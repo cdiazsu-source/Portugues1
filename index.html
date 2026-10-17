@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Português A1: Rotina, Comida e Mais</title>
+  <!-- Ícono de la pestaña: bandera de Brasil (Twemoji, CC-BY 4.0), incrustada para que funcione sin internet -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath fill='%23009B3A' d='M36 27c0 2.209-1.791 4-4 4H4c-2.209 0-4-1.791-4-4V9c0-2.209 1.791-4 4-4h28c2.209 0 4 1.791 4 4v18z'/%3E%3Cpath fill='%23FEDF01' d='M32.728 18L18 29.124 3.272 18 18 6.875z'/%3E%3Ccircle fill='%23002776' cx='17.976' cy='17.924' r='6.458'/%3E%3Cpath fill='%23CBE9D4' d='M12.277 14.887c-.332.621-.558 1.303-.672 2.023 3.995-.29 9.417 1.891 11.744 4.595.402-.604.7-1.28.883-2.004-2.872-2.808-7.917-4.63-11.955-4.614z'/%3E%3Cpath fill='%2388C9F9' d='M12 18.233h1v1h-1zm1 2h1v1h-1z'/%3E%3Cpath fill='%2355ACEE' d='M15 18.233h1v1h-1zm2 1h1v1h-1zm4 2h1v1h-1zm-3 1h1v1h-1zm3-6h1v1h-1z'/%3E%3Cpath fill='%233B88C3' d='M19 20.233h1v1h-1z'/%3E%3C/svg%3E">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -585,6 +587,37 @@
           nat: { pt: 'Isso aí é dez conto.', pron: 'Ísu aí é déis kóntu', note: '«Conto» = forma informal de decir reales (como «lucas»).' },
           key: { pt: 'a grana · o dinheiro', pron: 'a grána · u djiñéru', es: 'la plata (informal) · el dinero' } },
 
+        { section: 'Billetes y monedas de Brasil', rd: 'num-cedulas', icon: 'fa-money-bill-1', text: 'Cada billete tiene un <b>animal de Brasil</b> y un color distinto. Por delante todos llevan la <b>Efígie da República</b>: el rostro de una mujer que simboliza la República. ¡Y cuanto más valor, más grande es el billete!' },
+        { id: 'mb1', tag: 'As notas', tagIcon: 'fa-money-bill-wave', cash: 'notes',
+          rule: 'As cédulas do real', hint: 'Billete = <b>a nota</b> o <b>a cédula</b>. Toca cada uno para oír su valor y su animal. El de R$ 1 (con un colibrí, <b>beija-flor</b>) ya no se fabrica.',
+          items: [
+            { v: '2', pt: 'dois reais', pron: 'dóis jeáis', bg: ['#6f9cc0', '#2f5f86'], e: '🐢', an: 'a tartaruga-de-pente', anPron: 'a tartarúga dji pénchi', anEs: 'la tortuga carey', cor: 'azul', corPron: 'azúu', fact: 'Vive en las playas de Brasil y está en peligro de extinción. Fue el animal más votado por la gente.' },
+            { v: '5', pt: 'cinco reais', pron: 'sínku jeáis', bg: ['#9a7cc0', '#5b3f86'], e: '🦢', an: 'a garça-branca', anPron: 'a gársa bránka', anEs: 'la garza blanca', cor: 'lilás (violeta)', corPron: 'lilás', fact: 'Ave blanca de patas largas que pesca en ríos y lagos. (El emoji es el más parecido.)' },
+            { v: '10', pt: 'dez reais', pron: 'déis jeáis', bg: ['#d9585c', '#972b2f'], e: '🦜', an: 'a arara-vermelha', anPron: 'a arára vermélia', anEs: 'la guacamaya roja', cor: 'vermelha', corPron: 'vermélia', fact: 'Un loro grande y colorido de la Amazonía. ¡Como Tico, pero más grande!' },
+            { v: '20', pt: 'vinte reais', pron: 'vínchi jeáis', bg: ['#f4bf4f', '#d9822b'], e: '🐒', an: 'o mico-leão-dourado', anPron: 'u míku leáung dorádu', anEs: 'el tití león dorado', cor: 'amarela', corPron: 'amaréla', fact: 'Monito naranja con melena de león. Solo vive en la Mata Atlántica, cerca de Río.' },
+            { v: '50', pt: 'cinquenta reais', pron: 'sinkuénta jeáis', bg: ['#c49a6c', '#7a5230'], e: '🐆', an: 'a onça-pintada', anPron: 'a ónsa pintáda', anEs: 'el jaguar', cor: 'marrom', corPron: 'majóng', fact: 'El felino más grande de América. Por eso al billete de 50 le dicen «uma onça».' },
+            { v: '100', pt: 'cem reais', pron: 'séing jeáis', bg: ['#5b9ad6', '#1f5c99'], e: '🐟', an: 'a garoupa', anPron: 'a garôpa', anEs: 'el mero (un pez)', cor: 'azul', corPron: 'azúu', fact: 'Un pez grande de los arrecifes de Brasil. Al billete de 100 le dicen «uma garoupa».' },
+            { v: '200', pt: 'duzentos reais', pron: 'duzéntus jeáis', bg: ['#aaa59c', '#6b5b4b'], e: '🐺', an: 'o lobo-guará', anPron: 'u lôbu guará', anEs: 'el lobo de crin', cor: 'cinza e sépia', corPron: 'sínza i sépia', fact: 'El más nuevo (2020). Vive en el Cerrado y tiene patas larguísimas. ¡Es famoso por los memes!' }
+          ] },
+        { id: 'mb2', tag: 'As moedas', tagIcon: 'fa-coins', cash: 'coins',
+          rule: 'As moedas', hint: 'Las monedas muestran <b>personajes de la historia</b> de Brasil. Moneda = <b>a moeda</b> [a muéda].',
+          items: [
+            { v: '1', unit: 'centavo', pt: 'um centavo', pron: 'ung sentávu', metal: 'copper', who: 'Pedro Álvares Cabral', whoPron: 'Pédru Áuvaris Kabráu', fact: 'El navegante portugués que llegó a Brasil en 1500. Color cobre; ya casi no se ve.' },
+            { v: '5', unit: 'centavos', pt: 'cinco centavos', pron: 'sínku sentávus', metal: 'copper', who: 'Tiradentes', whoPron: 'Chiradénchis', fact: 'Héroe de la lucha por la independencia (1789). Color cobre.' },
+            { v: '10', unit: 'centavos', pt: 'dez centavos', pron: 'déis sentávus', metal: 'gold', who: 'Dom Pedro I', whoPron: 'Dôm Pédru Priméru', fact: 'El emperador que declaró la independencia en 1822. Color dorado.' },
+            { v: '25', unit: 'centavos', pt: 'vinte e cinco centavos', pron: 'vínchi i sínku sentávus', metal: 'gold', who: 'Marechal Deodoro da Fonseca', whoPron: 'Mareshau Deodóru da Fonsêka', fact: 'Proclamó la República en 1889 y fue el primer presidente. Color dorado.' },
+            { v: '50', unit: 'centavos', pt: 'cinquenta centavos', pron: 'sinkuénta sentávus', metal: 'silver', who: 'Barão do Rio Branco', whoPron: 'Baráung du Jíu Bránku', fact: 'El diplomático que definió las fronteras de Brasil. Color plateado.' },
+            { v: '1', unit: 'real', pt: 'um real', pron: 'ung jeáu', metal: 'bimetal', who: 'Efígie da República', whoPron: 'Efízhi da Jepúblika', fact: 'Bimetálica: centro plateado y aro dorado. Lleva el rostro de la República, como los billetes.' }
+          ] },
+        { id: 'mb3', tag: 'Jerga', tagIcon: 'fa-face-grin-wink',
+          pt: 'A nota de cinquenta tem uma onça-pintada.', pron: 'A nóta dji sinkuénta téing úma ónsa pintáda', es: 'El billete de cincuenta tiene un jaguar.',
+          nat: { pt: 'Me empresta uma onça?', pron: 'Mi emprésta úma ónsa?', note: 'Los billetes se conocen por su animal: «uma onça» = R$ 50.' },
+          key: { pt: 'uma onça · uma garoupa', pron: 'úma ónsa · úma garôpa', es: 'un billete de 50 · uno de 100 (informal)' } },
+        { id: 'mb4', tag: 'Monedas', tagIcon: 'fa-coins',
+          pt: 'Você tem uma moeda de um real?', pron: 'Vosê téing úma muéda dji ung jeáu?', es: '¿Tienes una moneda de un real?',
+          nat: { pt: 'Tem trocado?', pron: 'Téing trokádu?', note: '«Trocado» = sencillo: monedas o billetes pequeños.' },
+          key: { pt: 'a moeda · as moedas', pron: 'a muéda · as muédas', es: 'la moneda · las monedas' } },
+
         { section: 'En el día a día', rd: 'num-dia', icon: 'fa-basket-shopping', text: 'Cantidades, pisos y género: los usarás en mercados, edificios y al hablar de tu familia.' },
         { id: 'np10', tag: 'Mercado', tagIcon: 'fa-scale-balanced',
           pt: 'Me vê meio quilo de queijo, por favor.', pron: 'Mi vê méiu kílu dji kéizhu, pur favô(r)', es: 'Deme medio kilo de queso, por favor.',
@@ -830,52 +863,166 @@
         ]
       },
       phrases: [
+        { section: 'Los colores básicos', rd: 'cores-bas', icon: 'fa-palette', text: 'Toca cada color y repítelo. Ojo con los que no se parecen al español: <b>vermelho</b>, <b>roxo</b> y <b>marrom</b>.' },
         { id: 'co1', tag: 'Primarios', tagIcon: 'fa-droplet',
-          rule: 'Vermelho, azul, amarelo', hint: '<b>Vermelho</b> = rojo. ¡No se parece al español, repítelo varias veces!',
-          words: [
-            { pt: 'vermelho', pron: 'verméliu', es: 'rojo' },
-            { pt: 'azul', pron: 'azúu', es: 'azul' },
-            { pt: 'amarelo', pron: 'amarélu', es: 'amarillo' }
+          rule: 'Vermelho, azul, amarelo, verde', hint: '<b>Vermelho</b> = rojo. ¡No se parece al español, repítelo varias veces!',
+          pics: [
+            ['#e11d48', 'vermelho', 'verméliu', 'rojo'],
+            ['#2563eb', 'azul', 'azúu', 'azul'],
+            ['#facc15', 'amarelo', 'amarélu', 'amarillo'],
+            ['#16a34a', 'verde', 'vérdji', 'verde']
           ] },
         { id: 'co2', tag: 'Mezclas', tagIcon: 'fa-fill-drip',
-          rule: 'Verde, laranja, roxo, rosa', hint: '<b>Roxo</b> = morado (¡no rojo!). Laranja y rosa no cambian: camisas rosa.',
-          words: [
-            { pt: 'verde', pron: 'vérdji', es: 'verde' },
-            { pt: 'laranja', pron: 'laránzha', es: 'naranja' },
-            { pt: 'roxo', pron: 'jóshu', es: 'morado (¡ojo!)' },
-            { pt: 'rosa', pron: 'józa', es: 'rosado' }
+          rule: 'Laranja, roxo, rosa, lilás', hint: '<b>Roxo</b> = morado (¡no rojo!). Es el falso amigo más famoso de los colores.',
+          pics: [
+            ['#f97316', 'laranja', 'laránzha', 'naranja'],
+            ['#7e22ce', 'roxo', 'jóshu', 'morado (¡ojo!)'],
+            ['#f472b6', 'rosa', 'józa', 'rosado'],
+            ['#b49cf5', 'lilás', 'lilás', 'lila']
           ] },
         { id: 'co3', tag: 'Neutros', tagIcon: 'fa-circle-half-stroke',
-          rule: 'Branco, preto, cinza, marrom', hint: '<b>Preto</b> = negro para cosas. «Negro» se usa para personas.',
-          words: [
-            { pt: 'branco', pron: 'bránku', es: 'blanco' },
-            { pt: 'preto', pron: 'prétu', es: 'negro' },
-            { pt: 'cinza', pron: 'sínza', es: 'gris' },
-            { pt: 'marrom', pron: 'majóng', es: 'café, marrón' }
+          rule: 'Branco, preto, cinza, marrom', hint: '<b>Preto</b> = negro para cosas. <b>Marrom</b> = el color café.',
+          pics: [
+            ['#ffffff', 'branco', 'bránku', 'blanco'],
+            ['#111827', 'preto', 'prétu', 'negro'],
+            ['#9ca3af', 'cinza', 'sínza', 'gris'],
+            ['#7c4a1e', 'marrom', 'majóng', 'café, marrón']
           ] },
-        { id: 'co4', tag: 'Tonos', tagIcon: 'fa-swatchbook',
-          rule: 'Claro, escuro y más', hint: 'Se unen con guion: <b>azul-claro, verde-escuro</b>.',
-          words: [
-            { pt: 'azul-claro', pron: 'azúu kláru', es: 'azul claro' },
-            { pt: 'verde-escuro', pron: 'vérdji iskúru', es: 'verde oscuro' },
-            { pt: 'bege', pron: 'bézhi', es: 'beige' },
-            { pt: 'dourado', pron: 'dorádu', es: 'dorado' }
-          ] },
+        { id: 'cp8', tag: 'Preguntar', tagIcon: 'fa-circle-question',
+          pt: 'Qual é a cor do seu carro? — É branco.', pron: 'Kuáu é a kô(r) du séu káju? — É bránku', es: '¿De qué color es tu carro? — Es blanco.',
+          nat: { pt: 'De que cor é? — É branquinho.', pron: 'Dji ki kô(r) é? — É brankíñu', note: 'El diminutivo suaviza: «branquinho» = blanquito.' },
+          key: { pt: 'De que cor é…?', pron: 'Dji ki kô(r) é', es: '¿De qué color es…?' } },
         { id: 'cp1', tag: 'Favorito', tagIcon: 'fa-heart',
           pt: 'Minha cor favorita é o azul.', pron: 'Míña kô(r) favoríta é u azúu', es: 'Mi color favorito es el azul.',
           nat: { pt: 'Que cor cê mais curte? — Azul!', pron: 'Ki kô(r) sê máis kúrchi? — Azúu!', note: 'Se responde solo con el color.' },
           key: { pt: 'a cor', pron: 'a kô(r)', es: 'el color (¡femenino en portugués!)' } },
-        { id: 'cp2', tag: 'Describir', tagIcon: 'fa-eye', hl: 'verdes',
-          pt: 'Ela tem olhos verdes e cabelo preto.', pron: 'Éla téing ólius vérdjis i kabélu prétu', es: 'Ella tiene ojos verdes y pelo negro.',
-          key: { pt: 'olhos · cabelo', pron: 'ólius · kabélu', es: 'ojos · pelo (de la cabeza)' } },
+        { section: 'Tonos y matices', rd: 'cores-tons', icon: 'fa-swatchbook', text: 'El tono se agrega con guion: <b>azul-claro</b>, <b>verde-escuro</b>. Muchos colores salen de cosas: <b>vinho</b>, <b>creme</b>, <b>verde-limão</b>.' },
+        { id: 'co4', tag: 'Claro y oscuro', tagIcon: 'fa-circle-half-stroke',
+          rule: 'Claro e escuro', hint: '<b>Escuro</b> = oscuro. Suena «iskúru».',
+          pics: [
+            ['#93c5fd', 'azul-claro', 'azúu kláru', 'azul claro'],
+            ['#1e3a8a', 'azul-escuro', 'azúu iskúru', 'azul oscuro'],
+            ['#86efac', 'verde-claro', 'vérdji kláru', 'verde claro'],
+            ['#14532d', 'verde-escuro', 'vérdji iskúru', 'verde oscuro']
+          ] },
+        { id: 'co5', tag: 'De las cosas', tagIcon: 'fa-wine-glass',
+          rule: 'Marinho, limão, vinho, creme', hint: 'Como en español: el color del mar, del limón, del vino, de la crema.',
+          pics: [
+            ['#1e2a5a', 'azul-marinho', 'azúu maríñu', 'azul marino'],
+            ['#84cc16', 'verde-limão', 'vérdji limáung', 'verde limón'],
+            ['#7f1d1d', 'vinho', 'víñu', 'vinotinto'],
+            ['#f5f0dc', 'creme', 'krêmi', 'crema']
+          ] },
+        { id: 'co6', tag: 'Brillantes', tagIcon: 'fa-star',
+          rule: 'Dourado, prateado, bege, turquesa', hint: '<b>Prata</b> = plata, por eso <b>prateado</b>. OU suena «ô»: dourado = «dorádu».',
+          pics: [
+            ['#d4a017', 'dourado', 'dorádu', 'dorado'],
+            ['#c0c0c0', 'prateado', 'pratiádu', 'plateado'],
+            ['#d6c3a5', 'bege', 'bézhi', 'beige'],
+            ['#14b8a6', 'turquesa', 'turkêza', 'turquesa']
+          ] },
+        { id: 'cp5', tag: 'En la tienda', tagIcon: 'fa-bag-shopping',
+          pt: 'Eu prefiro um azul mais clarinho.', pron: 'Eu prefíru ung azúu máis klaríñu', es: 'Prefiero un azul más clarito.',
+          nat: { pt: 'Tem num tom mais escuro?', pron: 'Téing nung tóng máis iskúru?', note: '= ¿Lo tiene en un tono más oscuro?' },
+          key: { pt: 'o tom · clarinho · escurinho', pron: 'u tóng · klaríñu · iskuríñu', es: 'el tono · clarito · oscurito' } },
+        { id: 'cp9', tag: 'Estampados', tagIcon: 'fa-shirt',
+          pt: 'Eu gosto de roupa colorida.', pron: 'Eu góstu dji jôpa kolorída', es: 'Me gusta la ropa de colores.',
+          key: { pt: 'colorido · listrado · estampado', pron: 'kolorídu · listrádu · istampádu', es: 'de colores · a rayas · estampado' } },
+        { section: 'Género y plural', rd: 'cores-conc', icon: 'fa-venus-mars', text: 'El color va <b>después</b> de la palabra y concuerda con ella. Hay 3 grupos: los que cambian todo, los que solo cambian en plural y los que <b>nunca cambian</b>.' },
+        { id: 'co7', tag: 'Grupo 1', tagIcon: 'fa-1',
+          rule: 'Terminan en -o: cambian todo', hint: 'Como en español: <b>-o, -a, -os, -as</b>. Igual: preto, branco, amarelo, roxo.',
+          words: [
+            { pt: 'carro vermelho', pron: 'káju verméliu', es: 'carro rojo' },
+            { pt: 'casa vermelha', pron: 'káza vermélia', es: 'casa roja' },
+            { pt: 'carros vermelhos', pron: 'kájus vermélius', es: 'carros rojos' },
+            { pt: 'casas vermelhas', pron: 'kázas vermélias', es: 'casas rojas' }
+          ] },
+        { id: 'co8', tag: 'Grupo 2', tagIcon: 'fa-2',
+          rule: 'Terminan en -e, -l, -m: solo plural', hint: 'No cambian con el género: <b>o olho verde, a blusa verde</b>. Ojo: azul → <b>azuis</b>, marrom → <b>marrons</b>.',
+          words: [
+            { pt: 'olhos verdes', pron: 'ólius vérdjis', es: 'ojos verdes' },
+            { pt: 'sapatos azuis', pron: 'sapátus azúis', es: 'zapatos azules' },
+            { pt: 'bolsas marrons', pron: 'bôusas majóngs', es: 'bolsos café' },
+            { pt: 'calças beges', pron: 'káusas bézhis', es: 'pantalones beige' }
+          ] },
+        { id: 'co9', tag: 'Grupo 3', tagIcon: 'fa-3',
+          rule: 'Vienen de cosas: ¡no cambian!', hint: 'Como «camisas naranja» en español. Al hablar, <b>cinza</b> también se deja igual.',
+          words: [
+            { pt: 'camisas rosa', pron: 'kamízas józa', es: 'camisas rosadas' },
+            { pt: 'tênis laranja', pron: 'ténis laránzha', es: 'tenis naranja' },
+            { pt: 'sapatos vinho', pron: 'sapátus víñu', es: 'zapatos vinotinto' },
+            { pt: 'calças cinza', pron: 'káusas sínza', es: 'pantalones grises' }
+          ] },
         { id: 'cp3', tag: 'Ropa', tagIcon: 'fa-shirt',
           pt: 'Eu quero a camiseta branca, não a vermelha.', pron: 'Eu kéru a kamizéta bránka, náung a vermélia', es: 'Quiero la camiseta blanca, no la roja.',
           nat: { pt: 'Me vê a branca, por favor.', pron: 'Mi vê a bránka, pur favô(r)', note: 'En la tienda basta con el color: «a branca», «a preta».' },
           key: { pt: 'branco → branca', pron: 'bránku → bránka', es: 'el color concuerda con la prenda' } },
-        { id: 'cp4', tag: 'Expresión', tagIcon: 'fa-wallet',
+        { id: 'cp6', tag: 'Plural', tagIcon: 'fa-clone', hl: 'azuis',
+          pt: 'Comprei duas camisas azuis e uma calça cinza.', pron: 'Kompréi dúas kamízas azúis i úma káusa sínza', es: 'Compré dos camisas azules y un pantalón gris.',
+          key: { pt: 'a cor vem depois', pron: 'a kô(r) véing depóis', es: 'el color va después de la palabra' } },
+        { section: 'Describir personas', rd: 'cores-pess', icon: 'fa-user', text: 'Para pelo y ojos hay palabras especiales: los ojos café son <b>castanhos</b> (no «marrons») y el pelo rojo es <b>ruivo</b>.' },
+        { id: 'co10', tag: 'O cabelo', tagIcon: 'fa-scissors',
+          rule: 'Loiro, ruivo, castanho, grisalho', hint: '<b>Cabelo</b> = pelo de la cabeza. <b>Pelo</b> en portugués es el vello del cuerpo.',
+          pics: [
+            ['👱', 'loiro', 'lôiru', 'rubio'],
+            ['🧑‍🦰', 'ruivo', 'júivu', 'pelirrojo'],
+            ['#4a2c17', 'castanho', 'kastáñu', 'castaño'],
+            ['🧑‍🦳', 'grisalho', 'grizáliu', 'canoso']
+          ] },
+        { id: 'co11', tag: 'Os olhos', tagIcon: 'fa-eye',
+          rule: 'Olhos castanhos, azuis…', hint: '<b>Olhos castanhos</b> = ojos café. «Olhos marrons» suena raro.',
+          pics: [
+            ['#5b3a1e', 'castanhos', 'kastáñus', 'café'],
+            ['#3b82f6', 'azuis', 'azúis', 'azules'],
+            ['#22c55e', 'verdes', 'vérdjis', 'verdes'],
+            ['#1f2937', 'pretos', 'prétus', 'negros']
+          ] },
+        { id: 'cp2', tag: 'Describir', tagIcon: 'fa-eye', hl: 'verdes',
+          pt: 'Ela tem olhos verdes e cabelo preto.', pron: 'Éla téing ólius vérdjis i kabélu prétu', es: 'Ella tiene ojos verdes y pelo negro.',
+          key: { pt: 'olhos · cabelo', pron: 'ólius · kabélu', es: 'ojos · pelo (de la cabeza)' } },
+        { id: 'cp7', tag: 'Personas', tagIcon: 'fa-user',
+          pt: 'Ele é moreno, de olhos castanhos.', pron: 'Éli é morénu, dji ólius kastáñus', es: 'Él es moreno, de ojos café.',
+          nat: { pt: 'Ela é loira de olho azul.', pron: 'Éla é lôira dji óliu azúu', note: 'Al hablar se usa mucho el singular: «de olho azul».' },
+          key: { pt: 'moreno · loiro · ruivo', pron: 'morénu · lôiru · júivu', es: 'moreno · rubio · pelirrojo' } },
+        { section: 'Expresiones con colores', rd: 'cores-expr', icon: 'fa-face-grin-wink', text: 'Los brasileños usan los colores para hablar de sentimientos y de dinero. ¡Te harán sonar muy natural!' },
+        { id: 'cp4', tag: 'Dinero', tagIcon: 'fa-wallet',
           pt: 'Este mês eu estou no vermelho.', pron: 'Éschi méis eu istô nu verméliu', es: 'Este mes estoy en números rojos (sin plata).',
           nat: { pt: 'Tô no vermelho, tô sem grana.', pron: 'Tô nu verméliu, tô séing grána', note: '«Grana» = plata, dinero. Súper común.' },
-          key: { pt: 'estar no vermelho', pron: 'istá(r) nu verméliu', es: 'estar sin dinero' } }
+          key: { pt: 'estar no vermelho', pron: 'istá(r) nu verméliu', es: 'estar sin dinero' } },
+        { id: 'cp10', tag: 'Olvidar', tagIcon: 'fa-brain',
+          pt: 'Deu branco na prova!', pron: 'Dêu bránku na próva!', es: '¡Me quedé en blanco en el examen!',
+          nat: { pt: 'Nossa, me deu um branco…', pron: 'Nósa, mi dêu ung bránku…', note: 'Cuando olvidas algo de repente.' },
+          key: { pt: 'dar um branco', pron: 'dá(r) ung bránku', es: 'quedarse en blanco' } },
+        { id: 'cp11', tag: 'Sonrisa', tagIcon: 'fa-face-grimace',
+          pt: 'Ele deu um sorriso amarelo.', pron: 'Éli dêu ung sojízu amarélu', es: 'Sonrió a la fuerza (una sonrisa falsa).',
+          key: { pt: 'o sorriso amarelo', pron: 'u sojízu amarélu', es: 'la sonrisa forzada' } },
+        { id: 'cp12', tag: 'Vergüenza', tagIcon: 'fa-face-flushed',
+          pt: 'Fiquei vermelho de vergonha.', pron: 'Fikéi verméliu dji vergóña', es: 'Me puse rojo de la vergüenza.',
+          key: { pt: 'ficar vermelho', pron: 'fiká(r) verméliu', es: 'ponerse rojo' } },
+        { id: 'cp13', tag: 'Miedo', tagIcon: 'fa-person-running',
+          pt: 'Na hora H, ele amarelou.', pron: 'Na óra agá, éli amarelô', es: 'En el momento clave, se echó para atrás.',
+          key: { pt: 'amarelar', pron: 'amarelá(r)', es: 'acobardarse, rajarse' } },
+        { id: 'cp14', tag: 'Todo bien', tagIcon: 'fa-face-smile',
+          pt: 'Tudo azul por aqui!', pron: 'Túdu azúu pur akí!', es: '¡Todo bien por aquí!',
+          nat: { pt: 'E aí, tudo azul?', pron: 'I aí, túdu azúu?', note: '= ¿Todo bien? Un poco antiguo, pero muy simpático.' },
+          key: { pt: 'tudo azul', pron: 'túdu azúu', es: 'todo bien, todo tranquilo' } },
+        { section: 'Brasil en colores', rd: 'cores-br', icon: 'fa-flag', text: 'Verde y amarillo son los colores de Brasil. En días de partido, ¡todo el país se viste de <b>verde-amarelo</b>!' },
+        { id: 'co12', tag: 'A bandeira', tagIcon: 'fa-flag',
+          rule: 'Verde, amarelo, azul e branco', hint: 'Popularmente: <b>verde</b> = las selvas, <b>amarelo</b> = el oro, <b>azul</b> = el cielo. En el centro dice <b>Ordem e Progresso</b>.',
+          pics: [
+            ['🇧🇷', 'a bandeira', 'a bandéra', 'la bandera'],
+            ['#009c3b', 'verde', 'vérdji', 'verde'],
+            ['#ffdf00', 'amarelo', 'amarélu', 'amarillo'],
+            ['#002776', 'azul', 'azúu', 'azul']
+          ] },
+        { id: 'cp15', tag: 'Fútbol', tagIcon: 'fa-futbol',
+          pt: 'A seleção joga de camisa amarela.', pron: 'A selesáung zhóga dji kamíza amaréla', es: 'La selección juega con camiseta amarilla.',
+          nat: { pt: 'Hoje tem jogo! Bora de verde e amarelo!', pron: 'Ózhi téing zhógu! Bóra dji vérdji i amarélu!', note: '«Bora» = vamos. A la selección también le dicen «a Canarinho».' },
+          key: { pt: 'a camisa amarela', pron: 'a kamíza amaréla', es: 'la camiseta de Brasil' } },
+        { id: 'cp16', tag: 'Historia', tagIcon: 'fa-tree',
+          pt: 'O pau-brasil tem madeira vermelha.', pron: 'U páu brasíu téing madéra vermélia', es: 'El palo de Brasil tiene madera roja.',
+          nat: { pt: 'Foi a árvore que deu nome ao Brasil!', pron: 'Fôi a árvori ki dêu nômi au Brasíu!', note: 'Su madera roja como una brasa le dio el nombre al país.' },
+          key: { pt: 'o pau-brasil', pron: 'u páu brasíu', es: 'el árbol que le dio nombre al país' } },
       ]
     },
     {
@@ -1648,6 +1795,230 @@
       ]
     },
     {
+      id: 'animais', num: 0, tab: 'Animales', icon: 'fa-paw', color: 'emerald',
+      title: 'Os Animais', pron: 'Us Animáis', es: 'Los animales · Mascotas, granja, fauna de Brasil, sonidos y expresiones',
+      tip: {
+        title: 'El género de los animales',
+        text: 'Muchos tienen masculino y femenino: <b>o gato, a gata</b>. Otros tienen una sola forma y se agrega <b>macho</b> o <b>fêmea</b>: <b>a onça macho</b>, <b>o jacaré fêmea</b>. Y en Brasil <b>bicho</b> es cualquier animal.',
+        words: [
+          { pt: 'o animal · os animais', pron: 'u animáu · us animáis', es: 'el animal · los animales' },
+          { pt: 'o bicho', pron: 'u bíshu', es: 'el animal, el bichito' },
+          { pt: 'macho · fêmea', pron: 'máshu · fêmia', es: 'macho · hembra' }
+        ]
+      },
+      phrases: [
+        { section: 'Mascotas', rd: 'ani-pets', icon: 'fa-dog', text: 'Una mascota es un <b>bicho de estimação</b> o, más moderno, un <b>pet</b> [pétchi].' },
+        { id: 'an1', tag: 'Em casa', tagIcon: 'fa-house',
+          rule: 'O cachorro, o gato…', hint: '<b>Cachorro</b> = perro de cualquier edad. El cachorrito es <b>o filhote</b>.',
+          pics: [
+            ['🐕', 'o cachorro', 'u kashóju', 'el perro'],
+            ['🐈', 'o gato', 'u gátu', 'el gato'],
+            ['🐠', 'o peixe', 'u péishi', 'el pez'],
+            ['🐦', 'o passarinho', 'u pasaríñu', 'el pajarito']
+          ] },
+        { id: 'an2', tag: 'Pequeños', tagIcon: 'fa-paw',
+          rule: 'O coelho, a tartaruga…', hint: '<b>Coelho</b> = conejo. LH suena «li»: koéliu.',
+          pics: [
+            ['🐇', 'o coelho', 'u koéliu', 'el conejo'],
+            ['🐹', 'o hamster', 'u ámister', 'el hámster'],
+            ['🐢', 'a tartaruga', 'a tartarúga', 'la tortuga'],
+            ['🦜', 'o papagaio', 'u papagáiu', 'el loro']
+          ] },
+        { id: 'ap1', tag: 'Tener', tagIcon: 'fa-heart',
+          pt: 'Eu tenho um cachorro e dois gatos.', pron: 'Eu téñu ung kashóju i dóis gátus', es: 'Tengo un perro y dos gatos.',
+          nat: { pt: 'Cê tem bicho de estimação?', pron: 'Sê téing bíshu dji istimasáung?', note: '= ¿Tienes mascota? «Cê» = você, al hablar rápido.' },
+          key: { pt: 'o bicho de estimação · o pet', pron: 'u bíshu dji istimasáung · u pétchi', es: 'la mascota' } },
+        { id: 'ap2', tag: 'Nombre', tagIcon: 'fa-cat',
+          pt: 'O meu gato se chama Mingau e dorme o dia todo.', pron: 'U méu gátu si sháma Mingáu i dórmi u djía tôdu', es: 'Mi gato se llama Mingau y duerme todo el día.',
+          nat: { pt: 'Que fofo!', pron: 'Ki fôfu!', note: '= ¡Qué tierno! Lo dirás mucho con animales.' },
+          key: { pt: 'o filhote · o gatinho', pron: 'u filióchi · u gachíñu', es: 'la cría · el gatito' } },
+        { section: 'La granja', rd: 'ani-fazenda', icon: 'fa-cow', text: 'La granja es <b>a fazenda</b> o <b>o sítio</b> (más pequeña). ¡Cuidado con <b>peru</b>: es el pavo!' },
+        { id: 'an3', tag: 'Grandes', tagIcon: 'fa-horse',
+          rule: 'A vaca, o cavalo…', hint: '<b>Porco</b> = cerdo. La O suena cerrada: «pôrku».',
+          pics: [
+            ['🐄', 'a vaca', 'a váka', 'la vaca'],
+            ['🐎', 'o cavalo', 'u kaválu', 'el caballo'],
+            ['🐖', 'o porco', 'u pôrku', 'el cerdo'],
+            ['🐑', 'a ovelha', 'a ovélia', 'la oveja']
+          ] },
+        { id: 'an4', tag: 'Aves', tagIcon: 'fa-egg',
+          rule: 'A galinha, o galo…', hint: '<b>Galinha</b> = gallina · <b>galo</b> = gallo. NH suena «ñ».',
+          pics: [
+            ['🐔', 'a galinha', 'a galíña', 'la gallina'],
+            ['🐓', 'o galo', 'u gálu', 'el gallo'],
+            ['🦆', 'o pato', 'u pátu', 'el pato'],
+            ['🐐', 'a cabra', 'a kábra', 'la cabra']
+          ] },
+        { id: 'an5', tag: 'Más', tagIcon: 'fa-tractor',
+          rule: 'O boi, o peru…', hint: '<b>O peru</b> = el pavo (¡y también el país, o Peru!).',
+          pics: [
+            ['🐂', 'o boi', 'u bôi', 'el buey'],
+            ['🦃', 'o peru', 'u perú', 'el pavo'],
+            ['🐤', 'o pintinho', 'u pinchíñu', 'el pollito'],
+            ['🫏', 'o burro', 'u búju', 'el burro']
+          ] },
+        { id: 'ap3', tag: 'Qué dan', tagIcon: 'fa-egg',
+          pt: 'A vaca dá leite e a galinha bota ovo.', pron: 'A váka dá léichi i a galíña bóta óvu', es: 'La vaca da leche y la gallina pone huevos.',
+          key: { pt: 'botar ovo', pron: 'botá(r) óvu', es: 'poner huevos' } },
+        { id: 'ap4', tag: 'La finca', tagIcon: 'fa-house-chimney',
+          pt: 'A vovó Ana tem um sítio com muitos bichos.', pron: 'A vovó Ána téing ung sítchiu kong múintus bíshus', es: 'La abuela Ana tiene una finca con muchos animales.',
+          key: { pt: 'o sítio · a fazenda', pron: 'u sítchiu · a fazénda', es: 'la finca · la hacienda' } },
+        { section: 'Animales de Brasil', rd: 'ani-br', icon: 'fa-tree', text: 'Brasil tiene una de las faunas más ricas del mundo: Amazonía, Pantanal, Cerrado y Mata Atlántica. Algunos emojis son aproximados.' },
+        { id: 'an6', tag: 'Selva y río', tagIcon: 'fa-water',
+          rule: 'A onça, a preguiça…', hint: '<b>Preguiça</b> = pereza… ¡y también el perezoso! <b>Jacaré</b> = caimán.',
+          pics: [
+            ['🐆', 'a onça-pintada', 'a ónsa pintáda', 'el jaguar'],
+            ['🦥', 'a preguiça', 'a pregísa', 'el perezoso'],
+            ['🐊', 'o jacaré', 'u zhakaré', 'el caimán'],
+            ['🐬', 'o boto-cor-de-rosa', 'u bótu kô(r) dji józa', 'el delfín rosado']
+          ] },
+        { id: 'an7', tag: 'Famosos', tagIcon: 'fa-star',
+          rule: 'A capivara, a arara…', hint: 'La <b>capivara</b> (chigüiro) es el roedor más grande del mundo. ¡En Brasil es famosísima!',
+          pics: [
+            ['🦫', 'a capivara', 'a kapivára', 'el chigüiro'],
+            ['🦜', 'a arara', 'a arára', 'la guacamaya'],
+            ['🐒', 'o mico-leão-dourado', 'u míku leáung dorádu', 'el tití león dorado'],
+            ['🐍', 'a sucuri', 'a sukurí', 'la anaconda']
+          ] },
+        { id: 'ap5', tag: 'Récord', tagIcon: 'fa-trophy',
+          pt: 'A capivara é o maior roedor do mundo.', pron: 'A kapivára é u maió(r) joedô(r) du múndu', es: 'El chigüiro es el roedor más grande del mundo.',
+          key: { pt: 'o maior · o menor', pron: 'u maió(r) · u menó(r)', es: 'el más grande · el más pequeño' } },
+        { id: 'ap6', tag: 'Leyenda', tagIcon: 'fa-moon',
+          pt: 'Na Amazônia vive o boto-cor-de-rosa.', pron: 'Na Amazônia vívi u bótu kô(r) dji józa', es: 'En la Amazonía vive el delfín rosado.',
+          nat: { pt: 'Dizem que o boto vira gente nas festas!', pron: 'Djízeing ki u bótu víra zhénchi nas féstas!', note: 'Leyenda amazónica: el boto se convierte en hombre para ir a las fiestas.' },
+          key: { pt: 'a Amazônia · o Pantanal', pron: 'a Amazônia · u Pantanáu', es: 'la Amazonía · el Pantanal' } },
+        { section: 'Salvajes y del mar', rd: 'ani-mundo', icon: 'fa-earth-africa', text: 'Muchos se parecen al español. Fíjate en la pronunciación: <b>leão</b> [leáung], <b>tigre</b> [chígri].' },
+        { id: 'an8', tag: 'Safari', tagIcon: 'fa-binoculars',
+          rule: 'O leão, o elefante…', hint: 'Femenino: <b>a leoa</b> (la leona).',
+          pics: [
+            ['🦁', 'o leão', 'u leáung', 'el león'],
+            ['🐅', 'o tigre', 'u chígri', 'el tigre'],
+            ['🐘', 'o elefante', 'u elefánchi', 'el elefante'],
+            ['🦒', 'a girafa', 'a zhiráfa', 'la jirafa']
+          ] },
+        { id: 'an9', tag: 'Bosque', tagIcon: 'fa-tree',
+          rule: 'O macaco, o urso…', hint: '<b>Raposa</b> = zorro. La R inicial suena «j»: japôza.',
+          pics: [
+            ['🐵', 'o macaco', 'u makáku', 'el mono'],
+            ['🐻', 'o urso', 'u úrsu', 'el oso'],
+            ['🦊', 'a raposa', 'a japôza', 'el zorro'],
+            ['🦓', 'a zebra', 'a zêbra', 'la cebra']
+          ] },
+        { id: 'an10', tag: 'Mar 1', tagIcon: 'fa-water',
+          rule: 'O tubarão, a baleia…', hint: '<b>Tubarão</b> = tiburón · <b>golfinho</b> = delfín.',
+          pics: [
+            ['🦈', 'o tubarão', 'u tubaráung', 'el tiburón'],
+            ['🐋', 'a baleia', 'a baléia', 'la ballena'],
+            ['🐬', 'o golfinho', 'u goufíñu', 'el delfín'],
+            ['🦀', 'o caranguejo', 'u karangêzhu', 'el cangrejo']
+          ] },
+        { id: 'an11', tag: 'Mar 2', tagIcon: 'fa-fish',
+          rule: 'O polvo, a lula…', hint: '<b>Polvo</b> = pulpo y <b>lula</b> = calamar. ¡Dos falsos amigos!',
+          pics: [
+            ['🐙', 'o polvo', 'u pôuvu', 'el pulpo'],
+            ['🦑', 'a lula', 'a lúla', 'el calamar'],
+            ['🦐', 'o camarão', 'u kamaráung', 'el camarón'],
+            ['🪼', 'a água-viva', 'a água víva', 'la medusa']
+          ] },
+        { id: 'ap7', tag: 'El rey', tagIcon: 'fa-crown',
+          pt: 'O leão é o rei da selva.', pron: 'U leáung é u jêi da séuva', es: 'El león es el rey de la selva.',
+          key: { pt: 'o rei · a rainha', pron: 'u jêi · a jaíña', es: 'el rey · la reina' } },
+        { id: 'ap8', tag: 'Miedo', tagIcon: 'fa-face-flushed',
+          pt: 'Eu tenho medo de tubarão!', pron: 'Eu téñu médu dji tubaráung!', es: '¡Les tengo miedo a los tiburones!',
+          key: { pt: 'ter medo de', pron: 'tê(r) médu dji', es: 'tener miedo de' } },
+        { section: 'Insectos y bichitos', rd: 'ani-bichos', icon: 'fa-bug', text: 'A los insectos se les dice mucho <b>bicho</b> o <b>bichinho</b>. ¡Y ojo con <b>barata</b>: es la cucaracha!' },
+        { id: 'an12', tag: 'Jardín', tagIcon: 'fa-seedling',
+          rule: 'A formiga, a abelha…', hint: '<b>Borboleta</b> = mariposa. ¡Una palabra muy linda!',
+          pics: [
+            ['🐜', 'a formiga', 'a formíga', 'la hormiga'],
+            ['🐝', 'a abelha', 'a abélia', 'la abeja'],
+            ['🦋', 'a borboleta', 'a borboléta', 'la mariposa'],
+            ['🪰', 'a mosca', 'a móska', 'la mosca']
+          ] },
+        { id: 'an13', tag: 'En casa', tagIcon: 'fa-house',
+          rule: 'A barata, a aranha…', hint: '<b>Joaninha</b> = mariquita. Al zancudo en Brasil también le dicen <b>pernilongo</b>.',
+          pics: [
+            ['🪳', 'a barata', 'a baráta', 'la cucaracha (¡no «barata»!)'],
+            ['🕷️', 'a aranha', 'a aráña', 'la araña'],
+            ['🦟', 'o mosquito', 'u moskítu', 'el zancudo'],
+            ['🐞', 'a joaninha', 'a zhoaníña', 'la mariquita']
+          ] },
+        { id: 'ap9', tag: '¡Auxilio!', tagIcon: 'fa-bullhorn',
+          pt: 'Socorro! Tem uma barata na cozinha!', pron: 'Sokóju! Téing úma baráta na kozíña!', es: '¡Auxilio! ¡Hay una cucaracha en la cocina!',
+          key: { pt: 'Socorro!', pron: 'Sokóju!', es: '¡Auxilio!' } },
+        { id: 'ap10', tag: 'De noche', tagIcon: 'fa-moon',
+          pt: 'Os pernilongos não me deixam dormir.', pron: 'Us pernilóngus náung mi déishaung dormí(r)', es: 'Los zancudos no me dejan dormir.',
+          key: { pt: 'o pernilongo', pron: 'u pernilóngu', es: 'el zancudo' } },
+        { section: 'Cómo suenan y su cuerpo', rd: 'ani-sons', icon: 'fa-volume-high', text: 'Los animales brasileños «hablan» distinto: el perro dice <b>au au</b> y el gallo <b>cocoricó</b>.' },
+        { id: 'an14', tag: 'Onomatopeyas', tagIcon: 'fa-volume-high',
+          rule: 'Au au, miau, cocoricó', hint: 'Tócalas e imítalas. ¡Es la parte más divertida!',
+          words: [
+            { pt: 'au au', pron: 'áu áu', es: 'guau guau (perro)' },
+            { pt: 'miau', pron: 'miáu', es: 'miau (gato)' },
+            { pt: 'cocoricó', pron: 'kokorikó', es: 'quiquiriquí (gallo)' },
+            { pt: 'muuu', pron: 'múuu', es: 'muuu (vaca)' }
+          ] },
+        { id: 'an15', tag: 'Verbos', tagIcon: 'fa-comment',
+          rule: 'Latir, miar, cantar', hint: 'Ladrar es <b>latir</b>. Para el gallo y los pájaros: <b>cantar</b>.',
+          words: [
+            { pt: 'o cachorro late', pron: 'u kashóju láchi', es: 'el perro ladra' },
+            { pt: 'o gato mia', pron: 'u gátu mía', es: 'el gato maúlla' },
+            { pt: 'o passarinho canta', pron: 'u pasaríñu kánta', es: 'el pajarito canta' },
+            { pt: 'o leão ruge', pron: 'u leáung júzhi', es: 'el león ruge' }
+          ] },
+        { id: 'an16', tag: 'El cuerpo', tagIcon: 'fa-feather',
+          rule: 'A pata, o rabo, as asas', hint: '<b>O rabo</b> = la cola. Las plumas son <b>as penas</b>.',
+          words: [
+            { pt: 'a pata', pron: 'a páta', es: 'la pata' },
+            { pt: 'o rabo', pron: 'u jábu', es: 'la cola' },
+            { pt: 'as asas', pron: 'as ázas', es: 'las alas' },
+            { pt: 'as penas', pron: 'as pênas', es: 'las plumas' }
+          ] },
+        { id: 'ap11', tag: 'Vecinos', tagIcon: 'fa-dog',
+          pt: 'O cachorro do vizinho late a noite toda.', pron: 'U kashóju du vizíñu láchi a nôichi tôda', es: 'El perro del vecino ladra toda la noche.',
+          key: { pt: 'latir', pron: 'lachí(r)', es: 'ladrar' } },
+        { section: 'Expresiones con animales', rd: 'ani-expr', icon: 'fa-face-grin-wink', text: 'Los brasileños hablan mucho con animales. Algunas se parecen al español… ¡y otras no!' },
+        { id: 'ap12', tag: 'Culpa', tagIcon: 'fa-scale-unbalanced',
+          pt: 'Quem vai pagar o pato sou eu!', pron: 'Kéing vái pagá(r) u pátu sô eu!', es: '¡El que va a pagar los platos rotos soy yo!',
+          key: { pt: 'pagar o pato', pron: 'pagá(r) u pátu', es: 'pagar los platos rotos' } },
+        { id: 'ap13', tag: 'Eficiencia', tagIcon: 'fa-bullseye',
+          pt: 'Matei dois coelhos com uma cajadada só.', pron: 'Matéi dóis koélius kong úma kazhadáda só', es: 'Maté dos pájaros de un tiro.',
+          key: { pt: 'dois coelhos', pron: 'dóis koélius', es: 'dos pájaros (¡en Brasil son conejos!)' } },
+        { id: 'ap14', tag: 'Sospecha', tagIcon: 'fa-magnifying-glass',
+          pt: 'Fiquei com a pulga atrás da orelha.', pron: 'Fikéi kong a púuga atráis da orélia', es: 'Me quedé con la duda, sospechando.',
+          key: { pt: 'a pulga atrás da orelha', pron: 'a púuga atráis da orélia', es: 'la mosca detrás de la oreja' } },
+        { id: 'ap15', tag: 'Aguantar', tagIcon: 'fa-face-meh',
+          pt: 'Tive que engolir sapo no trabalho.', pron: 'Chívi ki engolí(r) sápu nu trabáliu', es: 'Tuve que aguantarme en el trabajo.',
+          key: { pt: 'engolir sapo', pron: 'engolí(r) sápu', es: 'tragarse la rabia (tragar sapo)' } },
+        { id: 'ap16', tag: 'Orgullo', tagIcon: 'fa-heart',
+          pt: 'Ela é uma mãe coruja.', pron: 'Éla é úma máing korúzha', es: 'Es una mamá muy orgullosa de sus hijos.',
+          key: { pt: 'mãe coruja · pai coruja', pron: 'máing korúzha · pái korúzha', es: 'mamá o papá orgulloso (coruja = búho)' } },
+        { id: 'ap17', tag: 'Refrán', tagIcon: 'fa-dog',
+          pt: 'Cão que ladra não morde.', pron: 'Káung ki ládra náung mórdji', es: 'Perro que ladra no muerde.',
+          key: { pt: 'o cão', pron: 'u káung', es: 'el perro (en refranes o formal)' } },
+        { section: '¡Falsos amigos!', rd: 'ani-ff', icon: 'fa-triangle-exclamation', text: 'Estos nombres engañan a los hispanohablantes. ¡Mira bien la imagen!' },
+        { id: 'an17', tag: 'Engañan 1', tagIcon: 'fa-face-surprise',
+          rule: 'Cachorro, polvo, barata, peru', hint: 'Si en Brasil dices «barata», todos van a buscar una cucaracha.',
+          pics: [
+            ['🐕', 'o cachorro', 'u kashóju', 'el perro (¡de cualquier edad!)'],
+            ['🐙', 'o polvo', 'u pôuvu', 'el pulpo (¡no polvo!)'],
+            ['🪳', 'a barata', 'a baráta', 'la cucaracha (¡no barata!)'],
+            ['🦃', 'o peru', 'u perú', 'el pavo']
+          ] },
+        { id: 'an18', tag: 'Engañan 2', tagIcon: 'fa-face-surprise',
+          rule: 'Rato, esquilo, lula, bicho', hint: '<b>Rato</b> sirve para ratón y para rata. El polvo de la casa es <b>a poeira</b>.',
+          pics: [
+            ['🐀', 'o rato', 'u játu', 'el ratón, la rata'],
+            ['🐿️', 'o esquilo', 'u iskílu', 'la ardilla'],
+            ['🦑', 'a lula', 'a lúla', 'el calamar'],
+            ['🐛', 'o bicho', 'u bíshu', 'el animal, el bichito']
+          ] },
+        { id: 'ap18', tag: 'Ternura', tagIcon: 'fa-paw',
+          pt: 'O filhote do cachorro é uma graça!', pron: 'U filióchi du kashóju é úma grása!', es: '¡El cachorrito es una ternura!',
+          key: { pt: 'o filhote', pron: 'u filióchi', es: 'la cría, el cachorrito' } },
+      ]
+    },
+    {
       id: 'vocab', num: 16, tab: 'Vocabulario', icon: 'fa-book', color: 'cyan', vocab: true,
       title: 'Vocabulário Essencial', pron: 'Vokabuláriu Esensiáu', es: 'Vocabulario esencial · Las palabras que más vas a usar, por categorías'
     },
@@ -1669,7 +2040,7 @@
   const GROUPS = [
     { id: 'base', name: 'Primeros pasos', icon: 'fa-seedling', ids: ['apres', 'som', 'num', 'horas', 'dias', 'meses', 'cores'] },
     { id: 'gram', name: 'Gramática', icon: 'fa-puzzle-piece', ids: ['verbos', 'hetero', 'adj', 'poss', 'contr', 'paises', 'perg', 'passado', 'vverbos'] },
-    { id: 'vida', name: 'Vida diaria', icon: 'fa-house', ids: ['rotina', 'comida', 'prof', 'objetos', 'vocab'] },
+    { id: 'vida', name: 'Vida diaria', icon: 'fa-house', ids: ['rotina', 'comida', 'prof', 'objetos', 'animais', 'vocab'] },
     { id: 'prac', name: 'Practicar', icon: 'fa-gamepad', ids: ['pratica', 'prompt'] }
   ];
   const ORDER = GROUPS.flatMap(g => g.ids);
@@ -1723,7 +2094,16 @@
     { id: 'f44', cat: 'Objetos',      icon: 'fa-glass-water',   pt: 'o copo',               pron: 'u kópu',                es: 'el vaso (¡no copa!)' },
     { id: 'f45', cat: 'Objetos',      icon: 'fa-shirt',         pt: 'a calça',              pron: 'a káusa',               es: 'el pantalón' },
     { id: 'f46', cat: 'Objetos',      icon: 'fa-umbrella',      pt: 'o guarda-chuva',       pron: 'u guárda shúva',        es: 'el paraguas' },
-    { id: 'f47', cat: 'Objetos',      icon: 'fa-pen',           pt: 'a caneta',             pron: 'a kanéta',              es: 'el esfero' }
+    { id: 'f47', cat: 'Objetos',      icon: 'fa-pen',           pt: 'a caneta',             pron: 'a kanéta',              es: 'el esfero' },
+    { id: 'f48', cat: 'Animales',     icon: 'fa-dog',           pt: 'o cachorro',           pron: 'u kashóju',             es: 'el perro (¡de cualquier edad!)' },
+    { id: 'f49', cat: 'Animales',     icon: 'fa-bug',           pt: 'a barata',             pron: 'a baráta',              es: 'la cucaracha (¡falso amigo!)' },
+    { id: 'f50', cat: 'Animales',     icon: 'fa-paw',           pt: 'a capivara',           pron: 'a kapivára',            es: 'el chigüiro' },
+    { id: 'f51', cat: 'Animales',     icon: 'fa-face-grin-wink', pt: 'pagar o pato',        pron: 'pagá(r) u pátu',        es: 'pagar los platos rotos' },
+    { id: 'f52', cat: 'Colores',      icon: 'fa-palette',       pt: 'roxo',                 pron: 'jóshu',                 es: 'morado (¡no rojo!)' },
+    { id: 'f53', cat: 'Colores',      icon: 'fa-eye',           pt: 'olhos castanhos',      pron: 'ólius kastáñus',        es: 'ojos café' },
+    { id: 'f54', cat: 'Colores',      icon: 'fa-brain',         pt: 'Deu branco!',          pron: 'Dêu bránku!',           es: '¡Me quedé en blanco!' },
+    { id: 'f55', cat: 'Números',      icon: 'fa-money-bill',    pt: 'uma onça',             pron: 'úma ónsa',              es: 'un billete de R$ 50 (informal)' },
+    { id: 'f56', cat: 'Números',      icon: 'fa-coins',         pt: 'a moeda',              pron: 'a muéda',               es: 'la moneda' }
   ];
 
   const FLASH_COLORS = {
@@ -1742,7 +2122,8 @@
     'Países':       'from-emerald-400 to-sky-600',
     'Objetos':      'from-rose-400 to-orange-500',
     'Colores':      'from-red-400 to-amber-400',
-    'Pasado':       'from-yellow-400 to-orange-500'
+    'Pasado':       'from-yellow-400 to-orange-500',
+    'Animales':     'from-emerald-400 to-lime-500'
   };
 
   const QUIZ = [
@@ -1988,7 +2369,52 @@
         { pt: 'Você me empresta a tesoura?',  pron: 'Vosê mi emprésta a tezôra' }
       ], correct: 0,
       hint: 'Pista: es el falso amigo más famoso de la escuela.',
-      explain: 'Borracha = borrador · caneta = esfero · tesoura = tijeras.' }
+      explain: 'Borracha = borrador · caneta = esfero · tesoura = tijeras.' },
+    { id: 'q28', topic: 'Animales',
+      q: '«Hay una cucaracha en la cocina» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'Tem um polvo na cozinha.', pron: 'Téing ung pôuvu na kozíña' },
+        { pt: 'Tem uma barata na cozinha.', pron: 'Téing úma baráta na kozíña' },
+        { pt: 'Tem uma lula na cozinha.', pron: 'Téing úma lúla na kozíña' }
+      ], correct: 1,
+      hint: 'Pista: una de ellas parece «barata» en español…',
+      explain: 'Barata = cucaracha · polvo = pulpo · lula = calamar.' },
+    { id: 'q29', topic: 'Animales',
+      q: '«Tengo un perro» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'Eu tenho um perro.', pron: 'Eu téñu ung péju' },
+        { pt: 'Eu tenho um cachorro.', pron: 'Eu téñu ung kashóju' },
+        { pt: 'Eu tenho um gato.', pron: 'Eu téñu ung gátu' }
+      ], correct: 1,
+      hint: 'Pista: «perro» no existe en portugués.',
+      explain: 'En Brasil el perro es «o cachorro», de cualquier edad.' },
+    { id: 'q30', topic: 'Colores',
+      q: '«Ella tiene ojos café» — ¿cuál suena natural?',
+      options: [
+        { pt: 'Ela tem olhos castanhos.', pron: 'Éla téing ólius kastáñus' },
+        { pt: 'Ela tem olhos cafés.', pron: 'Éla téing ólius kafés' },
+        { pt: 'Ela tem olhos roxos.', pron: 'Éla téing ólius jóshus' }
+      ], correct: 0,
+      hint: 'Pista: para ojos y pelo hay una palabra especial.',
+      explain: 'Ojos café = olhos castanhos. Roxo = morado.' },
+    { id: 'q31', topic: 'Colores',
+      q: '«Compré dos camisas azules» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'Comprei duas camisas azuls.', pron: 'Kompréi dúas kamízas azúus' },
+        { pt: 'Comprei duas camisas azuis.', pron: 'Kompréi dúas kamízas azúis' },
+        { pt: 'Comprei duas azuis camisas.', pron: 'Kompréi dúas azúis kamízas' }
+      ], correct: 1,
+      hint: 'Pista: las palabras en -l hacen el plural en -is.',
+      explain: 'Azul → azuis, y el color va después: camisas azuis.' },
+    { id: 'q32', topic: 'Dinero',
+      q: '¿Qué animal está en el billete de R$ 50?',
+      options: [
+        { pt: 'O lobo-guará.', pron: 'U lôbu guará' },
+        { pt: 'A onça-pintada.', pron: 'A ónsa pintáda' },
+        { pt: 'A tartaruga-de-pente.', pron: 'A tartarúga dji pénchi' }
+      ], correct: 1,
+      hint: 'Pista: por eso al billete de 50 le dicen «uma onça».',
+      explain: 'R$ 2 tartaruga · R$ 5 garça · R$ 10 arara · R$ 20 mico-leão · R$ 50 onça · R$ 100 garoupa · R$ 200 lobo-guará.' }
   ];
 
   /* ---------- Vocabulario por categorías ---------- */
@@ -2203,7 +2629,7 @@
       task: t => `Voy a pegar un texto que escribí en portugués sobre «${t}». Muéstrame la versión corregida frase por frase con el formato obligatorio y, debajo de cada frase, explica el error en una sola línea en español. Si algo es correcto pero suena poco natural, dime cómo lo diría un brasileño. Termina diciéndome una cosa que hice bien.\n\nMI TEXTO:\n[PEGA AQUÍ TU TEXTO]` }
   ];
 
-  const PROMPT_TOPICS = ['Mi presentación personal', 'Mi rutina diaria', 'Comida y restaurantes', 'Ser y estar', 'Palabras interrogativas', 'Viajar a Brasil', 'Mi familia', 'Adjetivos para describir personas', 'Lo que hice el fin de semana (pasado)', 'Números, fechas y teléfonos', '¿Qué hora es? (horas y citas)', 'Dinero y compras', 'Días de la semana y planes', 'Profesiones y trabajo', 'Colores y ropa', 'Contracciones (no, na, do, da, ao, à)', 'Meses, estaciones y clima', 'Países y nacionalidades', 'Objetos de la casa y del día a día'];
+  const PROMPT_TOPICS = ['Mi presentación personal', 'Mi rutina diaria', 'Comida y restaurantes', 'Ser y estar', 'Palabras interrogativas', 'Viajar a Brasil', 'Mi familia', 'Adjetivos para describir personas', 'Lo que hice el fin de semana (pasado)', 'Números, fechas y teléfonos', '¿Qué hora es? (horas y citas)', 'Dinero y compras', 'Días de la semana y planes', 'Profesiones y trabajo', 'Colores y ropa', 'Contracciones (no, na, do, da, ao, à)', 'Meses, estaciones y clima', 'Países y nacionalidades', 'Objetos de la casa y del día a día', 'Animales y mascotas', 'Billetes y monedas de Brasil'];
 
   const XP = { phrase: 20, flash: 10, quiz: 30 };
   // Umbrales como fracción del XP total, para que escalen al agregar contenido
@@ -2289,7 +2715,7 @@
       ['"Quantos anos o Tico tem?" — "Ele tem cinco anos."', '"Kuántus ánus u Tíku téing?" — "Éli téing sínku ánus"', '"¿Cuántos años tiene Tico?" — "Tiene cinco años."'],
       ['"Por que ele fala tanto?" — "Porque ele é feliz!"', '"Pur kê éli fála tántu?" — "Purkê éli é felís!"', '"¿Por qué habla tanto?" — "¡Porque es feliz!"']
     ] },
-    'cores': { emoji: '🌈', pt: 'O arco-íris', pron: 'U árku íris', es: 'El arcoíris', lines: [
+    'cores-bas': { emoji: '🌈', pt: 'O arco-íris', pron: 'U árku íris', es: 'El arcoíris', lines: [
       ['Depois da chuva, a Lia vê um arco-íris no céu.', 'Depóis da shúva, a Lía vê ung árku íris nu séu', 'Después de la lluvia, Lia ve un arcoíris en el cielo.'],
       ['Ele é vermelho, laranja, amarelo e verde.', 'Éli é verméliu, laránzha, amarélu i vérdji', 'Es rojo, naranja, amarillo y verde.'],
       ['Também tem azul e roxo, que é a cor favorita dela.', 'Tambéing téing azúu i jóshu, ki é a kô(r) favoríta déla', 'También tiene azul y morado, que es su color favorito.'],
@@ -2474,6 +2900,95 @@
       ['"Cadê a minha chave? E a minha carteira?"', '"Kadê a míña shávi? I a míña kartéra?"', '"¿Dónde está mi llave? ¿Y mi billetera?"'],
       ['A Lia procura embaixo do sofá e encontra as duas!', 'A Lía prokúra imbáishu du sofá i enkóntra as dúas!', '¡Lia busca debajo del sofá y encuentra las dos!'],
       ['"Obrigada, filha! E leva o guarda-chuva, vai chover!"', '"Obrigáda, fília! I léva u guárda shúva, vái shovê(r)!"', '"¡Gracias, hija! Y lleva el paraguas, ¡va a llover!"']
+    ] },
+    // Dinero: billetes y monedas
+    'num-cedulas': { emoji: '🐷', pt: 'O cofrinho da Lia', pron: 'U kofríñu da Lía', es: 'La alcancía de Lia', lines: [
+      ['A Lia abre o cofrinho dela para contar o dinheiro.', 'A Lía ábri u kofríñu déla pra kontá(r) u djiñéru', 'Lia abre su alcancía para contar el dinero.'],
+      ['Tem uma nota de vinte com o mico-leão-dourado.', 'Téing úma nóta dji vínchi kong u míku leáung dorádu', 'Hay un billete de veinte con el tití león dorado.'],
+      ['Tem também uma nota de dez com a arara, igual ao Tico!', 'Téing tambéing úma nóta dji déis kong a arára, iguáu au Tíku!', 'También hay un billete de diez con la guacamaya, ¡igual a Tico!'],
+      ['E cinco moedas de um real. Dá trinta e cinco reais!', 'I sínku muédas dji ung jeáu. Dá trínta i sínku jeáis!', 'Y cinco monedas de un real. ¡Suman treinta y cinco reales!']
+    ] },
+
+    // Colores (por sección)
+    'cores-tons': { emoji: '🖍️', pt: 'A caixa de lápis', pron: 'A káisha dji lápis', es: 'La caja de colores', lines: [
+      ['A Lia ganhou uma caixa de lápis de cor.', 'A Lía gañô úma káisha dji lápis dji kô(r)', 'Lia se ganó una caja de colores.'],
+      ['Tem azul-claro, azul-escuro e azul-marinho!', 'Téing azúu kláru, azúu iskúru i azúu maríñu!', '¡Hay azul claro, azul oscuro y azul marino!'],
+      ['Ela pinta o céu de azul-claro e o mar de azul-escuro.', 'Éla pínta u séu dji azúu kláru i u má(r) dji azúu iskúru', 'Pinta el cielo de azul claro y el mar de azul oscuro.'],
+      ['O sol fica dourado e brilhante. Que lindo!', 'U sóu fíka dorádu i briliánchi. Ki líndu!', 'El sol queda dorado y brillante. ¡Qué lindo!']
+    ] },
+    'cores-conc': { emoji: '🧦', pt: 'As meias do Pedro', pron: 'As méias du Pédru', es: 'Las medias de Pedro', lines: [
+      ['O Pedro está atrasado e coloca as meias correndo.', 'U Pédru istá atrazádu i kolóka as méias kojéndu', 'Pedro va tarde y se pone las medias corriendo.'],
+      ['Uma meia é verde e a outra é vermelha!', 'Úma méia é vérdji i a ôtra é vermélia!', '¡Una media es verde y la otra es roja!'],
+      ['Os tênis dele são azuis e a calça é cinza.', 'Us ténis déli sáung azúis i a káusa é sínza', 'Sus tenis son azules y el pantalón es gris.'],
+      ['A Lia ri: "Pedro, você parece um arco-íris!"', 'A Lía jí: "Pédru, vosê paréssi ung árku íris!"', 'Lia se ríe: "¡Pedro, pareces un arcoíris!"']
+    ] },
+    'cores-pess': { emoji: '👵', pt: 'Quem é quem?', pron: 'Kéing é kéing?', es: '¿Quién es quién?', lines: [
+      ['A vovó Ana tem cabelo grisalho e olhos verdes.', 'A vovó Ána téing kabélu grizáliu i ólius vérdjis', 'La abuela Ana tiene el pelo canoso y los ojos verdes.'],
+      ['A mãe da Lia é morena, de olhos castanhos.', 'A máing da Lía é moréna, dji ólius kastáñus', 'La mamá de Lia es morena, de ojos café.'],
+      ['O Pedro é ruivo e tem sardas no rosto.', 'U Pédru é júivu i téing sárdas nu jóstu', 'Pedro es pelirrojo y tiene pecas en la cara.'],
+      ['E o Tico? Ele é verde, amarelo e azul!', 'I u Tíku? Éli é vérdji, amarélu i azúu!', '¿Y Tico? ¡Es verde, amarillo y azul!']
+    ] },
+    'cores-expr': { emoji: '😳', pt: 'Deu branco!', pron: 'Dêu bránku!', es: '¡Me quedé en blanco!', lines: [
+      ['Hoje tem prova de português na escola.', 'Ózhi téing próva dji portugêis na iskóla', 'Hoy hay examen de portugués en la escuela.'],
+      ['A Lia lê a pergunta e… deu branco!', 'A Lía lê a pergúnta i… dêu bránku!', 'Lia lee la pregunta y… ¡se queda en blanco!'],
+      ['Ela fica vermelha, mas respira fundo.', 'Éla fíka vermélia, más jespíra fúndu', 'Se pone roja, pero respira hondo.'],
+      ['Depois ela lembra tudo. Tudo azul!', 'Depóis éla lémbra túdu. Túdu azúu!', 'Después lo recuerda todo. ¡Todo bien!']
+    ] },
+    'cores-br': { emoji: '⚽', pt: 'Dia de jogo', pron: 'Djía dji zhógu', es: 'Día de partido', lines: [
+      ['Hoje o Brasil joga e a rua está toda verde e amarela.', 'Ózhi u Brasíu zhóga i a júa istá tôda vérdji i amaréla', 'Hoy juega Brasil y la calle está toda verde y amarilla.'],
+      ['A Lia usa a camisa amarela da seleção.', 'A Lía úza a kamíza amaréla da selesáung', 'Lia usa la camiseta amarilla de la selección.'],
+      ['A vovó Ana pinta uma bandeira no rosto dela.', 'A vovó Ána pínta úma bandéra nu jóstu déla', 'La abuela Ana se pinta una bandera en la cara.'],
+      ['O Tico grita: "Gol! Gol do Brasil!"', 'U Tíku gríta: "Gôu! Gôu du Brasíu!"', 'Tico grita: "¡Gol! ¡Gol de Brasil!"']
+    ] },
+
+    // Animales
+    'ani-pets': { emoji: '🐱', pt: 'O Tico e o gatinho', pron: 'U Tíku i u gachíñu', es: 'Tico y el gatito', lines: [
+      ['A Lia tem um papagaio chamado Tico.', 'A Lía téing ung papagáiu shamádu Tíku', 'Lia tiene un loro llamado Tico.'],
+      ['Agora ela também tem um gatinho branco, o Mingau.', 'Agóra éla tambéing téing ung gachíñu bránku, u Mingáu', 'Ahora también tiene un gatito blanco, Mingau.'],
+      ['O Tico fala: "Miau, miau!" e o gato olha assustado.', 'U Tíku fála: "Miáu, miáu!" i u gátu ólia asustádu', 'Tico dice: "¡Miau, miau!" y el gato mira asustado.'],
+      ['Agora os dois são melhores amigos!', 'Agóra us dóis sáung meliôris amígus!', '¡Ahora los dos son mejores amigos!']
+    ] },
+    'ani-fazenda': { emoji: '🐄', pt: 'No sítio da vovó', pron: 'Nu sítchiu da vovó', es: 'En la finca de la abuela', lines: [
+      ['Nas férias, a Lia vai ao sítio da vovó Ana.', 'Nas férias, a Lía vái au sítchiu da vovó Ána', 'En vacaciones, Lia va a la finca de la abuela Ana.'],
+      ['Lá tem vacas, cavalos, porcos e muitas galinhas.', 'Lá téing vákas, kaválus, pôrkus i múintas galíñas', 'Allá hay vacas, caballos, cerdos y muchas gallinas.'],
+      ['De manhã, o galo canta: "Cocoricó!"', 'Dji mañá, u gálu kánta: "Kokorikó!"', 'Por la mañana, el gallo canta: "¡Quiquiriquí!"'],
+      ['A Lia toma leite fresquinho e pega os ovos.', 'A Lía tóma léichi freskíñu i péga us óvus', 'Lia toma leche fresquita y recoge los huevos.']
+    ] },
+    'ani-br': { emoji: '🐊', pt: 'Aventura no Pantanal', pron: 'Aventúra nu Pantanáu', es: 'Aventura en el Pantanal', lines: [
+      ['A Lia e o Pedro fazem um passeio de barco no Pantanal.', 'A Lía i u Pédru fázeing ung paséiu dji bárku nu Pantanáu', 'Lia y Pedro dan un paseo en bote por el Pantanal.'],
+      ['Eles veem um jacaré tomando sol.', 'Élis vêeing ung zhakaré tomándu sóu', 'Ven un caimán tomando el sol.'],
+      ['Uma família de capivaras come grama na beira do rio.', 'Úma família dji kapiváras kómi gráma na béra du jíu', 'Una familia de chigüiros come pasto a la orilla del río.'],
+      ['E lá no alto, uma arara azul voa. Que lindo!', 'I lá nu áutu, úma arára azúu vôa. Ki líndu!', 'Y allá arriba vuela una guacamaya azul. ¡Qué lindo!']
+    ] },
+    'ani-mundo': { emoji: '🦁', pt: 'No zoológico', pron: 'Nu zoolózhiku', es: 'En el zoológico', lines: [
+      ['No sábado, a Lia vai ao zoológico com a mãe.', 'Nu sábadu, a Lía vái au zoolózhiku kong a máing', 'El sábado, Lia va al zoológico con su mamá.'],
+      ['O leão está dormindo e a girafa come folhas.', 'U leáung istá dormíndu i a zhiráfa kómi fólias', 'El león está durmiendo y la jirafa come hojas.'],
+      ['No aquário, ela vê um tubarão enorme!', 'Nu akuáriu, éla vê ung tubaráung enórmi!', '¡En el acuario ve un tiburón enorme!'],
+      ['O macaco faz careta e todo mundo ri.', 'U makáku fáis karéta i tôdu múndu jí', 'El mono hace muecas y todo el mundo se ríe.']
+    ] },
+    'ani-bichos': { emoji: '🐞', pt: 'A joaninha', pron: 'A zhoaníña', es: 'La mariquita', lines: [
+      ['No jardim, a Lia encontra uma joaninha vermelha.', 'Nu zhardjíng, a Lía enkóntra úma zhoaníña vermélia', 'En el jardín, Lia encuentra una mariquita roja.'],
+      ['Ela coloca a joaninha na mão, bem devagar.', 'Éla kolóka a zhoaníña na máung, béing djevagá(r)', 'Pone la mariquita en su mano, muy despacio.'],
+      ['Uma borboleta amarela passa voando.', 'Úma borboléta amaréla pása voándu', 'Una mariposa amarilla pasa volando.'],
+      ['Mas quando ela vê uma barata… "Socorro!"', 'Más kuándu éla vê úma baráta… "Sokóju!"', 'Pero cuando ve una cucaracha… "¡Auxilio!"']
+    ] },
+    'ani-sons': { emoji: '🐶', pt: 'Que barulho é esse?', pron: 'Ki barúliu é ési?', es: '¿Qué ruido es ese?', lines: [
+      ['À noite, a Lia ouve um barulho: "Au au!"', 'À nôichi, a Lía ôvi ung barúliu: "Áu áu!"', 'En la noche, Lia oye un ruido: "¡Guau guau!"'],
+      ['"É o cachorro do vizinho", diz a mãe.', '"É u kashóju du vizíñu", djís a máing', '"Es el perro del vecino", dice la mamá.'],
+      ['Depois ela ouve: "Miau!" É o gato no telhado.', 'Depóis éla ôvi: "Miáu!" É u gátu nu teliádu', 'Después oye: "¡Miau!" Es el gato en el tejado.'],
+      ['E o Tico imita todos os bichos! Que bagunça!', 'I u Tíku imíta tôdus us bíshus! Ki bagúnsa!', '¡Y Tico imita a todos los animales! ¡Qué desorden!']
+    ] },
+    'ani-expr': { emoji: '🦉', pt: 'A mãe coruja', pron: 'A máing korúzha', es: 'La mamá orgullosa', lines: [
+      ['A Lia ganhou uma medalha na escola.', 'A Lía gañô úma medália na iskóla', 'Lia ganó una medalla en la escuela.'],
+      ['A mãe dela mostra a foto para todo mundo.', 'A máing déla móstra a fótu pra tôdu múndu', 'Su mamá le muestra la foto a todo el mundo.'],
+      ['A vovó Ana ri: "Você é uma mãe coruja!"', 'A vovó Ána jí: "Vosê é úma máing korúzha!"', 'La abuela Ana se ríe: "¡Eres una mamá orgullosa!"'],
+      ['E a Lia matou dois coelhos: ganhou a medalha e um sorvete!', 'I a Lía matô dóis koélius: gañô a medália i ung sorvéchi!', 'Y Lia mató dos pájaros de un tiro: ¡ganó la medalla y un helado!']
+    ] },
+    'ani-ff': { emoji: '🐙', pt: 'O polvo do Pedro', pron: 'U pôuvu du Pédru', es: 'El «polvo» de Pedro', lines: [
+      ['O Pedro chega na escola e diz: "Tem muito polvo na minha casa!"', 'U Pédru shéga na iskóla i djís: "Téing múintu pôuvu na míña káza!"', 'Pedro llega a la escuela y dice: "¡Hay mucho pulpo en mi casa!"'],
+      ['A Lia ri: "Polvo? Ah, você quer dizer poeira!"', 'A Lía jí: "Pôuvu? Á, vosê ké(r) djizê(r) poéra!"', 'Lia se ríe: "¿Pulpo? ¡Ah, quieres decir polvo!"'],
+      ['Depois ele diz: "E o meu cachorro é um filhote."', 'Depóis éli djís: "I u méu kashóju é ung filióchi"', 'Después dice: "Y mi perro es un cachorrito."'],
+      ['A professora sorri: "Muito bem, Pedro! Agora acertou!"', 'A profesôra sojí: "Múintu béing, Pédru! Agóra asertô!"', 'La profesora sonríe: "¡Muy bien, Pedro! ¡Ahora sí acertaste!"']
     ] },
     'obj-ff': { emoji: '🤭', pt: 'As confusões do Pedro', pron: 'As konfuzóings du Pédru', es: 'Las confusiones de Pedro', lines: [
       ['O Pedro quer apagar um erro e pede: "Me dá a borracha?"', 'U Pédru ké(r) apagá(r) ung éju i pédji: "Mi dá a bojásha?"', 'Pedro quiere borrar un error y pide: "¿Me das el borrador?"'],
@@ -2792,6 +3307,7 @@
   // Imágenes: Twemoji (SVG, CC-BY 4.0) desde jsDelivr; si falla, se muestra el emoji del sistema
   const TWEMOJI = 'https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/';
   function picHtml(e) {
+    if (e.startsWith('#')) return `<span class="w-16 h-16 rounded-full border-2 border-slate-200 shadow-inner" style="background:${e}" aria-hidden="true"></span>`;
     if (e.startsWith('fa-')) return `<span class="w-16 h-16 grid place-items-center text-4xl text-rose-400"><i class="fa-solid ${e}"></i></span>`;
     const code = Array.from(e).map(c => c.codePointAt(0).toString(16)).filter(c => c !== 'fe0f').join('-');
     return `<img src="${TWEMOJI}${code}.svg" alt="" width="64" height="64" loading="lazy" class="w-16 h-16" onerror="this.outerHTML='<span class=&quot;text-5xl&quot;>${e}</span>'">`;
@@ -2818,6 +3334,53 @@
         </div>
         <div class="grid grid-cols-2 gap-2">${tiles}</div>
         ${doneButton(p.id, '¡Ya los conozco!', `Toqué y repetí los ${p.pics.length}`)}
+      </article>`;
+  }
+
+  // Billetes y monedas de Brasil, dibujados con CSS
+  const METAL = {
+    copper: 'linear-gradient(135deg, #f0b78f, #b4643a)',
+    gold: 'linear-gradient(135deg, #f7dc8a, #c4952d)',
+    silver: 'linear-gradient(135deg, #f4f5f7, #a7adb5)',
+    bimetal: 'radial-gradient(circle, #eef0f3 0 52%, #a7adb5 54%, #e2b64a 56% 100%)'
+  };
+  function cashCard(p, m) {
+    const c = COLORS[m.color];
+    const tiles = p.cash === 'notes' ? p.items.map(n => `
+      <button data-say="${esc('Nota de ' + n.pt + ', com ' + n.an + '.')}" class="text-left flex flex-col gap-1.5 bg-white rounded-xl p-3 border border-slate-200 hover:border-indigo-300 hover:shadow-sm transition">
+        <span class="relative block w-full aspect-[2.2/1] rounded-lg overflow-hidden shadow" style="background:linear-gradient(135deg, ${n.bg[0]}, ${n.bg[1]})">
+          <span class="absolute inset-y-0 left-[38%] w-px bg-white/30"></span>
+          <span class="absolute top-1.5 left-2.5 text-white font-extrabold text-2xl drop-shadow">R$ ${n.v}</span>
+          <span class="absolute bottom-1.5 left-2.5 text-white/80 text-[9px] font-bold tracking-wider">BANCO CENTRAL DO BRASIL</span>
+          <span class="absolute right-3 top-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-white/25 grid place-items-center">${picHtml(n.e)}</span>
+        </span>
+        <span class="block font-bold text-slate-900 leading-tight mt-1">${n.pt} <span class="text-xs italic font-normal text-indigo-600">🔊 [${n.pron}]</span></span>
+        <span class="block text-sm text-slate-700"><b>${n.an}</b> <span class="text-xs italic text-indigo-600">[${n.anPron}]</span> · ${n.anEs}</span>
+        <span class="inline-flex items-center gap-1.5 text-xs text-slate-600"><span class="w-3 h-3 rounded-full" style="background:${n.bg[0]}"></span> Cor: <b>${n.cor}</b> [${n.corPron}]</span>
+        <span class="block text-xs text-slate-500">${n.fact}</span>
+      </button>`).join('')
+    : p.items.map(n => `
+      <button data-say="${esc(n.pt + ': ' + n.who + '.')}" class="text-left flex items-center gap-3 bg-white rounded-xl p-3 border border-slate-200 hover:border-indigo-300 hover:shadow-sm transition">
+        <span class="w-16 h-16 shrink-0 rounded-full grid place-items-center text-slate-800 shadow ring-1 ring-black/10" style="background:${METAL[n.metal]}">
+          <span class="text-center leading-none font-extrabold text-lg">${n.v}<span class="block text-[9px] font-bold uppercase">${n.unit}</span></span>
+        </span>
+        <span class="flex-1 min-w-0">
+          <span class="block font-bold text-slate-900 leading-tight">${n.pt} <span class="text-xs italic font-normal text-indigo-600">🔊 [${n.pron}]</span></span>
+          <span class="block text-sm text-slate-700"><b>${n.who}</b> <span class="text-xs italic text-indigo-600">[${n.whoPron}]</span></span>
+          <span class="block text-xs text-slate-500">${n.fact}</span>
+        </span>
+      </button>`).join('');
+    return `
+      <article class="md:col-span-2 fade-up bg-white rounded-2xl p-5 sm:p-6 flex flex-col gap-4 shadow-sm transition border ${state.done.includes(p.id) ? 'border-emerald-300 ring-2 ring-emerald-100' : 'border-slate-200'}">
+        <span class="self-start inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${c.chip}">
+          <i class="fa-solid ${p.tagIcon}"></i> ${p.tag}
+        </span>
+        <div>
+          <p class="text-xl font-bold text-slate-900 leading-snug">${p.rule}</p>
+          <p class="text-sm text-slate-500 mt-1">${p.hint}</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 ${p.cash === 'notes' ? 'lg:grid-cols-3' : ''} gap-3">${tiles}</div>
+        ${doneButton(p.id, '¡Ya los conozco!', `Vi y escuché los ${p.items.length}`)}
       </article>`;
   }
 
@@ -2862,7 +3425,7 @@
     const flush = () => { if (pending) html += readingCard(pending); pending = null; };
     m.phrases.forEach(p => {
       if (p.section) { flush(); html += sectionHead(p); pending = p.rd || null; }
-      else html += p.pics ? picCard(p, m) : p.words ? soundCard(p, m) : phraseCard(p, m);
+      else html += p.cash ? cashCard(p, m) : p.pics ? picCard(p, m) : p.words ? soundCard(p, m) : phraseCard(p, m);
     });
     flush();
     return html + readingCard(m.id);

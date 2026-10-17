@@ -12,9 +12,9 @@ Abre `index.html` en el navegador. No necesita instalación; el progreso se guar
 
 Cada módulo incluye una **lectura para niños** (y una por cada sección interna), con los personajes Lia, Tico, Pedro y la vovó Ana. El botón ☰ abre el menú con los módulos agrupados:
 
-- **Primeros pasos:** Presentación · Pronunciación · Números (fechas, teléfonos y dinero) · ¿Qué hora es? · Días de la semana · Meses y estaciones · Colores
+- **Primeros pasos:** Presentación · Pronunciación · Números (fechas, teléfonos, dinero y los billetes y monedas de Brasil con sus animales) · ¿Qué hora es? · Días de la semana · Meses y estaciones · Colores (tonos, género y plural, personas, expresiones y los colores de Brasil)
 - **Gramática:** Ser, estar e ir · Heterogenéricos · Adjetivos · Posesivos · Contracciones · Países · Preguntas · Pasado (pretérito perfeito) · Verbos (presente y pasado)
-- **Vida diaria:** Rutina · Comida · Profesiones · Objetos del día a día (con imágenes) · Vocabulario
+- **Vida diaria:** Rutina · Comida · Profesiones · Objetos del día a día (con imágenes) · Animales (mascotas, granja, fauna de Brasil, sonidos, expresiones y falsos amigos) · Vocabulario
 - **Practicar:** Flashcards y quiz · Prompt IA
 
 ## Créditos
