@@ -2019,6 +2019,144 @@
       ]
     },
     {
+      id: 'familia', num: 0, tab: 'Familia', icon: 'fa-people-roof', color: 'orange',
+      title: 'A Família', pron: 'A Família', es: 'La familia · Padres, hermanos, abuelos, tíos, pareja y cariño',
+      tip: {
+        title: 'Con posesivos, casi siempre con artículo',
+        text: 'En portugués es normal decir <b>a minha mãe</b>, <b>o meu pai</b>. Al hablar también se omite el posesivo: «Vou ligar pra <b>mãe</b>». Repasa <b>Posesivos</b> si dudas.',
+        words: [
+          { pt: 'a família', pron: 'a família', es: 'la familia' },
+          { pt: 'o parente', pron: 'u parénchi', es: 'el pariente (¡no «padre»!)' },
+          { pt: 'a minha mãe · o meu pai', pron: 'a míña máing · u méu pái', es: 'mi mamá · mi papá' }
+        ]
+      },
+      phrases: [
+        { section: 'La familia cercana', rd: 'fam-perto', icon: 'fa-house-chimney-user', text: 'Papá, mamá, hijos, hermanos y abuelos. Recuerda: <b>ÃO</b> suena «aung» → irmão = «irmáung».' },
+        { id: 'fm1', tag: 'Padres e hijos', tagIcon: 'fa-people-roof',
+          rule: 'O pai, a mãe, os filhos', hint: '<b>Mãe</b> suena «máing», con la nariz. Al hablar se dice mucho <b>mãe</b> y <b>pai</b>, sin «mi».',
+          pics: [
+            ['👨', 'o pai', 'u pái', 'el papá'],
+            ['👩', 'a mãe', 'a máing', 'la mamá'],
+            ['👦', 'o filho', 'u fíliu', 'el hijo'],
+            ['👧', 'a filha', 'a fília', 'la hija']
+          ] },
+        { id: 'fm2', tag: 'Hermanos y abuelos', tagIcon: 'fa-person-cane',
+          rule: 'O irmão, a avó…', hint: '¡Cuidado! <b>avô</b> (ô cerrada) = abuelo · <b>avó</b> (ó abierta) = abuela. Con cariño: <b>vovô, vovó</b>.',
+          pics: [
+            ['🧑', 'o irmão', 'u irmáung', 'el hermano'],
+            ['👩‍🦱', 'a irmã', 'a irmáng', 'la hermana'],
+            ['👴', 'o avô', 'u avô', 'el abuelo'],
+            ['👵', 'a avó', 'a avó', 'la abuela']
+          ] },
+        { id: 'fm3', tag: 'Plurales', tagIcon: 'fa-users',
+          rule: 'Os pais, os avós…', hint: 'Como en español, el masculino plural incluye a todos. <b>Os pais</b> = los padres (papá y mamá).',
+          words: [
+            { pt: 'os pais', pron: 'us páis', es: 'los padres' },
+            { pt: 'os filhos', pron: 'us fílius', es: 'los hijos' },
+            { pt: 'os irmãos', pron: 'us irmáungs', es: 'los hermanos' },
+            { pt: 'os avós', pron: 'us avós', es: 'los abuelos' }
+          ] },
+        { id: 'fp1', tag: 'Hermanos', tagIcon: 'fa-children', hl: 'irmã',
+          pt: 'Eu tenho uma irmã e dois irmãos.', pron: 'Eu téñu úma irmáng i dóis irmáungs', es: 'Tengo una hermana y dos hermanos.',
+          nat: { pt: 'Sou filho único.', pron: 'Sô fíliu úniku', note: '= Soy hijo único. Para ellas: filha única.' },
+          key: { pt: 'filho único · filha única', pron: 'fíliu úniku · fília única', es: 'hijo único · hija única' } },
+        { id: 'fp2', tag: 'Preguntar', tagIcon: 'fa-circle-question',
+          pt: 'Quantos irmãos você tem?', pron: 'Kuántus irmáungs vosê téing?', es: '¿Cuántos hermanos tienes?',
+          nat: { pt: 'Cê tem irmão?', pron: 'Sê téing irmáung?', note: 'Al hablar se pregunta en singular.' },
+          key: { pt: 'Quantos…? · Quantas…?', pron: 'Kuántus · Kuántas', es: '¿Cuántos…? · ¿Cuántas…?' } },
+        { section: 'Tíos, primos y más', rd: 'fam-longe', icon: 'fa-people-group', text: 'La familia grande. Ojo: <b>TI</b> suena «chi» → tio = «chíu». ¡Y en Brasil los niños llaman <b>tio / tia</b> a cualquier adulto y a los profes!' },
+        { id: 'fm4', tag: 'Tíos y primos', tagIcon: 'fa-user-group',
+          rule: 'O tio, a prima…', hint: 'Igual que en español, solo cambia la pronunciación: <b>tia</b> = «chía».',
+          pics: [
+            ['🧔', 'o tio', 'u chíu', 'el tío'],
+            ['👩‍🦰', 'a tia', 'a chía', 'la tía'],
+            ['🧒', 'o primo', 'u prímu', 'el primo'],
+            ['👩‍🎓', 'a prima', 'a príma', 'la prima']
+          ] },
+        { id: 'fm5', tag: 'Sobrinos y nietos', tagIcon: 'fa-baby',
+          rule: 'O sobrinho, o neto…', hint: '<b>Neto</b> = nieto. NH suena «ñ»: sobrinho = «sobríñu».',
+          words: [
+            { pt: 'o sobrinho', pron: 'u sobríñu', es: 'el sobrino' },
+            { pt: 'a sobrinha', pron: 'a sobríña', es: 'la sobrina' },
+            { pt: 'o neto', pron: 'u nétu', es: 'el nieto' },
+            { pt: 'a neta', pron: 'a néta', es: 'la nieta' }
+          ] },
+        { id: 'fm6', tag: 'Familia política', tagIcon: 'fa-ring',
+          rule: 'O marido, a sogra…', hint: '<b>A mulher</b> = la mujer y también la esposa: «a minha mulher». <b>NH</b> en cunhado = «ñ».',
+          words: [
+            { pt: 'o marido · a esposa', pron: 'u marídu · a ispôza', es: 'el esposo · la esposa' },
+            { pt: 'o sogro · a sogra', pron: 'u sôgru · a sógra', es: 'el suegro · la suegra' },
+            { pt: 'o cunhado · a cunhada', pron: 'u kuñádu · a kuñáda', es: 'el cuñado · la cuñada' },
+            { pt: 'o genro · a nora', pron: 'u zhénju · a nóra', es: 'el yerno · la nuera' }
+          ] },
+        { id: 'fp3', tag: 'Primos', tagIcon: 'fa-location-dot',
+          pt: 'A minha prima mora em São Paulo.', pron: 'A míña príma móra ing Sáung Páulu', es: 'Mi prima vive en São Paulo.',
+          key: { pt: 'o primo · a prima', pron: 'u prímu · a príma', es: 'el primo · la prima' } },
+        { id: 'fp4', tag: 'Abuelos', tagIcon: 'fa-tree',
+          pt: 'Os meus avós moram no interior.', pron: 'Us méus avós móraung nu interiô(r)', es: 'Mis abuelos viven en un pueblo, lejos de la capital.',
+          key: { pt: 'o interior', pron: 'u interiô(r)', es: 'las zonas fuera de las grandes ciudades' } },
+        { section: 'Estado civil y pareja', rd: 'fam-rel', icon: 'fa-heart', text: 'Para hablar de pareja. ¡Cuidado con <b>noivo</b>: no es el novio de todos los días!' },
+        { id: 'fm7', tag: 'Estado civil', tagIcon: 'fa-id-card',
+          rule: 'Solteiro, casado…', hint: 'Se usa con <b>ser</b> o <b>estar</b>: «Sou casado» o «Estou casado». EI suena «e»: solteiro = «soltéru».',
+          words: [
+            { pt: 'solteiro', pron: 'soltéru', es: 'soltero' },
+            { pt: 'casado', pron: 'kazádu', es: 'casado' },
+            { pt: 'divorciado', pron: 'djivorsiádu', es: 'divorciado' },
+            { pt: 'viúvo', pron: 'viúvu', es: 'viudo' }
+          ] },
+        { id: 'fm8', tag: 'Pareja', tagIcon: 'fa-heart',
+          rule: 'Namorado ou noivo?', hint: '<b>Namorado</b> = novio · <b>noivo</b> = prometido (o el novio en la boda). <b>Namorar</b> = ser novios.',
+          words: [
+            { pt: 'o namorado', pron: 'u namorádu', es: 'el novio' },
+            { pt: 'a namorada', pron: 'a namoráda', es: 'la novia' },
+            { pt: 'o noivo', pron: 'u nôivu', es: 'el prometido' },
+            { pt: 'a noiva', pron: 'a nôiva', es: 'la prometida, la novia (boda)' }
+          ] },
+        { id: 'fp5', tag: 'Novios', tagIcon: 'fa-heart',
+          pt: 'Eu sou solteiro, mas tenho namorada.', pron: 'Eu sô soltéru, más téñu namoráda', es: 'Soy soltero, pero tengo novia.',
+          nat: { pt: 'Tô namorando faz dois anos.', pron: 'Tô namorándu fáis dóis ánus', note: '= Llevo dos años de novio. ¡Muy común!' },
+          key: { pt: 'namorar', pron: 'namorá(r)', es: 'ser novios, salir con alguien' } },
+        { id: 'fp6', tag: 'Casados', tagIcon: 'fa-ring',
+          pt: 'Eles são casados há dez anos.', pron: 'Élis sáung kazádus á déis ánus', es: 'Llevan diez años casados.',
+          key: { pt: 'há … anos', pron: 'á … ánus', es: 'desde hace … años' } },
+        { section: 'Hablar de tu familia', rd: 'fam-falar', icon: 'fa-comments', text: 'Frases para presentar a tu familia y contar cómo es.' },
+        { id: 'fp7', tag: 'Nombres', tagIcon: 'fa-signature',
+          pt: 'Como se chama a sua mãe?', pron: 'Kómu si sháma a súa máing?', es: '¿Cómo se llama tu mamá?',
+          nat: { pt: 'Qual é o nome da sua mãe?', pron: 'Kuáu é u nômi da súa máing?', note: 'Otra forma muy común de preguntarlo.' },
+          key: { pt: 'Como se chama…?', pron: 'Kómu si sháma', es: '¿Cómo se llama…?' } },
+        { id: 'fp8', tag: 'Tamaño', tagIcon: 'fa-users',
+          pt: 'A minha família é pequena: somos três.', pron: 'A míña família é pekéna: sômus trêis', es: 'Mi familia es pequeña: somos tres.',
+          key: { pt: 'grande · pequena', pron: 'grándji · pekéna', es: 'grande · pequeña' } },
+        { id: 'fp9', tag: 'Parecido', tagIcon: 'fa-clone',
+          pt: 'Eu pareço com o meu pai.', pron: 'Eu parésu kong u méu pái', es: 'Me parezco a mi papá.',
+          nat: { pt: 'Cê é a cara do seu pai!', pron: 'Sê é a kára du séu pái!', note: '= ¡Eres idéntico a tu papá!' },
+          key: { pt: 'parecer com', pron: 'paresê(r) kong', es: 'parecerse a' } },
+        { id: 'fp10', tag: 'Lejos', tagIcon: 'fa-earth-americas',
+          pt: 'A minha família mora na Colômbia.', pron: 'A míña família móra na Kolômbia', es: 'Mi familia vive en Colombia.',
+          key: { pt: 'na Colômbia', pron: 'na Kolômbia', es: 'en Colombia (¡con artículo!)' } },
+        { id: 'fp11', tag: 'Saudade', tagIcon: 'fa-heart-crack',
+          pt: 'Eu sinto saudade da minha família.', pron: 'Eu síntu saudádji da míña família', es: 'Extraño a mi familia.',
+          nat: { pt: 'Tô morrendo de saudade!', pron: 'Tô mojéndu dji saudádji!', note: '= ¡Me muero de ganas de verlos!' },
+          key: { pt: 'a saudade', pron: 'a saudádji', es: 'la nostalgia, extrañar (¡muy brasileña!)' } },
+        { section: 'Cariño y costumbres', rd: 'fam-carinho', icon: 'fa-hand-holding-heart', text: 'En Brasil la familia se trata con mucho cariño: diminutivos, apodos y el almuerzo del domingo.' },
+        { id: 'fm9', tag: 'Apodos', tagIcon: 'fa-face-smile-beam',
+          rule: 'Mamãe, papai, vovó…', hint: 'El diminutivo es cariño: <b>irmãzinha</b>, <b>priminho</b>, <b>netinho</b>.',
+          words: [
+            { pt: 'mamãe · papai', pron: 'mamáing · papái', es: 'mami · papi' },
+            { pt: 'vovó · vovô', pron: 'vovó · vovô', es: 'abuelita · abuelito' },
+            { pt: 'maninho · maninha', pron: 'maníñu · maníña', es: 'hermanito · hermanita' },
+            { pt: 'meu amor', pron: 'méu amô(r)', es: 'mi amor' }
+          ] },
+        { id: 'fp12', tag: 'Bendición', tagIcon: 'fa-hands-praying',
+          pt: 'A bênção, vó!', pron: 'A bénsaung, vó!', es: '¡La bendición, abuela!',
+          nat: { pt: 'Deus te abençoe!', pron: 'Dêus chi abensôi!', note: 'Lo que responden los abuelos: ¡Dios te bendiga!' },
+          key: { pt: 'a bênção', pron: 'a bénsaung', es: 'la bendición (al saludar a los mayores)' } },
+        { id: 'fp13', tag: 'Domingo', tagIcon: 'fa-utensils',
+          pt: 'Domingo é dia de almoço em família.', pron: 'Domíngu é djía dji aumôsu ing família', es: 'El domingo es día de almuerzo en familia.',
+          key: { pt: 'o almoço de domingo', pron: 'u aumôsu dji domíngu', es: 'el almuerzo familiar del domingo' } },
+      ]
+    },
+    {
       id: 'vocab', num: 16, tab: 'Vocabulario', icon: 'fa-book', color: 'cyan', vocab: true,
       title: 'Vocabulário Essencial', pron: 'Vokabuláriu Esensiáu', es: 'Vocabulario esencial · Las palabras que más vas a usar, por categorías'
     },
@@ -2040,7 +2178,7 @@
   const GROUPS = [
     { id: 'base', name: 'Primeros pasos', icon: 'fa-seedling', ids: ['apres', 'som', 'num', 'horas', 'dias', 'meses', 'cores'] },
     { id: 'gram', name: 'Gramática', icon: 'fa-puzzle-piece', ids: ['verbos', 'hetero', 'adj', 'poss', 'contr', 'paises', 'perg', 'passado', 'vverbos'] },
-    { id: 'vida', name: 'Vida diaria', icon: 'fa-house', ids: ['rotina', 'comida', 'prof', 'objetos', 'animais', 'vocab'] },
+    { id: 'vida', name: 'Vida diaria', icon: 'fa-house', ids: ['familia', 'rotina', 'comida', 'prof', 'objetos', 'animais', 'vocab'] },
     { id: 'prac', name: 'Practicar', icon: 'fa-gamepad', ids: ['pratica', 'prompt'] }
   ];
   const ORDER = GROUPS.flatMap(g => g.ids);
@@ -2103,7 +2241,11 @@
     { id: 'f53', cat: 'Colores',      icon: 'fa-eye',           pt: 'olhos castanhos',      pron: 'ólius kastáñus',        es: 'ojos café' },
     { id: 'f54', cat: 'Colores',      icon: 'fa-brain',         pt: 'Deu branco!',          pron: 'Dêu bránku!',           es: '¡Me quedé en blanco!' },
     { id: 'f55', cat: 'Números',      icon: 'fa-money-bill',    pt: 'uma onça',             pron: 'úma ónsa',              es: 'un billete de R$ 50 (informal)' },
-    { id: 'f56', cat: 'Números',      icon: 'fa-coins',         pt: 'a moeda',              pron: 'a muéda',               es: 'la moneda' }
+    { id: 'f56', cat: 'Números',      icon: 'fa-coins',         pt: 'a moeda',              pron: 'a muéda',               es: 'la moneda' },
+    { id: 'f57', cat: 'Familia',      icon: 'fa-person-cane',   pt: 'a avó · o avô',        pron: 'a avó · u avô',         es: 'la abuela · el abuelo' },
+    { id: 'f58', cat: 'Familia',      icon: 'fa-heart',         pt: 'o namorado',           pron: 'u namorádu',            es: 'el novio (¡noivo = prometido!)' },
+    { id: 'f59', cat: 'Familia',      icon: 'fa-people-group',  pt: 'o parente',            pron: 'u parénchi',            es: 'el pariente (¡no «padre»!)' },
+    { id: 'f60', cat: 'Familia',      icon: 'fa-heart-crack',   pt: 'Sinto saudade',        pron: 'Síntu saudádji',        es: 'Extraño (a alguien)' }
   ];
 
   const FLASH_COLORS = {
@@ -2123,7 +2265,8 @@
     'Objetos':      'from-rose-400 to-orange-500',
     'Colores':      'from-red-400 to-amber-400',
     'Pasado':       'from-yellow-400 to-orange-500',
-    'Animales':     'from-emerald-400 to-lime-500'
+    'Animales':     'from-emerald-400 to-lime-500',
+    'Familia':      'from-orange-400 to-pink-500'
   };
 
   const QUIZ = [
@@ -2414,7 +2557,25 @@
         { pt: 'A tartaruga-de-pente.', pron: 'A tartarúga dji pénchi' }
       ], correct: 1,
       hint: 'Pista: por eso al billete de 50 le dicen «uma onça».',
-      explain: 'R$ 2 tartaruga · R$ 5 garça · R$ 10 arara · R$ 20 mico-leão · R$ 50 onça · R$ 100 garoupa · R$ 200 lobo-guará.' }
+      explain: 'R$ 2 tartaruga · R$ 5 garça · R$ 10 arara · R$ 20 mico-leão · R$ 50 onça · R$ 100 garoupa · R$ 200 lobo-guará.' },
+    { id: 'q33', topic: 'Familia',
+      q: '«Mis padres viven en Colombia» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'Os meus pais moram na Colômbia.', pron: 'Us méus páis móraung na Kolômbia' },
+        { pt: 'Os meus parentes moram na Colômbia.', pron: 'Us méus parénchis móraung na Kolômbia' },
+        { pt: 'Os meus pais moram em Colômbia.', pron: 'Us méus páis móraung ing Kolômbia' }
+      ], correct: 0,
+      hint: 'Pista: «parente» es un falso amigo, y Colombia lleva artículo.',
+      explain: 'Os pais = los padres · os parentes = los parientes · na Colômbia (em + a).' },
+    { id: 'q34', topic: 'Familia',
+      q: '«Mi abuela es muy cariñosa» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'O meu avô é muito carinhoso.', pron: 'U méu avô é múintu kariñôzu' },
+        { pt: 'A minha avó é muito carinhosa.', pron: 'A míña avó é múintu kariñóza' },
+        { pt: 'A minha avô é muito carinhosa.', pron: 'A míña avô é múintu kariñóza' }
+      ], correct: 1,
+      hint: 'Pista: abuela lleva la ó abierta.',
+      explain: 'Avó (ó abierta) = abuela · avô (ô cerrada) = abuelo.' }
   ];
 
   /* ---------- Vocabulario por categorías ---------- */
@@ -2989,6 +3150,37 @@
       ['A Lia ri: "Polvo? Ah, você quer dizer poeira!"', 'A Lía jí: "Pôuvu? Á, vosê ké(r) djizê(r) poéra!"', 'Lia se ríe: "¿Pulpo? ¡Ah, quieres decir polvo!"'],
       ['Depois ele diz: "E o meu cachorro é um filhote."', 'Depóis éli djís: "I u méu kashóju é ung filióchi"', 'Después dice: "Y mi perro es un cachorrito."'],
       ['A professora sorri: "Muito bem, Pedro! Agora acertou!"', 'A profesôra sojí: "Múintu béing, Pédru! Agóra asertô!"', 'La profesora sonríe: "¡Muy bien, Pedro! ¡Ahora sí acertaste!"']
+    ] },
+    // Familia
+    'fam-perto': { emoji: '👨‍👩‍👧', pt: 'A família da Lia', pron: 'A família da Lía', es: 'La familia de Lia', lines: [
+      ['A Lia mora no Brasil com a mãe e o Tico.', 'A Lía móra nu Brasíu kong a máing i u Tíku', 'Lia vive en Brasil con su mamá y Tico.'],
+      ['O pai dela mora na Colômbia e liga todo domingo.', 'U pái déla móra na Kolômbia i líga tôdu domíngu', 'Su papá vive en Colombia y llama todos los domingos.'],
+      ['Ela não tem irmãos: é filha única.', 'Éla náung téing irmáungs: é fília única', 'No tiene hermanos: es hija única.'],
+      ['Mas ela tem a vovó Ana, a melhor avó do mundo!', 'Más éla téing a vovó Ána, a melió(r) avó du múndu!', '¡Pero tiene a la abuela Ana, la mejor abuela del mundo!']
+    ] },
+    'fam-longe': { emoji: '🎂', pt: 'A festa da vovó', pron: 'A fésta da vovó', es: 'La fiesta de la abuela', lines: [
+      ['No aniversário da vovó, a casa fica cheia.', 'Nu aniversáriu da vovó, a káza fíka shéia', 'En el cumpleaños de la abuela, la casa se llena.'],
+      ['Vêm os tios, as tias e muitos primos.', 'Véing us chíus, as chías i múintus prímus', 'Vienen los tíos, las tías y muchos primos.'],
+      ['O primo Davi traz um bolo de chocolate.', 'U prímu Dávi tráis ung bôlu dji shokoláchi', 'El primo Davi trae una torta de chocolate.'],
+      ['A vovó sorri: "Os meus netos são o meu tesouro!"', 'A vovó sojí: "Us méus nétus sáung u méu tezôru!"', 'La abuela sonríe: "¡Mis nietos son mi tesoro!"']
+    ] },
+    'fam-rel': { emoji: '💒', pt: 'O casamento do tio Léo', pron: 'U kazaméntu du chíu Léu', es: 'La boda del tío Léo', lines: [
+      ['O tio Léo vai casar no sábado!', 'U chíu Léu vái kazá(r) nu sábadu!', '¡El tío Léo se casa el sábado!'],
+      ['A noiva se chama Carla e é muito simpática.', 'A nôiva si sháma Kárla i é múintu simpáchika', 'La novia se llama Carla y es muy simpática.'],
+      ['Eles namoram há cinco anos.', 'Élis namóraung á sínku ánus', 'Llevan cinco años de novios.'],
+      ['A Lia vai levar as alianças. Que emoção!', 'A Lía vái levá(r) as aliánsas. Ki emosáung!', 'Lia va a llevar los anillos. ¡Qué emoción!']
+    ] },
+    'fam-falar': { emoji: '📱', pt: 'Saudade do pai', pron: 'Saudádji du pái', es: 'Extrañando a papá', lines: [
+      ['No domingo, a Lia faz uma videochamada com o pai.', 'Nu domíngu, a Lía fáis úma vídeu shamáda kong u pái', 'El domingo, Lia hace una videollamada con su papá.'],
+      ['"Oi, pai! Estou com muita saudade!"', '"Ói, pái! Istô kong múinta saudádji!"', '"¡Hola, papá! ¡Te extraño mucho!"'],
+      ['O pai ri: "Você está a cara da sua mãe!"', 'U pái jí: "Vosê istá a kára da súa máing!"', 'El papá se ríe: "¡Estás igualita a tu mamá!"'],
+      ['O Tico grita: "Oi, papai!" e todo mundo ri.', 'U Tíku gríta: "Ói, papái!" i tôdu múndu jí', 'Tico grita: "¡Hola, papi!" y todos se ríen.']
+    ] },
+    'fam-carinho': { emoji: '🍲', pt: 'Almoço de domingo', pron: 'Aumôsu dji domíngu', es: 'Almuerzo de domingo', lines: [
+      ['Todo domingo, a família almoça na casa da vovó.', 'Tôdu domíngu, a família aumósa na káza da vovó', 'Todos los domingos, la familia almuerza en casa de la abuela.'],
+      ['A Lia chega e diz: "A bênção, vó!"', 'A Lía shéga i djís: "A bénsaung, vó!"', 'Lia llega y dice: "¡La bendición, abuela!"'],
+      ['A vovó responde: "Deus te abençoe, minha netinha!"', 'A vovó jespóndji: "Dêus chi abensôi, míña nechíña!"', 'La abuela responde: "¡Dios te bendiga, mi nietecita!"'],
+      ['Tem feijão, arroz e muito amor na mesa.', 'Téing fezháung, ajôis i múintu amô(r) na mêza', 'Hay fríjoles, arroz y mucho amor en la mesa.']
     ] },
     'obj-ff': { emoji: '🤭', pt: 'As confusões do Pedro', pron: 'As konfuzóings du Pédru', es: 'Las confusiones de Pedro', lines: [
       ['O Pedro quer apagar um erro e pede: "Me dá a borracha?"', 'U Pédru ké(r) apagá(r) ung éju i pédji: "Mi dá a bojásha?"', 'Pedro quiere borrar un error y pide: "¿Me das el borrador?"'],
