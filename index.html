@@ -100,6 +100,10 @@
 
     <!-- Cómo estudiar: 3 pasos (chunking) -->
     <section class="bg-white border border-slate-200 rounded-2xl p-5 mb-6 shadow-sm">
+      <div class="flex items-start gap-3 pb-4 mb-4 border-b border-slate-100">
+        <span class="text-3xl" aria-hidden="true">👋</span>
+        <div id="greeting" class="min-w-0"></div>
+      </div>
       <h2 class="font-bold text-slate-900 flex items-center gap-2"><i class="fa-solid fa-route text-indigo-500"></i> Tu método en 3 pasos</h2>
       <ol class="grid sm:grid-cols-3 gap-3 mt-3 text-sm">
         <li class="flex items-center gap-3 bg-indigo-50 rounded-xl p-3"><span class="text-2xl" aria-hidden="true">🎧</span><span><b>1. Escucha</b><br><span class="text-slate-500">Toca el botón 🔊</span></span></li>
@@ -118,7 +122,7 @@
 
   <footer class="border-t border-slate-200 bg-white mt-12">
     <div class="max-w-5xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-500">
-      <p>🇧🇷 Português A1 · Basado en los apuntes de clase</p>
+      <p>🇧🇷 Português A1 · Hecho para Cesar 💚 · Basado en los apuntes de clase</p>
       <button data-action="reset" class="text-slate-400 hover:text-slate-700 underline underline-offset-4">Reiniciar progreso</button>
     </div>
   </footer>
@@ -1275,6 +1279,135 @@
       ]
     },
     {
+      id: 'paises', num: 0, tab: 'Países', icon: 'fa-earth-americas', color: 'emerald',
+      title: 'Os Países', pron: 'Us Paízis', es: 'Los países · Con su artículo, sus excepciones y las nacionalidades',
+      tip: {
+        title: 'Casi todos los países llevan artículo',
+        text: 'En portugués casi todos los países llevan <b>o / a / os / as</b>, y se contraen con em y de: <b>no Brasil, da Colômbia</b>. Unos pocos van <b>sin artículo</b>: Portugal, Cuba, Israel… ¡Apréndete las excepciones!',
+        words: [
+          { pt: 'o Brasil', pron: 'u Braziú', es: 'Brasil (masculino)' },
+          { pt: 'a Colômbia', pron: 'a Kolômbia', es: 'Colombia (femenino)' },
+          { pt: 'Portugal', pron: 'Portugáu', es: 'Portugal (¡sin artículo!)' }
+        ]
+      },
+      phrases: [
+        { section: 'Masculinos: o', rd: 'paises-o', icon: 'fa-mars', text: 'Con estos: <b>no</b> (em + o), <b>do</b> (de + o), <b>ao</b> (a + o).' },
+        { id: 'pa1', tag: 'América', tagIcon: 'fa-earth-americas',
+          rule: 'O Brasil, o Peru, o Chile, o México', hint: '<b>Chile</b> suena «Shíli» y <b>México</b>, «Méshiku».',
+          words: [
+            { pt: 'o Brasil', pron: 'u Braziú', es: 'Brasil' },
+            { pt: 'o Peru', pron: 'u Perú', es: 'Perú' },
+            { pt: 'o Chile', pron: 'u Shíli', es: 'Chile' },
+            { pt: 'o México', pron: 'u Méshiku', es: 'México' }
+          ] },
+        { id: 'pa2', tag: 'Más de América', tagIcon: 'fa-earth-americas',
+          rule: 'O Equador, o Uruguai, o Paraguai, o Canadá', hint: 'Ojo: Ecuador se escribe <b>Equador</b>.',
+          words: [
+            { pt: 'o Equador', pron: 'u Ekuadô(r)', es: 'Ecuador' },
+            { pt: 'o Uruguai', pron: 'u Uruguái', es: 'Uruguay' },
+            { pt: 'o Paraguai', pron: 'u Paraguái', es: 'Paraguay' },
+            { pt: 'o Canadá', pron: 'u Kanadá', es: 'Canadá' }
+          ] },
+        { id: 'pa3', tag: 'Resto del mundo', tagIcon: 'fa-earth-asia',
+          rule: 'O Japão, o Reino Unido, o Egito, o Marrocos', hint: '<b>Japão</b> termina en -ão → suena «aung».',
+          words: [
+            { pt: 'o Japão', pron: 'u Zhapáung', es: 'Japón' },
+            { pt: 'o Reino Unido', pron: 'u Jéinu Unídu', es: 'el Reino Unido' },
+            { pt: 'o Egito', pron: 'u Ezhítu', es: 'Egipto' },
+            { pt: 'o Marrocos', pron: 'u Majókus', es: 'Marruecos' }
+          ] },
+        { id: 'pap1', tag: 'Con o', tagIcon: 'fa-location-dot', hl: 'no Chile',
+          pt: 'Meu primo mora no Chile e minha tia é do Peru.', pron: 'Méu prímu móra nu Shíli i míña chía é du Perú', es: 'Mi primo vive en Chile y mi tía es de Perú.',
+          key: { pt: 'no Chile · do Peru', pron: 'nu Shíli · du Perú', es: 'en Chile · de Perú' } },
+
+        { section: 'Femeninos: a', rd: 'paises-a', icon: 'fa-venus', text: 'Con estos: <b>na</b> (em + a), <b>da</b> (de + a), <b>à</b> (a + a).' },
+        { id: 'pa4', tag: 'América', tagIcon: 'fa-earth-americas',
+          rule: 'A Colômbia, a Argentina, a Venezuela, a Bolívia', hint: '<b>Argentina</b>: GE → «zhe» y TI → «chi».',
+          words: [
+            { pt: 'a Colômbia', pron: 'a Kolômbia', es: 'Colombia' },
+            { pt: 'a Argentina', pron: 'a Arzhenchína', es: 'Argentina' },
+            { pt: 'a Venezuela', pron: 'a Venezuéla', es: 'Venezuela' },
+            { pt: 'a Bolívia', pron: 'a Bolívia', es: 'Bolivia' }
+          ] },
+        { id: 'pa5', tag: 'Europa', tagIcon: 'fa-earth-europe',
+          rule: 'A Espanha, a França, a Itália, a Alemanha', hint: '<b>Alemanha</b> = Alemania · NH suena «ñ».',
+          words: [
+            { pt: 'a Espanha', pron: 'a Ispáña', es: 'España' },
+            { pt: 'a França', pron: 'a Fránsa', es: 'Francia' },
+            { pt: 'a Itália', pron: 'a Itália', es: 'Italia' },
+            { pt: 'a Alemanha', pron: 'a Alemáña', es: 'Alemania' }
+          ] },
+        { id: 'pa6', tag: 'Resto del mundo', tagIcon: 'fa-earth-asia',
+          rule: 'A China, a Índia, a Rússia, a Austrália', hint: '<b>China</b> suena «Shína» (CH = sh).',
+          words: [
+            { pt: 'a China', pron: 'a Shína', es: 'China' },
+            { pt: 'a Índia', pron: 'a Índjia', es: 'India' },
+            { pt: 'a Rússia', pron: 'a Júsia', es: 'Rusia' },
+            { pt: 'a Austrália', pron: 'a Austrália', es: 'Australia' }
+          ] },
+        { id: 'pap2', tag: 'Con a', tagIcon: 'fa-location-dot', hl: 'na Argentina',
+          pt: 'Eu sou da Colômbia, mas morei na Argentina.', pron: 'Eu sô da Kolômbia, mas moréi na Arzhenchína', es: 'Soy de Colombia, pero viví en Argentina.',
+          key: { pt: 'da Colômbia · na Argentina', pron: 'da Kolômbia · na Arzhenchína', es: 'de Colombia · en Argentina' } },
+
+        { section: 'Plurales: os, as', rd: 'paises-pl', icon: 'fa-clone', text: 'Algunos países son plurales, y el verbo también va en plural.' },
+        { id: 'pa7', tag: 'En plural', tagIcon: 'fa-flag-usa',
+          rule: 'Os Estados Unidos, as Filipinas', hint: 'El verbo va en plural: <b>Os Estados Unidos são grandes</b>. Contracción: <b>nos Estados Unidos</b>.',
+          words: [
+            { pt: 'os Estados Unidos', pron: 'us Istádus Unídus', es: 'Estados Unidos' },
+            { pt: 'os Países Baixos', pron: 'us Paízis Báishus', es: 'los Países Bajos' },
+            { pt: 'as Filipinas', pron: 'as Filipínas', es: 'Filipinas' }
+          ] },
+        { id: 'pap3', tag: 'Verbo en plural', tagIcon: 'fa-flag-usa',
+          pt: 'Os Estados Unidos são muito grandes.', pron: 'Us Istádus Unídus sáung múintu grándjis', es: 'Estados Unidos es muy grande.',
+          nat: { pt: 'Ela trabalha nos Estados Unidos.', pron: 'Éla trabália nus Istádus Unídus', note: 'Con la contracción: nos (em + os). También se escribe EUA.' },
+          key: { pt: 'os EUA', pron: 'us ê u á', es: 'EE. UU.' } },
+
+        { section: 'Excepciones: sin artículo', rd: 'paises-sin', icon: 'fa-triangle-exclamation', text: 'Estos países van <b>sin artículo</b>, así que no hay contracción: <b>em Portugal, de Cuba, a Angola</b>. Y las ciudades casi nunca llevan artículo… salvo <b>o Rio</b>.' },
+        { id: 'pa8', tag: 'Lusófonos', tagIcon: 'fa-language',
+          rule: 'Portugal, Angola, Moçambique, Cabo Verde', hint: '¡Muchos países que hablan portugués van sin artículo! ✗ no Portugal → ✓ <b>em Portugal</b>.',
+          words: [
+            { pt: 'Portugal', pron: 'Portugáu', es: 'Portugal' },
+            { pt: 'Angola', pron: 'Angóla', es: 'Angola' },
+            { pt: 'Moçambique', pron: 'Mosambíki', es: 'Mozambique' },
+            { pt: 'Cabo Verde', pron: 'Kábu Vérdji', es: 'Cabo Verde' }
+          ] },
+        { id: 'pa9', tag: 'Otros sin artículo', tagIcon: 'fa-ban',
+          rule: 'Cuba, Israel, Honduras, El Salvador', hint: 'Se dice <b>em Cuba, de Israel, em Honduras, em El Salvador</b>.',
+          words: [
+            { pt: 'Cuba', pron: 'Kúba', es: 'Cuba' },
+            { pt: 'Israel', pron: 'Izraéu', es: 'Israel' },
+            { pt: 'Honduras', pron: 'Ondúras', es: 'Honduras' },
+            { pt: 'El Salvador', pron: 'Éu Sauvadô(r)', es: 'El Salvador' }
+          ] },
+        { id: 'pa10', tag: 'Ciudades', tagIcon: 'fa-city',
+          rule: 'Ciudades: sin artículo… casi siempre', hint: 'Excepciones famosas: <b>o Rio</b> («Moro no Rio») y <b>o Porto</b>, en Portugal.',
+          words: [
+            { pt: 'São Paulo', pron: 'Sáung Páulu', es: 'São Paulo (em São Paulo)' },
+            { pt: 'Bogotá', pron: 'Bogotá', es: 'Bogotá (em Bogotá)' },
+            { pt: 'o Rio de Janeiro', pron: 'u Jíu dji Zhanéru', es: 'Río de Janeiro (¡no Rio!)' },
+            { pt: 'o Porto', pron: 'u Pôrtu', es: 'Oporto (¡no Porto!)' }
+          ] },
+        { id: 'pap4', tag: 'Con y sin', tagIcon: 'fa-plane',
+          pt: 'Eu fui a Portugal e depois ao Rio.', pron: 'Eu fúi a Portugáu i depóis au Jíu', es: 'Fui a Portugal y después a Río.',
+          nat: { pt: 'Fui pra Portugal e depois pro Rio.', pron: 'Fúi pra Portugáu i depóis pru Jíu', note: 'Sin artículo: «pra Portugal». Con artículo: «pro Rio» (para o).' },
+          key: { pt: 'a Portugal · ao Rio', pron: 'a Portugáu · au Jíu', es: 'sin artículo · con artículo' } },
+
+        { section: 'Nacionalidades', rd: 'paises-nac', icon: 'fa-id-card', text: 'Las nacionalidades van en <b>minúscula</b> y cambian con el género: colombiano, colombiana.' },
+        { id: 'pa11', tag: 'Gentilicios', tagIcon: 'fa-users',
+          rule: 'Colombiano, brasileiro, espanhol, português', hint: '<b>Brasileiro</b> = brasileño · femenino: <b>brasileira</b>.',
+          words: [
+            { pt: 'colombiano · colombiana', pron: 'kolombiánu · kolombiána', es: 'colombiano · colombiana' },
+            { pt: 'brasileiro · brasileira', pron: 'braziléru · braziléra', es: 'brasileño · brasileña' },
+            { pt: 'espanhol · espanhola', pron: 'ispañóu · ispañóla', es: 'español · española' },
+            { pt: 'português · portuguesa', pron: 'portugués · portugéza', es: 'portugués · portuguesa' }
+          ] },
+        { id: 'pap5', tag: 'Origen', tagIcon: 'fa-location-dot',
+          pt: 'Você é de onde? — Sou colombiano, de Cali.', pron: 'Vosê é dji óndji? — Sô kolombiánu, dji Káli', es: '¿De dónde eres? — Soy colombiano, de Cali.',
+          nat: { pt: 'Cê é de onde? — Da Colômbia!', pron: 'Sê é dji óndji? — Da Kolômbia!', note: 'Respuesta corta, con contracción: «da Colômbia».' },
+          key: { pt: 'de onde?', pron: 'dji óndji', es: '¿de dónde?' } }
+      ]
+    },
+    {
       id: 'vocab', num: 16, tab: 'Vocabulario', icon: 'fa-book', color: 'cyan', vocab: true,
       title: 'Vocabulário Essencial', pron: 'Vokabuláriu Esensiáu', es: 'Vocabulario esencial · Las palabras que más vas a usar, por categorías'
     },
@@ -1295,7 +1428,7 @@
   // Secciones del menú: el orden de los módulos (y su número) sale de aquí
   const GROUPS = [
     { id: 'base', name: 'Primeros pasos', icon: 'fa-seedling', ids: ['apres', 'som', 'num', 'horas', 'dias', 'meses', 'cores'] },
-    { id: 'gram', name: 'Gramática', icon: 'fa-puzzle-piece', ids: ['verbos', 'hetero', 'adj', 'poss', 'contr', 'perg', 'passado', 'vverbos'] },
+    { id: 'gram', name: 'Gramática', icon: 'fa-puzzle-piece', ids: ['verbos', 'hetero', 'adj', 'poss', 'contr', 'paises', 'perg', 'passado', 'vverbos'] },
     { id: 'vida', name: 'Vida diaria', icon: 'fa-house', ids: ['rotina', 'comida', 'prof', 'vocab'] },
     { id: 'prac', name: 'Practicar', icon: 'fa-gamepad', ids: ['pratica', 'prompt'] }
   ];
@@ -1342,7 +1475,10 @@
     { id: 'f36', cat: 'Contracciones', icon: 'fa-gift',         pt: 'Obrigado pela ajuda',  pron: 'Obrigádu péla azhúda',  es: 'Gracias por la ayuda (por + a)' },
     { id: 'f37', cat: 'Meses',        icon: 'fa-sun',           pt: 'o verão',              pron: 'u veráung',             es: 'el verano (dic.–mar. en Brasil)' },
     { id: 'f38', cat: 'Meses',        icon: 'fa-temperature-high', pt: 'Tá calor!',         pron: 'Tá kalô(r)!',           es: '¡Hace calor!' },
-    { id: 'f39', cat: 'Meses',        icon: 'fa-calendar',      pt: 'julho',                pron: 'zhúliu',                es: 'julio (¡no «junio»!)' }
+    { id: 'f39', cat: 'Meses',        icon: 'fa-calendar',      pt: 'julho',                pron: 'zhúliu',                es: 'julio (¡no «junio»!)' },
+    { id: 'f40', cat: 'Países',       icon: 'fa-earth-europe',  pt: 'em Portugal',          pron: 'ing Portugáu',          es: 'en Portugal (¡sin artículo!)' },
+    { id: 'f41', cat: 'Países',       icon: 'fa-city',          pt: 'no Rio',               pron: 'nu Jíu',                es: 'en Río (¡con artículo!)' },
+    { id: 'f42', cat: 'Países',       icon: 'fa-flag-usa',      pt: 'Os Estados Unidos são…', pron: 'Us Istádus Unídus sáung…', es: 'Estados Unidos es… (¡en plural!)' }
   ];
 
   const FLASH_COLORS = {
@@ -1358,6 +1494,7 @@
     'Profesiones':  'from-orange-400 to-amber-600',
     'Contracciones': 'from-sky-400 to-blue-600',
     'Meses':        'from-lime-400 to-green-600',
+    'Países':       'from-emerald-400 to-sky-600',
     'Colores':      'from-red-400 to-amber-400',
     'Pasado':       'from-yellow-400 to-orange-500'
   };
@@ -1560,7 +1697,34 @@
         { pt: 'De março a junho.',    pron: 'Dji márssu a zhúñu' }
       ], correct: 0,
       hint: 'Pista: Brasil está en el hemisferio sur.',
-      explain: 'En Brasil o verão va de diciembre a marzo: ¡Navidad con calor y playa!' }
+      explain: 'En Brasil o verão va de diciembre a marzo: ¡Navidad con calor y playa!' },
+    { id: 'q23', topic: 'Países',
+      q: '«Vivo en Portugal» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'Eu moro no Portugal.', pron: 'Eu móru nu Portugáu' },
+        { pt: 'Eu moro em Portugal.', pron: 'Eu móru ing Portugáu' },
+        { pt: 'Eu moro na Portugal.', pron: 'Eu móru na Portugáu' }
+      ], correct: 1,
+      hint: 'Pista: Portugal es una de las excepciones.',
+      explain: 'Portugal va sin artículo → em Portugal. Compara: no Brasil, na Colômbia.' },
+    { id: 'q24', topic: 'Países',
+      q: '«Soy de Perú» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'Sou da Peru.',   pron: 'Sô da Perú' },
+        { pt: 'Sou do Peru.',   pron: 'Sô du Perú' },
+        { pt: 'Sou de o Peru.', pron: 'Sô dji u Perú' }
+      ], correct: 1,
+      hint: 'Pista: o Peru es masculino y la contracción es obligatoria.',
+      explain: 'De + o = do → Sou do Peru. (Y Colombia: Sou da Colômbia.)' },
+    { id: 'q25', topic: 'Países',
+      q: '«Estados Unidos es muy grande» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'O Estados Unidos é muito grande.',     pron: 'U Istádus Unídus é múintu grándji' },
+        { pt: 'Os Estados Unidos são muito grandes.', pron: 'Us Istádus Unídus sáung múintu grándjis' },
+        { pt: 'A Estados Unidos é muito grande.',     pron: 'A Istádus Unídus é múintu grándji' }
+      ], correct: 1,
+      hint: 'Pista: en portugués este país es plural, con artículo y verbo.',
+      explain: 'Os Estados Unidos (plural) → são… grandes.' }
   ];
 
   /* ---------- Vocabulario por categorías ---------- */
@@ -1775,12 +1939,12 @@
       task: t => `Voy a pegar un texto que escribí en portugués sobre «${t}». Muéstrame la versión corregida frase por frase con el formato obligatorio y, debajo de cada frase, explica el error en una sola línea en español. Si algo es correcto pero suena poco natural, dime cómo lo diría un brasileño. Termina diciéndome una cosa que hice bien.\n\nMI TEXTO:\n[PEGA AQUÍ TU TEXTO]` }
   ];
 
-  const PROMPT_TOPICS = ['Mi presentación personal', 'Mi rutina diaria', 'Comida y restaurantes', 'Ser y estar', 'Palabras interrogativas', 'Viajar a Brasil', 'Mi familia', 'Adjetivos para describir personas', 'Lo que hice el fin de semana (pasado)', 'Números, fechas y teléfonos', '¿Qué hora es? (horas y citas)', 'Dinero y compras', 'Días de la semana y planes', 'Profesiones y trabajo', 'Colores y ropa', 'Contracciones (no, na, do, da, ao, à)', 'Meses, estaciones y clima'];
+  const PROMPT_TOPICS = ['Mi presentación personal', 'Mi rutina diaria', 'Comida y restaurantes', 'Ser y estar', 'Palabras interrogativas', 'Viajar a Brasil', 'Mi familia', 'Adjetivos para describir personas', 'Lo que hice el fin de semana (pasado)', 'Números, fechas y teléfonos', '¿Qué hora es? (horas y citas)', 'Dinero y compras', 'Días de la semana y planes', 'Profesiones y trabajo', 'Colores y ropa', 'Contracciones (no, na, do, da, ao, à)', 'Meses, estaciones y clima', 'Países y nacionalidades'];
 
   const XP = { phrase: 20, flash: 10, quiz: 30 };
   // Umbrales como fracción del XP total, para que escalen al agregar contenido
   const LEVELS = [[0, '🌱 Principiante'], [0.2, '🧭 Explorador'], [0.45, '✈️ Viajero'], [0.7, '🏆 Maestro']];
-  const PRAISE = ['¡Excelente!', '¡Genial!', '¡Lo lograste!', '¡Vas muy bien!', '¡Qué buen ritmo!'];
+  const PRAISE = ['¡Excelente!', '¡Genial!', '¡Lo lograste!', '¡Vas muy bien!', '¡Qué buen ritmo!', 'Muito bem, Cesar!', 'Isso aí, Cesar!', '¡Sigue así, Cesar!'];
 
   const COLORS = {
     sky:     { icon: 'bg-sky-100 text-sky-700',         chip: 'bg-sky-50 text-sky-700',         tip: 'bg-sky-50 border-sky-200',         hl: 'text-sky-700' },
@@ -1964,6 +2128,38 @@
       ['A vovó explica: "No Brasil, dezembro é verão!"', 'A vovó isplíka: "Nu Braziú, dezémbru é veráung!"', 'La abuela explica: "¡En Brasil, diciembre es verano!"'],
       ['"Na Colômbia não tem verão nem inverno, só chuva e sol", diz a Lia.', '"Na Kolômbia náung téing veráung néing invérnu, só shúva i sóu", djís a Lía', '"En Colombia no hay verano ni invierno, solo lluvia y sol", dice Lia.'],
       ['Então a família faz uma ceia de Natal na praia!', 'Entáung a família fáis úma séia dji Natáu na práia!', '¡Entonces la familia hace una cena de Navidad en la playa!']
+    ] },
+
+    // Países
+    'paises-o': { emoji: '🗺️', pt: 'O mapa do Tico', pron: 'U mápa du Tíku', es: 'El mapa de Tico', lines: [
+      ['O Tico olha o mapa e aponta: "O Brasil!"', 'U Tíku ólia u mápa i apónta: "U Braziú!"', 'Tico mira el mapa y señala: "¡Brasil!"'],
+      ['Depois ele aponta o Peru e o Chile.', 'Depóis éli apónta u Perú i u Shíli', 'Después señala Perú y Chile.'],
+      ['"No México tem tacos!", diz a Lia.', '"Nu Méshiku téing tákus!", djís a Lía', '"¡En México hay tacos!", dice Lia.'],
+      ['"E no Japão tem sushi!", grita o Tico.', '"I nu Zhapáung téing súshi!", gríta u Tíku', '"¡Y en Japón hay sushi!", grita Tico.']
+    ] },
+    'paises-a': { emoji: '🌍', pt: 'A família da Lia pelo mundo', pron: 'A família da Lía pélu múndu', es: 'La familia de Lia por el mundo', lines: [
+      ['A Lia é da Colômbia.', 'A Lía é da Kolômbia', 'Lia es de Colombia.'],
+      ['A tia dela mora na Argentina.', 'A chía déla móra na Arzhenchína', 'Su tía vive en Argentina.'],
+      ['O primo Davi estuda na Espanha.', 'U prímu Dávi istúda na Ispáña', 'El primo Davi estudia en España.'],
+      ['E a vovó Ana quer viajar para a Itália!', 'I a vovó Ána ké(r) viazhá(r) pára a Itália!', '¡Y la abuela Ana quiere viajar a Italia!']
+    ] },
+    'paises-pl': { emoji: '✉️', pt: 'Uma carta dos Estados Unidos', pron: 'Úma kárta dus Istádus Unídus', es: 'Una carta desde Estados Unidos', lines: [
+      ['O Pedro tem um amigo nos Estados Unidos.', 'U Pédru téing ung amígu nus Istádus Unídus', 'Pedro tiene un amigo en Estados Unidos.'],
+      ['O amigo escreve: "Os Estados Unidos são enormes!"', 'U amígu iskrévi: "Us Istádus Unídus sáung inórmis!"', 'El amigo escribe: "¡Estados Unidos es enorme!"'],
+      ['Ele também já visitou as Filipinas.', 'Éli tambéing zhá vizitô as Filipínas', 'También ya visitó Filipinas.'],
+      ['O Pedro responde: "Que legal! Um dia eu vou aí!"', 'U Pédru jespóndji: "Ki legáu! Ung djía eu vô aí!"', 'Pedro responde: "¡Qué chévere! ¡Un día voy para allá!"']
+    ] },
+    'paises-sin': { emoji: '🏰', pt: 'Férias em Portugal', pron: 'Férias ing Portugáu', es: 'Vacaciones en Portugal', lines: [
+      ['Nas férias, a Lia foi a Portugal.', 'Nas férias, a Lía fói a Portugáu', 'En vacaciones, Lia fue a Portugal.'],
+      ['Em Portugal, ela comeu pastel de nata.', 'Ing Portugáu, éla koméu pastéu dji náta', 'En Portugal, comió pastel de nata.'],
+      ['O Tico gritou: "No Portugal!", e a Lia riu: "Não, Tico! Em Portugal!"', 'U Tíku gritô: "Nu Portugáu!", i a Lía jíu: "Náung, Tíku! Ing Portugáu!"', 'Tico gritó: "¡No Portugal!" (✗), y Lia se rió: "¡No, Tico! ¡Se dice em Portugal!"'],
+      ['Depois eles voltaram pro Rio de avião.', 'Depóis élis voutáraung pru Jíu dji aviáung', 'Después volvieron a Río en avión.']
+    ] },
+    'paises-nac': { emoji: '🧒🏽', pt: 'A turma internacional', pron: 'A túrma internasionáu', es: 'El curso internacional', lines: [
+      ['Na turma da Lia tem crianças de vários países.', 'Na túrma da Lía téing kriánsas dji várius paízis', 'En el curso de Lia hay niños de varios países.'],
+      ['O Pedro é brasileiro e a Sofia é espanhola.', 'U Pédru é braziléru i a Sofía é ispañóla', 'Pedro es brasileño y Sofía es española.'],
+      ['O João é português, de Lisboa.', 'U Zhuáung é portugués, dji Lizbôa', 'João es portugués, de Lisboa.'],
+      ['E a Lia diz com orgulho: "Eu sou colombiana!"', 'I a Lía djís kong orgúliu: "Eu sô kolombiána!"', 'Y Lia dice con orgullo: "¡Soy colombiana!"']
     ] },
 
     // Profesiones
@@ -2663,7 +2859,7 @@
     const tema = (p.tema || '').trim() || 'un tema libre de nivel A1';
     const vistos = MODULES.filter(m => m.phrases).map(m => `- ${m.es.split(' · ')[0]}`).join('\n');
     const extra = (p.extra || '').trim();
-    return `Actúa como mi profesor(a) nativo(a) de Brasil y enséñame el portugués brasileño tal como se habla hoy. Soy hispanohablante, estoy en nivel A1 y tengo TDAH: necesito contenido corto, claro, por bloques y con refuerzo positivo.
+    return `Actúa como mi profesor(a) nativo(a) de Brasil y enséñame el portugués brasileño tal como se habla hoy. Me llamo Cesar (llámame por mi nombre), soy hispanohablante de Colombia, estoy en nivel A1 y tengo TDAH: necesito contenido corto, claro, por bloques y con refuerzo positivo.
 
 📚 LO QUE YA VI EN CLASE
 ${vistos}
@@ -2864,7 +3060,7 @@ Tengo unos ${p.mins} minutos para esta sesión.${extra ? `\nNota adicional: ${ex
   function afterChange(prevPct) {
     updateStats();
     if (prevPct < 100 && percent() === 100) {
-      setTimeout(() => { toast('🎉 ¡Completaste el curso A1! Parabéns!'); burst(160, 0.6); }, 600);
+      setTimeout(() => { toast('🎉 Parabéns, Cesar! ¡Completaste el curso A1!'); burst(160, 0.6); }, 600);
     }
   }
 
@@ -2998,6 +3194,24 @@ Tengo unos ${p.mins} minutos para esta sesión.${extra ? `\nNota adicional: ${ex
     }
   });
 
+  // Saludo personal según la hora del día
+  function renderGreeting() {
+    const h = new Date().getHours();
+    const [pt, pron, es] = h < 12 ? ['Bom dia, Cesar!', 'Bong djía, Séza(r)!', '¡Buenos días, Cesar!']
+      : h < 18 ? ['Boa tarde, Cesar!', 'Bóa tárdji, Séza(r)!', '¡Buenas tardes, Cesar!']
+      : ['Boa noite, Cesar!', 'Bóa nóichi, Séza(r)!', '¡Buenas noches, Cesar!'];
+    const sub = calcXP() > 0
+      ? ['Que bom te ver de novo. Bora continuar?', 'Ki bong chi vê(r) dji nóvu. Bóra konchinuá(r)?', 'Qué bueno verte de nuevo. ¿Seguimos?']
+      : ['Seja bem-vindo! Bora começar?', 'Sézha béing víndu! Bóra komesá(r)?', '¡Bienvenido! ¿Empezamos?'];
+    $('greeting').innerHTML = [[pt, pron, es, 'text-xl'], [...sub, 'text-base']].map(([p, r, e, size]) => `
+      <button data-say="${esc(p)}" class="block text-left">
+        <span class="block ${size} font-bold text-slate-900">${p}</span>
+        <span class="block text-sm italic text-indigo-600">🔊 [${r}]</span>
+        <span class="block text-sm text-slate-500">${e}</span>
+      </button>`).join('');
+  }
+
+  renderGreeting();
   renderPanel();
   updateStats();
   centerActiveTab();
