@@ -2157,6 +2157,155 @@
       ]
     },
     {
+      id: 'casa', num: 0, tab: 'La casa', icon: 'fa-house-chimney', color: 'amber',
+      title: 'A Casa', pron: 'A Káza', es: 'La casa · Viviendas, cuartos, ubicación, tareas y alquiler',
+      tip: {
+        title: 'Casa, lar y morar',
+        text: 'Para decir dónde vives se usa <b>morar</b>: «Eu moro numa casa». <b>Em casa</b> (sin artículo) = en casa: «Estou em casa». Los objetos de cada cuarto están en <b>Objetos</b>.',
+        words: [
+          { pt: 'morar', pron: 'morá(r)', es: 'vivir (en un lugar)' },
+          { pt: 'em casa', pron: 'ing káza', es: 'en casa' },
+          { pt: 'o lar', pron: 'u lá(r)', es: 'el hogar' }
+        ]
+      },
+      phrases: [
+        { section: 'Tipos de vivienda', rd: 'casa-tipos', icon: 'fa-city', text: 'En las ciudades de Brasil mucha gente vive en <b>prédios</b> (edificios) con <b>porteiro</b>. ¡Ojo: <b>prédio</b> no es un terreno, es el edificio!' },
+        { id: 'cs1', tag: 'Viviendas', tagIcon: 'fa-house',
+          rule: 'A casa, o prédio…', hint: '<b>Prédio</b> = edificio · <b>apartamento</b> = al hablar, <b>apê</b>. Un conjunto cerrado es un <b>condomínio</b>.',
+          pics: [
+            ['🏠', 'a casa', 'a káza', 'la casa'],
+            ['🏢', 'o prédio', 'u prédjiu', 'el edificio'],
+            ['fa-building-user', 'o apartamento', 'u apartaméntu', 'el apartamento'],
+            ['🏘️', 'o condomínio', 'u kondomíniu', 'el conjunto residencial']
+          ] },
+        { id: 'cs2', tag: 'En el edificio', tagIcon: 'fa-building',
+          rule: 'O elevador, a escada…', hint: 'El piso de un edificio es <b>o andar</b>: «moro no quinto andar». La planta baja es <b>o térreo</b>.',
+          pics: [
+            ['🛗', 'o elevador', 'u elevadô(r)', 'el ascensor'],
+            ['fa-stairs', 'a escada', 'a iskáda', 'la escalera'],
+            ['fa-bell-concierge', 'a portaria', 'a portaría', 'la portería'],
+            ['🚗', 'a garagem', 'a garázheing', 'el garaje']
+          ] },
+        { id: 'csp1', tag: 'Dónde vives', tagIcon: 'fa-location-dot',
+          pt: 'Eu moro num apartamento no quinto andar.', pron: 'Eu móru nung apartaméntu nu kíntu andá(r)', es: 'Vivo en un apartamento en el quinto piso.',
+          nat: { pt: 'Moro num apê pequeno.', pron: 'Móru nung apê pekénu', note: '«Apê» = apartamento. ¡Lo oirás todo el tiempo!' },
+          key: { pt: 'o andar · o térreo', pron: 'u andá(r) · u téjiu', es: 'el piso · la planta baja' } },
+        { id: 'csp2', tag: 'Portero', tagIcon: 'fa-user-tie',
+          pt: 'O porteiro é muito simpático.', pron: 'U portéru é múintu simpáchiku', es: 'El portero es muy simpático.',
+          key: { pt: 'o porteiro · o vizinho', pron: 'u portéru · u vizíñu', es: 'el portero · el vecino' } },
+        { section: 'Los cuartos', rd: 'casa-comodos', icon: 'fa-door-open', text: 'Cada cuarto de la casa es <b>um cômodo</b>. Y la habitación para dormir es <b>o quarto</b>: ¡masculino!' },
+        { id: 'cs3', tag: 'Cómodos 1', tagIcon: 'fa-couch',
+          rule: 'A sala, a cozinha, o quarto…', hint: '<b>Quarto</b> = habitación (y también «cuarto» de hora). <b>Banheiro</b> = baño.',
+          pics: [
+            ['🛋️', 'a sala', 'a sála', 'la sala'],
+            ['🍳', 'a cozinha', 'a kozíña', 'la cocina'],
+            ['🛏️', 'o quarto', 'u kuártu', 'la habitación'],
+            ['🛁', 'o banheiro', 'u bañéru', 'el baño']
+          ] },
+        { id: 'cs4', tag: 'Cómodos 2', tagIcon: 'fa-tree',
+          rule: 'A varanda, o quintal…', hint: 'La <b>área de serviço</b> es donde se lava la ropa. <b>Quintal</b> = el patio de atrás.',
+          pics: [
+            ['🧺', 'a área de serviço', 'a área dji servísu', 'el patio de ropas'],
+            ['🌳', 'o quintal', 'u kintáu', 'el patio, el jardín'],
+            ['🌇', 'a varanda', 'a varánda', 'el balcón'],
+            ['fa-briefcase', 'o escritório', 'u iskritóriu', 'el estudio, la oficina']
+          ] },
+        { id: 'csp3', tag: 'Describir', tagIcon: 'fa-house', hl: 'quartos',
+          pt: 'A minha casa tem dois quartos e um banheiro.', pron: 'A míña káza téing dóis kuártus i ung bañéru', es: 'Mi casa tiene dos habitaciones y un baño.',
+          key: { pt: 'o cômodo', pron: 'u kômodu', es: 'cualquier cuarto de la casa' } },
+        { id: 'csp4', tag: 'Preguntar', tagIcon: 'fa-circle-question',
+          pt: 'Onde fica o banheiro?', pron: 'Óndji fíka u bañéru?', es: '¿Dónde queda el baño?',
+          nat: { pt: 'Cadê o banheiro?', pron: 'Kadê u bañéru?', note: 'Más informal, entre amigos.' },
+          key: { pt: 'Onde fica…?', pron: 'Óndji fíka', es: '¿Dónde queda…?' } },
+        { section: 'Partes de la casa', rd: 'casa-partes', icon: 'fa-house-crack', text: 'El techo de adentro y el de afuera tienen nombres distintos: <b>teto</b> y <b>telhado</b>.' },
+        { id: 'cs5', tag: 'Estructura', tagIcon: 'fa-trowel-bricks',
+          rule: 'O chão, a parede, o teto', hint: '<b>Teto</b> = techo por dentro · <b>telhado</b> = tejado por fuera. ¡Y el piso de un edificio es <b>andar</b>!',
+          words: [
+            { pt: 'o chão', pron: 'u sháung', es: 'el piso, el suelo' },
+            { pt: 'a parede', pron: 'a parédji', es: 'la pared' },
+            { pt: 'o teto', pron: 'u tétu', es: 'el techo (por dentro)' },
+            { pt: 'o telhado', pron: 'u teliádu', es: 'el tejado' }
+          ] },
+        { id: 'cs6', tag: 'Entradas', tagIcon: 'fa-door-closed',
+          rule: 'A porta, o portão…', hint: '<b>Portão</b> = la reja o el portón de la calle. <b>O corredor</b> = el pasillo.',
+          words: [
+            { pt: 'a porta', pron: 'a pórta', es: 'la puerta' },
+            { pt: 'o portão', pron: 'u portáung', es: 'el portón, la reja' },
+            { pt: 'a janela', pron: 'a zhanéla', es: 'la ventana' },
+            { pt: 'o corredor', pron: 'u kojedô(r)', es: 'el pasillo' }
+          ] },
+        { id: 'csp5', tag: 'Cuidado', tagIcon: 'fa-triangle-exclamation',
+          pt: 'Cuidado, o chão está molhado!', pron: 'Kuidádu, u sháung istá moliádu!', es: '¡Cuidado, el piso está mojado!',
+          key: { pt: 'molhado · seco', pron: 'moliádu · séku', es: 'mojado · seco' } },
+        { section: '¿Dónde está?', rd: 'casa-onde', icon: 'fa-map-pin', text: 'Para ubicar cosas. Recuerda las contracciones: <b>em cima da mesa</b> (de + a), <b>embaixo do sofá</b> (de + o).' },
+        { id: 'cs7', tag: 'Posición 1', tagIcon: 'fa-arrows-up-down',
+          rule: 'Em cima, embaixo…', hint: '<b>Em cima de</b> = encima de · <b>embaixo de</b> = debajo de.',
+          words: [
+            { pt: 'em cima de', pron: 'ing síma dji', es: 'encima de' },
+            { pt: 'embaixo de', pron: 'ingbáishu dji', es: 'debajo de' },
+            { pt: 'dentro de', pron: 'déntru dji', es: 'dentro de' },
+            { pt: 'atrás de', pron: 'atráis dji', es: 'detrás de' }
+          ] },
+        { id: 'cs8', tag: 'Posición 2', tagIcon: 'fa-arrows-left-right',
+          rule: 'Do lado, na frente…', hint: '<b>Na frente de</b> = delante de, frente a. <b>Longe</b> = lejos.',
+          words: [
+            { pt: 'do lado de', pron: 'du ládu dji', es: 'al lado de' },
+            { pt: 'na frente de', pron: 'na frénchi dji', es: 'delante de, frente a' },
+            { pt: 'entre', pron: 'éntri', es: 'entre' },
+            { pt: 'perto de · longe de', pron: 'pértu dji · lónzhi dji', es: 'cerca de · lejos de' }
+          ] },
+        { id: 'csp6', tag: 'Gato', tagIcon: 'fa-cat', hl: 'embaixo da',
+          pt: 'O gato está embaixo da cama.', pron: 'U gátu istá ingbáishu da káma', es: 'El gato está debajo de la cama.',
+          key: { pt: 'embaixo da = embaixo de + a', pron: 'ingbáishu da', es: 'debajo de la' } },
+        { id: 'csp7', tag: 'Llaves', tagIcon: 'fa-key',
+          pt: 'A chave está em cima da mesa.', pron: 'A shávi istá ing síma da mêza', es: 'La llave está encima de la mesa.',
+          key: { pt: 'em cima da · em cima do', pron: 'ing síma da · ing síma du', es: 'encima de la · encima del' } },
+        { id: 'csp8', tag: 'Barrio', tagIcon: 'fa-store',
+          pt: 'O mercado fica perto da minha casa.', pron: 'U merkádu fíka pértu da míña káza', es: 'El mercado queda cerca de mi casa.',
+          nat: { pt: 'É pertinho, dá pra ir a pé.', pron: 'É perchíñu, dá pra í(r) a pé', note: '«Pertinho» = cerquita. «Dá pra» = se puede.' },
+          key: { pt: 'perto · longe', pron: 'pértu · lónzhi', es: 'cerca · lejos' } },
+        { section: 'Tareas de la casa', rd: 'casa-tarefas', icon: 'fa-broom', text: 'Las tareas domésticas son <b>as tarefas de casa</b>. Una limpieza a fondo es <b>uma faxina</b>.' },
+        { id: 'cs9', tag: 'Limpiar', tagIcon: 'fa-broom',
+          rule: 'Lavar a louça, varrer…', hint: '<b>A louça</b> = los platos sucios. OU suena «ô»: lôsa.',
+          words: [
+            { pt: 'lavar a louça', pron: 'lavá(r) a lôsa', es: 'lavar los platos' },
+            { pt: 'varrer a casa', pron: 'vajê(r) a káza', es: 'barrer la casa' },
+            { pt: 'limpar o banheiro', pron: 'limpá(r) u bañéru', es: 'limpiar el baño' },
+            { pt: 'tirar o lixo', pron: 'chirá(r) u líshu', es: 'sacar la basura' }
+          ] },
+        { id: 'cs10', tag: 'Ordenar', tagIcon: 'fa-shirt',
+          rule: 'Arrumar, passar…', hint: '<b>Arrumar</b> = ordenar, organizar. <b>Passar roupa</b> = planchar.',
+          words: [
+            { pt: 'arrumar a cama', pron: 'ajumá(r) a káma', es: 'tender la cama' },
+            { pt: 'lavar a roupa', pron: 'lavá(r) a jôpa', es: 'lavar la ropa' },
+            { pt: 'passar roupa', pron: 'pasá(r) jôpa', es: 'planchar' },
+            { pt: 'fazer faxina', pron: 'fazê(r) fashína', es: 'hacer aseo general' }
+          ] },
+        { id: 'csp9', tag: 'Repartir', tagIcon: 'fa-handshake',
+          pt: 'Eu lavo a louça e você varre a casa, combinado?', pron: 'Eu lávu a lôsa i vosê váji a káza, kombinádu?', es: 'Yo lavo los platos y tú barres la casa, ¿de acuerdo?',
+          key: { pt: 'Combinado!', pron: 'Kombinádu!', es: '¡De acuerdo! ¡Trato hecho!' } },
+        { id: 'csp10', tag: 'Desorden', tagIcon: 'fa-face-dizzy',
+          pt: 'A casa está uma bagunça!', pron: 'A káza istá úma bagúnsa!', es: '¡La casa está hecha un desorden!',
+          nat: { pt: 'Hoje é dia de faxina!', pron: 'Ózhi é djía dji fashína!', note: 'Lo que dicen las mamás brasileñas el sábado.' },
+          key: { pt: 'a bagunça · arrumado', pron: 'a bagúnsa · ajumádu', es: 'el desorden · ordenado' } },
+        { section: 'Alquilar y recibir visitas', rd: 'casa-alugar', icon: 'fa-key', text: 'Para buscar dónde vivir y para recibir gente en tu casa.' },
+        { id: 'csp11', tag: 'Buscar', tagIcon: 'fa-magnifying-glass',
+          pt: 'Estou procurando um apartamento para alugar.', pron: 'Istô prokurándu ung apartaméntu pra alugá(r)', es: 'Estoy buscando un apartamento para arrendar.',
+          nat: { pt: 'Quanto é o aluguel?', pron: 'Kuántu é u alugéu?', note: 'La pregunta clave. Pregunta también por el condomínio (la administración).' },
+          key: { pt: 'alugar · o aluguel', pron: 'alugá(r) · u alugéu', es: 'arrendar · el arriendo' } },
+        { id: 'csp12', tag: 'Muebles', tagIcon: 'fa-couch',
+          pt: 'O apartamento é mobiliado?', pron: 'U apartaméntu é mobiliádu?', es: '¿El apartamento es amoblado?',
+          key: { pt: 'mobiliado · os móveis', pron: 'mobiliádu · us móveis', es: 'amoblado · los muebles' } },
+        { id: 'csp13', tag: 'El barrio', tagIcon: 'fa-city',
+          pt: 'A casa é grande, mas o bairro é barulhento.', pron: 'A káza é grándji, más u báiju é baruliéntu', es: 'La casa es grande, pero el barrio es ruidoso.',
+          key: { pt: 'o bairro · tranquilo', pron: 'u báiju · trankuílu', es: 'el barrio · tranquilo' } },
+        { id: 'csp14', tag: 'Visitas', tagIcon: 'fa-door-open',
+          pt: 'Seja bem-vindo! Fica à vontade.', pron: 'Séja béing víndu! Fíka a vontádji', es: '¡Bienvenido! Siéntete como en casa.',
+          nat: { pt: 'A casa é sua!', pron: 'A káza é súa!', note: '= ¡Mi casa es tu casa!' },
+          key: { pt: 'Fica à vontade', pron: 'Fíka a vontádji', es: 'ponte cómodo, como en tu casa' } },
+      ]
+    },
+    {
       id: 'vocab', num: 16, tab: 'Vocabulario', icon: 'fa-book', color: 'cyan', vocab: true,
       title: 'Vocabulário Essencial', pron: 'Vokabuláriu Esensiáu', es: 'Vocabulario esencial · Las palabras que más vas a usar, por categorías'
     },
@@ -2178,7 +2327,7 @@
   const GROUPS = [
     { id: 'base', name: 'Primeros pasos', icon: 'fa-seedling', ids: ['apres', 'som', 'num', 'horas', 'dias', 'meses', 'cores'] },
     { id: 'gram', name: 'Gramática', icon: 'fa-puzzle-piece', ids: ['verbos', 'hetero', 'adj', 'poss', 'contr', 'paises', 'perg', 'passado', 'vverbos'] },
-    { id: 'vida', name: 'Vida diaria', icon: 'fa-house', ids: ['familia', 'rotina', 'comida', 'prof', 'objetos', 'animais', 'vocab'] },
+    { id: 'vida', name: 'Vida diaria', icon: 'fa-house', ids: ['familia', 'casa', 'rotina', 'comida', 'prof', 'objetos', 'animais', 'vocab'] },
     { id: 'prac', name: 'Practicar', icon: 'fa-gamepad', ids: ['pratica', 'prompt'] }
   ];
   const ORDER = GROUPS.flatMap(g => g.ids);
@@ -2245,7 +2394,12 @@
     { id: 'f57', cat: 'Familia',      icon: 'fa-person-cane',   pt: 'a avó · o avô',        pron: 'a avó · u avô',         es: 'la abuela · el abuelo' },
     { id: 'f58', cat: 'Familia',      icon: 'fa-heart',         pt: 'o namorado',           pron: 'u namorádu',            es: 'el novio (¡noivo = prometido!)' },
     { id: 'f59', cat: 'Familia',      icon: 'fa-people-group',  pt: 'o parente',            pron: 'u parénchi',            es: 'el pariente (¡no «padre»!)' },
-    { id: 'f60', cat: 'Familia',      icon: 'fa-heart-crack',   pt: 'Sinto saudade',        pron: 'Síntu saudádji',        es: 'Extraño (a alguien)' }
+    { id: 'f60', cat: 'Familia',      icon: 'fa-heart-crack',   pt: 'Sinto saudade',        pron: 'Síntu saudádji',        es: 'Extraño (a alguien)' },
+    { id: 'f61', cat: 'Casa',         icon: 'fa-bed',           pt: 'o quarto',             pron: 'u kuártu',              es: 'la habitación (¡masculino!)' },
+    { id: 'f62', cat: 'Casa',         icon: 'fa-building',      pt: 'o prédio',             pron: 'u prédjiu',             es: 'el edificio (¡falso amigo!)' },
+    { id: 'f63', cat: 'Casa',         icon: 'fa-arrow-down',    pt: 'embaixo de',           pron: 'ingbáishu dji',         es: 'debajo de' },
+    { id: 'f64', cat: 'Casa',         icon: 'fa-key',           pt: 'o aluguel',            pron: 'u alugéu',              es: 'el arriendo' },
+    { id: 'f65', cat: 'Casa',         icon: 'fa-broom',         pt: 'lavar a louça',        pron: 'lavá(r) a lôsa',        es: 'lavar los platos' }
   ];
 
   const FLASH_COLORS = {
@@ -2266,7 +2420,8 @@
     'Colores':      'from-red-400 to-amber-400',
     'Pasado':       'from-yellow-400 to-orange-500',
     'Animales':     'from-emerald-400 to-lime-500',
-    'Familia':      'from-orange-400 to-pink-500'
+    'Familia':      'from-orange-400 to-pink-500',
+    'Casa':         'from-amber-400 to-orange-500'
   };
 
   const QUIZ = [
@@ -2575,7 +2730,25 @@
         { pt: 'A minha avô é muito carinhosa.', pron: 'A míña avô é múintu kariñóza' }
       ], correct: 1,
       hint: 'Pista: abuela lleva la ó abierta.',
-      explain: 'Avó (ó abierta) = abuela · avô (ô cerrada) = abuelo.' }
+      explain: 'Avó (ó abierta) = abuela · avô (ô cerrada) = abuelo.' },
+    { id: 'q35', topic: 'Casa',
+      q: '«El gato está debajo de la cama» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'O gato está embaixo da cama.', pron: 'U gátu istá ingbáishu da káma' },
+        { pt: 'O gato está em cima da cama.', pron: 'U gátu istá ing síma da káma' },
+        { pt: 'O gato está embaixo de a cama.', pron: 'U gátu istá ingbáishu dji a káma' }
+      ], correct: 0,
+      hint: 'Pista: de + a se contrae.',
+      explain: 'Embaixo de + a cama = embaixo da cama. «Em cima» = encima.' },
+    { id: 'q36', topic: 'Casa',
+      q: '«Mi habitación es grande» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'A minha quarta é grande.', pron: 'A míña kuárta é grándji' },
+        { pt: 'O meu quarto é grande.', pron: 'U méu kuártu é grándji' },
+        { pt: 'A minha habitação é grande.', pron: 'A míña abitasáung é grándji' }
+      ], correct: 1,
+      hint: 'Pista: la habitación para dormir es masculina en portugués.',
+      explain: 'Habitación = o quarto (masculino): o meu quarto.' }
   ];
 
   /* ---------- Vocabulario por categorías ---------- */
@@ -2790,7 +2963,7 @@
       task: t => `Voy a pegar un texto que escribí en portugués sobre «${t}». Muéstrame la versión corregida frase por frase con el formato obligatorio y, debajo de cada frase, explica el error en una sola línea en español. Si algo es correcto pero suena poco natural, dime cómo lo diría un brasileño. Termina diciéndome una cosa que hice bien.\n\nMI TEXTO:\n[PEGA AQUÍ TU TEXTO]` }
   ];
 
-  const PROMPT_TOPICS = ['Mi presentación personal', 'Mi rutina diaria', 'Comida y restaurantes', 'Ser y estar', 'Palabras interrogativas', 'Viajar a Brasil', 'Mi familia', 'Adjetivos para describir personas', 'Lo que hice el fin de semana (pasado)', 'Números, fechas y teléfonos', '¿Qué hora es? (horas y citas)', 'Dinero y compras', 'Días de la semana y planes', 'Profesiones y trabajo', 'Colores y ropa', 'Contracciones (no, na, do, da, ao, à)', 'Meses, estaciones y clima', 'Países y nacionalidades', 'Objetos de la casa y del día a día', 'Animales y mascotas', 'Billetes y monedas de Brasil'];
+  const PROMPT_TOPICS = ['Mi presentación personal', 'Mi rutina diaria', 'Comida y restaurantes', 'Ser y estar', 'Palabras interrogativas', 'Viajar a Brasil', 'Mi familia', 'Adjetivos para describir personas', 'Lo que hice el fin de semana (pasado)', 'Números, fechas y teléfonos', '¿Qué hora es? (horas y citas)', 'Dinero y compras', 'Días de la semana y planes', 'Profesiones y trabajo', 'Colores y ropa', 'Contracciones (no, na, do, da, ao, à)', 'Meses, estaciones y clima', 'Países y nacionalidades', 'Objetos de la casa y del día a día', 'Animales y mascotas', 'Mi casa y las tareas domésticas', 'Billetes y monedas de Brasil'];
 
   const XP = { phrase: 20, flash: 10, quiz: 30 };
   // Umbrales como fracción del XP total, para que escalen al agregar contenido
@@ -3181,6 +3354,43 @@
       ['A Lia chega e diz: "A bênção, vó!"', 'A Lía shéga i djís: "A bénsaung, vó!"', 'Lia llega y dice: "¡La bendición, abuela!"'],
       ['A vovó responde: "Deus te abençoe, minha netinha!"', 'A vovó jespóndji: "Dêus chi abensôi, míña nechíña!"', 'La abuela responde: "¡Dios te bendiga, mi nietecita!"'],
       ['Tem feijão, arroz e muito amor na mesa.', 'Téing fezháung, ajôis i múintu amô(r) na mêza', 'Hay fríjoles, arroz y mucho amor en la mesa.']
+    ] },
+    // Casa
+    'casa-tipos': { emoji: '🏢', pt: 'O prédio da Lia', pron: 'U prédjiu da Lía', es: 'El edificio de Lia', lines: [
+      ['A Lia mora num prédio azul.', 'A Lía móra nung prédjiu azúu', 'Lia vive en un edificio azul.'],
+      ['O apartamento dela fica no sexto andar.', 'U apartaméntu déla fíka nu sêstu andá(r)', 'Su apartamento queda en el sexto piso.'],
+      ['Ela sobe de elevador, mas o Pedro sobe de escada!', 'Éla sóbi dji elevadô(r), más u Pédru sóbi dji iskáda!', 'Ella sube en ascensor, ¡pero Pedro sube por la escalera!'],
+      ['O porteiro, seu João, diz: "Bom dia, Lia! Bom dia, Tico!"', 'U portéru, séu Zhoáung, djís: "Bong djía, Lía! Bong djía, Tíku!"', 'El portero, don João, dice: "¡Buenos días, Lia! ¡Buenos días, Tico!"']
+    ] },
+    'casa-comodos': { emoji: '🏠', pt: 'Um tour pela casa', pron: 'Ung túr péla káza', es: 'Un recorrido por la casa', lines: [
+      ['A Lia mostra a casa para uma nova amiga.', 'A Lía móstra a káza pra úma nóva amíga', 'Lia le muestra la casa a una nueva amiga.'],
+      ['"Aqui é a sala, e ali é a cozinha."', '"Akí é a sála, i alí é a kozíña"', '"Aquí está la sala, y allá la cocina."'],
+      ['"Este é o meu quarto, e o banheiro fica no corredor."', '"Éschi é u méu kuártu, i u bañéru fíka nu kojedô(r)"', '"Esta es mi habitación, y el baño queda en el pasillo."'],
+      ['"E na varanda mora o Tico!"', '"I na varánda móra u Tíku!"', '"¡Y en el balcón vive Tico!"']
+    ] },
+    'casa-partes': { emoji: '🌧️', pt: 'Choveu!', pron: 'Shovêu!', es: '¡Llovió!', lines: [
+      ['Choveu muito à noite.', 'Shovêu múintu a nôichi', 'Llovió mucho en la noche.'],
+      ['De manhã, tem água no chão da sala!', 'Dji mañá, téing água nu sháung da sála!', '¡Por la mañana hay agua en el piso de la sala!'],
+      ['A mãe olha para o teto: "Tem um buraco no telhado!"', 'A máing ólia pru tétu: "Téing ung buráku nu teliádu!"', 'La mamá mira el techo: "¡Hay un hueco en el tejado!"'],
+      ['O tio Léo vem consertar. Ufa!', 'U chíu Léu véing konsertá(r). Úfa!', 'El tío Léo viene a arreglarlo. ¡Uf!']
+    ] },
+    'casa-onde': { emoji: '🦜', pt: 'Cadê o Tico?', pron: 'Kadê u Tíku?', es: '¿Dónde está Tico?', lines: [
+      ['A Lia procura o Tico pela casa toda.', 'A Lía prokúra u Tíku péla káza tôda', 'Lia busca a Tico por toda la casa.'],
+      ['Ele não está em cima do armário nem embaixo da cama.', 'Éli náung istá ing síma du armáriu neing ingbáishu da káma', 'No está encima del armario ni debajo de la cama.'],
+      ['Também não está atrás da porta!', 'Tambéing náung istá atráis da pórta!', '¡Tampoco está detrás de la puerta!'],
+      ['Ah! Ele está dentro da caixa de brinquedos!', 'Á! Éli istá déntru da káisha dji brinkêdus!', '¡Ah! ¡Está dentro de la caja de juguetes!']
+    ] },
+    'casa-tarefas': { emoji: '🧹', pt: 'Dia de faxina', pron: 'Djía dji fashína', es: 'Día de aseo', lines: [
+      ['Sábado é dia de faxina na casa da Lia.', 'Sábadu é djía dji fashína na káza da Lía', 'El sábado es día de aseo en la casa de Lia.'],
+      ['A mãe lava a roupa e a Lia arruma o quarto.', 'A máing láva a jôpa i a Lía ajúma u kuártu', 'La mamá lava la ropa y Lia ordena su habitación.'],
+      ['Depois, ela varre a varanda e tira o lixo.', 'Depóis, éla váji a varánda i chíra u líshu', 'Después, barre el balcón y saca la basura.'],
+      ['No final, a casa está brilhando!', 'Nu fináu, a káza istá briliándu!', '¡Al final, la casa está brillando!']
+    ] },
+    'casa-alugar': { emoji: '🔑', pt: 'A casa nova do Pedro', pron: 'A káza nóva du Pédru', es: 'La casa nueva de Pedro', lines: [
+      ['A família do Pedro está procurando uma casa para alugar.', 'A família du Pédru istá prokurándu úma káza pra alugá(r)', 'La familia de Pedro está buscando una casa para arrendar.'],
+      ['Eles encontram uma casa com quintal e três quartos.', 'Élis enkóntraung úma káza kong kintáu i trêis kuártus', 'Encuentran una casa con patio y tres habitaciones.'],
+      ['O aluguel é um pouco caro, mas o bairro é tranquilo.', 'U alugéu é ung pôku káru, más u báiju é trankuílu', 'El arriendo es un poco caro, pero el barrio es tranquilo.'],
+      ['Na casa nova, o Pedro diz para a Lia: "Fica à vontade!"', 'Na káza nóva, u Pédru djís pra Lía: "Fíka a vontádji!"', 'En la casa nueva, Pedro le dice a Lia: "¡Siéntete como en casa!"']
     ] },
     'obj-ff': { emoji: '🤭', pt: 'As confusões do Pedro', pron: 'As konfuzóings du Pédru', es: 'Las confusiones de Pedro', lines: [
       ['O Pedro quer apagar um erro e pede: "Me dá a borracha?"', 'U Pédru ké(r) apagá(r) ung éju i pédji: "Mi dá a bojásha?"', 'Pedro quiere borrar un error y pide: "¿Me das el borrador?"'],
