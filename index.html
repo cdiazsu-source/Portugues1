@@ -384,7 +384,7 @@
     },
     {
       id: 'poss', num: 8, tab: 'Posesivos', icon: 'fa-user-check', color: 'violet',
-      title: 'Possessivos', pron: 'Posesívus', es: 'Posesivos · meu, seu, dele…',
+      title: 'Os Pronomes Possessivos', pron: 'Us Pronômis Posesívus', es: 'Los posesivos · Formas, concordancia, seu vs. dele, artículo y ejercicios',
       tip: {
         title: 'Así se usan en Brasil',
         text: 'El artículo antes del posesivo es <b>opcional</b>: (o) meu carro. <b>Seu</b> se entiende como «tuyo» (de você); para «de él / de ella» se usa <b>dele / dela</b>.',
@@ -395,6 +395,34 @@
         ]
       },
       phrases: [
+        { section: 'Las formas', rd: 'poss-formas', icon: 'fa-table', text: 'Toca cada forma de la tabla. En Brasil <b>seu / sua</b> es «tu / tuyo» (de você). En el sur y el nordeste también se oye <b>teu / tua</b>.' },
+        { id: 'po1', tag: 'Tabla completa', tagIcon: 'fa-table',
+          rule: 'Todos los posesivos', hint: 'Meu, seu y nosso concuerdan con la <b>cosa</b>: <b>minha</b> casa, aunque el dueño sea un hombre. <b>Dele / dela</b> van después y concuerdan con el <b>dueño</b>: nunca cambian con la cosa.',
+          table: { head: ['Dueño', 'Masc. sing.', 'Fem. sing.', 'Masc. plural', 'Fem. plural'], rows: [
+            ['eu', ['meu', 'méu'], ['minha', 'míña'], ['meus', 'méus'], ['minhas', 'míñas']],
+            ['você', ['seu', 'séu'], ['sua', 'súa'], ['seus', 'séus'], ['suas', 'súas']],
+            ['tu (regional)', ['teu', 'téu'], ['tua', 'túa'], ['teus', 'téus'], ['tuas', 'túas']],
+            ['nós · a gente', ['nosso', 'nósu'], ['nossa', 'nósa'], ['nossos', 'nósus'], ['nossas', 'nósas']],
+            ['ele', ['o carro dele', 'u káju déli'], ['a casa dele', 'a káza déli'], ['os carros dele', 'us kájus déli'], ['as casas dele', 'as kázas déli']],
+            ['ela', ['o carro dela', 'u káju déla'], ['a casa dela', 'a káza déla'], ['os carros dela', 'us kájus déla'], ['as casas dela', 'as kázas déla']],
+            ['eles · elas', ['o carro deles', 'u káju délis'], ['a casa delas', 'a káza délas'], ['os carros deles', 'us kájus délis'], ['as casas delas', 'as kázas délas']]
+          ] } },
+        { id: 'po2', tag: 'Eu', tagIcon: 'fa-user',
+          rule: 'Meu, minha, meus, minhas', hint: '<b>Minha</b> suena «míña» (NH = ñ). ¡Es la forma que más vas a usar!',
+          words: [
+            { pt: 'meu livro', pron: 'méu lívru', es: 'mi libro' },
+            { pt: 'minha mãe', pron: 'míña máing', es: 'mi mamá' },
+            { pt: 'meus amigos', pron: 'méus amígus', es: 'mis amigos' },
+            { pt: 'minhas chaves', pron: 'míñas shávis', es: 'mis llaves' }
+          ] },
+        { id: 'po3', tag: 'Nós', tagIcon: 'fa-users',
+          rule: 'Nosso, nossa, nossos, nossas', hint: 'Con <b>a gente</b> también se usa nosso: «A gente ama a <b>nossa</b> cidade».',
+          words: [
+            { pt: 'nosso carro', pron: 'nósu káju', es: 'nuestro carro' },
+            { pt: 'nossa casa', pron: 'nósa káza', es: 'nuestra casa' },
+            { pt: 'nossos filhos', pron: 'nósus fílius', es: 'nuestros hijos' },
+            { pt: 'nossas férias', pron: 'nósas férias', es: 'nuestras vacaciones' }
+          ] },
         { id: 'p1', tag: 'Singular', tagIcon: 'fa-car',
           pt: 'Meu carro é novo e minha casa é grande.', pron: 'Méu káju é nóvu i míña káza é grándji', es: 'Mi carro es nuevo y mi casa es grande.',
           key: { pt: 'novo / grande', pron: 'nóvu / grándji', es: 'nuevo / grande' } },
@@ -402,9 +430,155 @@
           pt: 'Seus amigos são muito simpáticos.', pron: 'Séus amígus saung múintu simpáchikus', es: 'Tus amigos son muy simpáticos.',
           nat: { pt: 'Seus amigos são gente boa!', pron: 'Séus amígus saung zhénchi bóa', note: '«Gente boa» = buena gente, buena onda.' },
           key: { pt: 'seus / suas', pron: 'séus / súas', es: 'tus' } },
+        { section: 'Concuerda con la cosa', rd: 'poss-conc', icon: 'fa-venus-mars', text: 'El posesivo mira a la <b>cosa</b>: si es femenina, minha / sua / nossa; si es plural, + s. ¡Y ojo con las palabras que cambian de género respecto al español!' },
+        { id: 'po4', tag: 'Género y número', tagIcon: 'fa-clone',
+          rule: 'Mi casa → minha casa', hint: 'En español «mi» no cambia; en portugués sí: <b>meu</b> pai, <b>minha</b> mãe.',
+          words: [
+            { pt: 'o meu pai · a minha mãe', pron: 'u méu pái · a míña máing', es: 'mi papá · mi mamá' },
+            { pt: 'os meus livros', pron: 'us méus lívrus', es: 'mis libros' },
+            { pt: 'as minhas amigas', pron: 'as míñas amígas', es: 'mis amigas' },
+            { pt: 'a nossa escola', pron: 'a nósa iskóla', es: 'nuestra escuela' }
+          ] },
+        { id: 'po5', tag: '¡Trampa!', tagIcon: 'fa-triangle-exclamation',
+          rule: 'Sigue el género en portugués', hint: 'Repasa <b>Heterogenéricos</b>: el posesivo concuerda con el género portugués.',
+          words: [
+            { pt: 'a minha viagem', pron: 'a míña viázheing', es: 'mi viaje' },
+            { pt: 'o meu leite', pron: 'u méu léichi', es: 'mi leche' },
+            { pt: 'a sua cor favorita', pron: 'a súa kô(r) favoríta', es: 'tu color favorito' },
+            { pt: 'o nosso nariz', pron: 'u nósu narís', es: 'nuestra nariz' }
+          ] },
+        { id: 'pop1', tag: 'Viaje', tagIcon: 'fa-plane', hl: 'minha',
+          pt: 'A minha viagem para o Brasil foi incrível.', pron: 'A míña viázheing pru Brazíu fôi inkríveu', es: 'Mi viaje a Brasil fue increíble.',
+          key: { pt: 'a minha viagem', pron: 'a míña viázheing', es: 'mi viaje (¡femenino!)' } },
+        { id: 'pop2', tag: 'Plural', tagIcon: 'fa-chalkboard-user', hl: 'nossos',
+          pt: 'Os nossos professores são ótimos.', pron: 'Us nósus profesôris sáung ótchimus', es: 'Nuestros profesores son excelentes.',
+          key: { pt: 'os nossos · as nossas', pron: 'us nósus · as nósas', es: 'nuestros · nuestras' } },
+        { section: 'Seu, dele, dela', rd: 'poss-dele', icon: 'fa-people-arrows', text: 'En Brasil <b>seu</b> casi siempre significa «de você» (tuyo). Para «de él / de ella» se usa <b>dele / dela</b>, <b>después</b> de la cosa. Ojo: dele / dela concuerdan con el <b>dueño</b>.' },
+        { id: 'po6', tag: 'De él, de ella', tagIcon: 'fa-user-group',
+          rule: 'Dele, dela, deles, delas', hint: 'Van después del sustantivo: <b>o carro dele</b> = su carro (de él).',
+          words: [
+            { pt: 'o carro dele', pron: 'u káju déli', es: 'su carro (de él)' },
+            { pt: 'a casa dela', pron: 'a káza déla', es: 'su casa (de ella)' },
+            { pt: 'os filhos deles', pron: 'us fílius délis', es: 'sus hijos (de ellos)' },
+            { pt: 'as amigas delas', pron: 'as amígas délas', es: 'sus amigas (de ellas)' }
+          ] },
+        { id: 'po7', tag: 'Sin confusión', tagIcon: 'fa-scale-balanced',
+          rule: '¿De quién es el libro?', hint: 'En español «su libro» puede ser de todos. En portugués queda claro.',
+          words: [
+            { pt: 'o seu livro', pron: 'u séu lívru', es: 'tu libro (de você)' },
+            { pt: 'o livro dele', pron: 'u lívru déli', es: 'el libro de él' },
+            { pt: 'o livro dela', pron: 'u lívru déla', es: 'el libro de ella' },
+            { pt: 'o livro de vocês', pron: 'u lívru dji vosêis', es: 'el libro de ustedes' }
+          ] },
         { id: 'p3', tag: 'Dele · Dela', tagIcon: 'fa-bicycle',
           pt: 'A bicicleta dele é azul.', pron: 'A bisikléta déli é azúu', es: 'La bicicleta de él es azul.',
-          key: { pt: 'de + ele = dele', pron: 'dji + éli = déli', es: 'de + él' } }
+          key: { pt: 'de + ele = dele', pron: 'dji + éli = déli', es: 'de + él' } },
+        { id: 'pop3', tag: 'Aclarar', tagIcon: 'fa-mobile-screen',
+          pt: 'Esse é o seu celular ou o celular dela?', pron: 'Ési é u séu selulá(r) ô u selulá(r) déla?', es: '¿Ese es tu celular o el celular de ella?',
+          key: { pt: 'o seu · o dela', pron: 'u séu · u déla', es: 'el tuyo · el de ella' } },
+        { id: 'pop4', tag: 'Pareja', tagIcon: 'fa-ring', hl: 'dela',
+          pt: 'Ela foi à festa com o marido dela.', pron: 'Éla fôi à fésta kong u marídu déla', es: 'Ella fue a la fiesta con su esposo.',
+          key: { pt: 'o marido dela', pron: 'u marídu déla', es: 'su esposo (de ella)' } },
+        { id: 'pop5', tag: 'Plural', tagIcon: 'fa-school',
+          pt: 'A Lia e o Pedro? A escola deles fica perto.', pron: 'A Lía i u Pédru? A iskóla délis fíka pértu', es: '¿Lia y Pedro? Su escuela queda cerca.',
+          key: { pt: 'deles · delas', pron: 'délis · délas', es: 'de ellos · de ellas' } },
+        { section: 'Con o sin artículo', rd: 'poss-art', icon: 'fa-a', text: 'En Brasil el artículo es <b>opcional</b>: «meu carro» o «o meu carro». Pero con preposición se nota: <b>na minha casa, do meu pai</b>. Y el posesivo también puede ir <b>después</b>: um amigo meu.' },
+        { id: 'po8', tag: 'Con preposición', tagIcon: 'fa-link',
+          rule: 'Na minha casa, do meu pai…', hint: 'Em + a minha = <b>na minha</b> · de + o meu = <b>do meu</b>.',
+          words: [
+            { pt: 'o meu carro = meu carro', pron: 'u méu káju = méu káju', es: 'mi carro' },
+            { pt: 'na minha casa', pron: 'na míña káza', es: 'en mi casa' },
+            { pt: 'do meu pai', pron: 'du méu pái', es: 'de mi papá' },
+            { pt: 'com a minha irmã', pron: 'kong a míña irmáng', es: 'con mi hermana' }
+          ] },
+        { id: 'po9', tag: 'Después del sustantivo', tagIcon: 'fa-arrow-right',
+          rule: 'Um amigo meu, é meu!', hint: 'Como «un amigo mío» o «¡es mío!» en español.',
+          words: [
+            { pt: 'um amigo meu', pron: 'ung amígu méu', es: 'un amigo mío' },
+            { pt: 'uma prima minha', pron: 'úma príma míña', es: 'una prima mía' },
+            { pt: 'É meu!', pron: 'É méu!', es: '¡Es mío!' },
+            { pt: 'Isso é seu?', pron: 'Ísu é séu?', es: '¿Eso es tuyo?' }
+          ] },
+        { id: 'pop6', tag: 'Familia', tagIcon: 'fa-house-chimney', hl: 'da minha',
+          pt: 'Vou almoçar na casa da minha avó.', pron: 'Vô aumosá(r) na káza da míña avó', es: 'Voy a almorzar a la casa de mi abuela.',
+          key: { pt: 'da minha = de + a minha', pron: 'da míña', es: 'de mi' } },
+        { id: 'pop7', tag: 'Cariño', tagIcon: 'fa-heart',
+          pt: 'Meu amor, você viu as minhas chaves?', pron: 'Méu amô(r), vosê víu as míñas shávis?', es: 'Mi amor, ¿viste mis llaves?',
+          key: { pt: 'Meu amor! · Meu Deus!', pron: 'Méu amô(r)! · Méu Dêus!', es: '¡Mi amor! · ¡Dios mío! (sin artículo)' } },
+        { section: 'Sin sustantivo: o meu, a sua…', rd: 'poss-pron', icon: 'fa-hand-holding', text: 'Cuando no repites la cosa, el posesivo va con artículo: <b>o meu, a sua</b> = el mío, la tuya. Para preguntar: <b>De quem é?</b>' },
+        { id: 'po10', tag: 'El mío, la tuya', tagIcon: 'fa-hand-holding',
+          rule: 'O meu, a sua, os nossos…', hint: 'Funcionan igual que «el mío, la tuya, los nuestros».',
+          words: [
+            { pt: 'o meu', pron: 'u méu', es: 'el mío' },
+            { pt: 'a sua', pron: 'a súa', es: 'la tuya' },
+            { pt: 'os nossos', pron: 'us nósus', es: 'los nuestros' },
+            { pt: 'a dele', pron: 'a déli', es: 'la de él' }
+          ] },
+        { id: 'pop8', tag: 'Comparar', tagIcon: 'fa-car',
+          pt: 'O meu carro é azul, e o seu?', pron: 'U méu káju é azúu, i u séu?', es: 'Mi carro es azul, ¿y el tuyo?',
+          key: { pt: 'e o seu?', pron: 'i u séu?', es: '¿y el tuyo?' } },
+        { id: 'pop9', tag: 'Mochila', tagIcon: 'fa-bag-shopping',
+          pt: 'Esta mochila é sua? — Não, a minha é preta.', pron: 'Ésta moshíla é súa? — Náung, a míña é préta', es: '¿Esta mochila es tuya? — No, la mía es negra.',
+          key: { pt: 'a minha', pron: 'a míña', es: 'la mía' } },
+        { id: 'pop10', tag: 'Preguntar', tagIcon: 'fa-circle-question',
+          pt: 'De quem é este boné? — É meu!', pron: 'Dji kéing é éschi boné? — É méu!', es: '¿De quién es esta gorra? — ¡Es mía!',
+          key: { pt: 'De quem é…?', pron: 'Dji kéing é', es: '¿De quién es…?' } },
+        { section: '¡Ejercicios!', rd: 'poss-ex', icon: 'fa-pencil', text: 'Primero elige la opción correcta y luego escribe tú la palabra. La pista entre paréntesis dice <b>quién es el dueño</b>.' },
+        { id: 'pox1', tag: 'Ejercicio 1', tagIcon: 'fa-venus-mars',
+          rule: 'Concordancia', hint: 'Mira el género y el número de la cosa <b>en portugués</b>.',
+          ex: [
+            { q: '«Mi casa es grande.» → «___ casa é grande.»', o: ['Meu', 'Minha', 'Minhas'], a: 1, why: 'Casa es femenino singular → minha.' },
+            { q: '«Mis libros» → «Os ___ livros»', o: ['meus', 'minhas', 'meu'], a: 0, why: 'Livros es masculino plural → meus.' },
+            { q: '«Nuestras vacaciones» → «As ___ férias»', o: ['nossos', 'nossas', 'nossa'], a: 1, why: 'Férias es femenino plural → nossas.' },
+            { q: '«Mi viaje» → «A ___ viagem»', o: ['meu', 'minha', 'minhas'], a: 1, why: 'A viagem es femenina en portugués → minha.' },
+            { q: '«Tu leche» → «O ___ leite»', o: ['sua', 'seu', 'seus'], a: 1, why: 'O leite es masculino en portugués → seu.' }
+          ] },
+        { id: 'pox2', tag: 'Ejercicio 2', tagIcon: 'fa-people-arrows',
+          rule: 'Seu, dele o dela', hint: 'Seu = de você · dele = de él · dela = de ella · deles / delas = de ellos / ellas.',
+          ex: [
+            { q: 'Hablas con un amigo: «Esse é o ___ carro?»', o: ['seu', 'dele', 'dela'], a: 0, why: 'Le hablas a él (você) → seu.' },
+            { q: 'Hablas del papá de Pedro: «O pai ___ é médico.»', o: ['seu', 'dele', 'dela'], a: 1, why: 'De Pedro (ele) → dele.' },
+            { q: 'Hablas de la casa de Lia: «A casa ___ é azul.»', o: ['dele', 'dela', 'deles'], a: 1, why: 'De Lia (ela) → dela. Concuerda con la dueña, no con «casa».' },
+            { q: 'De Pedro y Davi: «Os pais ___ são simpáticos.»', o: ['dele', 'delas', 'deles'], a: 2, why: 'Dos hombres → deles.' },
+            { q: 'De Lia y su mamá: «O cachorro ___ se chama Bob.»', o: ['deles', 'delas', 'dela'], a: 1, why: 'Dos mujeres → delas.' }
+          ] },
+        { id: 'pox3', tag: 'Ejercicio 3', tagIcon: 'fa-language',
+          rule: 'Traduce al portugués', hint: 'Junta todo: concordancia, dele / dela, artículo y posesivo sin sustantivo.',
+          ex: [
+            { q: '«Un amigo mío vive en Río.»', o: ['Um meu amigo mora no Rio.', 'Um amigo meu mora no Rio.', 'Um amigo de mim mora no Rio.'], a: 1, why: 'Posesivo después del sustantivo: um amigo meu.' },
+            { q: '«¿De quién es? — ¡Es mío!»', o: ['De quem é? — É meu!', 'De quem é? — É mim!', 'De quem é? — É minho!'], a: 0, why: '«Mío» = meu. «Mim» es «mí» (pra mim).' },
+            { q: '«Voy a la casa de mi abuela.»', o: ['Vou na casa da minha avó.', 'Vou na casa do minha avó.', 'Vou na casa da meu avó.'], a: 0, why: 'De + a minha = da minha · avó (abuela) es femenino.' },
+            { q: '«Mi carro es rojo, ¿y el tuyo?»', o: ['O meu carro é vermelho, e o seu?', 'O meu carro é vermelho, e a sua?', 'A minha carro é vermelho, e o seu?'], a: 0, why: 'Carro es masculino → o meu… e o seu.' },
+            { q: '«Ella fue con su esposo (de ella).»', o: ['Ela foi com o marido dela.', 'Ela foi com o marido dele.', 'Ela foi com a marido dela.'], a: 0, why: 'Dueña = ella → dela.' }
+          ] },
+        { id: 'pow1', tag: 'Escribir 1', tagIcon: 'fa-keyboard',
+          rule: 'Completa con el posesivo (1)', hint: 'Escribe el posesivo. La pista dice <b>quién es el dueño</b>. Recuerda: dele / dela van después de la cosa. Pulsa Enter para comprobar.',
+          wr: [
+            { q: 'Esta é a _____ casa. (eu)', a: ['minha'], why: 'Eu + casa (femenino) → minha.' },
+            { q: 'Os _____ amigos chegaram cedo. (nós)', a: ['nossos'], why: 'Nós + amigos (masc. plural) → nossos.' },
+            { q: 'Você esqueceu as _____ chaves no carro! (você)', a: ['suas'], why: 'Você + chaves (fem. plural) → suas.' },
+            { q: 'O irmão _____ trabalha num banco. (ela)', a: ['dela'], why: 'Ela → dela (después de la cosa).' },
+            { q: 'Os filhos _____ estudam na mesma escola. (eles)', a: ['deles'], why: 'Eles → deles.' },
+            { q: 'A _____ viagem foi incrível. (nós)', a: ['nossa'], why: 'Nós + viagem (femenino) → nossa.' },
+            { q: 'Esses são os _____ livros? (você)', a: ['seus'], why: 'Você + livros (masc. plural) → seus.' },
+            { q: 'Eu adoro o _____ cachorro, ele é muito fofo. (eu)', a: ['meu'], why: 'Eu + cachorro (masculino) → meu.' },
+            { q: 'A professora _____ é brasileira. (eles)', a: ['deles'], why: 'Eles → deles. Concuerda con los dueños, no con «professora».' },
+            { q: 'As _____ irmãs moram na Colômbia. (eu)', a: ['minhas'], why: 'Eu + irmãs (fem. plural) → minhas.' }
+          ] },
+        { id: 'pow2', tag: 'Escribir 2', tagIcon: 'fa-keyboard',
+          rule: 'Completa con el posesivo (2)', hint: 'Ahora con preposiciones y sin sustantivo. Pulsa Enter para comprobar.',
+          wr: [
+            { q: 'Vou almoçar na casa da _____ avó. (eu)', a: ['minha'], why: 'Eu + avó (femenino) → da minha avó.' },
+            { q: 'O carro _____ é vermelho. (ele)', a: ['dele'], why: 'Ele → dele.' },
+            { q: 'Qual é o _____ nome? (você)', a: ['seu'], why: 'Você + nome (masculino) → seu.' },
+            { q: 'As amigas _____ são muito simpáticas. (elas)', a: ['delas'], why: 'Elas → delas.' },
+            { q: 'Este lápis é _____? (você)', a: ['seu'], why: 'Lápis es masculino → É seu?' },
+            { q: 'Não, não é meu. O _____ é azul. (eu)', a: ['meu'], why: 'Sin sustantivo: o meu = el mío.' },
+            { q: 'A _____ família é grande: somos oito! (nós)', a: ['nossa'], why: 'Nós + família (femenino) → nossa.' },
+            { q: 'Um amigo _____ mora em São Paulo. (eu)', a: ['meu'], why: 'Posesivo después: um amigo meu.' },
+            { q: 'O cachorro _____ se chama Bolinha. (o vizinho)', a: ['dele'], why: 'El vecino = ele → dele.' },
+            { q: 'Nas _____ férias, a gente vai para a praia. (nós)', a: ['nossas'], why: 'Em + as nossas férias → nas nossas.' }
+          ] },
       ]
     },
     {
@@ -3063,6 +3237,40 @@
   MODULES.sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
   MODULES.forEach((m, i) => { m.num = i + 1; m.group = GROUPS.find(g => g.ids.includes(m.id)); });
 
+  // Descripción corta en portugués de cada módulo: [frase, pronunciación]
+  const DESCS = {
+    apres: ['Aprenda a se apresentar: nome, idade, origem e o que você faz.', 'Aprénda a si aprezentá(r): nômi, idádji, orízheing i u ki vosê fáis'],
+    som: ['Os sons do português do Brasil que mais confundem quem fala espanhol.', 'Us sóngs du portugêis du Brazíu ki máis konfúndeing kéing fála ispañóu'],
+    num: ['Números para contar, dizer datas e telefones e pagar em reais.', 'Númerus pra kontá(r), djizê(r) dátas i telefônis i pagá(r) ing jeáis'],
+    horas: ['Como perguntar e dizer as horas e marcar encontros.', 'Kómu perguntá(r) i djizê(r) as óras i marká(r) enkóntrus'],
+    dias: ['Os dias da semana e como fazer planos.', 'Us djías da semána i kómu fazê(r) plánus'],
+    meses: ['Os meses, as estações e as festas do ano no Brasil.', 'Us mézis, as istasóings i as féstas du ánu nu Brazíu'],
+    clima: ['Fale do tempo: sol, chuva, calor, frio e a previsão.', 'Fáli du témpu: sóu, shúva, kalô(r), fríu i a previzáung'],
+    cores: ['As cores, seus tons e expressões para descrever o mundo.', 'As kôris, séus tóngs i isprezóings pra deskrevê(r) u múndu'],
+    verbos: ['Ser, estar e ir: os três verbos mais importantes do dia a dia.', 'Sê(r), istá(r) i í(r): us trêis vérbus máis importánchis du djía a djía'],
+    hetero: ['Palavras que mudam de gênero do espanhol para o português.', 'Palávras ki múdaung dji zhêneru du ispañóu pru portugêis'],
+    adj: ['Adjetivos para descrever pessoas, coisas e sentimentos.', 'Adzhechívus pra deskrevê(r) pesôas, kôizas i sentchiméntus'],
+    poss: ['Meu, seu, nosso, dele: como dizer de quem é cada coisa.', 'Méu, séu, nósu, déli: kómu djizê(r) dji kéing é káda kôiza'],
+    demo: ['Este, esse, aquele, isso: aponte para tudo com segurança.', 'Éschi, ési, akéli, ísu: apónchi pra túdu kong segurânsa'],
+    contr: ['Contrações sem medo: no, na, do, da, ao e à.', 'Kontrasóings séing médu: nu, na, du, da, au i à'],
+    paises: ['Os países com seus artigos e as nacionalidades.', 'Us paízis kong séus artchígus i as nasionalidádjis'],
+    perg: ['Perguntas essenciais: quem, onde, quando, por que e muito mais.', 'Pergúntas esensiáis: kéing, óndji, kuándu, pur kê i múintu máis'],
+    passado: ['O pretérito perfeito: conte o que você fez, passo a passo.', 'U pretéritu perféitu: kónchi u ki vosê fêis, pásu a pásu'],
+    vverbos: ['Os verbos mais usados, no presente e no passado.', 'Us vérbus máis uzádus, nu prezénchi i nu pasádu'],
+    familia: ['A família: pais, irmãos, avós, tios e muito carinho.', 'A família: páis, irmáungs, avós, chíus i múintu karíñu'],
+    casa: ['A casa: os cômodos, onde ficam as coisas e as tarefas.', 'A káza: us kômodus, óndji fíkaung as kôizas i as taréfas'],
+    cidade: ['A cidade: lugares, ruas, direções e transporte.', 'A sidádji: lugáris, júas, djiresóings i transpórchi'],
+    rotina: ['Conte o seu dia: acordar, trabalhar, comer e dormir.', 'Kónchi u séu djía: akordá(r), trabaliá(r), komê(r) i dormí(r)'],
+    comida: ['Comidas, bebidas e frases para pedir no restaurante.', 'Komídas, bebídas i frázis pra pedjí(r) nu jestauránchi'],
+    prof: ['Profissões e frases para falar do seu trabalho.', 'Profisóings i frázis pra falá(r) du séu trabáliu'],
+    objetos: ['Os objetos que você usa todo dia, com imagens.', 'Us obzhétus ki vosê úza tôdu djía, kong imázheings'],
+    animais: ['Animais de estimação, da fazenda e da natureza brasileira.', 'Animáis dji istimasáung, da fazénda i da naturêza brazilêra'],
+    vocab: ['As palavras mais usadas, organizadas por temas.', 'As palávras máis uzádas, organizádas pur têmas'],
+    pratica: ['Pratique com flashcards e quiz e ganhe XP!', 'Prachíki kong fléshkards i kuíz i gáñi ékis pê!'],
+    prompt: ['Um prompt pronto para estudar com inteligência artificial.', 'Ung prómpchi próntu pra istudá(r) kong intelizhénsia artifisiáu']
+  };
+  MODULES.forEach(m => { m.desc = DESCS[m.id]; });
+
   const FLASH = [
     { id: 'f9',  cat: 'Presentación', icon: 'fa-hand',          pt: 'Eu me chamo…',         pron: 'Eu mi shámu',           es: 'Me llamo…' },
     { id: 'f1',  cat: 'Rutina',       icon: 'fa-bed',           pt: 'Eu acordo cedo',       pron: 'Eu akórdu sédu',        es: 'Me despierto temprano' },
@@ -3847,7 +4055,37 @@
       ['Os dois são amigos inteligentes e simpáticos.', 'Us dóis sáung amígus intelizhénchis i simpáchikus', 'Los dos son amigos inteligentes y simpáticos.'],
       ['O Pedro fala português muito bem!', 'U Pédru fála portugués múintu béing!', '¡Pedro habla portugués muy bien!']
     ] },
-    'poss': { emoji: '🛏️', pt: 'O quarto da Lia', pron: 'U kuártu da Lía', es: 'El cuarto de Lia', lines: [
+    'poss-conc': { emoji: '🎒', pt: 'A mochila nova', pron: 'A moshíla nóva', es: 'La mochila nueva', lines: [
+      ['A Lia tem uma mochila nova.', 'A Lía téing úma moshíla nóva', 'Lia tiene una mochila nueva.'],
+      ['"A minha mochila é roxa e os meus cadernos são azuis."', '"A míña moshíla é jósha i us méus kadérnus sáung azúis"', '"Mi mochila es morada y mis cuadernos son azules."'],
+      ['O Pedro diz: "Os nossos lápis são iguais!"', 'U Pédru djís: "Us nósus lápis sáung iguáis!"', 'Pedro dice: "¡Nuestros lápices son iguales!"'],
+      ['"Que legal! A nossa turma vai gostar."', '"Ki legáu! A nósa túrma vái gostá(r)"', '"¡Qué chévere! A nuestro grupo le va a gustar."']
+    ] },
+    'poss-dele': { emoji: '🐶', pt: 'Dele ou dela?', pron: 'Déli ô déla?', es: '¿De él o de ella?', lines: [
+      ['O Pedro tem um cachorro. O cachorro dele é grande.', 'U Pédru téing ung kashóju. U kashóju déli é grándji', 'Pedro tiene un perro. Su perro es grande.'],
+      ['A Lia tem um papagaio. O papagaio dela é o Tico.', 'A Lía téing ung papagáiu. U papagáiu déla é u Tíku', 'Lia tiene un loro. Su loro es Tico.'],
+      ['Os dois têm uma professora. A professora deles é a Marta.', 'Us dóis têing úma profesôra. A profesôra délis é a Márta', 'Los dos tienen una profesora. Su profesora es Marta.'],
+      ['O Tico pergunta: "E a sua casa, Pedro, onde fica?"', 'U Tíku pergúnta: "I a súa káza, Pédru, óndji fíka?"', 'Tico pregunta: "¿Y tu casa, Pedro, dónde queda?"']
+    ] },
+    'poss-art': { emoji: '👵', pt: 'Na casa da minha avó', pron: 'Na káza da míña avó', es: 'En la casa de mi abuela', lines: [
+      ['Todo domingo, a Lia vai na casa da avó dela.', 'Tôdu domíngu, a Lía vái na káza da avó déla', 'Todos los domingos, Lia va a la casa de su abuela.'],
+      ['"Meu amor, que saudade!", diz a vovó Ana.', '"Méu amô(r), ki saudádji!", djís a vovó Ána', '"¡Mi amor, qué falta me hacías!", dice la abuela Ana.'],
+      ['Lá também está um primo meu, o Davi.', 'Lá tambéing istá ung prímu méu, u Dávi', 'Allá también está un primo mío, Davi.'],
+      ['A Lia diz: "A casa da minha avó é a minha casa favorita!"', 'A Lía djís: "A káza da míña avó é a míña káza favoríta!"', 'Lia dice: "¡La casa de mi abuela es mi casa favorita!"']
+    ] },
+    'poss-pron': { emoji: '🧢', pt: 'De quem é?', pron: 'Dji kéing é?', es: '¿De quién es?', lines: [
+      ['No parque, o Pedro encontra um boné no chão.', 'Nu párki, u Pédru enkóntra ung boné nu sháung', 'En el parque, Pedro encuentra una gorra en el piso.'],
+      ['"De quem é este boné? É seu, Lia?"', '"Dji kéing é éschi boné? É séu, Lía?"', '"¿De quién es esta gorra? ¿Es tuya, Lia?"'],
+      ['"Não, o meu é rosa. Esse é azul."', '"Náung, u méu é józa. Ési é azúu"', '"No, la mía es rosada. Esa es azul."'],
+      ['Um menino corre e grita: "É meu! Obrigado!"', 'Ung menínu kóji i gríta: "É méu! Obrigádu!"', 'Un niño corre y grita: "¡Es mía! ¡Gracias!"']
+    ] },
+    'poss-ex': { emoji: '🏆', pt: 'O jogo do Tico', pron: 'U zhógu du Tíku', es: 'El juego de Tico', lines: [
+      ['O Tico inventa um jogo: "De quem é?"', 'U Tíku invénta ung zhógu: "Dji kéing é?"', 'Tico inventa un juego: "¿De quién es?"'],
+      ['Ele mostra uma caneta: "É sua ou dela?"', 'Éli móstra úma kanéta: "É súa ô déla?"', 'Muestra un esfero: "¿Es tuyo o de ella?"'],
+      ['A Lia ri: "É minha! A dela é verde."', 'A Lía jí: "É míña! A déla é vérdji"', 'Lia se ríe: "¡Es mío! El de ella es verde."'],
+      ['"Acertou! Ponto para a nossa equipe!"', '"Asertô! Póntu pra nósa ekípi!"', '"¡Acertaste! ¡Punto para nuestro equipo!"']
+    ] },
+    'poss-formas': { emoji: '🛏️', pt: 'O quarto da Lia', pron: 'U kuártu da Lía', es: 'El cuarto de Lia', lines: [
       ['Este é o meu quarto.', 'Éschi é u méu kuártu', 'Este es mi cuarto.'],
       ['A minha cama é azul e as minhas bonecas são novas.', 'A míña káma é azúu i as míñas bonékas sáung nóvas', 'Mi cama es azul y mis muñecas son nuevas.'],
       ['O Pedro traz a bola dele para brincar.', 'U Pédru tráis a bóla déli pra brinká(r)', 'Pedro trae su balón para jugar.'],
@@ -4575,6 +4813,10 @@
           <h2 class="text-2xl font-bold text-slate-900 leading-tight">${m.title}</h2>
           <p class="text-sm italic text-indigo-600">🔊 [${m.pron}]</p>
           <p class="text-sm text-slate-500">${m.es}</p>
+          ${m.desc ? `<button data-say="${esc(m.desc[0])}" class="mt-2 block text-left rounded-lg bg-emerald-50 border border-emerald-100 hover:border-emerald-300 px-3 py-1.5 transition">
+            <span class="block text-sm font-semibold text-emerald-900">🇧🇷 ${m.desc[0]}</span>
+            <span class="block text-xs italic text-indigo-600">🔊 [${m.desc[1]}]</span>
+          </button>` : ''}
         </div>
         <button data-say="${esc(m.title)}" class="w-11 h-11 shrink-0 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 grid place-items-center" title="Escuchar título">
           <i class="fa-solid fa-volume-high"></i><span class="sr-only">Escuchar</span>
