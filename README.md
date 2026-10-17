@@ -14,5 +14,9 @@ Cada módulo incluye una **lectura para niños** (y una por cada sección intern
 
 - **Primeros pasos:** Presentación · Pronunciación · Números (fechas, teléfonos y dinero) · ¿Qué hora es? · Días de la semana · Meses y estaciones · Colores
 - **Gramática:** Ser, estar e ir · Heterogenéricos · Adjetivos · Posesivos · Contracciones · Países · Preguntas · Pasado (pretérito perfeito) · Verbos (presente y pasado)
-- **Vida diaria:** Rutina · Comida · Profesiones · Vocabulario
+- **Vida diaria:** Rutina · Comida · Profesiones · Objetos del día a día (con imágenes) · Vocabulario
 - **Practicar:** Flashcards y quiz · Prompt IA
+
+## Créditos
+
+Imágenes de [Twemoji](https://github.com/jdecked/twemoji) (CC-BY 4.0) e íconos de [Font Awesome](https://fontawesome.com).

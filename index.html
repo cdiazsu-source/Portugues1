@@ -123,6 +123,7 @@
   <footer class="border-t border-slate-200 bg-white mt-12">
     <div class="max-w-5xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-500">
       <p>🇧🇷 Português A1 · Hecho para Cesar 💚 · Basado en los apuntes de clase</p>
+      <p class="text-xs">Imágenes: <a href="https://github.com/jdecked/twemoji" target="_blank" rel="noopener" class="underline">Twemoji</a> (CC-BY 4.0) · Íconos: Font Awesome</p>
       <button data-action="reset" class="text-slate-400 hover:text-slate-700 underline underline-offset-4">Reiniciar progreso</button>
     </div>
   </footer>
@@ -1408,6 +1409,245 @@
       ]
     },
     {
+      id: 'objetos', num: 0, tab: 'Objetos', icon: 'fa-couch', color: 'rose',
+      title: 'Os Objetos do Dia a Dia', pron: 'Us Obzhétus du Djía a Djía', es: 'Los objetos del día a día · Casa, escuela, tecnología, ropa y más',
+      tip: {
+        title: 'Aprende cada objeto con su artículo',
+        text: 'Memoriza siempre <b>o</b> o <b>a</b> junto a la palabra: muchos objetos cambian de género respecto al español (<b>o sal</b>, <b>a colher</b>…). Toca cada imagen para oírla y repítela en voz alta.',
+        words: [
+          { pt: 'o objeto', pron: 'u obzhétu', es: 'el objeto' },
+          { pt: 'a coisa', pron: 'a kôiza', es: 'la cosa' },
+          { pt: 'Como se chama isso?', pron: 'Kómu si sháma ísu', es: '¿Cómo se llama esto?' }
+        ]
+      },
+      phrases: [
+        { section: 'Sala y cuarto', rd: 'obj-casa', icon: 'fa-house', text: 'Los objetos de la casa. Para decir dónde están: <b>em cima de</b> (encima), <b>embaixo de</b> (debajo), <b>do lado de</b> (al lado).' },
+        { id: 'ob1', tag: 'Na sala', tagIcon: 'fa-couch',
+          rule: 'O sofá, a cadeira, a TV…', hint: '<b>Cadeira</b> = silla (¡no cadera!). Al hablar, la tele es <b>a TV</b> [a tevê].',
+          pics: [
+            ['🛋️', 'o sofá', 'u sofá', 'el sofá'],
+            ['🪑', 'a cadeira', 'a kadéra', 'la silla'],
+            ['📺', 'a televisão', 'a televizáung', 'el televisor'],
+            ['🪴', 'a planta', 'a plánta', 'la planta']
+          ] },
+        { id: 'ob2', tag: 'Por la casa', tagIcon: 'fa-door-open',
+          rule: 'A porta, a janela…', hint: '<b>Janela</b> = ventana · <b>lâmpada</b> = bombillo.',
+          pics: [
+            ['🚪', 'a porta', 'a pórta', 'la puerta'],
+            ['🪟', 'a janela', 'a zhanéla', 'la ventana'],
+            ['💡', 'a lâmpada', 'a lámpada', 'el bombillo'],
+            ['🕰️', 'o relógio', 'u jelózhiu', 'el reloj']
+          ] },
+        { id: 'ob3', tag: 'No quarto', tagIcon: 'fa-bed',
+          rule: 'A cama, o despertador…', hint: 'La almohada es <b>o travesseiro</b> [u travesséru] y la cobija, <b>o cobertor</b>.',
+          pics: [
+            ['🛏️', 'a cama', 'a káma', 'la cama'],
+            ['⏰', 'o despertador', 'u dispertadô(r)', 'el despertador'],
+            ['🧸', 'o ursinho de pelúcia', 'u ursíñu dji pelúsia', 'el oso de peluche'],
+            ['📦', 'a caixa', 'a káisha', 'la caja']
+          ] },
+        { id: 'obp1', tag: 'Dónde está', tagIcon: 'fa-magnifying-glass',
+          pt: 'O controle da TV está embaixo do sofá.', pron: 'U kontróli da tevê istá imbáishu du sofá', es: 'El control de la tele está debajo del sofá.',
+          nat: { pt: 'Cadê o controle?', pron: 'Kadê u kontróli?', note: '«Cadê?» = ¿dónde está? Muy brasileño.' },
+          key: { pt: 'em cima de · embaixo de', pron: 'ing síma dji · imbáishu dji', es: 'encima de · debajo de' } },
+
+        { section: 'Cocina', rd: 'obj-cozinha', icon: 'fa-kitchen-set', text: 'Ojo con los vasos: <b>copo</b> = vaso, <b>taça</b> = copa, <b>xícara</b> = taza.' },
+        { id: 'ob4', tag: 'Para comer', tagIcon: 'fa-utensils',
+          rule: 'O prato, o garfo, a faca, a colher', hint: '<b>Garfo</b> = tenedor · <b>colher</b> = cuchara. Los tres juntos son <b>os talheres</b> (cubiertos).',
+          pics: [
+            ['🍽️', 'o prato', 'u prátu', 'el plato'],
+            ['🍴', 'o garfo', 'u gárfu', 'el tenedor'],
+            ['🔪', 'a faca', 'a fáka', 'el cuchillo'],
+            ['🥄', 'a colher', 'a kolié(r)', 'la cuchara']
+          ] },
+        { id: 'ob5', tag: 'Para beber', tagIcon: 'fa-mug-hot',
+          rule: 'O copo, a xícara, a garrafa, a taça', hint: '¡Trampa! <b>copo</b> = vaso y <b>taça</b> = copa.',
+          pics: [
+            ['🥛', 'o copo', 'u kópu', 'el vaso (¡no copa!)'],
+            ['☕', 'a xícara', 'a shíkara', 'la taza'],
+            ['🍾', 'a garrafa', 'a gajáfa', 'la botella'],
+            ['🍷', 'a taça', 'a tása', 'la copa']
+          ] },
+        { id: 'ob6', tag: 'Para cocinar', tagIcon: 'fa-fire-burner',
+          rule: 'A panela, a frigideira, a geladeira', hint: '<b>Geladeira</b> = nevera · <b>fogão</b> [fogáung] = estufa.',
+          pics: [
+            ['🍲', 'a panela', 'a panéla', 'la olla'],
+            ['🍳', 'a frigideira', 'a frizhidéra', 'la sartén'],
+            ['🫖', 'o bule', 'u búli', 'la tetera'],
+            ['🧊', 'a geladeira', 'a zheladéra', 'la nevera']
+          ] },
+        { id: 'obp2', tag: 'En la mesa', tagIcon: 'fa-glass-water', hl: 'copo',
+          pt: 'Me passa o sal e um copo de água, por favor.', pron: 'Mi pása u sáu i ung kópu dji água, pur favô(r)', es: 'Pásame la sal y un vaso de agua, por favor.',
+          key: { pt: 'o sal · um copo de', pron: 'u sáu · ung kópu dji', es: 'la sal (¡masculino!) · un vaso de' } },
+
+        { section: 'Baño', rd: 'obj-banheiro', icon: 'fa-shower', text: 'En Brasil el baño es <b>o banheiro</b>, y «tomar banho» es ducharse.' },
+        { id: 'ob7', tag: 'Higiene', tagIcon: 'fa-soap',
+          rule: 'O sabonete, a escova de dentes…', hint: '<b>Sabonete</b> = jabón de baño · <b>chuveiro</b> = ducha.',
+          pics: [
+            ['🧼', 'o sabonete', 'u sabonéchi', 'el jabón'],
+            ['🪥', 'a escova de dentes', 'a iskóva dji dénchis', 'el cepillo de dientes'],
+            ['🧻', 'o papel higiênico', 'u papéu izhiêniku', 'el papel higiénico'],
+            ['🚿', 'o chuveiro', 'u shuvéru', 'la ducha']
+          ] },
+        { id: 'ob8', tag: 'Más del baño', tagIcon: 'fa-bath',
+          rule: 'O espelho, o xampu…', hint: 'La toalla es <b>a toalha</b> [a tuália] y la crema dental, <b>a pasta de dente</b>.',
+          pics: [
+            ['🪞', 'o espelho', 'u ispéliu', 'el espejo'],
+            ['🧴', 'o xampu', 'u shampú', 'el champú'],
+            ['🧽', 'a esponja', 'a ispónzha', 'la esponja'],
+            ['🛁', 'a banheira', 'a bañéra', 'la tina']
+          ] },
+        { id: 'obp3', tag: 'Olvido', tagIcon: 'fa-face-flushed',
+          pt: 'Esqueci a escova de dentes!', pron: 'Iskesí a iskóva dji dénchis!', es: '¡Se me olvidó el cepillo de dientes!',
+          nat: { pt: 'Putz, esqueci a escova!', pron: 'Púts, iskesí a iskóva!', note: '«Putz» = ¡uy! / ¡rayos! (informal).' },
+          key: { pt: 'esquecer', pron: 'iskesê(r)', es: 'olvidar' } },
+
+        { section: 'Escuela y oficina', rd: 'obj-escola', icon: 'fa-pencil', text: 'Útiles para estudiar y trabajar. ¡Cuidado con <b>borracha</b> y <b>caneta</b>!' },
+        { id: 'ob9', tag: 'Para escribir', tagIcon: 'fa-pen',
+          rule: 'O lápis, a caneta, o caderno, o livro', hint: '<b>Caneta</b> = esfero (¡no «caneca», que es un pocillo!).',
+          pics: [
+            ['✏️', 'o lápis', 'u lápis', 'el lápiz'],
+            ['🖊️', 'a caneta', 'a kanéta', 'el esfero'],
+            ['📓', 'o caderno', 'u kadérnu', 'el cuaderno'],
+            ['📕', 'o livro', 'u lívru', 'el libro']
+          ] },
+        { id: 'ob10', tag: 'Útiles', tagIcon: 'fa-scissors',
+          rule: 'A borracha, a tesoura, a régua…', hint: '<b>Borracha</b> = borrador (¡no «borracha»!) · <b>a tesoura</b> va en singular.',
+          pics: [
+            ['fa-eraser', 'a borracha', 'a bojásha', 'el borrador'],
+            ['✂️', 'a tesoura', 'a tezôra', 'las tijeras'],
+            ['📏', 'a régua', 'a régua', 'la regla'],
+            ['🎒', 'a mochila', 'a moshíla', 'la maleta, el morral']
+          ] },
+        { id: 'ob11', tag: 'En la oficina', tagIcon: 'fa-briefcase',
+          rule: 'A pasta, o clipe, a agenda', hint: '<b>Pasta</b> = carpeta (y también crema: pasta de dente).',
+          pics: [
+            ['🗂️', 'a pasta', 'a pásta', 'la carpeta'],
+            ['📎', 'o clipe', 'u klípi', 'el clip'],
+            ['📒', 'a agenda', 'a azhénda', 'la agenda'],
+            ['📅', 'o calendário', 'u kalendáriu', 'el calendario']
+          ] },
+        { id: 'obp4', tag: 'Pedir prestado', tagIcon: 'fa-hand-holding',
+          pt: 'Você me empresta uma caneta?', pron: 'Vosê mi emprésta úma kanéta?', es: '¿Me prestas un esfero?',
+          nat: { pt: 'Tem uma caneta aí?', pron: 'Téing úma kanéta aí?', note: 'Forma rápida de pedir algo prestado.' },
+          key: { pt: 'emprestar', pron: 'emprestá(r)', es: 'prestar' } },
+
+        { section: 'Tecnología', rd: 'obj-tec', icon: 'fa-laptop', text: 'Muchas palabras vienen del inglés, pero se pronuncian «a la brasileña»: mouse = «máusi».' },
+        { id: 'ob12', tag: 'Lo de siempre', tagIcon: 'fa-mobile-screen',
+          rule: 'O celular, o notebook, o fone…', hint: 'En Brasil el portátil es <b>o notebook</b> y los audífonos, <b>o fone</b>.',
+          pics: [
+            ['📱', 'o celular', 'u selulá(r)', 'el celular'],
+            ['💻', 'o notebook', 'u notibúki', 'el portátil'],
+            ['🎧', 'o fone de ouvido', 'u fóni dji ovídu', 'los audífonos'],
+            ['🔌', 'o carregador', 'u kajegadô(r)', 'el cargador']
+          ] },
+        { id: 'ob13', tag: 'Computador', tagIcon: 'fa-keyboard',
+          rule: 'O teclado, o mouse, a impressora', hint: '<b>Mouse</b> se dice «máusi», con la i final brasileña.',
+          pics: [
+            ['⌨️', 'o teclado', 'u tekládu', 'el teclado'],
+            ['🖱️', 'o mouse', 'u máusi', 'el mouse'],
+            ['🖨️', 'a impressora', 'a impresóra', 'la impresora'],
+            ['📷', 'a câmera', 'a kâmera', 'la cámara']
+          ] },
+        { id: 'ob14', tag: 'Más aparatos', tagIcon: 'fa-battery-half',
+          rule: 'A bateria, a lanterna, o videogame', hint: '<b>Lanterna</b> = linterna · <b>videogame</b> = consola de videojuegos.',
+          pics: [
+            ['🔋', 'a bateria', 'a batería', 'la batería'],
+            ['🔦', 'a lanterna', 'a lantérna', 'la linterna'],
+            ['🎮', 'o videogame', 'u vidjiugéimi', 'la consola de videojuegos']
+          ] },
+        { id: 'obp5', tag: 'Emergencia', tagIcon: 'fa-battery-empty',
+          pt: 'Meu celular está sem bateria. Você tem um carregador?', pron: 'Méu selulá(r) istá séing batería. Vosê téing ung kajegadô(r)?', es: 'Mi celular está sin batería. ¿Tienes un cargador?',
+          nat: { pt: 'Acabou minha bateria! Tem carregador aí?', pron: 'Akabô míña batería! Téing kajegadô(r) aí?', note: 'La frase de emergencia más dicha en Brasil 😅' },
+          key: { pt: 'sem bateria', pron: 'séing batería', es: 'sin batería' } },
+
+        { section: 'Ropa y accesorios', rd: 'obj-roupa', icon: 'fa-shirt', text: 'Para ponerse ropa: <b>vestir</b> o <b>colocar</b>. Para usarla: <b>usar</b> («Ele usa óculos»).' },
+        { id: 'ob15', tag: 'Ropa', tagIcon: 'fa-shirt',
+          rule: 'A camiseta, a calça, o vestido, o casaco', hint: '<b>Calça</b> = pantalón (¡en singular!). <b>Casaco</b> = chaqueta.',
+          pics: [
+            ['👕', 'a camiseta', 'a kamizéta', 'la camiseta'],
+            ['👖', 'a calça', 'a káusa', 'el pantalón'],
+            ['👗', 'o vestido', 'u vischídu', 'el vestido'],
+            ['🧥', 'o casaco', 'u kazáku', 'la chaqueta']
+          ] },
+        { id: 'ob16', tag: 'Calzado', tagIcon: 'fa-shoe-prints',
+          rule: 'O tênis, o sapato, o chinelo, as meias', hint: '<b>Chinelo</b> = chancla (¡las famosas Havaianas!) · <b>meias</b> = medias.',
+          pics: [
+            ['👟', 'o tênis', 'u ténis', 'los tenis'],
+            ['👞', 'o sapato', 'u sapátu', 'el zapato'],
+            ['🩴', 'o chinelo', 'u shinélu', 'la chancla'],
+            ['🧦', 'as meias', 'as méias', 'las medias']
+          ] },
+        { id: 'ob17', tag: 'Accesorios', tagIcon: 'fa-glasses',
+          rule: 'O boné, os óculos, o relógio, a bolsa', hint: '<b>Óculos</b> siempre va en plural: <b>os meus óculos</b>.',
+          pics: [
+            ['🧢', 'o boné', 'u boné', 'la gorra'],
+            ['👓', 'os óculos', 'us ókulus', 'las gafas'],
+            ['⌚', 'o relógio', 'u jelózhiu', 'el reloj'],
+            ['👜', 'a bolsa', 'a bóusa', 'el bolso, la cartera']
+          ] },
+        { id: 'obp6', tag: 'Cumplido', tagIcon: 'fa-heart', hl: 'calça',
+          pt: 'Essa calça é nova? Ficou ótima em você!', pron: 'Ésa káusa é nóva? Fikô óchima ing vosê!', es: '¿Ese pantalón es nuevo? ¡Te quedó genial!',
+          key: { pt: 'ficou ótima', pron: 'fikô óchima', es: 'te quedó genial' } },
+
+        { section: 'Transporte', rd: 'obj-trans', icon: 'fa-bus', text: 'Con transporte se usa <b>de</b>: <b>de carro, de ônibus</b>. Caminando: <b>a pé</b>.' },
+        { id: 'ob18', tag: 'En la ciudad', tagIcon: 'fa-car',
+          rule: 'O carro, o ônibus, a moto, a bicicleta', hint: 'Al hablar: <b>a bike</b> [a báiki] y el bus, <b>o busão</b>.',
+          pics: [
+            ['🚗', 'o carro', 'u káju', 'el carro'],
+            ['🚌', 'o ônibus', 'u ónibus', 'el bus'],
+            ['🏍️', 'a moto', 'a mótu', 'la moto'],
+            ['🚲', 'a bicicleta', 'a bisikléta', 'la bicicleta']
+          ] },
+        { id: 'ob19', tag: 'Viajes', tagIcon: 'fa-plane',
+          rule: 'O avião, o metrô, o caminhão, o barco', hint: '¡Ojo! <b>Caminhão</b> = camión de carga. El bus es <b>ônibus</b>.',
+          pics: [
+            ['✈️', 'o avião', 'u aviáung', 'el avión'],
+            ['🚇', 'o metrô', 'u metrô', 'el metro'],
+            ['🚚', 'o caminhão', 'u kamiñáung', 'el camión'],
+            ['⛵', 'o barco', 'u bárku', 'el barco']
+          ] },
+        { id: 'obp7', tag: 'Cómo vas', tagIcon: 'fa-route',
+          pt: 'Eu vou de ônibus, mas volto de metrô.', pron: 'Eu vô dji ónibus, mas vóutu dji metrô', es: 'Voy en bus, pero vuelvo en metro.',
+          nat: { pt: 'Vou a pé mesmo.', pron: 'Vô a pé mézmu', note: '«A pé» = a pie · «mesmo» = no más.' },
+          key: { pt: 'ir de + transporte', pron: 'í(r) dji', es: 'ir en + transporte (¡con «de»!)' } },
+
+        { section: 'Para salir de casa', rd: 'obj-sair', icon: 'fa-key', text: 'Antes de salir, revisa: <b>chave, carteira e celular</b>.' },
+        { id: 'ob20', tag: 'No te olvides', tagIcon: 'fa-key',
+          rule: 'A chave, a carteira, o guarda-chuva', hint: '<b>Carteira</b> = billetera · <b>guarda-chuva</b> = paraguas («guarda la lluvia»).',
+          pics: [
+            ['🔑', 'a chave', 'a shávi', 'la llave'],
+            ['👛', 'a carteira', 'a kartéra', 'la billetera'],
+            ['☂️', 'o guarda-chuva', 'u guárda shúva', 'el paraguas'],
+            ['💳', 'o cartão', 'u kartáung', 'la tarjeta']
+          ] },
+        { id: 'obp8', tag: 'Buscar', tagIcon: 'fa-magnifying-glass',
+          pt: 'Cadê a minha chave? — Tá na sua bolsa!', pron: 'Kadê a míña shávi? — Tá na súa bóusa!', es: '¿Dónde está mi llave? — ¡Está en tu bolso!',
+          key: { pt: 'Cadê…?', pron: 'Kadê', es: '¿dónde está…? (informal)' } },
+
+        { section: '¡Falsos amigos!', rd: 'obj-ff', icon: 'fa-triangle-exclamation', text: 'Se parecen al español… ¡pero significan otra cosa! Son los errores más comunes de los hispanohablantes.' },
+        { id: 'ob21', tag: 'Engañan 1', tagIcon: 'fa-face-surprise',
+          rule: 'Borracha, presente, copo, taça', hint: 'Lee bien la traducción: ¡la imagen te ayuda a recordar!',
+          pics: [
+            ['fa-eraser', 'a borracha', 'a bojásha', 'el borrador (¡no «borracha»!)'],
+            ['🎁', 'o presente', 'u prezénchi', 'el regalo'],
+            ['🥛', 'o copo', 'u kópu', 'el vaso (¡no copa!)'],
+            ['🍷', 'a taça', 'a tása', 'la copa']
+          ] },
+        { id: 'ob22', tag: 'Engañan 2', tagIcon: 'fa-face-surprise',
+          rule: 'Vaso, polvo, cadeira, escritório', hint: '<b>O vaso sanitário</b> = el inodoro. ¡Y <b>polvo</b> es un animal!',
+          pics: [
+            ['🏺', 'o vaso', 'u vázu', 'el florero (¡no vaso!)'],
+            ['🐙', 'o polvo', 'u pôuvu', 'el pulpo (¡no polvo!)'],
+            ['🪑', 'a cadeira', 'a kadéra', 'la silla (¡no cadera!)'],
+            ['🏢', 'o escritório', 'u iskritóriu', 'la oficina (¡no escritorio!)']
+          ] },
+        { id: 'obp9', tag: 'Regalo', tagIcon: 'fa-gift',
+          pt: 'Eu comprei um presente para você!', pron: 'Eu kompréi ung prezénchi pra vosê!', es: '¡Te compré un regalo!',
+          key: { pt: 'o presente', pron: 'u prezénchi', es: 'el regalo (y también «el presente»)' } },
+      ]
+    },
+    {
       id: 'vocab', num: 16, tab: 'Vocabulario', icon: 'fa-book', color: 'cyan', vocab: true,
       title: 'Vocabulário Essencial', pron: 'Vokabuláriu Esensiáu', es: 'Vocabulario esencial · Las palabras que más vas a usar, por categorías'
     },
@@ -1429,7 +1669,7 @@
   const GROUPS = [
     { id: 'base', name: 'Primeros pasos', icon: 'fa-seedling', ids: ['apres', 'som', 'num', 'horas', 'dias', 'meses', 'cores'] },
     { id: 'gram', name: 'Gramática', icon: 'fa-puzzle-piece', ids: ['verbos', 'hetero', 'adj', 'poss', 'contr', 'paises', 'perg', 'passado', 'vverbos'] },
-    { id: 'vida', name: 'Vida diaria', icon: 'fa-house', ids: ['rotina', 'comida', 'prof', 'vocab'] },
+    { id: 'vida', name: 'Vida diaria', icon: 'fa-house', ids: ['rotina', 'comida', 'prof', 'objetos', 'vocab'] },
     { id: 'prac', name: 'Practicar', icon: 'fa-gamepad', ids: ['pratica', 'prompt'] }
   ];
   const ORDER = GROUPS.flatMap(g => g.ids);
@@ -1478,7 +1718,12 @@
     { id: 'f39', cat: 'Meses',        icon: 'fa-calendar',      pt: 'julho',                pron: 'zhúliu',                es: 'julio (¡no «junio»!)' },
     { id: 'f40', cat: 'Países',       icon: 'fa-earth-europe',  pt: 'em Portugal',          pron: 'ing Portugáu',          es: 'en Portugal (¡sin artículo!)' },
     { id: 'f41', cat: 'Países',       icon: 'fa-city',          pt: 'no Rio',               pron: 'nu Jíu',                es: 'en Río (¡con artículo!)' },
-    { id: 'f42', cat: 'Países',       icon: 'fa-flag-usa',      pt: 'Os Estados Unidos são…', pron: 'Us Istádus Unídus sáung…', es: 'Estados Unidos es… (¡en plural!)' }
+    { id: 'f42', cat: 'Países',       icon: 'fa-flag-usa',      pt: 'Os Estados Unidos são…', pron: 'Us Istádus Unídus sáung…', es: 'Estados Unidos es… (¡en plural!)' },
+    { id: 'f43', cat: 'Objetos',      icon: 'fa-eraser',        pt: 'a borracha',           pron: 'a bojásha',             es: 'el borrador (¡falso amigo!)' },
+    { id: 'f44', cat: 'Objetos',      icon: 'fa-glass-water',   pt: 'o copo',               pron: 'u kópu',                es: 'el vaso (¡no copa!)' },
+    { id: 'f45', cat: 'Objetos',      icon: 'fa-shirt',         pt: 'a calça',              pron: 'a káusa',               es: 'el pantalón' },
+    { id: 'f46', cat: 'Objetos',      icon: 'fa-umbrella',      pt: 'o guarda-chuva',       pron: 'u guárda shúva',        es: 'el paraguas' },
+    { id: 'f47', cat: 'Objetos',      icon: 'fa-pen',           pt: 'a caneta',             pron: 'a kanéta',              es: 'el esfero' }
   ];
 
   const FLASH_COLORS = {
@@ -1495,6 +1740,7 @@
     'Contracciones': 'from-sky-400 to-blue-600',
     'Meses':        'from-lime-400 to-green-600',
     'Países':       'from-emerald-400 to-sky-600',
+    'Objetos':      'from-rose-400 to-orange-500',
     'Colores':      'from-red-400 to-amber-400',
     'Pasado':       'from-yellow-400 to-orange-500'
   };
@@ -1724,7 +1970,25 @@
         { pt: 'A Estados Unidos é muito grande.',     pron: 'A Istádus Unídus é múintu grándji' }
       ], correct: 1,
       hint: 'Pista: en portugués este país es plural, con artículo y verbo.',
-      explain: 'Os Estados Unidos (plural) → são… grandes.' }
+      explain: 'Os Estados Unidos (plural) → são… grandes.' },
+    { id: 'q26', topic: 'Objetos',
+      q: '«Pásame un vaso de agua» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'Me passa uma taça de água.', pron: 'Mi pása úma tása dji água' },
+        { pt: 'Me passa um vaso de água.',  pron: 'Mi pása ung vázu dji água' },
+        { pt: 'Me passa um copo de água.',  pron: 'Mi pása ung kópu dji água' }
+      ], correct: 2,
+      hint: 'Pista: «vaso» y «copa» son falsos amigos.',
+      explain: 'Copo = vaso · taça = copa · vaso = florero.' },
+    { id: 'q27', topic: 'Objetos',
+      q: '«¿Me prestas el borrador?» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'Você me empresta a borracha?', pron: 'Vosê mi emprésta a bojásha' },
+        { pt: 'Você me empresta a caneta?',   pron: 'Vosê mi emprésta a kanéta' },
+        { pt: 'Você me empresta a tesoura?',  pron: 'Vosê mi emprésta a tezôra' }
+      ], correct: 0,
+      hint: 'Pista: es el falso amigo más famoso de la escuela.',
+      explain: 'Borracha = borrador · caneta = esfero · tesoura = tijeras.' }
   ];
 
   /* ---------- Vocabulario por categorías ---------- */
@@ -1939,7 +2203,7 @@
       task: t => `Voy a pegar un texto que escribí en portugués sobre «${t}». Muéstrame la versión corregida frase por frase con el formato obligatorio y, debajo de cada frase, explica el error en una sola línea en español. Si algo es correcto pero suena poco natural, dime cómo lo diría un brasileño. Termina diciéndome una cosa que hice bien.\n\nMI TEXTO:\n[PEGA AQUÍ TU TEXTO]` }
   ];
 
-  const PROMPT_TOPICS = ['Mi presentación personal', 'Mi rutina diaria', 'Comida y restaurantes', 'Ser y estar', 'Palabras interrogativas', 'Viajar a Brasil', 'Mi familia', 'Adjetivos para describir personas', 'Lo que hice el fin de semana (pasado)', 'Números, fechas y teléfonos', '¿Qué hora es? (horas y citas)', 'Dinero y compras', 'Días de la semana y planes', 'Profesiones y trabajo', 'Colores y ropa', 'Contracciones (no, na, do, da, ao, à)', 'Meses, estaciones y clima', 'Países y nacionalidades'];
+  const PROMPT_TOPICS = ['Mi presentación personal', 'Mi rutina diaria', 'Comida y restaurantes', 'Ser y estar', 'Palabras interrogativas', 'Viajar a Brasil', 'Mi familia', 'Adjetivos para describir personas', 'Lo que hice el fin de semana (pasado)', 'Números, fechas y teléfonos', '¿Qué hora es? (horas y citas)', 'Dinero y compras', 'Días de la semana y planes', 'Profesiones y trabajo', 'Colores y ropa', 'Contracciones (no, na, do, da, ao, à)', 'Meses, estaciones y clima', 'Países y nacionalidades', 'Objetos de la casa y del día a día'];
 
   const XP = { phrase: 20, flash: 10, quiz: 30 };
   // Umbrales como fracción del XP total, para que escalen al agregar contenido
@@ -2160,6 +2424,62 @@
       ['O Pedro é brasileiro e a Sofia é espanhola.', 'U Pédru é braziléru i a Sofía é ispañóla', 'Pedro es brasileño y Sofía es española.'],
       ['O João é português, de Lisboa.', 'U Zhuáung é portugués, dji Lizbôa', 'João es portugués, de Lisboa.'],
       ['E a Lia diz com orgulho: "Eu sou colombiana!"', 'I a Lía djís kong orgúliu: "Eu sô kolombiána!"', 'Y Lia dice con orgullo: "¡Soy colombiana!"']
+    ] },
+
+    // Objetos
+    'obj-casa': { emoji: '🏠', pt: 'A casa do Tico', pron: 'A káza du Tíku', es: 'La casa de Tico', lines: [
+      ['O Tico mora numa gaiola perto da janela.', 'U Tíku móra núma gaióla pértu da zhanéla', 'Tico vive en una jaula cerca de la ventana.'],
+      ['Da janela, ele vê o sofá, a cadeira e a televisão.', 'Da zhanéla, éli vê u sofá, a kadéra i a televizáung', 'Desde la ventana, ve el sofá, la silla y el televisor.'],
+      ['À noite, a Lia apaga a lâmpada e vai para a cama.', 'A nóichi, a Lía apága a lámpada i vái pára a káma', 'En la noche, Lia apaga el bombillo y se va a la cama.'],
+      ['O despertador toca às sete: "Bom dia, Tico!"', 'U dispertadô(r) tóka ás séchi: "Bong djía, Tíku!"', 'El despertador suena a las siete: "¡Buenos días, Tico!"']
+    ] },
+    'obj-cozinha': { emoji: '🥞', pt: 'A Lia faz panquecas', pron: 'A Lía fáis pankékas', es: 'Lia hace pancakes', lines: [
+      ['A Lia e a vovó fazem panquecas na cozinha.', 'A Lía i a vovó fázeing pankékas na koziña', 'Lia y la abuela hacen pancakes en la cocina.'],
+      ['A vovó pega a frigideira e a Lia pega os pratos.', 'A vovó péga a frizhidéra i a Lía péga us prátus', 'La abuela coge la sartén y Lia coge los platos.'],
+      ['Elas comem com garfo e faca e bebem um copo de leite.', 'Élas kómeing kong gárfu i fáka i bébeing ung kópu dji léichi', 'Comen con tenedor y cuchillo y beben un vaso de leche.'],
+      ['O Tico quer uma colher de mel!', 'U Tíku ké(r) úma kolié(r) dji méu!', '¡Tico quiere una cucharada de miel!']
+    ] },
+    'obj-banheiro': { emoji: '🛁', pt: 'Hora do banho', pron: 'Óra du báñu', es: 'Hora del baño', lines: [
+      ['Depois do parque, a Lia vai tomar banho.', 'Depóis du párki, a Lía vái tomá(r) báñu', 'Después del parque, Lia va a bañarse.'],
+      ['Ela liga o chuveiro e usa o sabonete e o xampu.', 'Éla líga u shuvéru i úza u sabonéchi i u shampú', 'Abre la ducha y usa el jabón y el champú.'],
+      ['Depois, ela escova os dentes na frente do espelho.', 'Depóis, éla iskóva us dénchis na frénchi du ispéliu', 'Después, se cepilla los dientes frente al espejo.'],
+      ['O Tico também quer banho… na pia!', 'U Tíku tambéing ké(r) báñu… na pía!', 'Tico también quiere bañarse… ¡en el lavamanos!']
+    ] },
+    'obj-escola': { emoji: '🎒', pt: 'A mochila da Lia', pron: 'A moshíla da Lía', es: 'La maleta de Lia', lines: [
+      ['Na mochila da Lia tem um caderno, um livro e um lápis.', 'Na moshíla da Lía téing ung kadérnu, ung lívru i ung lápis', 'En la maleta de Lia hay un cuaderno, un libro y un lápiz.'],
+      ['Também tem uma borracha rosa e uma régua.', 'Tambéing téing úma bojásha józa i úma régua', 'También hay un borrador rosado y una regla.'],
+      ['O Pedro pergunta: "Você me empresta a tesoura?"', 'U Pédru pergúnta: "Vosê mi emprésta a tezôra?"', 'Pedro pregunta: "¿Me prestas las tijeras?"'],
+      ['"Claro! Mas não esquece de devolver!"', '"Kláru! Mas náung iskési dji devouvê(r)!"', '"¡Claro! ¡Pero no olvides devolverlas!"']
+    ] },
+    'obj-tec': { emoji: '📱', pt: 'O Tico e o celular', pron: 'U Tíku i u selulá(r)', es: 'Tico y el celular', lines: [
+      ['A mãe da Lia trabalha no notebook.', 'A máing da Lía trabália nu notibúki', 'La mamá de Lia trabaja en el portátil.'],
+      ['A Lia ouve música com o fone de ouvido.', 'A Lía ôvi múzika kong u fóni dji ovídu', 'Lia escucha música con los audífonos.'],
+      ['De repente, o celular toca: "Trim, trim!"', 'Dji jepénchi, u selulá(r) tóka: "Tríng, tríng!"', 'De repente, suena el celular: "¡Ring, ring!"'],
+      ['Mas não é o celular… é o Tico imitando o som!', 'Mas náung é u selulá(r)… é u Tíku imitándu u sóng!', 'Pero no es el celular… ¡es Tico imitando el sonido!']
+    ] },
+    'obj-roupa': { emoji: '👗', pt: 'Vamos à festa!', pron: 'Vámus a fésta!', es: '¡Vamos a la fiesta!', lines: [
+      ['Hoje tem festa na escola!', 'Ózhi téing fésta na iskóla!', '¡Hoy hay fiesta en la escuela!'],
+      ['A Lia veste um vestido amarelo e tênis brancos.', 'A Lía véschi ung vischídu amarélu i ténis bránkus', 'Lia se pone un vestido amarillo y tenis blancos.'],
+      ['O Pedro usa calça jeans, camiseta e boné.', 'U Pédru úza káusa djíns, kamizéta i boné', 'Pedro lleva jean, camiseta y gorra.'],
+      ['E o Tico? Ele usa óculos escuros, como um artista!', 'I u Tíku? Éli úza ókulus iskúrus, kómu ung archísta!', '¿Y Tico? ¡Lleva gafas oscuras, como un artista!']
+    ] },
+    'obj-trans': { emoji: '🚌', pt: 'Uma viagem de verdade', pron: 'Úma viázheing dji verdádji', es: 'Un viaje de verdad', lines: [
+      ['A família da Lia vai visitar a tia em São Paulo.', 'A família da Lía vái vizitá(r) a chía ing Sáung Páulu', 'La familia de Lia va a visitar a la tía en São Paulo.'],
+      ['Primeiro, eles vão de táxi até o aeroporto.', 'Priméru, élis váung dji táksi até u aeropôrtu', 'Primero, van en taxi hasta el aeropuerto.'],
+      ['Depois, vão de avião. O Tico fica na janela!', 'Depóis, váung dji aviáung. U Tíku fíka na zhanéla!', 'Después, van en avión. ¡Tico se queda en la ventanilla!'],
+      ['Em São Paulo, eles andam de metrô e de ônibus.', 'Ing Sáung Páulu, élis ándaung dji metrô i dji ónibus', 'En São Paulo, andan en metro y en bus.']
+    ] },
+    'obj-sair': { emoji: '🔑', pt: 'Cadê a chave?', pron: 'Kadê a shávi?', es: '¿Dónde está la llave?', lines: [
+      ['A mãe da Lia está atrasada para o trabalho.', 'A máing da Lía istá atrazáda pru trabáliu', 'La mamá de Lia va tarde para el trabajo.'],
+      ['"Cadê a minha chave? E a minha carteira?"', '"Kadê a míña shávi? I a míña kartéra?"', '"¿Dónde está mi llave? ¿Y mi billetera?"'],
+      ['A Lia procura embaixo do sofá e encontra as duas!', 'A Lía prokúra imbáishu du sofá i enkóntra as dúas!', '¡Lia busca debajo del sofá y encuentra las dos!'],
+      ['"Obrigada, filha! E leva o guarda-chuva, vai chover!"', '"Obrigáda, fília! I léva u guárda shúva, vái shovê(r)!"', '"¡Gracias, hija! Y lleva el paraguas, ¡va a llover!"']
+    ] },
+    'obj-ff': { emoji: '🤭', pt: 'As confusões do Pedro', pron: 'As konfuzóings du Pédru', es: 'Las confusiones de Pedro', lines: [
+      ['O Pedro quer apagar um erro e pede: "Me dá a borracha?"', 'U Pédru ké(r) apagá(r) ung éju i pédji: "Mi dá a bojásha?"', 'Pedro quiere borrar un error y pide: "¿Me das el borrador?"'],
+      ['A Lia ri, porque em espanhol isso parece outra coisa!', 'A Lía jí, purkê ing ispañóu ísu paréssi ôtra kôiza!', 'Lia se ríe, porque en español eso parece otra cosa.'],
+      ['Depois, ele pede um copo de água, não uma taça.', 'Depóis, éli pédji ung kópu dji água, náung úma tása', 'Después, pide un vaso de agua, no una copa.'],
+      ['No final, ele dá um presente para a Lia: um polvo de pelúcia!', 'Nu fináu, éli dá ung prezénchi pra Lía: ung pôuvu dji pelúsia!', 'Al final, le da un regalo a Lia: ¡un pulpo de peluche!']
     ] },
 
     // Profesiones
@@ -2469,6 +2789,38 @@
       </article>`;
   }
 
+  // Imágenes: Twemoji (SVG, CC-BY 4.0) desde jsDelivr; si falla, se muestra el emoji del sistema
+  const TWEMOJI = 'https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/';
+  function picHtml(e) {
+    if (e.startsWith('fa-')) return `<span class="w-16 h-16 grid place-items-center text-4xl text-rose-400"><i class="fa-solid ${e}"></i></span>`;
+    const code = Array.from(e).map(c => c.codePointAt(0).toString(16)).filter(c => c !== 'fe0f').join('-');
+    return `<img src="${TWEMOJI}${code}.svg" alt="" width="64" height="64" loading="lazy" class="w-16 h-16" onerror="this.outerHTML='<span class=&quot;text-5xl&quot;>${e}</span>'">`;
+  }
+
+  // Tarjeta de objetos: 3–4 imágenes con palabra, pronunciación y traducción
+  function picCard(p, m) {
+    const c = COLORS[m.color];
+    const tiles = p.pics.map(([e, pt, pron, es]) => `
+      <button data-say="${esc(pt)}" class="flex flex-col items-center text-center gap-1 bg-white rounded-xl p-3 border border-slate-200 hover:border-indigo-300 hover:shadow-sm transition">
+        ${picHtml(e)}
+        <span class="block font-bold text-slate-900 leading-tight">${pt}</span>
+        <span class="block text-xs italic text-indigo-600">🔊 [${pron}]</span>
+        <span class="block text-xs text-slate-500">${es}</span>
+      </button>`).join('');
+    return `
+      <article class="fade-up bg-white rounded-2xl p-5 sm:p-6 flex flex-col gap-4 shadow-sm transition border ${state.done.includes(p.id) ? 'border-emerald-300 ring-2 ring-emerald-100' : 'border-slate-200'}">
+        <span class="self-start inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${c.chip}">
+          <i class="fa-solid ${p.tagIcon}"></i> ${p.tag}
+        </span>
+        <div>
+          <p class="text-xl font-bold text-slate-900 leading-snug">${p.rule}</p>
+          <p class="text-sm text-slate-500 mt-1">${p.hint}</p>
+        </div>
+        <div class="grid grid-cols-2 gap-2">${tiles}</div>
+        ${doneButton(p.id, '¡Ya los conozco!', `Toqué y repetí los ${p.pics.length}`)}
+      </article>`;
+  }
+
   // Lectura para niños: una historia corta, frase por frase
   function readingCard(key) {
     const r = READINGS[key];
@@ -2510,7 +2862,7 @@
     const flush = () => { if (pending) html += readingCard(pending); pending = null; };
     m.phrases.forEach(p => {
       if (p.section) { flush(); html += sectionHead(p); pending = p.rd || null; }
-      else html += p.words ? soundCard(p, m) : phraseCard(p, m);
+      else html += p.pics ? picCard(p, m) : p.words ? soundCard(p, m) : phraseCard(p, m);
     });
     flush();
     return html + readingCard(m.id);
