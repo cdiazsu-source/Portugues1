@@ -1,0 +1,2060 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Português A1: Rotina, Comida e Mais</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome (íconos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Confeti para micro-celebraciones -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <!-- Lexend: tipografía diseñada para mejorar la fluidez lectora -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: { extend: { fontFamily: { sans: ['Lexend', 'system-ui', 'sans-serif'] } } }
+    };
+  </script>
+
+  <style>
+    body { background: #F8FAFC; }
+
+    /* Flashcard 3D */
+    .flip { perspective: 1200px; }
+    .flip-inner { transition: transform .55s cubic-bezier(.4, 0, .2, 1); transform-style: preserve-3d; }
+    .flip.is-flipped .flip-inner { transform: rotateY(180deg); }
+    .face { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+    .face-back { transform: rotateY(180deg); }
+
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { scrollbar-width: none; }
+
+    @keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.18); } 100% { transform: scale(1); } }
+    .pop { animation: pop .35s ease; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    .fade-up { animation: fadeUp .3s ease both; }
+
+    :focus-visible { outline: 3px solid #818CF8; outline-offset: 2px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen text-slate-800 font-sans antialiased selection:bg-indigo-100">
+
+  <!-- ========== HEADER FIJO + PROGRESO GLOBAL ========== -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 pt-3 pb-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+      <div class="flex items-center gap-3 min-w-0">
+        <div class="w-11 h-11 shrink-0 rounded-2xl bg-emerald-100 grid place-items-center text-2xl" aria-hidden="true">🇧🇷</div>
+        <div class="min-w-0">
+          <div class="flex flex-wrap items-center gap-2">
+            <h1 class="text-base sm:text-xl font-bold text-slate-900 leading-tight">Português A1: Rotina, Comida e Mais</h1>
+            <span class="inline-flex items-center gap-1 text-xs font-semibold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2.5 py-0.5 rounded-full">
+              <i class="fa-solid fa-brain"></i> TDAH Friendly
+            </span>
+          </div>
+          <p class="hidden sm:block text-xs italic text-indigo-600">🔊 [Portuguéis A1: Jochína, Komída i Máis]</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <div id="xp-pill" class="flex items-center gap-1.5 bg-amber-50 border border-amber-200 rounded-xl px-3 py-1.5" title="Puntos de experiencia">
+          <i class="fa-solid fa-bolt text-amber-500"></i>
+          <span id="xp" class="font-bold text-amber-900 tabular-nums">0</span>
+          <span class="text-xs text-amber-700">XP</span>
+        </div>
+        <div id="level" class="hidden sm:flex items-center gap-1 bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-semibold rounded-xl px-3 py-1.5">🌱 Principiante</div>
+        <button id="btn-slow" data-action="slow" aria-pressed="false" title="Audio lento" class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 transition grid place-items-center">
+          <span aria-hidden="true">🐢</span><span class="sr-only">Audio lento</span>
+        </button>
+        <button id="btn-noise" data-action="noise" aria-pressed="false" title="Ruido marrón para concentrarte" class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 transition grid place-items-center">
+          <i class="fa-solid fa-headphones"></i><span class="sr-only">Sonido de enfoque</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4 pb-3 flex items-center gap-3">
+      <div id="progress" role="progressbar" aria-label="Progreso del curso" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+           class="flex-1 h-3 bg-slate-100 rounded-full overflow-hidden">
+        <div id="progress-bar" class="h-full rounded-full bg-gradient-to-r from-emerald-400 to-indigo-500 transition-all duration-700" style="width:0%"></div>
+      </div>
+      <span id="progress-text" class="text-sm font-bold text-slate-700 w-11 text-right tabular-nums">0%</span>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-6">
+
+    <!-- Cómo estudiar: 3 pasos (chunking) -->
+    <section class="bg-white border border-slate-200 rounded-2xl p-5 mb-6 shadow-sm">
+      <h2 class="font-bold text-slate-900 flex items-center gap-2"><i class="fa-solid fa-route text-indigo-500"></i> Tu método en 3 pasos</h2>
+      <ol class="grid sm:grid-cols-3 gap-3 mt-3 text-sm">
+        <li class="flex items-center gap-3 bg-indigo-50 rounded-xl p-3"><span class="text-2xl" aria-hidden="true">🎧</span><span><b>1. Escucha</b><br><span class="text-slate-500">Toca el botón 🔊</span></span></li>
+        <li class="flex items-center gap-3 bg-emerald-50 rounded-xl p-3"><span class="text-2xl" aria-hidden="true">🗣️</span><span><b>2. Repite</b><br><span class="text-slate-500">En voz alta, 2 veces</span></span></li>
+        <li class="flex items-center gap-3 bg-amber-50 rounded-xl p-3"><span class="text-2xl" aria-hidden="true">✅</span><span><b>3. Marca</b><br><span class="text-slate-500">Gana XP y avanza</span></span></li>
+      </ol>
+      <p class="text-xs text-slate-500 mt-3">🇧🇷 Todo sigue el <b>acento y el habla nativa de Brasil</b>. Busca las cajas verdes «Así lo dice un brasileño» para sonar natural. En las guías, <b>(r)</b> = r final casi muda.</p>
+    </section>
+
+    <!-- Pestañas -->
+    <nav id="tabs" role="tablist" aria-label="Módulos del curso" class="flex gap-2 overflow-x-auto no-scrollbar pb-2 mb-6"></nav>
+
+    <!-- Contenido del módulo activo -->
+    <div id="panel" role="tabpanel"></div>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white mt-12">
+    <div class="max-w-5xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-500">
+      <p>🇧🇷 Português A1 · Diseñado para mentes TDAH · Basado en los apuntes de clase</p>
+      <button data-action="reset" class="text-slate-400 hover:text-slate-700 underline underline-offset-4">Reiniciar progreso</button>
+    </div>
+  </footer>
+
+  <!-- Toast de refuerzo positivo -->
+  <div id="toast" role="status" aria-live="polite"
+       class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-xl text-sm font-semibold transition-all duration-300 opacity-0 translate-y-6 pointer-events-none max-w-[90vw] text-center"></div>
+
+  <script>
+  /* ================================================================
+     CONTENIDO DEL CURSO
+     Cada frase: pt (portugués) · pron (pronunciación) · es (traducción)
+     ================================================================ */
+  /* Convenciones de pronunciación (acento nativo de Brasil):
+     TE/TI → chi · DE/DI → dji · E final → i · O final → u · L final → u
+     R inicial/RR → j suave · R final → (r) casi muda · OU → ô · EM final → eing
+     «nat» = cómo lo diría un brasileño en la calle */
+  const MODULES = [
+    {
+      id: 'apres', num: 1, tab: 'Presentación', icon: 'fa-hand', color: 'sky',
+      title: 'Apresentação Pessoal', pron: 'Aprezentasáung Pesoáu', es: 'Presentación personal · Tu tarjeta de visita en portugués',
+      tip: {
+        title: 'Saludos según la hora',
+        text: 'Tu presentación tiene 4 piezas, como un LEGO: <b>nombre → edad → origen → gustos</b>. Empieza siempre con un saludo.',
+        words: [
+          { pt: 'Bom dia!', pron: 'Bong djía', es: '¡Buenos días!' },
+          { pt: 'Boa tarde!', pron: 'Bóa tárdji', es: '¡Buenas tardes!' },
+          { pt: 'Boa noite!', pron: 'Bóa nóichi', es: '¡Buenas noches!' }
+        ]
+      },
+      phrases: [
+        { id: 'a1', tag: 'Nombre', tagIcon: 'fa-id-badge',
+          pt: 'Bom dia! Eu me chamo Laura.', pron: 'Bong djía! Eu mi shámu Láura', es: '¡Buenos días! Me llamo Laura.',
+          nat: { pt: 'Oi, tudo bem? Sou a Laura.', pron: 'Ói, túdu béing? Sô a Láura', note: 'Muy natural: entre amigos se pone «a / o» antes del nombre.' },
+          key: { pt: 'eu me chamo', pron: 'eu mi shámu', es: 'me llamo' } },
+        { id: 'a2', tag: 'Edad', tagIcon: 'fa-cake-candles',
+          pt: 'Eu tenho vinte e quatro anos.', pron: 'Eu téñu vínchi i kuátru ánus', es: 'Tengo veinticuatro años.',
+          nat: { pt: 'Tenho vinte e quatro.', pron: 'Téñu vínchi i kuátru', note: 'Al hablar se omiten «eu» y «anos».' },
+          key: { pt: 'eu tenho', pron: 'eu téñu', es: 'yo tengo' } },
+        { id: 'a3', tag: 'Origen', tagIcon: 'fa-location-dot',
+          pt: 'Sou de Cali, mas moro em Bogotá.', pron: 'Sô dji Káli, mas móru ing Bogotá', es: 'Soy de Cali, pero vivo en Bogotá.',
+          key: { pt: 'morar = viver', pron: 'morá(r) = vivê(r)', es: 'vivir' } },
+        { id: 'a4', tag: 'Gustos', tagIcon: 'fa-heart',
+          pt: 'Eu gosto de andar de bicicleta e adoro viajar.', pron: 'Eu góstu dji andá(r) dji bisikléta i adóru viazhá(r)', es: 'Me gusta montar en bicicleta y me encanta viajar.',
+          nat: { pt: 'Curto andar de bike e amo viajar.', pron: 'Kúrtu andá(r) dji báiki i ámu viazhá(r)', note: '«Curtir» y «bike» se oyen todo el tiempo.' },
+          key: { pt: 'gostar de', pron: 'gostá(r) dji', es: 'gustar (¡siempre con «de»!)' } }
+      ]
+    },
+    {
+      id: 'som', num: 2, tab: 'Pronunciación', icon: 'fa-ear-listen', color: 'teal',
+      title: 'Os Sons do Português', pron: 'Us Sóns du Portugués', es: 'Los sonidos de Brasil · Las claves para sonar nativo',
+      tip: {
+        title: 'Las vocales finales se «cierran»',
+        text: 'Al final de palabra, la <b>e</b> suena <b>i</b> y la <b>o</b> suena <b>u</b>. Así hablan todos en Brasil.',
+        words: [
+          { pt: 'nome', pron: 'nómi', es: 'nombre' },
+          { pt: 'gato', pron: 'gátu', es: 'gato' },
+          { pt: 'sempre', pron: 'sémpri', es: 'siempre' }
+        ]
+      },
+      phrases: [
+        { id: 's0', tag: 'TE · DE', tagIcon: 'fa-star',
+          rule: 'TE/TI suenan «chi» y DE/DI suenan «dji»', hint: 'Es EL sonido de Brasil. Escúchalo en «Bom dia» = «Bong djía».',
+          words: [
+            { pt: 'noite', pron: 'nóichi', es: 'noche' },
+            { pt: 'cidade', pron: 'sidádji', es: 'ciudad' },
+            { pt: 'tipo', pron: 'chípu', es: 'tipo' }
+          ] },
+        { id: 's1', tag: 'LH', tagIcon: 'fa-volume-high',
+          rule: 'LH suena como «li»', hint: 'Nunca como la «ll» del español.',
+          words: [
+            { pt: 'trabalho', pron: 'trabáliu', es: 'trabajo' },
+            { pt: 'mulher', pron: 'mulié(r)', es: 'mujer' },
+            { pt: 'melhor', pron: 'melió(r)', es: 'mejor' }
+          ] },
+        { id: 's2', tag: 'CH', tagIcon: 'fa-volume-high',
+          rule: 'CH suena como «sh»', hint: 'Como cuando pides silencio: ¡shhh!',
+          words: [
+            { pt: 'chá', pron: 'shá', es: 'té' },
+            { pt: 'chuva', pron: 'shúva', es: 'lluvia' },
+            { pt: 'chocolate', pron: 'shokoláchi', es: 'chocolate' }
+          ] },
+        { id: 's3', tag: 'L final', tagIcon: 'fa-volume-high',
+          rule: 'L al final de sílaba suena «u»', hint: 'Brasil se dice «Braziú». Por eso «mal» y «mau» suenan igual.',
+          words: [
+            { pt: 'Brasil', pron: 'Braziú', es: 'Brasil' },
+            { pt: 'hotel', pron: 'otéu', es: 'hotel' },
+            { pt: 'futebol', pron: 'fuchibóu', es: 'fútbol' }
+          ] },
+        { id: 's4', tag: 'R', tagIcon: 'fa-volume-high',
+          rule: 'R inicial y RR suenan «j» suave; la R final casi no suena', hint: 'En las guías verás (r): falar = falá(r). Entre vocales, una r suena como en español: agora.',
+          words: [
+            { pt: 'rua', pron: 'júa', es: 'calle' },
+            { pt: 'carro', pron: 'káju', es: 'carro' },
+            { pt: 'falar', pron: 'falá(r)', es: 'hablar' }
+          ] },
+        { id: 's5', tag: 'S → Z', tagIcon: 'fa-volume-high',
+          rule: 'S entre vocales suena «z»', hint: 'Zumba como una abejita: zzz 🐝',
+          words: [
+            { pt: 'casa', pron: 'káza', es: 'casa' },
+            { pt: 'mesa', pron: 'méza', es: 'mesa' },
+            { pt: 'música', pron: 'múzika', es: 'música' }
+          ] }
+      ]
+    },
+    {
+      id: 'verbos', num: 3, tab: 'Ser · Estar · Ir', icon: 'fa-bolt', color: 'rose',
+      title: 'Ser, Estar e Ir', pron: 'Sê(r), Istá(r) i Í(r)', es: 'Ser, estar e ir · Los 3 verbos que usarás todo el día',
+      tip: {
+        title: 'Uno para cada cosa',
+        text: '<b>Ser</b> = lo que eres. <b>Estar</b> = cómo estás ahora. <b>Ir</b> = a dónde vas (¡y el futuro!). Al hablar, <b>estou → tô</b> y <b>está → tá</b>.',
+        words: [
+          { pt: 'eu sou', pron: 'eu sô', es: 'yo soy' },
+          { pt: 'eu estou · tô', pron: 'eu istô · tô', es: 'yo estoy' },
+          { pt: 'eu vou', pron: 'eu vô', es: 'yo voy' }
+        ]
+      },
+      phrases: [
+        { id: 'v1', tag: 'Ser', tagIcon: 'fa-id-card',
+          pt: 'Sou colombiana e sou estudante.', pron: 'Sô kolombiána i sô istudánchi', es: 'Soy colombiana y soy estudiante.',
+          key: { pt: 'ele é · a gente é', pron: 'éli é · a zhénchi é', es: 'él es · nosotros somos' } },
+        { id: 'v2', tag: 'Estar com', tagIcon: 'fa-face-tired',
+          pt: 'Eu estou cansado e com fome.', pron: 'Eu istô kansádu i kong fómi', es: 'Estoy cansado y tengo hambre.',
+          nat: { pt: 'Tô cansado e com fome.', pron: 'Tô kansádu i kong fómi', note: '«Tô» es la forma que oirás todo el tiempo.' },
+          key: { pt: 'estar com fome', pron: 'istá(r) kong fómi', es: 'tener hambre' } },
+        { id: 'v3', tag: 'Ganas', tagIcon: 'fa-umbrella-beach',
+          pt: 'Eu estou com vontade de ir à praia.', pron: 'Eu istô kong vontádji dji í(r) a práia', es: 'Tengo ganas de ir a la playa.',
+          nat: { pt: 'Tô com vontade de ir pra praia.', pron: 'Tô kong vontádji dji í(r) pra práia', note: '«Pra» (= para a) es lo más natural.' },
+          key: { pt: 'estar com vontade de', pron: 'istá(r) kong vontádji dji', es: 'tener ganas de' } },
+        { id: 'v4', tag: 'Futuro', tagIcon: 'fa-plane-departure',
+          pt: 'No próximo sábado eu vou viajar para o Brasil.', pron: 'Nu prósimu sábadu eu vô viazhá(r) pára u Braziú', es: 'El próximo sábado voy a viajar a Brasil.',
+          nat: { pt: 'Sábado que vem vou viajar pro Brasil.', pron: 'Sábadu ki véing vô viazhá(r) pru Braziú', note: '«Que vem» = próximo · «pro» = para o.' },
+          key: { pt: 'vou + viajar', pron: 'vô + viazhá(r)', es: 'voy a + viajar (futuro inmediato)' } }
+      ]
+    },
+    {
+      id: 'rotina', num: 4, tab: 'Rutina', icon: 'fa-sun', color: 'emerald', focus: true,
+      title: 'Minha Rotina Diária', pron: 'Míña Jochína Djiária', es: 'Mi rutina diaria · Verbos en presente y expresiones',
+      tip: {
+        title: 'Truco rápido: el presente con "eu"',
+        text: 'Con <b>eu</b> (yo), casi todos los verbos en presente terminan en <b>-o</b>, ¡igual que en español!',
+        words: [
+          { pt: 'eu tomo', pron: 'eu tómu', es: 'yo tomo' },
+          { pt: 'eu janto', pron: 'eu zhántu', es: 'yo ceno' },
+          { pt: 'eu vou', pron: 'eu vô', es: 'yo voy (¡irregular!)' }
+        ]
+      },
+      phrases: [
+        { id: 'r1', tag: 'Mañana', tagIcon: 'fa-sun',
+          pt: 'Eu acordo às sete da manhã.', pron: 'Eu akórdu ás séchi da mañáng', es: 'Me despierto a las siete de la mañana.',
+          nat: { pt: 'Eu levanto às sete.', pron: 'Eu levántu ás séchi', note: 'En Brasil casi siempre se dice «eu levanto», sin «me».' },
+          key: { pt: 'acordar', pron: 'akordá(r)', es: 'despertarse' } },
+        { id: 'r2', tag: 'Mediodía', tagIcon: 'fa-tooth',
+          pt: 'Depois do almoço, eu sempre escovo os dentes.', pron: 'Dipóis du almósu, eu sémpri iskóvu uz dénchis', es: 'Después del almuerzo, siempre me cepillo los dientes.',
+          key: { pt: 'escovar', pron: 'isková(r)', es: 'cepillar' } },
+        { id: 'r3', tag: 'Trabajo', tagIcon: 'fa-train-subway',
+          pt: 'Eu tomo banho e vou trabalhar de metrô.', pron: 'Eu tómu báñu i vô trabaliá(r) dji metrô', es: 'Me ducho y voy a trabajar en metro.',
+          key: { pt: 'tomar banho', pron: 'tomá(r) báñu', es: 'ducharse' } },
+        { id: 'r4', tag: 'Noche', tagIcon: 'fa-moon',
+          pt: 'Toda noite eu janto com a minha família.', pron: 'Tóda nóichi eu zhántu kong a míña família', es: 'Todas las noches ceno con mi familia.',
+          key: { pt: 'jantar', pron: 'zhantá(r)', es: 'cenar' } }
+      ]
+    },
+    {
+      id: 'comida', num: 5, tab: 'Comida', icon: 'fa-utensils', color: 'amber',
+      title: 'Comida, Artigos e Presente Simples', pron: 'Komída, Archígus i Prezénchi Símplis', es: 'Comida, artículos y presente simple',
+      tip: {
+        title: 'Artículos cortitos',
+        text: 'Los artículos son: <b>o</b> (el), <b>a</b> (la), <b>os</b> (los), <b>as</b> (las). Con "em" se funden: em + o = <b>no</b>.',
+        words: [
+          { pt: 'o pão', pron: 'u paung', es: 'el pan' },
+          { pt: 'a maçã', pron: 'a masáng', es: 'la manzana' },
+          { pt: 'no almoço', pron: 'nu almósu', es: 'en el almuerzo' }
+        ]
+      },
+      phrases: [
+        { id: 'c1', tag: 'Desayuno', tagIcon: 'fa-bread-slice',
+          pt: 'Eu como pão com manteiga no café da manhã.', pron: 'Eu kómu paung kong mantéiga nu kafé da mañáng', es: 'Como pan con mantequilla en el desayuno.',
+          key: { pt: 'café da manhã', pron: 'kafé da mañáng', es: 'desayuno' } },
+        { id: 'c2', tag: 'Bebidas', tagIcon: 'fa-glass-water',
+          pt: 'A gente toma suco de laranja no almoço.', pron: 'A zhénchi tóma súku dji laránzha nu almósu', es: 'Tomamos jugo de naranja en el almuerzo.',
+          key: { pt: 'a gente = nós', pron: 'a zhénchi = nós', es: 'nosotros (con el verbo como «ele»)' } },
+        { id: 'c3', tag: 'Adjetivos', tagIcon: 'fa-apple-whole',
+          pt: 'A maçã é doce e o café está quente.', pron: 'A masáng é dósi i u kafé istá kénchi', es: 'La manzana es dulce y el café está caliente.',
+          nat: { pt: 'O café tá quente!', pron: 'U kafé tá kénchi', note: 'Al hablar, «está» se vuelve «tá».' },
+          key: { pt: 'quente', pron: 'kénchi', es: 'caliente' } }
+      ]
+    },
+    {
+      id: 'hetero', num: 6, tab: 'Heterogenéricos', icon: 'fa-shuffle', color: 'indigo',
+      title: 'Palavras Traiçoeiras', pron: 'Palávras Traisoéiras', es: 'Palabras traicioneras · ¡Cambian de género respecto al español!',
+      tip: {
+        title: 'Regla de oro: -agem = femenino',
+        text: 'Estas palabras <b>cambian de género</b>. Todo lo que termina en <b>-agem</b> es femenino.',
+        words: [
+          { pt: 'a garagem', pron: 'a garázheing', es: 'el garaje' },
+          { pt: 'a mensagem', pron: 'a mensázheing', es: 'el mensaje' },
+          { pt: 'o nariz', pron: 'u naríz', es: 'la nariz' }
+        ]
+      },
+      phrases: [
+        { id: 'h1', tag: 'Femenino en PT', tagIcon: 'fa-palette', hl: 'A cor',
+          pt: 'A cor amarela é muito bonita.', pron: 'A kor amaréla é múintu boníta', es: 'El color amarillo es muy bonito.',
+          key: { pt: 'a cor', pron: 'a kor', es: 'el color' } },
+        { id: 'h2', tag: 'Masculino en PT', tagIcon: 'fa-glass-water', hl: 'O leite',
+          pt: 'O leite está muito frio.', pron: 'U léichi istá múintu fríu', es: 'La leche está muy fría.',
+          nat: { pt: 'O leite tá bem gelado.', pron: 'U léichi tá béing zheládu', note: 'Para bebidas se dice «gelado»; «bem» = muy.' },
+          key: { pt: 'o leite', pron: 'u léichi', es: 'la leche' } },
+        { id: 'h3', tag: 'Femenino en PT', tagIcon: 'fa-plane', hl: 'A viagem',
+          pt: 'A viagem para o Brasil é incrível.', pron: 'A viázheing pára u Braziú é inkríveu', es: 'El viaje a Brasil es increíble.',
+          key: { pt: 'a viagem', pron: 'a viázheing', es: 'el viaje' } }
+      ]
+    },
+    {
+      id: 'adj', num: 7, tab: 'Adjetivos', icon: 'fa-wand-magic-sparkles', color: 'orange',
+      title: 'Adjetivos', pron: 'Adjechívus', es: 'Adjetivos · Para describirte a ti, a la gente y a la comida',
+      tip: {
+        title: 'Bom ≠ bem · Mau ≠ mal',
+        text: '<b>Bom / mau</b> describen algo (adjetivos). <b>Bem / mal</b> dicen cómo se hace (adverbios). ¡Ojo: mau y mal suenan igual!',
+        words: [
+          { pt: 'bom / boa', pron: 'bong / bóa', es: 'bueno / buena' },
+          { pt: 'mau / má', pron: 'máu / má', es: 'malo / mala' },
+          { pt: 'bem / mal', pron: 'béing / máu', es: 'bien / mal' }
+        ]
+      },
+      phrases: [
+        { id: 'ad1', tag: 'Personalidad', tagIcon: 'fa-user',
+          pt: 'Eu sou organizado, trabalhador e pontual.', pron: 'Eu sô organizádu, trabaliadô(r) i pontuáu', es: 'Soy organizado, trabajador y puntual.',
+          key: { pt: 'calmo ≠ nervoso', pron: 'káumu ≠ nervózu', es: 'tranquilo ≠ nervioso' } },
+        { id: 'ad2', tag: 'Bom · Mau', tagIcon: 'fa-car-side',
+          pt: 'Manuel é um bom estudante, mas é um mau motorista.', pron: 'Manuéu é ung bong istudánchi, mas é ung máu motorísta', es: 'Manuel es buen estudiante, pero mal conductor.',
+          key: { pt: 'motorista', pron: 'motorísta', es: 'conductor' } },
+        { id: 'ad3', tag: 'Bem · Mal', tagIcon: 'fa-bed',
+          pt: 'Ontem eu dormi mal e hoje estou cansada.', pron: 'Ónteing eu dormí máu i ózhi istô kansáda', es: 'Ayer dormí mal y hoy estoy cansada.',
+          nat: { pt: 'Dormi mal, tô morta!', pron: 'Dormí máu, tô mórta', note: '«Tô morto/a» = estoy agotado/a (coloquial).' },
+          key: { pt: 'ontem · hoje', pron: 'ónteing · ózhi', es: 'ayer · hoy' } },
+        { id: 'ad4', tag: 'Comida', tagIcon: 'fa-drumstick-bite',
+          pt: 'A comida está gostosa, mas o pastel está oleoso.', pron: 'A komída istá gostóza, mas u pastéu istá oleózu', es: 'La comida está sabrosa, pero el pastel (empanada frita) está grasoso.',
+          nat: { pt: 'Tá uma delícia!', pron: 'Tá úma delísia', note: 'Así elogian la comida los brasileños.' },
+          key: { pt: 'gostoso', pron: 'gostózu', es: 'sabroso, rico' } }
+      ]
+    },
+    {
+      id: 'poss', num: 8, tab: 'Posesivos', icon: 'fa-user-check', color: 'violet',
+      title: 'Possessivos', pron: 'Posesívus', es: 'Posesivos · meu, seu, dele…',
+      tip: {
+        title: 'Así se usan en Brasil',
+        text: 'El artículo antes del posesivo es <b>opcional</b>: (o) meu carro. <b>Seu</b> se entiende como «tuyo» (de você); para «de él / de ella» se usa <b>dele / dela</b>.',
+        words: [
+          { pt: 'meu / minha', pron: 'méu / míña', es: 'mi (masc. / fem.)' },
+          { pt: 'seu / sua', pron: 'séu / súa', es: 'tu (de você)' },
+          { pt: 'dele / dela', pron: 'déli / déla', es: 'de él / de ella' }
+        ]
+      },
+      phrases: [
+        { id: 'p1', tag: 'Singular', tagIcon: 'fa-car',
+          pt: 'Meu carro é novo e minha casa é grande.', pron: 'Méu káju é nóvu i míña káza é grándji', es: 'Mi carro es nuevo y mi casa es grande.',
+          key: { pt: 'novo / grande', pron: 'nóvu / grándji', es: 'nuevo / grande' } },
+        { id: 'p2', tag: 'Plural', tagIcon: 'fa-user-group',
+          pt: 'Seus amigos são muito simpáticos.', pron: 'Séus amígus saung múintu simpáchikus', es: 'Tus amigos son muy simpáticos.',
+          nat: { pt: 'Seus amigos são gente boa!', pron: 'Séus amígus saung zhénchi bóa', note: '«Gente boa» = buena gente, buena onda.' },
+          key: { pt: 'seus / suas', pron: 'séus / súas', es: 'tus' } },
+        { id: 'p3', tag: 'Dele · Dela', tagIcon: 'fa-bicycle',
+          pt: 'A bicicleta dele é azul.', pron: 'A bisikléta déli é azúu', es: 'La bicicleta de él es azul.',
+          key: { pt: 'de + ele = dele', pron: 'dji + éli = déli', es: 'de + él' } }
+      ]
+    },
+    {
+      id: 'perg', num: 9, tab: 'Preguntas', icon: 'fa-circle-question', color: 'purple',
+      title: 'Palavras Interrogativas', pron: 'Palávras Interogachívas', es: 'Palabras interrogativas · ¡Para entrevistar a cualquiera!',
+      tip: {
+        title: 'Onde ≠ Aonde',
+        text: '<b>Onde</b> = lugar fijo. <b>Aonde</b> = a + onde (hay movimiento). Al hablar se oye mucho <b>pra onde</b>. <b>Cadê?</b> = ¿dónde está?',
+        words: [
+          { pt: 'onde', pron: 'óndji', es: 'dónde (fijo)' },
+          { pt: 'aonde · pra onde', pron: 'aóndji · pra óndji', es: 'a dónde (movimiento)' },
+          { pt: 'cadê?', pron: 'kadê', es: '¿dónde está?' }
+        ]
+      },
+      phrases: [
+        { id: 'q1p', tag: 'Movimiento', tagIcon: 'fa-plane',
+          pt: 'Aonde você vai nas próximas férias?', pron: 'Aóndji vosê vái nas prósimas férias', es: '¿A dónde vas en las próximas vacaciones?',
+          nat: { pt: 'Cê vai pra onde nas férias?', pron: 'Sê vái pra óndji nas férias', note: 'Al hablar: você → cê, y la pregunta va al final.' },
+          key: { pt: 'férias ≠ feriado', pron: 'férias ≠ feriádu', es: 'vacaciones ≠ día festivo' } },
+        { id: 'q2p', tag: 'O que + verbo', tagIcon: 'fa-calendar-day',
+          pt: 'O que você faz aos domingos?', pron: 'U ki vosê fáis aus domíngus', es: '¿Qué haces los domingos?',
+          nat: { pt: 'Que cê faz no domingo?', pron: 'Ki sê fáis nu domíngu', note: 'Versión rápida y natural.' },
+          key: { pt: 'o que + verbo', pron: 'u ki + vérbu', es: 'qué + verbo' } },
+        { id: 'q3p', tag: 'Que + sustantivo', tagIcon: 'fa-bowl-food',
+          pt: 'Que tipo de comida você gosta de comer?', pron: 'Ki chípu dji komída vosê gósta dji komê(r)', es: '¿Qué tipo de comida te gusta comer?',
+          key: { pt: 'que + substantivo', pron: 'ki + substanchívu', es: 'qué + sustantivo' } },
+        { id: 'q4p', tag: 'Tiempo', tagIcon: 'fa-hourglass-half',
+          pt: 'Há quanto tempo você mora aqui?', pron: 'A kuántu témpu vosê móra akí', es: '¿Hace cuánto tiempo vives aquí?',
+          nat: { pt: 'Cê mora aqui faz quanto tempo?', pron: 'Sê móra akí fáis kuántu témpu', note: '«Faz quanto tempo» es lo más común al hablar.' },
+          key: { pt: 'faz quanto tempo?', pron: 'fáis kuántu témpu', es: '¿hace cuánto tiempo?' } }
+      ]
+    },
+    {
+      id: 'num', num: 10, tab: 'Números', icon: 'fa-hashtag', color: 'blue',
+      title: 'Os Números', pron: 'Us Númerus', es: 'Los números · Contar, fechas, teléfonos, direcciones y compras',
+      tip: {
+        title: 'El número con apodo',
+        text: 'En Brasil el 6 se dice <b>meia</b> al dictar teléfonos y direcciones (de «meia dúzia», media docena). Así no se confunde con <b>três</b>.',
+        words: [
+          { pt: 'meia', pron: 'méia', es: 'seis (al dictar números)' },
+          { pt: 'meia dúzia', pron: 'méia dúzia', es: 'media docena' },
+          { pt: 'dez reais', pron: 'déis jeáis', es: '10 reales (R$ 10)' }
+        ]
+      },
+      phrases: [
+        { section: 'Contar del 0 al 1000', icon: 'fa-hashtag', text: 'Toca cada número y repítelo. Van en grupos de 4.' },
+        { id: 'n1', tag: 'Del 0 al 3', tagIcon: 'fa-hashtag',
+          rule: 'Zero, um, dois, três', hint: '¡El 1 y el 2 tienen femenino! <b>um carro, uma casa · dois carros, duas casas</b>.',
+          words: [
+            { pt: 'zero', pron: 'zéru', es: 'cero' },
+            { pt: 'um · uma', pron: 'ung · úma', es: 'uno · una' },
+            { pt: 'dois · duas', pron: 'dóis · dúas', es: 'dos (masc. · fem.)' },
+            { pt: 'três', pron: 'trés', es: 'tres' }
+          ] },
+        { id: 'n2', tag: 'Del 4 al 7', tagIcon: 'fa-hashtag',
+          rule: 'Quatro, cinco, seis, sete', hint: '<b>Sete</b> suena «séchi»: TE → chi.',
+          words: [
+            { pt: 'quatro', pron: 'kuátru', es: 'cuatro' },
+            { pt: 'cinco', pron: 'sínku', es: 'cinco' },
+            { pt: 'seis', pron: 'séis', es: 'seis' },
+            { pt: 'sete', pron: 'séchi', es: 'siete' }
+          ] },
+        { id: 'n3', tag: 'Del 8 al 11', tagIcon: 'fa-hashtag',
+          rule: 'Oito, nove, dez, onze', hint: 'La E final suena «i»: <b>nove = nóvi, onze = ónzi</b>.',
+          words: [
+            { pt: 'oito', pron: 'óitu', es: 'ocho' },
+            { pt: 'nove', pron: 'nóvi', es: 'nueve' },
+            { pt: 'dez', pron: 'déis', es: 'diez' },
+            { pt: 'onze', pron: 'ónzi', es: 'once' }
+          ] },
+        { id: 'n4', tag: 'Del 12 al 15', tagIcon: 'fa-hashtag',
+          rule: 'Doze, treze, quatorze, quinze', hint: 'Todos terminan en <b>-ze</b> → suena «zi».',
+          words: [
+            { pt: 'doze', pron: 'dózi', es: 'doce' },
+            { pt: 'treze', pron: 'trézi', es: 'trece' },
+            { pt: 'quatorze', pron: 'katórzi', es: 'catorce' },
+            { pt: 'quinze', pron: 'kínzi', es: 'quince' }
+          ] },
+        { id: 'n5', tag: 'Del 16 al 19', tagIcon: 'fa-hashtag',
+          rule: 'Dezesseis, dezessete, dezoito, dezenove', hint: 'Es «diez + número»: dez + seis. <b>Deze-</b> suena «djize».',
+          words: [
+            { pt: 'dezesseis', pron: 'djizeséis', es: 'dieciséis' },
+            { pt: 'dezessete', pron: 'djizeséchi', es: 'diecisiete' },
+            { pt: 'dezoito', pron: 'djizóitu', es: 'dieciocho' },
+            { pt: 'dezenove', pron: 'djizenóvi', es: 'diecinueve' }
+          ] },
+        { id: 'n6', tag: 'Del 20 al 50', tagIcon: 'fa-layer-group',
+          rule: 'Vinte, trinta, quarenta, cinquenta', hint: 'Se unen con «e»: <b>vinte e um</b> (21), <b>trinta e cinco</b> (35).',
+          words: [
+            { pt: 'vinte', pron: 'vínchi', es: 'veinte' },
+            { pt: 'trinta', pron: 'trínta', es: 'treinta' },
+            { pt: 'quarenta', pron: 'kuarénta', es: 'cuarenta' },
+            { pt: 'cinquenta', pron: 'sinkuénta', es: 'cincuenta' }
+          ] },
+        { id: 'n7', tag: 'Del 60 al 90', tagIcon: 'fa-layer-group',
+          rule: 'Sessenta, setenta, oitenta, noventa', hint: 'Ojo: <b>sessenta</b> (60) lleva doble S y <b>setenta</b> (70) una sola.',
+          words: [
+            { pt: 'sessenta', pron: 'sesénta', es: 'sesenta' },
+            { pt: 'setenta', pron: 'seténta', es: 'setenta' },
+            { pt: 'oitenta', pron: 'oiténta', es: 'ochenta' },
+            { pt: 'noventa', pron: 'novénta', es: 'noventa' }
+          ] },
+        { id: 'n8', tag: 'Cien y mil', tagIcon: 'fa-cubes',
+          rule: 'Cem, cento e um, duzentos, mil', hint: '100 exacto = <b>cem</b>; de 101 en adelante = <b>cento e…</b> · mil suena «míu».',
+          words: [
+            { pt: 'cem', pron: 'séing', es: 'cien' },
+            { pt: 'cento e um', pron: 'séntu i ung', es: 'ciento uno' },
+            { pt: 'duzentos', pron: 'duzéntus', es: 'doscientos' },
+            { pt: 'mil', pron: 'míu', es: 'mil' }
+          ] },
+        { section: 'Fechas', icon: 'fa-calendar-days', text: 'En Brasil se escribe <b>dia/mês/ano</b> (15/05/2026), como en Colombia. Los meses van en minúscula y el día 1 es <b>primeiro</b>.' },
+        { id: 'nm1', tag: 'Enero – abril', tagIcon: 'fa-calendar',
+          rule: 'Janeiro, fevereiro, março, abril', hint: '«-eiro» suena «-éru»: <b>janeiro = zhanéru</b>.',
+          words: [
+            { pt: 'janeiro', pron: 'zhanéru', es: 'enero' },
+            { pt: 'fevereiro', pron: 'feveréru', es: 'febrero' },
+            { pt: 'março', pron: 'márssu', es: 'marzo' },
+            { pt: 'abril', pron: 'abríu', es: 'abril' }
+          ] },
+        { id: 'nm2', tag: 'Mayo – agosto', tagIcon: 'fa-calendar',
+          rule: 'Maio, junho, julho, agosto', hint: '¡Ojo! <b>junho</b> (NH = ñ) es junio y <b>julho</b> (LH = li) es julio.',
+          words: [
+            { pt: 'maio', pron: 'máiu', es: 'mayo' },
+            { pt: 'junho', pron: 'zhúñu', es: 'junio' },
+            { pt: 'julho', pron: 'zhúliu', es: 'julio' },
+            { pt: 'agosto', pron: 'agóstu', es: 'agosto' }
+          ] },
+        { id: 'nm3', tag: 'Sept. – diciembre', tagIcon: 'fa-calendar',
+          rule: 'Setembro, outubro, novembro, dezembro', hint: 'Casi como en español. <b>Outubro</b>: OU → «o».',
+          words: [
+            { pt: 'setembro', pron: 'setémbru', es: 'septiembre' },
+            { pt: 'outubro', pron: 'otúbru', es: 'octubre' },
+            { pt: 'novembro', pron: 'novémbru', es: 'noviembre' },
+            { pt: 'dezembro', pron: 'dezémbru', es: 'diciembre' }
+          ] },
+        { id: 'np5', tag: 'Fecha de hoy', tagIcon: 'fa-calendar-day',
+          pt: 'Hoje é dia quinze de maio.', pron: 'Ózhi é djía kínzi dji máiu', es: 'Hoy es quince de mayo.',
+          nat: { pt: 'Que dia é hoje? — Quinze.', pron: 'Ki djía é ózhi? — Kínzi', note: 'Si el mes es obvio, se responde solo con el número.' },
+          key: { pt: 'dia + número + de + mês', pron: 'djía … dji …', es: 'día + número + de + mes' } },
+        { id: 'np6', tag: 'Cumpleaños', tagIcon: 'fa-cake-candles', hl: 'primeiro',
+          pt: 'Meu aniversário é no dia primeiro de março.', pron: 'Méu aniversáriu é nu djía priméru dji márssu', es: 'Mi cumpleaños es el primero de marzo.',
+          nat: { pt: 'Faço aniversário dia primeiro de março.', pron: 'Fásu aniversáriu djía priméru dji márssu', note: '«Fazer aniversário» = cumplir años.' },
+          key: { pt: 'primeiro de…', pron: 'priméru dji', es: 'el día 1 se dice «primeiro»' } },
+        { id: 'np7', tag: 'Año', tagIcon: 'fa-baby',
+          pt: 'Eu nasci em dois mil e um.', pron: 'Eu nasí ing dóis míu i ung', es: 'Nací en el dos mil uno.',
+          key: { pt: 'dois mil e vinte e seis', pron: 'dóis míu i vínchi i séis', es: '2026 (sin «el» antes del año)' } },
+
+        { section: 'Teléfonos y direcciones', icon: 'fa-phone', text: 'Los números se dictan uno por uno o de dos en dos. Recuerda: <b>6 = meia</b>.' },
+        { id: 'np1', tag: 'Teléfono', tagIcon: 'fa-phone',
+          pt: 'Meu celular é nove, oito, meia, dois, cinco.', pron: 'Méu selulá(r) é nóvi, óitu, méia, dóis, sínku', es: 'Mi celular es nueve, ocho, seis, dos, cinco.',
+          nat: { pt: 'Anota aí: nove, oito, meia, dois, cinco.', pron: 'Anóta aí: nóvi, óitu, méia, dóis, sínku', note: 'Al dictar teléfonos el 6 siempre es «meia».' },
+          key: { pt: 'meia = seis', pron: 'méia = séis', es: 'el 6 al dictar números' } },
+        { id: 'np8', tag: 'Pedir el número', tagIcon: 'fa-mobile-screen',
+          pt: 'Você me passa o seu número?', pron: 'Vosê mi pása u séu númeru', es: '¿Me das tu número?',
+          nat: { pt: 'Me passa teu zap?', pron: 'Mi pása téu zápi', note: '«Zap» = WhatsApp. Así se pide el número en Brasil.' },
+          key: { pt: 'o DDD', pron: 'u dê dê dê', es: 'el indicativo de ciudad (11 = São Paulo)' } },
+        { id: 'np9', tag: 'Dirección', tagIcon: 'fa-location-dot',
+          pt: 'Eu moro na Rua Sete, número cento e vinte.', pron: 'Eu móru na Júa Séchi, númeru séntu i vínchi', es: 'Vivo en la Calle Siete, número ciento veinte.',
+          nat: { pt: 'Moro na Rua Sete, cento e vinte, apê trinta e dois.', pron: 'Móru na Júa Séchi, séntu i vínchi, apê trínta i dóis', note: '«Apê» = apartamento. Se dice el número sin «número».' },
+          key: { pt: 'o apartamento · o apê', pron: 'u apartaméntu · u apê', es: 'el apartamento' } },
+
+        { section: 'En el día a día', icon: 'fa-basket-shopping', text: 'Precios, cantidades y pisos: los usarás en tiendas, mercados y edificios.' },
+        { id: 'np2', tag: 'Precio', tagIcon: 'fa-tag',
+          pt: 'Quanto custa? Custa vinte e cinco reais.', pron: 'Kuántu kústa? Kústa vínchi i sínku jeáis', es: '¿Cuánto cuesta? Cuesta veinticinco reales.',
+          nat: { pt: 'Quanto é? Dá vinte e cinco.', pron: 'Kuántu é? Dá vínchi i sínku', note: '«Dá» = sale / da en total. Lo oirás en todas las tiendas.' },
+          key: { pt: 'o real · os reais', pron: 'u jeáu · us jeáis', es: 'el real · los reales (moneda de Brasil)' } },
+        { id: 'np10', tag: 'Mercado', tagIcon: 'fa-scale-balanced',
+          pt: 'Me vê meio quilo de queijo, por favor.', pron: 'Mi vê méiu kílu dji kéizhu, pur favô(r)', es: 'Deme medio kilo de queso, por favor.',
+          key: { pt: 'meio quilo · meia dúzia', pron: 'méiu kílu · méia dúzia', es: 'medio kilo · media docena' } },
+        { id: 'np11', tag: 'Piso', tagIcon: 'fa-building',
+          pt: 'Eu moro no segundo andar.', pron: 'Eu móru nu segúndu andá(r)', es: 'Vivo en el segundo piso.',
+          key: { pt: 'primeiro · segundo · terceiro', pron: 'priméru · segúndu · terséru', es: 'primero · segundo · tercero (¡andar = piso!)' } },
+        { id: 'np4', tag: 'Género', tagIcon: 'fa-venus-mars', hl: 'duas',
+          pt: 'Eu tenho dois irmãos e duas irmãs.', pron: 'Eu téñu dóis irmáungs i dúas irmáns', es: 'Tengo dos hermanos y dos hermanas.',
+          key: { pt: 'dois irmãos · duas irmãs', pron: 'dóis irmáungs · dúas irmáns', es: 'el 2 concuerda con la palabra' } }
+      ]
+    },
+    {
+      id: 'horas', num: 11, tab: '¿Qué hora es?', icon: 'fa-clock', color: 'green',
+      title: 'Que Horas São?', pron: 'Ki Óras Sáung', es: '¿Qué hora es? · Preguntar la hora y todas las formas de responder',
+      tip: {
+        title: 'É para la 1, são para las demás',
+        text: 'Las horas son femeninas: <b>uma, duas</b>. Se responde con <b>é</b> para la una, el mediodía y la medianoche, y con <b>são</b> para las demás. Al hablar, casi siempre se dicen solo los números.',
+        words: [
+          { pt: 'Que horas são?', pron: 'Ki óras sáung', es: '¿Qué hora es?' },
+          { pt: 'É uma hora.', pron: 'É úma óra', es: 'Es la una.' },
+          { pt: 'São duas horas.', pron: 'Sáung dúas óras', es: 'Son las dos.' }
+        ]
+      },
+      phrases: [
+        { section: 'Preguntar y responder', icon: 'fa-comments', text: 'Primero las preguntas, luego las respuestas de la más fácil a la más difícil.' },
+        { id: 'ho1', tag: 'Preguntar', tagIcon: 'fa-circle-question',
+          rule: '3 formas de preguntar', hint: 'Para un evento: <b>A que horas começa?</b> → <b>Às oito.</b>',
+          words: [
+            { pt: 'Que horas são?', pron: 'Ki óras sáung', es: '¿Qué hora es?' },
+            { pt: 'Cê tem horas?', pron: 'Sê téing óras', es: '¿Tienes la hora? (muy común)' },
+            { pt: 'A que horas…?', pron: 'A ki óras', es: '¿A qué hora…?' }
+          ] },
+        { id: 'ho2', tag: 'En punto', tagIcon: 'fa-bullseye',
+          rule: 'La hora exacta', hint: '12:00 tiene nombre propio: <b>meio-dia</b> o <b>meia-noite</b>.',
+          words: [
+            { pt: 'São três em ponto.', pron: 'Sáung trés ing póntu', es: 'Son las tres en punto.' },
+            { pt: 'É meio-dia.', pron: 'É méiu djía', es: 'Es mediodía.' },
+            { pt: 'É meia-noite.', pron: 'É méia nóichi', es: 'Es medianoche.' }
+          ] },
+        { id: 'ho3', tag: 'Y cuarto · y media', tagIcon: 'fa-plus',
+          rule: 'Minutos después: «e»', hint: 'Lo más natural es decir los minutos tal cual: <b>e quinze, e meia</b>. «E um quarto» casi no se usa en Brasil.',
+          words: [
+            { pt: 'São duas e quinze.', pron: 'Sáung dúas i kínzi', es: 'Son las dos y cuarto.' },
+            { pt: 'São duas e meia.', pron: 'Sáung dúas i méia', es: 'Son las dos y media.' },
+            { pt: 'São duas e quarenta.', pron: 'Sáung dúas i kuarénta', es: 'Son las dos y cuarenta.' }
+          ] },
+        { id: 'ho4', tag: 'Faltando', tagIcon: 'fa-minus',
+          rule: 'Antes de la hora: «para as»', hint: 'Igual que en Colombia: «diez para las ocho». Al hablar, <b>para as → pras</b>.',
+          words: [
+            { pt: 'São quinze para as três.', pron: 'Sáung kínzi pára as trés', es: 'Son las tres menos cuarto.' },
+            { pt: 'Dez pras oito.', pron: 'Déis pras óitu', es: 'Diez para las ocho.' },
+            { pt: 'Quase cinco.', pron: 'Kuázi sínku', es: 'Casi las cinco.' }
+          ] },
+
+        { section: 'Partes del día y reloj de 24 horas', icon: 'fa-sun', text: 'En Brasil no se dice a. m. / p. m.: se dice la parte del día. En horarios, pasajes y TV se usa el reloj de 24 horas.' },
+        { id: 'ho5', tag: 'Partes del día', tagIcon: 'fa-cloud-sun',
+          rule: 'Da manhã, da tarde, da noite', hint: 'De la medianoche al amanecer es <b>da madrugada</b>.',
+          words: [
+            { pt: 'sete da manhã', pron: 'séchi da mañáng', es: '7 a. m.' },
+            { pt: 'três da tarde', pron: 'trés da tárdji', es: '3 p. m.' },
+            { pt: 'nove da noite', pron: 'nóvi da nóichi', es: '9 p. m.' },
+            { pt: 'duas da madrugada', pron: 'dúas da madrugáda', es: '2 a. m.' }
+          ] },
+        { id: 'ho6', tag: '24 horas', tagIcon: 'fa-train',
+          rule: 'Horarios formales', hint: 'Ojo: en <b>meio-dia e meia</b>, «meia» es «media hora» (femenino).',
+          words: [
+            { pt: 'São quatorze horas.', pron: 'Sáung katórzi óras', es: 'Son las 14:00 (2 p. m.).' },
+            { pt: 'às vinte horas', pron: 'ás vínchi óras', es: 'a las 20:00' },
+            { pt: 'meio-dia e meia', pron: 'méiu djía i méia', es: '12:30' }
+          ] },
+
+        { section: 'En situaciones reales', icon: 'fa-person-walking', text: 'Así usarás la hora en clase, con amigos y en tu rutina.' },
+        { id: 'hp1', tag: 'Respuesta rápida', tagIcon: 'fa-bolt',
+          pt: 'Que horas são? — São dez e vinte.', pron: 'Ki óras sáung? — Sáung déis i vínchi', es: '¿Qué hora es? — Son las diez y veinte.',
+          nat: { pt: 'Que horas são? — Dez e vinte.', pron: 'Ki óras sáung? — Déis i vínchi', note: 'Se responde solo con los números, sin «são».' },
+          key: { pt: 'é (1) · são (2+)', pron: 'é · sáung', es: 'es la una · son las…' } },
+        { id: 'hp2', tag: 'Cita', tagIcon: 'fa-chalkboard-user',
+          pt: 'A aula começa às sete e meia da noite.', pron: 'A áula komésa ás séchi i méia da nóichi', es: 'La clase empieza a las siete y media de la noche.',
+          nat: { pt: 'A aula é que horas? — Sete e meia.', pron: 'A áula é ki óras? — Séchi i méia', note: 'En Brasil la pregunta puede ir al final.' },
+          key: { pt: 'às + hora', pron: 'ás', es: 'a las + hora' } },
+        { id: 'hp3', tag: 'Rutina', tagIcon: 'fa-utensils',
+          pt: 'Eu almoço ao meio-dia e janto às oito.', pron: 'Eu aumósu au méiu djía i zhántu ás óitu', es: 'Almuerzo al mediodía y ceno a las ocho.',
+          key: { pt: 'ao meio-dia · à meia-noite', pron: 'au méiu djía · a méia nóichi', es: 'al mediodía · a medianoche' } },
+        { id: 'hp4', tag: 'Llego tarde', tagIcon: 'fa-person-running',
+          pt: 'Desculpa, estou atrasado! Chego em dez minutos.', pron: 'Djiskúupa, istô atrazádu! Shégu ing déis minútus', es: '¡Perdón, voy tarde! Llego en diez minutos.',
+          nat: { pt: 'Foi mal, tô atrasado! Chego em dez.', pron: 'Fói máu, tô atrazádu! Shégu ing déis', note: '«Foi mal» = ¡perdón! (informal).' },
+          key: { pt: 'atrasado · adiantado', pron: 'atrazádu · adjiantádu', es: 'tarde · temprano (con estar)' } },
+        { id: 'hp5', tag: 'Duración', tagIcon: 'fa-hourglass-half',
+          pt: 'Quanto tempo demora? — Uns vinte minutos.', pron: 'Kuántu témpu demóra? — Úns vínchi minútus', es: '¿Cuánto se demora? — Unos veinte minutos.',
+          key: { pt: 'uns · umas', pron: 'úns · úmas', es: 'unos · unas (aproximado)' } }
+      ]
+    },
+    {
+      id: 'cores', num: 12, tab: 'Colores', icon: 'fa-palette', color: 'red',
+      title: 'As Cores', pron: 'As Kóris', es: 'Los colores · Describir cosas, personas y ropa',
+      tip: {
+        title: 'Los colores también tienen género y plural',
+        text: 'Van <b>después</b> de la palabra y concuerdan con ella: <b>carro vermelho, casa vermelha</b>. Los que terminan en -e o -l solo cambian en plural. ¡Y <b>a cor</b> es femenina!',
+        words: [
+          { pt: 'vermelho · vermelha', pron: 'verméliu · vermélia', es: 'rojo · roja' },
+          { pt: 'verde · verdes', pron: 'vérdji · vérdjis', es: 'verde · verdes' },
+          { pt: 'azul · azuis', pron: 'azúu · azúis', es: 'azul · azules' }
+        ]
+      },
+      phrases: [
+        { id: 'co1', tag: 'Primarios', tagIcon: 'fa-droplet',
+          rule: 'Vermelho, azul, amarelo', hint: '<b>Vermelho</b> = rojo. ¡No se parece al español, repítelo varias veces!',
+          words: [
+            { pt: 'vermelho', pron: 'verméliu', es: 'rojo' },
+            { pt: 'azul', pron: 'azúu', es: 'azul' },
+            { pt: 'amarelo', pron: 'amarélu', es: 'amarillo' }
+          ] },
+        { id: 'co2', tag: 'Mezclas', tagIcon: 'fa-fill-drip',
+          rule: 'Verde, laranja, roxo, rosa', hint: '<b>Roxo</b> = morado (¡no rojo!). Laranja y rosa no cambian: camisas rosa.',
+          words: [
+            { pt: 'verde', pron: 'vérdji', es: 'verde' },
+            { pt: 'laranja', pron: 'laránzha', es: 'naranja' },
+            { pt: 'roxo', pron: 'jóshu', es: 'morado (¡ojo!)' },
+            { pt: 'rosa', pron: 'józa', es: 'rosado' }
+          ] },
+        { id: 'co3', tag: 'Neutros', tagIcon: 'fa-circle-half-stroke',
+          rule: 'Branco, preto, cinza, marrom', hint: '<b>Preto</b> = negro para cosas. «Negro» se usa para personas.',
+          words: [
+            { pt: 'branco', pron: 'bránku', es: 'blanco' },
+            { pt: 'preto', pron: 'prétu', es: 'negro' },
+            { pt: 'cinza', pron: 'sínza', es: 'gris' },
+            { pt: 'marrom', pron: 'majóng', es: 'café, marrón' }
+          ] },
+        { id: 'co4', tag: 'Tonos', tagIcon: 'fa-swatchbook',
+          rule: 'Claro, escuro y más', hint: 'Se unen con guion: <b>azul-claro, verde-escuro</b>.',
+          words: [
+            { pt: 'azul-claro', pron: 'azúu kláru', es: 'azul claro' },
+            { pt: 'verde-escuro', pron: 'vérdji iskúru', es: 'verde oscuro' },
+            { pt: 'bege', pron: 'bézhi', es: 'beige' },
+            { pt: 'dourado', pron: 'dorádu', es: 'dorado' }
+          ] },
+        { id: 'cp1', tag: 'Favorito', tagIcon: 'fa-heart',
+          pt: 'Minha cor favorita é o azul.', pron: 'Míña kô(r) favoríta é u azúu', es: 'Mi color favorito es el azul.',
+          nat: { pt: 'Que cor cê mais curte? — Azul!', pron: 'Ki kô(r) sê máis kúrchi? — Azúu!', note: 'Se responde solo con el color.' },
+          key: { pt: 'a cor', pron: 'a kô(r)', es: 'el color (¡femenino en portugués!)' } },
+        { id: 'cp2', tag: 'Describir', tagIcon: 'fa-eye', hl: 'verdes',
+          pt: 'Ela tem olhos verdes e cabelo preto.', pron: 'Éla téing ólius vérdjis i kabélu prétu', es: 'Ella tiene ojos verdes y pelo negro.',
+          key: { pt: 'olhos · cabelo', pron: 'ólius · kabélu', es: 'ojos · pelo (de la cabeza)' } },
+        { id: 'cp3', tag: 'Ropa', tagIcon: 'fa-shirt',
+          pt: 'Eu quero a camiseta branca, não a vermelha.', pron: 'Eu kéru a kamizéta bránka, náung a vermélia', es: 'Quiero la camiseta blanca, no la roja.',
+          nat: { pt: 'Me vê a branca, por favor.', pron: 'Mi vê a bránka, pur favô(r)', note: 'En la tienda basta con el color: «a branca», «a preta».' },
+          key: { pt: 'branco → branca', pron: 'bránku → bránka', es: 'el color concuerda con la prenda' } },
+        { id: 'cp4', tag: 'Expresión', tagIcon: 'fa-wallet',
+          pt: 'Este mês eu estou no vermelho.', pron: 'Éschi méis eu istô nu verméliu', es: 'Este mes estoy en números rojos (sin plata).',
+          nat: { pt: 'Tô no vermelho, tô sem grana.', pron: 'Tô nu verméliu, tô séing grána', note: '«Grana» = plata, dinero. Súper común.' },
+          key: { pt: 'estar no vermelho', pron: 'istá(r) nu verméliu', es: 'estar sin dinero' } }
+      ]
+    },
+    {
+      id: 'passado', num: 13, tab: 'Pasado', icon: 'fa-clock-rotate-left', color: 'yellow',
+      title: 'O Passado', pron: 'U Pasádu', es: 'El pasado · Lo que hiciste ayer, el fin de semana y en tu vida',
+      tip: {
+        title: 'El pretérito: acciones terminadas',
+        text: 'Funciona como en español: <b>falei</b> = hablé, <b>comi</b> = comí. Truco: con <b>ele / você / a gente</b>, los verbos en -AR terminan en <b>-ou</b> y suena «ô» (falou = falô). Tablas completas en <button data-action="pastverbs" data-arg="1" class="underline font-semibold text-indigo-700">Verbos → Pasado</button>.',
+        words: [
+          { pt: 'ontem', pron: 'ónteing', es: 'ayer' },
+          { pt: 'semana passada', pron: 'semána pasáda', es: 'la semana pasada' },
+          { pt: 'ano passado', pron: 'ánu pasádu', es: 'el año pasado' }
+        ]
+      },
+      phrases: [
+        { id: 'ps1', tag: 'Regulares -AR', tagIcon: 'fa-comment',
+          rule: 'falar → falei, falou', hint: 'eu fal<b>ei</b> · ele / a gente fal<b>ou</b> · eles fal<b>aram</b>. ¡«-ou» suena «ô»!',
+          words: [
+            { pt: 'eu falei', pron: 'eu faléi', es: 'yo hablé' },
+            { pt: 'ele falou', pron: 'éli falô', es: 'él habló' },
+            { pt: 'eles falaram', pron: 'élis faláraung', es: 'ellos hablaron' }
+          ] },
+        { id: 'ps2', tag: 'Regulares -ER', tagIcon: 'fa-utensils',
+          rule: 'comer → comi, comeu', hint: 'Casi igual que en español: comí → <b>comi</b>, comió → <b>comeu</b>.',
+          words: [
+            { pt: 'eu comi', pron: 'eu komí', es: 'yo comí' },
+            { pt: 'ele comeu', pron: 'éli koméu', es: 'él comió' },
+            { pt: 'eles comeram', pron: 'élis koméraung', es: 'ellos comieron' }
+          ] },
+        { id: 'ps3', tag: 'Regulares -IR', tagIcon: 'fa-door-open',
+          rule: 'abrir → abri, abriu', hint: 'Como -ER pero con «i»: abri, abr<b>iu</b>, abr<b>iram</b>.',
+          words: [
+            { pt: 'eu abri', pron: 'eu abrí', es: 'yo abrí' },
+            { pt: 'ele abriu', pron: 'éli abríu', es: 'él abrió' },
+            { pt: 'eles abriram', pron: 'élis abríraung', es: 'ellos abrieron' }
+          ] },
+        { id: 'ps4', tag: 'Ser = Ir', tagIcon: 'fa-equals',
+          rule: 'fui, foi, foram', hint: 'Como en español, <b>ser</b> e <b>ir</b> son iguales en pasado: «Fui à praia» · «Foi incrível».',
+          words: [
+            { pt: 'eu fui', pron: 'eu fúi', es: 'yo fui' },
+            { pt: 'ele foi', pron: 'éli fói', es: 'él fue' },
+            { pt: 'eles foram', pron: 'élis fóraung', es: 'ellos fueron' }
+          ] },
+        { id: 'ps5', tag: 'Estar · Ter', tagIcon: 'fa-hand-holding',
+          rule: 'estive, tive', hint: 'Ojo: con <b>eu</b> terminan en <b>-e</b>, no en «-o»: estive (estuve), tive (tuve).',
+          words: [
+            { pt: 'eu estive', pron: 'eu ischívi', es: 'yo estuve' },
+            { pt: 'ele esteve', pron: 'éli istévi', es: 'él estuvo' },
+            { pt: 'eu tive', pron: 'eu chívi', es: 'yo tuve' },
+            { pt: 'ele teve', pron: 'éli tévi', es: 'él tuvo' }
+          ] },
+        { id: 'ps6', tag: 'Fazer · Poder · Querer', tagIcon: 'fa-hammer',
+          rule: 'fiz, fez, pude, quis', hint: 'Cortitos y muy usados. ¡Repítelos hasta que salgan solos!',
+          words: [
+            { pt: 'eu fiz', pron: 'eu fís', es: 'yo hice' },
+            { pt: 'ele fez', pron: 'éli fêis', es: 'él hizo' },
+            { pt: 'eu pude', pron: 'eu púdji', es: 'yo pude' },
+            { pt: 'eu quis', pron: 'eu kís', es: 'yo quise' }
+          ] },
+        { id: 'ps7', tag: 'Ver · Dar · Dizer', tagIcon: 'fa-eye',
+          rule: 'vi, deu, disse', hint: '<b>Deu certo!</b> = ¡Funcionó! Se dice todo el tiempo.',
+          words: [
+            { pt: 'eu vi', pron: 'eu ví', es: 'yo vi' },
+            { pt: 'deu', pron: 'déu', es: 'dio / salió' },
+            { pt: 'eu disse', pron: 'eu djísi', es: 'yo dije' }
+          ] },
+        { id: 'pp1', tag: 'Ayer', tagIcon: 'fa-bed',
+          pt: 'Ontem eu acordei tarde.', pron: 'Ónteing eu akordéi tárdji', es: 'Ayer me desperté tarde.',
+          nat: { pt: 'Ontem acordei super tarde.', pron: 'Ónteing akordéi súpe(r) tárdji', note: 'Se omite «eu» y «super» intensifica.' },
+          key: { pt: 'ontem · anteontem', pron: 'ónteing · anchiónteing', es: 'ayer · anteayer' } },
+        { id: 'pp2', tag: 'Semana pasada', tagIcon: 'fa-umbrella-beach',
+          pt: 'Na semana passada eu fui à praia com meus amigos.', pron: 'Na semána pasáda eu fúi a práia kong méus amígus', es: 'La semana pasada fui a la playa con mis amigos.',
+          nat: { pt: 'Semana passada fui pra praia com a galera.', pron: 'Semána pasáda fúi pra práia kong a galéra', note: '«A galera» = el parche, el grupo de amigos.' },
+          key: { pt: 'eu fui · ele foi', pron: 'eu fúi · éli fói', es: 'yo fui · él fue' } },
+        { id: 'pp3', tag: 'Experiencias', tagIcon: 'fa-bowl-food',
+          pt: 'Eu já comi feijoada, mas ainda não provei açaí.', pron: 'Eu zhá komí fezhuáda, mas aínda náung provéi asaí', es: 'Ya comí feijoada, pero todavía no he probado el açaí.',
+          nat: { pt: 'Já foi pro Brasil? — Já! / Ainda não.', pron: 'Zhá fói pru Braziú? — Zhá! / Aínda náung', note: 'Para «he probado / he ido» se usa el pasado simple. Se responde con «já» o «ainda não», no con «sí».' },
+          key: { pt: 'já · ainda não', pron: 'zhá · aínda náung', es: 'ya · todavía no' } },
+        { id: 'pp4', tag: 'Fin de semana', tagIcon: 'fa-champagne-glasses',
+          pt: 'Como foi o seu fim de semana? Foi ótimo!', pron: 'Kómu fói u séu fing dji semána? Fói óchimu!', es: '¿Cómo estuvo tu fin de semana? ¡Estuvo genial!',
+          nat: { pt: 'E aí, como foi o fim de semana? — Foi demais!', pron: 'I aí, kómu fói u fing dji semána? — Fói djimáis!', note: '«Demais» = ¡buenísimo!' },
+          key: { pt: 'Como foi…?', pron: 'Kómu fói', es: '¿Cómo estuvo / cómo fue…?' } },
+        { id: 'pp5', tag: 'Resultado', tagIcon: 'fa-circle-check',
+          pt: 'Eu tentei e deu certo!', pron: 'Eu tentéi i déu sértu', es: '¡Lo intenté y funcionó!',
+          nat: { pt: 'Deu ruim!', pron: 'Déu juíng', note: 'Lo contrario, en jerga: «¡Salió mal! / ¡Se dañó!»' },
+          key: { pt: 'deu certo · deu errado', pron: 'déu sértu · déu ejádu', es: 'salió bien · salió mal' } },
+        { id: 'pp6', tag: 'Hace…', tagIcon: 'fa-hourglass-half',
+          pt: 'Eu comecei a estudar português há dois meses.', pron: 'Eu komeséi a istudá(r) portugués a dóis mézis', es: 'Empecé a estudiar portugués hace dos meses.',
+          nat: { pt: 'Comecei faz dois meses.', pron: 'Komeséi fáis dóis mézis', note: 'Al hablar, «faz» reemplaza a «há».' },
+          key: { pt: 'há + tiempo', pron: 'á', es: 'hace + tiempo' } }
+      ]
+    },
+    {
+      id: 'vocab', num: 14, tab: 'Vocabulario', icon: 'fa-book', color: 'cyan', vocab: true,
+      title: 'Vocabulário Essencial', pron: 'Vokabuláriu Esensiáu', es: 'Vocabulario esencial · Las palabras que más vas a usar, por categorías'
+    },
+    {
+      id: 'vverbos', num: 15, tab: 'Verbos', icon: 'fa-person-running', color: 'lime', verbs: true,
+      title: 'Verbos Mais Usados', pron: 'Vérbus Máis Uzádus', es: 'Los verbos más usados · Presente y pasado en 1ª, 2ª y 3ª persona'
+    },
+    {
+      id: 'pratica', num: 16, tab: 'Práctica', icon: 'fa-gamepad', color: 'pink', practice: true,
+      title: 'Prática Interativa', pron: 'Práchika Interachíva', es: 'Práctica interactiva · Flashcards y quiz'
+    },
+    {
+      id: 'prompt', num: 17, tab: 'Prompt IA', icon: 'fa-robot', color: 'fuchsia', prompt: true,
+      title: 'Estude com IA', pron: 'Istúdji kong i-á', es: 'Estudia con IA · Un prompt listo para copiar y pegar'
+    }
+  ];
+
+  const FLASH = [
+    { id: 'f9',  cat: 'Presentación', icon: 'fa-hand',          pt: 'Eu me chamo…',         pron: 'Eu mi shámu',           es: 'Me llamo…' },
+    { id: 'f1',  cat: 'Rutina',       icon: 'fa-bed',           pt: 'Eu acordo cedo',       pron: 'Eu akórdu sédu',        es: 'Me despierto temprano' },
+    { id: 'f2',  cat: 'Rutina',       icon: 'fa-tooth',         pt: 'Eu escovo os dentes',  pron: 'Eu iskóvu uz dénchis',  es: 'Me cepillo los dientes' },
+    { id: 'f3',  cat: 'Rutina',       icon: 'fa-shower',        pt: 'Eu tomo banho',        pron: 'Eu tómu báñu',          es: 'Me ducho' },
+    { id: 'f4',  cat: 'Rutina',       icon: 'fa-train-subway',  pt: 'Eu vou de metrô',      pron: 'Eu vô dji metrô',       es: 'Voy en metro' },
+    { id: 'f5',  cat: 'Rutina',       icon: 'fa-moon',          pt: 'Eu janto',             pron: 'Eu zhántu',             es: 'Ceno' },
+    { id: 'f6',  cat: 'Comida',       icon: 'fa-bread-slice',   pt: 'O pão com manteiga',   pron: 'U paung kong mantéiga', es: 'El pan con mantequilla' },
+    { id: 'f7',  cat: 'Comida',       icon: 'fa-glass-water',   pt: 'O suco de laranja',    pron: 'U súku dji laránzha',   es: 'El jugo de naranja' },
+    { id: 'f8',  cat: 'Comida',       icon: 'fa-apple-whole',   pt: 'A maçã é doce',        pron: 'A masáng é dósi',       es: 'La manzana es dulce' },
+    { id: 'f10', cat: 'Estados',      icon: 'fa-burger',        pt: 'Tô com fome',          pron: 'Tô kong fómi',          es: 'Tengo hambre' },
+    { id: 'f11', cat: 'Preguntas',    icon: 'fa-house-user',    pt: 'Com quem você mora?',  pron: 'Kong kéing vosê móra',  es: '¿Con quién vives?' },
+    { id: 'f12', cat: 'Falso amigo',  icon: 'fa-face-grimace',  pt: 'esquisito',            pron: 'iskizítu',              es: 'raro, extraño (¡no «exquisito»!)' },
+    { id: 'f13', cat: 'Falso amigo',  icon: 'fa-lightbulb',     pt: 'esperto',              pron: 'ispértu',               es: 'listo, astuto (¡no «experto»!)' },
+    { id: 'f14', cat: 'Números',      icon: 'fa-phone',         pt: 'meia',                 pron: 'méia',                  es: 'seis (al dictar teléfonos)' },
+    { id: 'f15', cat: 'Números',      icon: 'fa-hashtag',       pt: 'dezessete',            pron: 'djizeséchi',            es: 'diecisiete' },
+    { id: 'f16', cat: 'Colores',      icon: 'fa-palette',       pt: 'roxo',                 pron: 'jóshu',                 es: 'morado (¡no «rojo»!)' },
+    { id: 'f17', cat: 'Colores',      icon: 'fa-shirt',         pt: 'A camiseta preta',     pron: 'A kamizéta préta',      es: 'La camiseta negra' },
+    { id: 'f18', cat: 'Pasado',       icon: 'fa-umbrella-beach', pt: 'Ontem eu fui à praia', pron: 'Ónteing eu fúi a práia', es: 'Ayer fui a la playa' },
+    { id: 'f19', cat: 'Pasado',       icon: 'fa-circle-check',  pt: 'Deu certo!',           pron: 'Déu sértu',             es: '¡Funcionó! / ¡Salió bien!' },
+    { id: 'f20', cat: 'Números',      icon: 'fa-cake-candles',  pt: 'primeiro de março',    pron: 'priméru dji márssu',    es: 'primero de marzo' },
+    { id: 'f21', cat: 'Horas',        icon: 'fa-clock',         pt: 'Cê tem horas?',        pron: 'Sê téing óras',         es: '¿Tienes la hora?' },
+    { id: 'f22', cat: 'Horas',        icon: 'fa-hourglass-end', pt: 'Quinze para as três',  pron: 'Kínzi pára as trés',    es: 'Las tres menos cuarto' },
+    { id: 'f23', cat: 'Horas',        icon: 'fa-sun',           pt: 'É meio-dia',           pron: 'É méiu djía',           es: 'Es mediodía' }
+  ];
+
+  const FLASH_COLORS = {
+    'Presentación': 'from-sky-400 to-indigo-500',
+    'Rutina':       'from-emerald-400 to-teal-500',
+    'Comida':       'from-orange-400 to-rose-500',
+    'Estados':      'from-rose-400 to-pink-500',
+    'Preguntas':    'from-violet-400 to-purple-600',
+    'Falso amigo':  'from-slate-500 to-slate-700',
+    'Números':      'from-blue-400 to-indigo-500',
+    'Horas':        'from-green-400 to-emerald-600',
+    'Colores':      'from-red-400 to-amber-400',
+    'Pasado':       'from-yellow-400 to-orange-500'
+  };
+
+  const QUIZ = [
+    { id: 'q1', topic: 'Heterogenéricos',
+      q: '¿Cómo se dice «El viaje es increíble»?',
+      options: [
+        { pt: 'O viagem é incrível.',  pron: 'U viázheing é inkríveu' },
+        { pt: 'A viagem é incrível.',  pron: 'A viázheing é inkríveu' },
+        { pt: 'Um viagem é incrível.', pron: 'Ung viázheing é inkríveu' }
+      ], correct: 1,
+      hint: 'Pista: las palabras que terminan en -agem son femeninas.',
+      explain: 'Viagem termina en -agem → femenino: a viagem.' },
+    { id: 'q2', topic: 'Heterogenéricos',
+      q: '«La leche está muy fría» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'O leite está muito frio.', pron: 'U léichi istá múintu fríu' },
+        { pt: 'A leite está muito fria.', pron: 'A léichi istá múintu fría' },
+        { pt: 'A leite está muito frio.', pron: 'A léichi istá múintu fríu' }
+      ], correct: 0,
+      hint: 'Pista: en portugués la leche es masculina. Mira también el adjetivo.',
+      explain: 'Leite es masculino: o leite… frio. Un brasileño diría: «O leite tá bem gelado».' },
+    { id: 'q3', topic: 'Verbos de rutina',
+      q: '¿Cómo dices «Me ducho» en portugués?',
+      options: [
+        { pt: 'Eu tomo café.',  pron: 'Eu tómu kafé' },
+        { pt: 'Eu janto.',      pron: 'Eu zhántu' },
+        { pt: 'Eu tomo banho.', pron: 'Eu tómu báñu' }
+      ], correct: 2,
+      hint: 'Pista: piensa en «tomar un baño».',
+      explain: 'Tomar banho = ducharse. (Tomar café = desayunar o tomar café.)' },
+    { id: 'q4', topic: 'Interrogativas',
+      q: 'Quieres preguntar «¿A dónde vas el sábado?». ¿Cuál usas?',
+      options: [
+        { pt: 'Onde você vai no sábado?',  pron: 'Óndji vosê vái nu sábadu' },
+        { pt: 'Aonde você vai no sábado?', pron: 'Aóndji vosê vái nu sábadu' },
+        { pt: 'Cadê você vai no sábado?',  pron: 'Kadê vosê vái nu sábadu' }
+      ], correct: 1,
+      hint: 'Pista: hay movimiento (ir) → a + onde.',
+      explain: 'Con movimiento se usa aonde. En la calle: «Cê vai pra onde no sábado?».' },
+    { id: 'q5', topic: 'Adjetivos',
+      q: '«Davi habla portugués muy bien» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'Davi fala português muito bom.', pron: 'Dávi fála portugués múintu bong' },
+        { pt: 'Davi fala português muito boa.', pron: 'Dávi fála portugués múintu bóa' },
+        { pt: 'Davi fala português muito bem.', pron: 'Dávi fála portugués múintu béing' }
+      ], correct: 2,
+      hint: 'Pista: dice CÓMO habla → necesitas un adverbio.',
+      explain: 'Bem es adverbio (cómo se hace algo). Bom describe una cosa: um bom estudante.' },
+    { id: 'q6', topic: 'Ser · Estar',
+      q: '¿Cómo dices «Tengo hambre»?',
+      options: [
+        { pt: 'Eu estou com fome.', pron: 'Eu istô kong fómi' },
+        { pt: 'Eu sou com fome.',   pron: 'Eu sô kong fómi' },
+        { pt: 'Eu tenho com fome.', pron: 'Eu téñu kong fómi' }
+      ], correct: 0,
+      hint: 'Pista: el hambre es un estado temporal… ¿ser o estar?',
+      explain: 'Estar com = tener (un estado). Un brasileño diría: «Tô com fome!».' },
+    { id: 'q7', topic: 'Números',
+      q: '¿Cómo dices «Tengo dos hermanas»?',
+      options: [
+        { pt: 'Eu tenho dois irmãs.', pron: 'Eu téñu dóis irmáns' },
+        { pt: 'Eu tenho duas irmãs.', pron: 'Eu téñu dúas irmáns' },
+        { pt: 'Eu tenho duos irmãs.', pron: 'Eu téñu dúus irmáns' }
+      ], correct: 1,
+      hint: 'Pista: «irmã» es femenino… y el 2 también tiene femenino.',
+      explain: 'Con palabras femeninas se usa duas: dois irmãos, duas irmãs.' },
+    { id: 'q8', topic: 'Colores',
+      q: '«Quiero la camisa morada» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'Eu quero a camisa roxa.',     pron: 'Eu kéru a kamíza jósha' },
+        { pt: 'Eu quero a camisa vermelha.', pron: 'Eu kéru a kamíza vermélia' },
+        { pt: 'Eu quero a camisa roxo.',     pron: 'Eu kéru a kamíza jóshu' }
+      ], correct: 0,
+      hint: 'Pista: «roxo» es un falso amigo… y el color concuerda con «camisa».',
+      explain: 'Roxo = morado (vermelho = rojo). Camisa es femenino → roxa.' },
+    { id: 'q9', topic: 'Pasado',
+      q: '¿Cómo dices «Ayer fui a la playa»?',
+      options: [
+        { pt: 'Ontem eu vou à praia.', pron: 'Ónteing eu vô a práia' },
+        { pt: 'Ontem eu fui à praia.', pron: 'Ónteing eu fúi a práia' },
+        { pt: 'Ontem eu foi à praia.', pron: 'Ónteing eu fói a práia' }
+      ], correct: 1,
+      hint: 'Pista: con «eu», el pasado de ir es igual que en español.',
+      explain: 'Eu fui = yo fui · ele foi = él fue. Un brasileño diría: «Ontem fui pra praia».' },
+    { id: 'q10', topic: 'Pasado',
+      q: '«Él habló con su jefe» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'Ele falei com o chefe.', pron: 'Éli faléi kong u shéfi' },
+        { pt: 'Ele falau com o chefe.', pron: 'Éli faláu kong u shéfi' },
+        { pt: 'Ele falou com o chefe.', pron: 'Éli falô kong u shéfi' }
+      ], correct: 2,
+      hint: 'Pista: los verbos en -AR con «ele» terminan en -ou.',
+      explain: 'Eu falei · ele falou (suena «falô»).' },
+    { id: 'q11', topic: 'Horas',
+      q: '¿Cómo dices «Es la una y media»?',
+      options: [
+        { pt: 'São uma e meia.', pron: 'Sáung úma i méia' },
+        { pt: 'É uma e meia.',   pron: 'É úma i méia' },
+        { pt: 'É um e meio.',    pron: 'É ung i méiu' }
+      ], correct: 1,
+      hint: 'Pista: para la una se usa el singular… y «hora» es femenina.',
+      explain: 'É uma (singular, femenino) e meia. Para las demás horas: são duas, são três…' },
+    { id: 'q12', topic: 'Números',
+      q: '¿Cómo dices «Hoy es 1 de marzo»?',
+      options: [
+        { pt: 'Hoje é dia um de março.',       pron: 'Ózhi é djía ung dji márssu' },
+        { pt: 'Hoje é dia primeiro de março.', pron: 'Ózhi é djía priméru dji márssu' },
+        { pt: 'Hoje é o primeiro março.',      pron: 'Ózhi é u priméru márssu' }
+      ], correct: 1,
+      hint: 'Pista: el día 1 del mes es especial.',
+      explain: 'El día 1 se dice «primeiro». Del 2 en adelante: dia dois, dia três…' }
+  ];
+
+  /* ---------- Vocabulario por categorías ---------- */
+  const VOCAB = [
+    { id: 'vc-saludos', emoji: '👋', name: 'Saludos y cortesía', tip: 'Obrigado lo dice un hombre; obrigada, una mujer.',
+      words: [
+        { pt: 'Oi!', pron: 'Ói', es: '¡Hola!' },
+        { pt: 'Tudo bem?', pron: 'Túdu béing', es: '¿Todo bien?' },
+        { pt: 'Obrigado / Obrigada', pron: 'Obrigádu / Obrigáda', es: 'Gracias' },
+        { pt: 'Por favor', pron: 'Pur favô(r)', es: 'Por favor' },
+        { pt: 'Desculpa', pron: 'Djiskúupa', es: 'Perdón, disculpa' },
+        { pt: 'Com licença', pron: 'Kong lisénsa', es: 'Con permiso' },
+        { pt: 'Tchau!', pron: 'Cháu', es: '¡Chao!' },
+        { pt: 'Até logo!', pron: 'Até lógu', es: '¡Hasta luego!' }
+      ] },
+    { id: 'vc-familia', emoji: '👨‍👩‍👧', name: 'Personas y familia', tip: '«A gente» significa «nosotros» en la conversación diaria.',
+      words: [
+        { pt: 'a mãe', pron: 'a máing', es: 'la madre' },
+        { pt: 'o pai', pron: 'u pái', es: 'el padre' },
+        { pt: 'o irmão / a irmã', pron: 'u irmáung / a irmáng', es: 'el hermano / la hermana' },
+        { pt: 'o filho / a filha', pron: 'u fíliu / a fília', es: 'el hijo / la hija' },
+        { pt: 'o amigo / a amiga', pron: 'u amígu / a amíga', es: 'el amigo / la amiga' },
+        { pt: 'o namorado / a namorada', pron: 'u namorádu / a namoráda', es: 'el novio / la novia' },
+        { pt: 'o menino / a menina', pron: 'u menínu / a menína', es: 'el niño / la niña' },
+        { pt: 'a gente', pron: 'a zhénchi', es: 'nosotros (informal) / la gente' }
+      ] },
+    { id: 'vc-tempo', emoji: '⏰', name: 'Tiempo', tip: 'Amanhã = mañana (el día siguiente). La mañana del día es «a manhã».',
+      words: [
+        { pt: 'hoje', pron: 'ózhi', es: 'hoy' },
+        { pt: 'ontem', pron: 'ónteing', es: 'ayer' },
+        { pt: 'amanhã', pron: 'amañáng', es: 'mañana' },
+        { pt: 'agora', pron: 'agóra', es: 'ahora' },
+        { pt: 'sempre', pron: 'sémpri', es: 'siempre' },
+        { pt: 'nunca', pron: 'núnka', es: 'nunca' },
+        { pt: 'a semana', pron: 'a semána', es: 'la semana' },
+        { pt: 'o fim de semana', pron: 'u fing dji semána', es: 'el fin de semana' }
+      ] },
+    { id: 'vc-dias', emoji: '📅', name: 'Días de la semana', tip: 'Se cuenta desde el domingo. Al hablar se dice solo «segunda», «terça»…',
+      words: [
+        { pt: 'segunda-feira', pron: 'segúnda féra', es: 'lunes' },
+        { pt: 'terça-feira', pron: 'térsa féra', es: 'martes' },
+        { pt: 'quarta-feira', pron: 'kuárta féra', es: 'miércoles' },
+        { pt: 'quinta-feira', pron: 'kínta féra', es: 'jueves' },
+        { pt: 'sexta-feira', pron: 'sésta féra', es: 'viernes' },
+        { pt: 'sábado', pron: 'sábadu', es: 'sábado' },
+        { pt: 'domingo', pron: 'domíngu', es: 'domingo' },
+        { pt: 'o feriado', pron: 'u feriádu', es: 'el día festivo' }
+      ] },
+    { id: 'vc-lugares', emoji: '🏙️', name: 'Lugares', tip: 'Ônibus es el bus. ¡Nada que ver con «ómnibus»!',
+      words: [
+        { pt: 'a casa', pron: 'a káza', es: 'la casa' },
+        { pt: 'o trabalho', pron: 'u trabáliu', es: 'el trabajo' },
+        { pt: 'a escola', pron: 'a iskóla', es: 'la escuela' },
+        { pt: 'a praia', pron: 'a práia', es: 'la playa' },
+        { pt: 'o mercado', pron: 'u merkádu', es: 'el mercado' },
+        { pt: 'a rua', pron: 'a júa', es: 'la calle' },
+        { pt: 'o banheiro', pron: 'u bañéru', es: 'el baño' },
+        { pt: 'o ônibus', pron: 'u ónibus', es: 'el bus' }
+      ] },
+    { id: 'vc-comida', emoji: '🍽️', name: 'Comida y bebida', tip: 'El plato típico de Brasil: arroz com feijão.',
+      words: [
+        { pt: 'a água', pron: 'a água', es: 'el agua' },
+        { pt: 'o café', pron: 'u kafé', es: 'el café' },
+        { pt: 'o pão', pron: 'u paung', es: 'el pan' },
+        { pt: 'o arroz', pron: 'u ajós', es: 'el arroz' },
+        { pt: 'o feijão', pron: 'u fezháung', es: 'el frijol' },
+        { pt: 'a carne', pron: 'a kárni', es: 'la carne' },
+        { pt: 'o frango', pron: 'u frángu', es: 'el pollo' },
+        { pt: 'a cerveja', pron: 'a servézha', es: 'la cerveza' }
+      ] },
+    { id: 'vc-conectores', emoji: '🔗', name: 'Conectores', tip: '¡Mas = pero, mais = más! Y «aí» es el «entonces» de los brasileños al contar algo.',
+      words: [
+        { pt: 'e', pron: 'i', es: 'y' },
+        { pt: 'mas', pron: 'mas', es: 'pero' },
+        { pt: 'também', pron: 'tambéing', es: 'también' },
+        { pt: 'porque', pron: 'purkê', es: 'porque' },
+        { pt: 'então', pron: 'entáung', es: 'entonces' },
+        { pt: 'muito', pron: 'múintu', es: 'muy / mucho' },
+        { pt: 'mais', pron: 'máis', es: 'más' },
+        { pt: 'aí', pron: 'aí', es: 'entonces, luego (al contar algo)' }
+      ] },
+    { id: 'vc-girias', emoji: '🇧🇷', name: 'Expresiones brasileñas', tip: 'Informales y súper frecuentes. ¡Suenan muy naturales!',
+      words: [
+        { pt: 'Legal!', pron: 'Legáu', es: '¡Chévere!' },
+        { pt: 'Beleza?', pron: 'Beléza', es: '¿Todo bien? / ¡Listo!' },
+        { pt: 'Que saudade!', pron: 'Ki saudádji', es: '¡Qué nostalgia! / ¡Te extraño!' },
+        { pt: 'Tô cansado', pron: 'Tô kansádu', es: 'Estoy cansado (informal)' },
+        { pt: 'E aí, galera?', pron: 'I aí, galéra', es: '¿Qué más, gente?' },
+        { pt: 'Nossa!', pron: 'Nósa', es: '¡Wow! / ¡Uy!' },
+        { pt: 'Tá bom', pron: 'Tá bong', es: 'Está bien / vale' },
+        { pt: 'Valeu!', pron: 'Valéu', es: '¡Gracias! (informal)' }
+      ] }
+  ];
+
+  /* ---------- Verbos más usados (presente) ---------- */
+  // Orden de formas: eu · tu · você/ele/ela · nós · vocês/eles/elas
+  const PERSONS = [
+    { pt: 'eu',   pron: 'eu',   es: 'yo',       label: '1ª persona singular' },
+    { pt: 'tu',   pron: 'tu',   es: 'tú',       label: '2ª persona singular · casi no se usa en Brasil' },
+    { pt: 'ele',  pron: 'éli',  es: 'él',       label: '3ª persona singular · también você / ela' },
+    { pt: 'nós',  pron: 'nós',  es: 'nosotros', label: '1ª persona plural' },
+    { pt: 'eles', pron: 'élis', es: 'ellos',    label: '3ª persona plural · también vocês / elas' }
+  ];
+
+  const VERBS = [
+    { id: 'vb-ser', inf: 'ser', pron: 'sê(r)', es: 'ser', type: 'irr',
+      forms: ['sou', 'és', 'é', 'somos', 'são'], prons: ['sô', 'és', 'é', 'sómus', 'saung'], esForms: ['soy', 'eres', 'es', 'somos', 'son'],
+      ex: { pt: 'Eu sou de Bogotá.', pron: 'Eu sô dji Bogotá', es: 'Soy de Bogotá.' } },
+    { id: 'vb-estar', inf: 'estar', pron: 'istá(r)', es: 'estar', type: 'irr',
+      forms: ['estou', 'estás', 'está', 'estamos', 'estão'], prons: ['istô', 'istás', 'istá', 'istámus', 'istáung'], esForms: ['estoy', 'estás', 'está', 'estamos', 'están'],
+      ex: { pt: 'Nós estamos muito cansados.', pron: 'Nós istámus múintu kansádus', es: 'Estamos muy cansados.' },
+      street: { pt: 'Tô bem! E você, tá bem?', pron: 'Tô béing! I vosê, tá béing', note: 'Al hablar: estou → tô, está → tá, estamos → tamo.' } },
+    { id: 'vb-ter', inf: 'ter', pron: 'tê(r)', es: 'tener', type: 'irr',
+      forms: ['tenho', 'tens', 'tem', 'temos', 'têm'], prons: ['téñu', 'téins', 'téing', 'témus', 'téing'], esForms: ['tengo', 'tienes', 'tiene', 'tenemos', 'tienen'],
+      ex: { pt: 'Você tem filhos?', pron: 'Vosê téing fílius', es: '¿Tienes hijos?' },
+      street: { pt: 'Cê tem filho?', pron: 'Sê téing fíliu', note: '«Cê» es la forma corta de «você».' } },
+    { id: 'vb-ir', inf: 'ir', pron: 'í(r)', es: 'ir', type: 'irr',
+      forms: ['vou', 'vais', 'vai', 'vamos', 'vão'], prons: ['vô', 'váis', 'vái', 'vámus', 'váung'], esForms: ['voy', 'vas', 'va', 'vamos', 'van'],
+      ex: { pt: 'Eles vão à praia no sábado.', pron: 'Élis váung a práia nu sábadu', es: 'Ellos van a la playa el sábado.' },
+      street: { pt: 'Vou pra casa.', pron: 'Vô pra káza', note: '«Pra» (= para a) es lo más natural.' } },
+    { id: 'vb-fazer', inf: 'fazer', pron: 'fazê(r)', es: 'hacer', type: 'irr',
+      forms: ['faço', 'fazes', 'faz', 'fazemos', 'fazem'], prons: ['fásu', 'fázis', 'fáis', 'fazémus', 'fázeing'], esForms: ['hago', 'haces', 'hace', 'hacemos', 'hacen'],
+      ex: { pt: 'O que você faz aos domingos?', pron: 'U ki vosê fáis aus domíngus', es: '¿Qué haces los domingos?' },
+      street: { pt: 'Que cê faz no domingo?', pron: 'Ki sê fáis nu domíngu', note: 'Pregunta rápida y natural.' } },
+    { id: 'vb-poder', inf: 'poder', pron: 'podê(r)', es: 'poder', type: 'irr',
+      forms: ['posso', 'podes', 'pode', 'podemos', 'podem'], prons: ['pósu', 'pódjis', 'pódji', 'podémus', 'pódeing'], esForms: ['puedo', 'puedes', 'puede', 'podemos', 'pueden'],
+      ex: { pt: 'Você pode me ajudar?', pron: 'Vosê pódji mi azhudá(r)', es: '¿Puedes ayudarme?' },
+      street: { pt: 'Pode deixar!', pron: 'Pódji deishá(r)', note: '= «¡Déjalo en mis manos!» / «¡Tranquilo!»' } },
+    { id: 'vb-querer', inf: 'querer', pron: 'kerê(r)', es: 'querer', type: 'irr',
+      forms: ['quero', 'queres', 'quer', 'queremos', 'querem'], prons: ['kéru', 'kéris', 'ké(r)', 'kerémus', 'kéreing'], esForms: ['quiero', 'quieres', 'quiere', 'queremos', 'quieren'],
+      ex: { pt: 'Eu quero um café, por favor.', pron: 'Eu kéru ung kafé, pur favô(r)', es: 'Quiero un café, por favor.' },
+      street: { pt: 'Me vê um café, por favor?', pron: 'Mi vê ung kafé, pur favô(r)', note: 'Así se pide en una cafetería brasileña.' } },
+    { id: 'vb-saber', inf: 'saber', pron: 'sabê(r)', es: 'saber', type: 'irr',
+      forms: ['sei', 'sabes', 'sabe', 'sabemos', 'sabem'], prons: ['séi', 'sábis', 'sábi', 'sabémus', 'sábeing'], esForms: ['sé', 'sabes', 'sabe', 'sabemos', 'saben'],
+      ex: { pt: 'Eu não sei falar inglês.', pron: 'Eu naung séi falá(r) inglés', es: 'No sé hablar inglés.' },
+      street: { pt: 'Sei não.', pron: 'Séi naung', note: 'Negación muy brasileña: el «não» va al final.' } },
+    { id: 'vb-falar', inf: 'falar', pron: 'falá(r)', es: 'hablar', type: 'ar',
+      forms: ['falo', 'falas', 'fala', 'falamos', 'falam'], prons: ['fálu', 'fálas', 'fála', 'falámus', 'fálaung'], esForms: ['hablo', 'hablas', 'habla', 'hablamos', 'hablan'],
+      ex: { pt: 'Nós falamos espanhol.', pron: 'Nós falámus ispañóu', es: 'Hablamos español.' },
+      street: { pt: 'Fala sério!', pron: 'Fála sériu', note: '= «¡No me digas!» / «¿En serio?»' } },
+    { id: 'vb-gostar', inf: 'gostar de', pron: 'gostá(r) dji', es: 'gustar', type: 'ar',
+      forms: ['gosto', 'gostas', 'gosta', 'gostamos', 'gostam'], prons: ['góstu', 'góstas', 'gósta', 'gostámus', 'góstaung'],
+      esFull: ['me gusta', 'te gusta', 'le gusta (a él)', 'nos gusta', 'les gusta (a ellos)'],
+      ex: { pt: 'Ela gosta de dançar.', pron: 'Éla gósta dji dansá(r)', es: 'A ella le gusta bailar.' },
+      street: { pt: 'Ela curte dançar.', pron: 'Éla kúrchi dansá(r)', note: '«Curtir» = disfrutar, gustar mucho.' } },
+    { id: 'vb-comer', inf: 'comer', pron: 'komê(r)', es: 'comer', type: 'er',
+      forms: ['como', 'comes', 'come', 'comemos', 'comem'], prons: ['kómu', 'kómis', 'kómi', 'komémus', 'kómeing'], esForms: ['como', 'comes', 'come', 'comemos', 'comen'],
+      ex: { pt: 'Eles comem arroz com feijão.', pron: 'Élis kómeing ajós kong fezháung', es: 'Ellos comen arroz con frijoles.' },
+      street: { pt: 'Bora comer?', pron: 'Bóra komê(r)', note: '«Bora» = ¡vamos! (muy informal).' } },
+    { id: 'vb-abrir', inf: 'abrir', pron: 'abrí(r)', es: 'abrir', type: 'ir',
+      forms: ['abro', 'abres', 'abre', 'abrimos', 'abrem'], prons: ['ábru', 'ábris', 'ábri', 'abrímus', 'ábreing'], esForms: ['abro', 'abres', 'abre', 'abrimos', 'abren'],
+      ex: { pt: 'A loja abre às nove.', pron: 'A lózha ábri ás nóvi', es: 'La tienda abre a las nueve.' },
+      street: { pt: 'A loja abre que horas?', pron: 'A lózha ábri ki óras', note: 'En Brasil la pregunta puede ir al final.' } }
+  ];
+
+  /* ---------- Verbos en pasado (pretérito perfeito) ---------- */
+  // Mismo orden de personas que PERSONS; «es» trae la traducción completa
+  const PAST = {
+    'vb-ser': { forms: ['fui', 'foste', 'foi', 'fomos', 'foram'], prons: ['fúi', 'fóschi', 'fói', 'fómus', 'fóraung'],
+      es: ['yo fui', 'tú fuiste', 'él fue', 'nosotros fuimos', 'ellos fueron'],
+      ex: { pt: 'A festa foi incrível!', pron: 'A fésta fói inkríveu', es: '¡La fiesta fue increíble!' } },
+    'vb-estar': { forms: ['estive', 'estiveste', 'esteve', 'estivemos', 'estiveram'], prons: ['ischívi', 'ischivéschi', 'istévi', 'ischivémus', 'ischivéraung'],
+      es: ['yo estuve', 'tú estuviste', 'él estuvo', 'nosotros estuvimos', 'ellos estuvieron'],
+      ex: { pt: 'Ontem eu estive na casa da minha avó.', pron: 'Ónteing eu ischívi na káza da míña avó', es: 'Ayer estuve en la casa de mi abuela.' },
+      street: { pt: 'Ontem eu tava na casa da minha avó.', pron: 'Ónteing eu táva na káza da míña avó', note: 'Al hablar se usa mucho «tava» (estaba) en vez de «estive».' } },
+    'vb-ter': { forms: ['tive', 'tiveste', 'teve', 'tivemos', 'tiveram'], prons: ['chívi', 'chivéschi', 'tévi', 'chivémus', 'chivéraung'],
+      es: ['yo tuve', 'tú tuviste', 'él tuvo', 'nosotros tuvimos', 'ellos tuvieron'],
+      ex: { pt: 'Eu tive uma ideia!', pron: 'Eu chívi úma idéia', es: '¡Tuve una idea!' } },
+    'vb-ir': { forms: ['fui', 'foste', 'foi', 'fomos', 'foram'], prons: ['fúi', 'fóschi', 'fói', 'fómus', 'fóraung'],
+      es: ['yo fui', 'tú fuiste', 'él fue', 'nosotros fuimos', 'ellos fueron'],
+      ex: { pt: 'Nós fomos ao cinema no sábado.', pron: 'Nós fómus au sinéma nu sábadu', es: 'Fuimos al cine el sábado.' },
+      street: { pt: 'A gente foi pro cinema no sábado.', pron: 'A zhénchi fói pru sinéma nu sábadu', note: '«A gente foi» = nosotros fuimos.' } },
+    'vb-fazer': { forms: ['fiz', 'fizeste', 'fez', 'fizemos', 'fizeram'], prons: ['fís', 'fizéschi', 'fêis', 'fizémus', 'fizéraung'],
+      es: ['yo hice', 'tú hiciste', 'él hizo', 'nosotros hicimos', 'ellos hicieron'],
+      ex: { pt: 'O que você fez ontem?', pron: 'U ki vosê fêis ónteing', es: '¿Qué hiciste ayer?' },
+      street: { pt: 'Que cê fez ontem?', pron: 'Ki sê fêis ónteing', note: 'Pregunta rápida y natural.' } },
+    'vb-poder': { forms: ['pude', 'pudeste', 'pôde', 'pudemos', 'puderam'], prons: ['púdji', 'pudéschi', 'pôdji', 'pudémus', 'pudéraung'],
+      es: ['yo pude', 'tú pudiste', 'él pudo', 'nosotros pudimos', 'ellos pudieron'],
+      ex: { pt: 'Eu não pude ir à aula.', pron: 'Eu náung púdji í(r) a áula', es: 'No pude ir a clase.' },
+      street: { pt: 'Não deu pra ir.', pron: 'Náung déu pra í(r)', note: '«Não deu» = no se pudo. Muy común.' } },
+    'vb-querer': { forms: ['quis', 'quiseste', 'quis', 'quisemos', 'quiseram'], prons: ['kís', 'kizéschi', 'kís', 'kizémus', 'kizéraung'],
+      es: ['yo quise', 'tú quisiste', 'él quiso', 'nosotros quisimos', 'ellos quisieron'],
+      ex: { pt: 'Ela quis vir com a gente.', pron: 'Éla kís ví(r) kong a zhénchi', es: 'Ella quiso venir con nosotros.' } },
+    'vb-saber': { forms: ['soube', 'soubeste', 'soube', 'soubemos', 'souberam'], prons: ['sôbi', 'sobéschi', 'sôbi', 'sobémus', 'sobéraung'],
+      es: ['yo supe', 'tú supiste', 'él supo', 'nosotros supimos', 'ellos supieron'],
+      ex: { pt: 'Você soube da notícia?', pron: 'Vosê sôbi da nochísia', es: '¿Supiste la noticia?' },
+      street: { pt: 'Cê ficou sabendo?', pron: 'Sê fikô sabéndu', note: '= ¿Te enteraste? Más natural que «soube».' } },
+    'vb-falar': { forms: ['falei', 'falaste', 'falou', 'falamos', 'falaram'], prons: ['faléi', 'faláschi', 'falô', 'falámus', 'faláraung'],
+      es: ['yo hablé', 'tú hablaste', 'él habló', 'nosotros hablamos', 'ellos hablaron'],
+      ex: { pt: 'Eu falei com o meu chefe.', pron: 'Eu faléi kong u méu shéfi', es: 'Hablé con mi jefe.' },
+      street: { pt: 'Falou!', pron: 'Falô!', note: '= «¡Listo!» / «¡Chao!» Muy usado para despedirse.' } },
+    'vb-gostar': { forms: ['gostei', 'gostaste', 'gostou', 'gostamos', 'gostaram'], prons: ['gostéi', 'gostáschi', 'gostô', 'gostámus', 'gostáraung'],
+      es: ['me gustó', 'te gustó', 'le gustó (a él)', 'nos gustó', 'les gustó (a ellos)'],
+      ex: { pt: 'Eu gostei muito do filme.', pron: 'Eu gostéi múintu du fíumi', es: 'Me gustó mucho la película.' },
+      street: { pt: 'Curti demais!', pron: 'Kurchí djimáis', note: '= ¡Me encantó!' } },
+    'vb-comer': { forms: ['comi', 'comeste', 'comeu', 'comemos', 'comeram'], prons: ['komí', 'koméschi', 'koméu', 'komémus', 'koméraung'],
+      es: ['yo comí', 'tú comiste', 'él comió', 'nosotros comimos', 'ellos comieron'],
+      ex: { pt: 'Eles comeram feijoada no domingo.', pron: 'Élis koméraung fezhuáda nu domíngu', es: 'Ellos comieron feijoada el domingo.' } },
+    'vb-abrir': { forms: ['abri', 'abriste', 'abriu', 'abrimos', 'abriram'], prons: ['abrí', 'abríschi', 'abríu', 'abrímus', 'abríraung'],
+      es: ['yo abrí', 'tú abriste', 'él abrió', 'nosotros abrimos', 'ellos abrieron'],
+      ex: { pt: 'O restaurante abriu às oito.', pron: 'U jestauránchi abríu ás óitu', es: 'El restaurante abrió a las ocho.' } }
+  };
+  VERBS.forEach(v => { v.past = PAST[v.id]; });
+
+  const VERB_GROUPS = [
+    { name: 'Irregulares esenciales', types: ['irr'] },
+    { name: 'Regulares (modelos -ar · -er · -ir)', types: ['ar', 'er', 'ir'] }
+  ];
+
+  /* ---------- Plantillas del prompt para IA ---------- */
+  const PROMPT_ACTS = [
+    { id: 'lectura', icon: 'fa-book-open', label: 'Lectura en voz alta',
+      task: t => `Escribe un texto corto (8 a 10 frases) sobre «${t}» para que yo lo lea en voz alta, con el portugués que habla de verdad un brasileño. Divídelo en 3 bloques con un subtítulo cada uno. Al final agrega un mini glosario con las 6 palabras más útiles del texto.` },
+    { id: 'conversa', icon: 'fa-comments', label: 'Conversación guiada',
+      task: t => `Practiquemos una conversación sobre «${t}», como la tendría con un amigo brasileño. Haz UNA sola pregunta a la vez en portugués y espera mi respuesta. Si me equivoco o sueno muy formal, corrígeme con amabilidad mostrando cómo lo diría un nativo, con el formato obligatorio, y continúa. Máximo 10 turnos. Empieza tú.` },
+    { id: 'ejercicios', icon: 'fa-pen-to-square', label: 'Ejercicios',
+      task: t => `Crea 6 ejercicios cortos sobre «${t}»: 2 de completar espacios, 2 de elegir la opción correcta y 2 de traducir del español al portugués de Brasil. Pon las respuestas al final, bajo el título «✅ Respuestas», para que no las vea antes de intentarlo.` },
+    { id: 'explica', icon: 'fa-chalkboard-user', label: 'Explicarme un tema',
+      task: t => `Explícame «${t}» en máximo 5 líneas de español sencillo, contándome cómo lo usan de verdad los brasileños. Luego dame 4 ejemplos y termina con 3 preguntas rápidas para comprobar que entendí (respuestas al final).` },
+    { id: 'entrevista', icon: 'fa-microphone', label: 'Preparar entrevista',
+      task: t => `Prepárame una entrevista de 8 preguntas en portugués sobre «${t}», usando palabras interrogativas variadas (onde, aonde, o que, que, qual, quantos, com quem, há quanto tempo). Para cada pregunta, dame una respuesta modelo corta en primera persona, como la diría un brasileño.` },
+    { id: 'corrige', icon: 'fa-spell-check', label: 'Corregir mi texto',
+      task: t => `Voy a pegar un texto que escribí en portugués sobre «${t}». Muéstrame la versión corregida frase por frase con el formato obligatorio y, debajo de cada frase, explica el error en una sola línea en español. Si algo es correcto pero suena poco natural, dime cómo lo diría un brasileño. Termina diciéndome una cosa que hice bien.\n\nMI TEXTO:\n[PEGA AQUÍ TU TEXTO]` }
+  ];
+
+  const PROMPT_TOPICS = ['Mi presentación personal', 'Mi rutina diaria', 'Comida y restaurantes', 'Ser y estar', 'Palabras interrogativas', 'Viajar a Brasil', 'Mi familia', 'Adjetivos para describir personas', 'Lo que hice el fin de semana (pasado)', 'Números, fechas y teléfonos', '¿Qué hora es? (horas y citas)', 'Colores y ropa'];
+
+  const XP = { phrase: 20, flash: 10, quiz: 30 };
+  const LEVELS = [[0, '🌱 Principiante'], [600, '🧭 Explorador'], [1300, '✈️ Viajero'], [2100, '🏆 Maestro']];
+  const PRAISE = ['¡Excelente!', '¡Genial!', '¡Lo lograste!', '¡Vas muy bien!', '¡Qué buen ritmo!'];
+
+  const COLORS = {
+    sky:     { icon: 'bg-sky-100 text-sky-700',         chip: 'bg-sky-50 text-sky-700',         tip: 'bg-sky-50 border-sky-200',         hl: 'text-sky-700' },
+    teal:    { icon: 'bg-teal-100 text-teal-700',       chip: 'bg-teal-50 text-teal-700',       tip: 'bg-teal-50 border-teal-200',       hl: 'text-teal-700' },
+    rose:    { icon: 'bg-rose-100 text-rose-700',       chip: 'bg-rose-50 text-rose-700',       tip: 'bg-rose-50 border-rose-200',       hl: 'text-rose-700' },
+    emerald: { icon: 'bg-emerald-100 text-emerald-700', chip: 'bg-emerald-50 text-emerald-700', tip: 'bg-emerald-50 border-emerald-200', hl: 'text-emerald-700' },
+    amber:   { icon: 'bg-amber-100 text-amber-700',     chip: 'bg-amber-50 text-amber-800',     tip: 'bg-amber-50 border-amber-200',     hl: 'text-amber-700' },
+    indigo:  { icon: 'bg-indigo-100 text-indigo-700',   chip: 'bg-indigo-50 text-indigo-700',   tip: 'bg-indigo-50 border-indigo-200',   hl: 'text-indigo-700' },
+    orange:  { icon: 'bg-orange-100 text-orange-700',   chip: 'bg-orange-50 text-orange-700',   tip: 'bg-orange-50 border-orange-200',   hl: 'text-orange-700' },
+    violet:  { icon: 'bg-violet-100 text-violet-700',   chip: 'bg-violet-50 text-violet-700',   tip: 'bg-violet-50 border-violet-200',   hl: 'text-violet-700' },
+    purple:  { icon: 'bg-purple-100 text-purple-700',   chip: 'bg-purple-50 text-purple-700',   tip: 'bg-purple-50 border-purple-200',   hl: 'text-purple-700' },
+    pink:    { icon: 'bg-pink-100 text-pink-700',       chip: 'bg-pink-50 text-pink-700',       tip: 'bg-pink-50 border-pink-200',       hl: 'text-pink-700' },
+    cyan:    { icon: 'bg-cyan-100 text-cyan-700',       chip: 'bg-cyan-50 text-cyan-700',       tip: 'bg-cyan-50 border-cyan-200',       hl: 'text-cyan-700' },
+    lime:    { icon: 'bg-lime-100 text-lime-700',       chip: 'bg-lime-50 text-lime-800',       tip: 'bg-lime-50 border-lime-200',       hl: 'text-lime-700' },
+    blue:    { icon: 'bg-blue-100 text-blue-700',       chip: 'bg-blue-50 text-blue-700',       tip: 'bg-blue-50 border-blue-200',       hl: 'text-blue-700' },
+    red:     { icon: 'bg-red-100 text-red-700',         chip: 'bg-red-50 text-red-700',         tip: 'bg-red-50 border-red-200',         hl: 'text-red-700' },
+    yellow:  { icon: 'bg-yellow-100 text-yellow-700',   chip: 'bg-yellow-50 text-yellow-800',   tip: 'bg-yellow-50 border-yellow-200',   hl: 'text-yellow-700' },
+    green:   { icon: 'bg-green-100 text-green-700',     chip: 'bg-green-50 text-green-700',     tip: 'bg-green-50 border-green-200',     hl: 'text-green-700' },
+    fuchsia: { icon: 'bg-fuchsia-100 text-fuchsia-700', chip: 'bg-fuchsia-50 text-fuchsia-700', tip: 'bg-fuchsia-50 border-fuchsia-200', hl: 'text-fuchsia-700' }
+  };
+
+  // Unidades que cuentan para el progreso en cada módulo
+  function unitIds(m) {
+    if (m.vocab) return VOCAB.map(c => c.id);
+    if (m.verbs) return VERBS.flatMap(v => [v.id, v.id + '-p']);
+    return (m.phrases || []).filter(p => p.id).map(p => p.id);
+  }
+  const ALL_UNITS = MODULES.flatMap(unitIds);
+  const TOTAL = ALL_UNITS.length + FLASH.length + QUIZ.length;
+
+  /* ================================================================
+     ESTADO (se guarda en este navegador)
+     ================================================================ */
+  const KEY = 'pt-a1-tdah-v1';
+  const state = Object.assign(
+    { done: [], seen: [], quiz: {}, tab: 'apres', practice: 'cards', slow: false,
+      prompt: { act: 'lectura', tema: 'Mi rutina diaria', mins: '10', extra: '' } },
+    load()
+  );
+  const ui = { card: 0, flipped: false, q: null, wrong: [], solved: false, vocab: 0, verb: 0, tense: 'pres' };
+
+  function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const doneCount = () => state.done.filter(id => ALL_UNITS.includes(id)).length;
+  function unitsDone() { return doneCount() + state.seen.length + Object.keys(state.quiz).length; }
+  function calcXP() { return doneCount() * XP.phrase + state.seen.length * XP.flash + Object.keys(state.quiz).length * XP.quiz; }
+  function percent() { return Math.round(unitsDone() / TOTAL * 100); }
+  function moduleProgress(m) {
+    if (m.practice) return [state.seen.length + Object.keys(state.quiz).length, FLASH.length + QUIZ.length];
+    if (m.prompt) return null;
+    const ids = unitIds(m);
+    return [ids.filter(id => state.done.includes(id)).length, ids.length];
+  }
+
+  /* ================================================================
+     AUDIO: pronunciación (Web Speech API, pt-BR)
+     ================================================================ */
+  let voices = [];
+  function loadVoices() { if ('speechSynthesis' in window) voices = speechSynthesis.getVoices(); }
+  if ('speechSynthesis' in window) { loadVoices(); speechSynthesis.onvoiceschanged = loadVoices; }
+
+  function speak(text) {
+    if (!('speechSynthesis' in window)) { toast('Tu navegador no tiene voz integrada 😕'); return; }
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'pt-BR';
+    // Solo voces de Brasil: nunca caer en una voz de Portugal
+    const v = voices.find(v => /pt[-_]BR/i.test(v.lang)) || voices.find(v => /brasil|brazil/i.test(v.name));
+    if (v) u.voice = v;
+    u.rate = state.slow ? 0.6 : 0.85;
+    speechSynthesis.speak(u);
+  }
+
+  /* Ruido marrón suave para concentración */
+  let audioCtx = null;
+  function toggleNoise() {
+    const btn = $('btn-noise');
+    if (audioCtx) {
+      audioCtx.close(); audioCtx = null;
+      setPressed(btn, false);
+      toast('Sonido de enfoque apagado');
+      return;
+    }
+    try {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const len = audioCtx.sampleRate * 4;
+      const buf = audioCtx.createBuffer(1, len, audioCtx.sampleRate);
+      const data = buf.getChannelData(0);
+      let last = 0;
+      for (let i = 0; i < len; i++) {
+        last = (last + 0.02 * (Math.random() * 2 - 1)) / 1.02;
+        data[i] = last * 3.5;
+      }
+      const src = audioCtx.createBufferSource();
+      src.buffer = buf; src.loop = true;
+      const gain = audioCtx.createGain();
+      gain.gain.value = 0.15;
+      src.connect(gain).connect(audioCtx.destination);
+      src.start();
+      setPressed(btn, true);
+      toast('🎧 Ruido suave activado para bloquear distracciones');
+    } catch (e) {
+      audioCtx = null;
+      toast('El sonido de enfoque no está disponible aquí');
+    }
+  }
+
+  function setPressed(btn, on) {
+    btn.setAttribute('aria-pressed', on);
+    btn.classList.toggle('bg-indigo-100', on);
+    btn.classList.toggle('ring-2', on);
+    btn.classList.toggle('ring-indigo-300', on);
+    btn.classList.toggle('bg-slate-100', !on);
+  }
+
+  /* ================================================================
+     FEEDBACK: toast + confeti
+     ================================================================ */
+  let toastTimer;
+  function toast(msg) {
+    const t = $('toast');
+    t.textContent = msg;
+    t.classList.remove('opacity-0', 'translate-y-6');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.add('opacity-0', 'translate-y-6'), 2600);
+  }
+  function burst(n, y = 0.8) {
+    if (window.confetti && !reduceMotion) confetti({ particleCount: n, spread: 60, origin: { y } });
+  }
+
+  /* ================================================================
+     PLANTILLAS HTML
+     ================================================================ */
+  // Estructura obligatoria: Portugués → Pronunciación 🔊 → Traducción
+  function miniWord(w) {
+    return `
+      <button data-say="${esc(w.pt)}" class="text-left bg-white rounded-xl p-3 border border-slate-200 hover:border-indigo-300 hover:shadow-sm transition">
+        <span class="block font-bold text-slate-900">${w.pt}</span>
+        <span class="block text-xs italic text-indigo-600">🔊 [${w.pron}]</span>
+        <span class="block text-xs text-slate-500">${w.es}</span>
+      </button>`;
+  }
+
+  // «Así lo dice un brasileño»: versión coloquial nativa
+  function natBox(n) {
+    return `
+      <div class="rounded-xl bg-emerald-50 border border-emerald-200 px-3 py-2.5">
+        <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-1">🇧🇷 Así lo dice un brasileño</p>
+        <button data-say="${esc(n.pt)}" class="text-left w-full">
+          <span class="block font-bold text-slate-900">${n.pt}</span>
+          <span class="block text-sm italic text-indigo-600">🔊 [${n.pron}]</span>
+          <span class="block text-xs text-slate-500">${n.note}</span>
+        </button>
+      </div>`;
+  }
+
+  function moduleHeader(m) {
+    const c = COLORS[m.color];
+    return `
+      <div class="flex items-start gap-4 mb-5">
+        <div class="w-12 h-12 shrink-0 rounded-2xl grid place-items-center text-xl ${c.icon}"><i class="fa-solid ${m.icon}"></i></div>
+        <div class="flex-1 min-w-0">
+          <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Módulo ${m.num}${m.focus ? ' · <span class="text-emerald-600">Énfasis principal</span>' : ''}</p>
+          <h2 class="text-2xl font-bold text-slate-900 leading-tight">${m.title}</h2>
+          <p class="text-sm italic text-indigo-600">🔊 [${m.pron}]</p>
+          <p class="text-sm text-slate-500">${m.es}</p>
+        </div>
+        <button data-say="${esc(m.title)}" class="w-11 h-11 shrink-0 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 grid place-items-center" title="Escuchar título">
+          <i class="fa-solid fa-volume-high"></i><span class="sr-only">Escuchar</span>
+        </button>
+      </div>`;
+  }
+
+  function tipBox(m) {
+    const c = COLORS[m.color];
+    return `
+      <section class="rounded-2xl border ${c.tip} p-5 mb-6">
+        <h3 class="font-bold text-slate-800 flex items-center gap-2"><i class="fa-solid fa-lightbulb text-amber-500"></i> ${m.tip.title}</h3>
+        <p class="text-sm text-slate-600 mt-1">${m.tip.text}</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">${m.tip.words.map(miniWord).join('')}</div>
+      </section>`;
+  }
+
+  function phraseCard(p, m) {
+    const c = COLORS[m.color];
+    const done = state.done.includes(p.id);
+    const ptHtml = p.hl
+      ? p.pt.replace(p.hl, `<span class="${c.hl} underline decoration-4 underline-offset-4">${p.hl}</span>`)
+      : p.pt;
+    return `
+      <article class="fade-up bg-white rounded-2xl p-5 sm:p-6 flex flex-col gap-4 shadow-sm transition border ${done ? 'border-emerald-300 ring-2 ring-emerald-100' : 'border-slate-200'}">
+        <div class="flex items-center justify-between gap-2">
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${c.chip}">
+            <i class="fa-solid ${p.tagIcon}"></i> ${p.tag}
+          </span>
+          <button data-say="${esc(p.pt)}" class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-sm font-semibold transition">
+            <i class="fa-solid fa-volume-high"></i> Escuchar
+          </button>
+        </div>
+
+        <div class="space-y-1">
+          <p class="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">${ptHtml}</p>
+          <p class="text-sm italic text-indigo-600"><span aria-hidden="true">🔊</span> [${p.pron}]</p>
+          <p class="text-sm text-slate-500">${p.es}</p>
+        </div>
+
+        ${p.nat ? natBox(p.nat) : ''}
+
+        <div class="flex items-center gap-3 bg-slate-50 rounded-xl px-3 py-2">
+          <span class="text-xs font-semibold text-slate-400 uppercase shrink-0">Clave</span>
+          <button data-say="${esc(p.key.pt)}" class="text-left">
+            <span class="block text-sm font-bold text-slate-900">${p.key.pt}</span>
+            <span class="block text-xs italic text-indigo-600">🔊 [${p.key.pron}]</span>
+            <span class="block text-xs text-slate-500">${p.key.es}</span>
+          </button>
+        </div>
+
+        <button data-action="done" data-arg="${p.id}" aria-pressed="${done}"
+          class="mt-auto w-full py-3 rounded-xl font-semibold transition flex items-center justify-center gap-2 ${done ? 'bg-emerald-500 text-white hover:bg-emerald-600' : 'bg-slate-100 text-slate-700 hover:bg-emerald-100 hover:text-emerald-800'}">
+          ${done ? '<i class="fa-solid fa-circle-check"></i> ¡Aprendida!' : `<i class="fa-regular fa-circle"></i> La repetí en voz alta (+${XP.phrase} XP)`}
+        </button>
+      </article>`;
+  }
+
+  // Subtítulo que agrupa tarjetas dentro de un módulo
+  function sectionHead(sec) {
+    return `
+      <div class="md:col-span-2 mt-4 first:mt-0">
+        <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2"><i class="fa-solid ${sec.icon} text-indigo-500"></i> ${sec.section}</h3>
+        ${sec.text ? `<p class="text-sm text-slate-500 mt-0.5">${sec.text}</p>` : ''}
+      </div>`;
+  }
+
+  // Tarjeta de sonido: una regla + 3 palabras de ejemplo
+  function soundCard(s, m) {
+    const c = COLORS[m.color];
+    const done = state.done.includes(s.id);
+    return `
+      <article class="fade-up bg-white rounded-2xl p-5 sm:p-6 flex flex-col gap-4 shadow-sm transition border ${done ? 'border-emerald-300 ring-2 ring-emerald-100' : 'border-slate-200'}">
+        <span class="self-start inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${c.chip}">
+          <i class="fa-solid ${s.tagIcon}"></i> ${s.tag}
+        </span>
+        <div>
+          <p class="text-xl font-bold text-slate-900 leading-snug">${s.rule}</p>
+          <p class="text-sm text-slate-500 mt-1">${s.hint}</p>
+        </div>
+        <div class="grid gap-2 ${s.words.length === 4 ? 'grid-cols-2' : 'grid-cols-1 sm:grid-cols-3'}">${s.words.map(miniWord).join('')}</div>
+        <button data-action="done" data-arg="${s.id}" aria-pressed="${done}"
+          class="mt-auto w-full py-3 rounded-xl font-semibold transition flex items-center justify-center gap-2 ${done ? 'bg-emerald-500 text-white hover:bg-emerald-600' : 'bg-slate-100 text-slate-700 hover:bg-emerald-100 hover:text-emerald-800'}">
+          ${done ? '<i class="fa-solid fa-circle-check"></i> ¡Dominado!' : `<i class="fa-regular fa-circle"></i> Toqué y repetí las ${s.words.length} (+${XP.phrase} XP)`}
+        </button>
+      </article>`;
+  }
+
+  function nextButton(m) {
+    const next = MODULES[MODULES.indexOf(m) + 1];
+    if (!next) return '';
+    return `
+      <div class="flex justify-end mt-6">
+        <button data-action="tab" data-arg="${next.id}" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold shadow-sm transition">
+          Siguiente: ${next.tab} <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>`;
+  }
+
+  /* ---------- Práctica ---------- */
+  function practiceHtml() {
+    const seg = (mode, icon, label) => `
+      <button data-action="mode" data-arg="${mode}" aria-pressed="${state.practice === mode}"
+        class="flex-1 py-3 rounded-xl font-semibold transition flex items-center justify-center gap-2 ${state.practice === mode ? 'bg-white shadow text-slate-900' : 'text-slate-500 hover:text-slate-800'}">
+        <i class="fa-solid ${icon}"></i> ${label}
+      </button>`;
+    return `
+      <div class="flex gap-1 bg-slate-100 p-1 rounded-2xl max-w-md mx-auto mb-6">
+        ${seg('cards', 'fa-layer-group', 'Flashcards')}
+        ${seg('quiz', 'fa-circle-question', 'Quiz')}
+      </div>
+      <div id="practice-body">${state.practice === 'cards' ? cardsHtml() : quizHtml()}</div>`;
+  }
+
+  function dotsHtml() {
+    return FLASH.map((f, i) => `
+      <span class="w-2.5 h-2.5 rounded-full ${i === ui.card ? 'ring-2 ring-indigo-300 ' : ''}${state.seen.includes(f.id) ? 'bg-emerald-400' : 'bg-slate-200'}"></span>`).join('');
+  }
+
+  function cardsHtml() {
+    const f = FLASH[ui.card];
+    const front = FLASH_COLORS[f.cat] || 'from-indigo-400 to-violet-500';
+    return `
+      <div class="max-w-md mx-auto fade-up">
+        <p class="text-center text-sm text-slate-500 mb-3">Tarjeta <b>${ui.card + 1}</b> de ${FLASH.length} · Toca la tarjeta para girarla</p>
+
+        <div id="flashcard" data-action="flip" role="button" tabindex="0" aria-pressed="${ui.flipped}" aria-label="Tarjeta: ${esc(f.pt)}. Pulsa para ver la respuesta"
+             class="flip ${ui.flipped ? 'is-flipped' : ''} h-72 cursor-pointer select-none">
+          <div class="flip-inner relative w-full h-full">
+            <div class="face absolute inset-0 rounded-3xl bg-gradient-to-br ${front} text-white p-6 flex flex-col items-center justify-center text-center shadow-lg">
+              <span class="text-xs font-bold uppercase tracking-widest bg-white/25 px-3 py-1 rounded-full">${f.cat}</span>
+              <i class="fa-solid ${f.icon} text-5xl my-5"></i>
+              <p class="text-3xl font-bold">${f.pt}</p>
+              <p class="text-sm mt-4 opacity-90"><i class="fa-solid fa-hand-pointer"></i> ¿Qué significa?</p>
+            </div>
+            <div class="face face-back absolute inset-0 rounded-3xl bg-white border-2 border-emerald-300 p-6 flex flex-col items-center justify-center text-center shadow-lg">
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Respuesta</span>
+              <p class="text-2xl font-bold text-slate-900 mt-3">${f.pt}</p>
+              <p class="text-base italic text-indigo-600 mt-1">🔊 [${f.pron}]</p>
+              <p class="text-lg text-slate-500 mt-3">${f.es}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 mt-5">
+          <button data-action="prev" class="py-3 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 font-semibold text-slate-700"><i class="fa-solid fa-arrow-left"></i> Atrás</button>
+          <button data-say="${esc(f.pt)}" class="py-3 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-semibold"><i class="fa-solid fa-volume-high"></i> Oír</button>
+          <button data-action="next" class="py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold">Otra <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div id="dots" class="flex justify-center gap-2 mt-5" aria-hidden="true">${dotsHtml()}</div>
+      </div>`;
+  }
+
+  function firstUnanswered() {
+    const i = QUIZ.findIndex(q => !state.quiz[q.id]);
+    return i === -1 ? QUIZ.length : i;
+  }
+
+  function quizHtml() {
+    if (ui.q === null) ui.q = firstUnanswered();
+
+    if (ui.q >= QUIZ.length) {
+      return `
+        <div class="max-w-xl mx-auto text-center bg-white rounded-3xl border border-emerald-200 p-8 shadow-sm fade-up">
+          <div class="text-5xl mb-3" aria-hidden="true">🏆</div>
+          <h3 class="text-2xl font-bold text-slate-900">¡Quiz completado!</h3>
+          <p class="text-slate-500 mt-2">Respondiste las ${QUIZ.length} preguntas. Tu cerebro ya está creando conexiones nuevas. 🧠✨</p>
+          <button data-action="restartquiz" class="mt-6 px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold">
+            <i class="fa-solid fa-rotate-right"></i> Repasar otra vez
+          </button>
+        </div>`;
+    }
+
+    const q = QUIZ[ui.q];
+    const options = q.options.map((o, i) => {
+      const isRight = ui.solved && i === q.correct;
+      const isWrong = ui.wrong.includes(i);
+      const cls = isRight ? 'border-emerald-400 bg-emerald-50'
+        : isWrong ? 'border-amber-300 bg-amber-50'
+        : ui.solved ? 'border-slate-200 bg-white opacity-60'
+        : 'border-slate-200 bg-white hover:border-indigo-300 hover:bg-indigo-50';
+      const icon = isRight ? '<i class="fa-solid fa-circle-check text-emerald-500 text-xl"></i>'
+        : isWrong ? '<i class="fa-solid fa-lightbulb text-amber-500 text-xl"></i>' : '';
+      return `
+        <button data-action="answer" data-arg="${i}" ${ui.solved || isWrong ? 'disabled' : ''}
+          class="w-full text-left p-4 rounded-2xl border-2 transition flex items-center gap-3 ${cls}">
+          <span class="w-8 h-8 shrink-0 rounded-full bg-slate-100 text-slate-600 grid place-items-center font-bold">${'ABC'[i]}</span>
+          <span class="flex-1">
+            <span class="block text-lg font-bold text-slate-900">${o.pt}</span>
+            <span class="block text-sm italic text-indigo-600">🔊 [${o.pron}]</span>
+          </span>
+          ${icon}
+        </button>`;
+    }).join('');
+
+    let feedback = '';
+    if (ui.solved) {
+      feedback = `
+        <div class="mt-4 p-4 rounded-2xl bg-emerald-50 border border-emerald-200 fade-up">
+          <p class="font-bold text-emerald-800"><i class="fa-solid fa-star"></i> ${ui.praise}</p>
+          <p class="text-sm text-emerald-700 mt-1">${q.explain}</p>
+        </div>
+        <div class="flex justify-end mt-4">
+          <button data-action="nextq" class="px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold">
+            ${ui.q + 1 < QUIZ.length ? 'Siguiente pregunta' : 'Ver resultado'} <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>`;
+    } else if (ui.wrong.length) {
+      feedback = `
+        <div class="mt-4 p-4 rounded-2xl bg-amber-50 border border-amber-200 fade-up">
+          <p class="font-bold text-amber-800">¡Casi! Sin prisa, prueba otra opción 💛</p>
+          <p class="text-sm text-amber-700 mt-1">${q.hint}</p>
+        </div>`;
+    }
+
+    const progressDots = QUIZ.map((x, i) => `<span class="h-2 flex-1 rounded-full ${state.quiz[x.id] ? 'bg-emerald-400' : i === ui.q ? 'bg-indigo-300' : 'bg-slate-200'}"></span>`).join('');
+
+    return `
+      <div class="max-w-xl mx-auto bg-white rounded-3xl border border-slate-200 p-6 shadow-sm fade-up">
+        <div class="flex gap-2 mb-4" aria-hidden="true">${progressDots}</div>
+        <div class="flex items-center justify-between gap-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-700 bg-indigo-50 px-3 py-1 rounded-full">Pregunta ${ui.q + 1} de ${QUIZ.length}</span>
+          <span class="text-xs text-slate-400">${q.topic}</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mt-3">${q.q}</h3>
+        <p class="text-xs text-slate-400 mt-1">Sin penalizaciones: puedes intentarlo las veces que quieras.</p>
+        <div class="space-y-3 mt-5">${options}</div>
+        ${feedback}
+      </div>`;
+  }
+
+  /* ---------- Vocabulario ---------- */
+  const chunk = (arr, n) => arr.reduce((acc, x, i) => (i % n ? acc[acc.length - 1].push(x) : acc.push([x]), acc), []);
+
+  function pill(action, arg, active, label) {
+    return `
+      <button data-action="${action}" data-arg="${arg}" aria-pressed="${active}"
+        class="shrink-0 px-3 py-2 rounded-xl text-sm font-semibold border transition ${active ? 'bg-slate-900 text-white border-slate-900' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'}">${label}</button>`;
+  }
+
+  function doneButton(id, doneLabel, todoLabel) {
+    const done = state.done.includes(id);
+    return `
+      <button data-action="done" data-arg="${id}" aria-pressed="${done}"
+        class="w-full py-3 rounded-xl font-semibold transition flex items-center justify-center gap-2 ${done ? 'bg-emerald-500 text-white hover:bg-emerald-600' : 'bg-slate-100 text-slate-700 hover:bg-emerald-100 hover:text-emerald-800'}">
+        ${done ? `<i class="fa-solid fa-circle-check"></i> ${doneLabel}` : `<i class="fa-regular fa-circle"></i> ${todoLabel} (+${XP.phrase} XP)`}
+      </button>`;
+  }
+
+  function vocabHtml(m) {
+    const cat = VOCAB[ui.vocab];
+    const pills = VOCAB.map((c, i) => pill('vcat', i, i === ui.vocab, `${c.emoji} ${c.name}${state.done.includes(c.id) ? ' ✓' : ''}`)).join('');
+    const blocks = chunk(cat.words, 4).map((ws, bi) => `
+      <div>
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Bloque ${bi + 1}</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">${ws.map(miniWord).join('')}</div>
+      </div>`).join('');
+    const next = VOCAB[ui.vocab + 1];
+    return `
+      <p class="text-sm text-slate-500 mb-3">Elige una categoría. Toca cada palabra para oírla 🔊</p>
+      <div class="flex flex-wrap gap-2 mb-6">${pills}</div>
+      <article class="fade-up bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm space-y-5">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h3 class="text-xl font-bold text-slate-900">${cat.emoji} ${cat.name}</h3>
+            <p class="text-sm text-slate-500 mt-1"><i class="fa-solid fa-lightbulb text-amber-500"></i> ${cat.tip}</p>
+          </div>
+          <button data-say="${esc(cat.words.map(w => w.pt).join('. '))}" class="shrink-0 inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-sm font-semibold">
+            <i class="fa-solid fa-play"></i> Oír todas
+          </button>
+        </div>
+        ${blocks}
+        ${doneButton(cat.id, '¡Categoría aprendida!', 'Ya me sé estas palabras')}
+      </article>
+      ${next ? `
+      <div class="flex justify-end mt-6">
+        <button data-action="vcat" data-arg="${ui.vocab + 1}" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold shadow-sm">
+          Siguiente: ${next.emoji} ${next.name} <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>` : nextButton(m)}`;
+  }
+
+  /* ---------- Verbos ---------- */
+  function endingsTable(past) {
+    const rows = past
+      ? [['eu', 'ei', 'i', 'i'], ['tu', 'aste', 'este', 'iste'], ['ele · você', 'ou', 'eu', 'iu'], ['nós', 'amos', 'emos', 'imos'], ['eles · vocês', 'aram', 'eram', 'iram']]
+      : [['eu', 'o', 'o', 'o'], ['tu', 'as', 'es', 'es'], ['ele · você', 'a', 'e', 'e'], ['nós', 'amos', 'emos', 'imos'], ['eles · vocês', 'am', 'em', 'em']];
+    return `
+      <div class="overflow-x-auto mt-4">
+        <table class="w-full max-w-md text-sm bg-white rounded-xl overflow-hidden border border-slate-200">
+          <thead class="bg-slate-50 text-slate-500"><tr><th class="text-left p-2"></th><th class="p-2">-AR</th><th class="p-2">-ER</th><th class="p-2">-IR</th></tr></thead>
+          <tbody>${rows.map(r => `<tr class="border-t border-slate-100"><td class="p-2 font-semibold text-slate-600">${r[0]}</td>${r.slice(1).map(x => `<td class="p-2 text-center font-bold text-slate-900">-${x}</td>`).join('')}</tr>`).join('')}</tbody>
+        </table>
+      </div>`;
+  }
+
+  // En el habla diaria, «a gente» reemplaza a «nós» y usa la forma de «ele»
+  function aGenteRow(T, es) {
+    return `
+        <button data-say="${esc('a gente ' + T.forms[2])}" class="w-full text-left flex items-center gap-3 p-3 rounded-xl border border-emerald-200 bg-emerald-50 hover:border-emerald-400 transition">
+          <span class="w-28 sm:w-40 shrink-0 text-xs text-emerald-700 leading-tight font-semibold">🇧🇷 «nosotros» al hablar · se conjuga como «ele»</span>
+          <span class="flex-1">
+            <span class="block text-lg font-bold text-slate-900">a gente ${T.forms[2]}</span>
+            <span class="block text-sm italic text-indigo-600">🔊 [a zhénchi ${T.prons[2]}]</span>
+            <span class="block text-sm text-slate-500">${es}</span>
+          </span>
+          <i class="fa-solid fa-volume-high text-emerald-500"></i>
+        </button>`;
+  }
+
+  function verbsHtml(m) {
+    const v = VERBS[ui.verb];
+    const past = ui.tense === 'past';
+    const T = past ? v.past : v;
+    const uid = past ? v.id + '-p' : v.id;
+    const esOf = i => past ? T.es[i] : v.esFull ? v.esFull[i] : `${PERSONS[i].es} ${v.esForms[i]}`;
+    const seg = (t, icon, label) => `
+      <button data-action="tense" data-arg="${t}" aria-pressed="${ui.tense === t}"
+        class="flex-1 py-3 rounded-xl font-semibold transition flex items-center justify-center gap-2 ${ui.tense === t ? 'bg-white shadow text-slate-900' : 'text-slate-500 hover:text-slate-800'}">
+        <i class="fa-solid ${icon}"></i> ${label}
+      </button>`;
+    const groups = VERB_GROUPS.map(g => `
+      <div>
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">${g.name}</p>
+        <div class="flex flex-wrap gap-2">${VERBS.map((x, i) => g.types.includes(x.type) ? pill('verb', i, i === ui.verb, `${x.inf}${state.done.includes(past ? x.id + '-p' : x.id) ? ' ✓' : ''}`) : '').join('')}</div>
+      </div>`).join('');
+
+    const rows = PERSONS.map((p, i) => {
+      const pt = `${p.pt} ${T.forms[i]}`;
+      const es = esOf(i);
+      return `
+        <button data-say="${esc(pt)}" class="w-full text-left flex items-center gap-3 p-3 rounded-xl border ${i === 1 ? 'border-dashed border-slate-200 bg-slate-50/60' : 'border-slate-100 bg-white'} hover:border-indigo-300 transition">
+          <span class="w-28 sm:w-40 shrink-0 text-xs text-slate-400 leading-tight">${p.label}</span>
+          <span class="flex-1">
+            <span class="block text-lg font-bold text-slate-900">${pt}</span>
+            <span class="block text-sm italic text-indigo-600">🔊 [${p.pron} ${T.prons[i]}]</span>
+            <span class="block text-sm text-slate-500">${es}</span>
+          </span>
+          <i class="fa-solid fa-volume-high text-indigo-400"></i>
+        </button>`;
+    }).join('') + aGenteRow(T, esOf(3));
+
+    const typeLabel = { irr: 'Irregular', ar: 'Regular -AR', er: 'Regular -ER', ir: 'Regular -IR' }[v.type];
+    return `
+      <div class="flex gap-1 bg-slate-100 p-1 rounded-2xl max-w-md mx-auto mb-6">
+        ${seg('pres', 'fa-calendar-day', 'Presente')}
+        ${seg('past', 'fa-clock-rotate-left', 'Pasado')}
+      </div>
+
+      <section class="rounded-2xl border ${COLORS[m.color].tip} p-5 mb-6">
+        <h3 class="font-bold text-slate-800 flex items-center gap-2"><i class="fa-solid fa-lightbulb text-amber-500"></i> Terminaciones de los verbos regulares ${past ? 'en pasado' : 'en presente'}</h3>
+        <p class="text-sm text-slate-600 mt-1">${past
+          ? 'Para acciones terminadas (ontem, semana passada). Con <b>ele / você / a gente</b>, -AR termina en <b>-ou</b> y suena «ô»: falou = falô. Ojo: <b>nós falamos</b> es igual en presente y en pasado; el contexto lo aclara.'
+          : 'Quita <b>-ar / -er / -ir</b> y pon la terminación. En Brasil casi nadie usa <b>tu</b>: con <b>você</b> se usa la forma de <b>ele</b> (você fala). Y al hablar, <b>a gente</b> reemplaza a <b>nós</b>: a gente fala.'}</p>
+        ${endingsTable(past)}
+      </section>
+
+      <div class="space-y-4 mb-6">${groups}</div>
+
+      <article class="fade-up bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm space-y-4">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${COLORS[m.color].chip}">${typeLabel} · ${past ? 'Pasado' : 'Presente'}</span>
+            <p class="text-3xl font-bold text-slate-900 mt-3">${v.inf}</p>
+            <p class="text-sm italic text-indigo-600">🔊 [${v.pron}]</p>
+            <p class="text-sm text-slate-500">${v.es}</p>
+          </div>
+          <button data-say="${esc(PERSONS.map((p, i) => `${p.pt} ${T.forms[i]}`).join('. '))}" class="shrink-0 inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-sm font-semibold">
+            <i class="fa-solid fa-play"></i> Oír todo
+          </button>
+        </div>
+
+        <div class="space-y-2">${rows}</div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-4">
+          <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-1">Ejemplo</p>
+          <button data-say="${esc(T.ex.pt)}" class="text-left">
+            <span class="block text-lg font-bold text-slate-900">${T.ex.pt}</span>
+            <span class="block text-sm italic text-indigo-600">🔊 [${T.ex.pron}]</span>
+            <span class="block text-sm text-slate-500">${T.ex.es}</span>
+          </button>
+        </div>
+
+        ${T.street ? natBox(T.street) : ''}
+
+        ${doneButton(uid, '¡Ya lo conjugo!', 'Lo conjugué en voz alta')}
+      </article>
+
+      <div class="grid grid-cols-2 gap-3 mt-5">
+        <button data-action="verb" data-arg="${(ui.verb - 1 + VERBS.length) % VERBS.length}" class="py-3 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 font-semibold text-slate-700"><i class="fa-solid fa-arrow-left"></i> ${VERBS[(ui.verb - 1 + VERBS.length) % VERBS.length].inf}</button>
+        <button data-action="verb" data-arg="${(ui.verb + 1) % VERBS.length}" class="py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold">${VERBS[(ui.verb + 1) % VERBS.length].inf} <i class="fa-solid fa-arrow-right"></i></button>
+      </div>`;
+  }
+
+  /* ---------- Prompt para IA ---------- */
+  function buildPrompt() {
+    const p = state.prompt;
+    const act = PROMPT_ACTS.find(a => a.id === p.act) || PROMPT_ACTS[0];
+    const tema = (p.tema || '').trim() || 'un tema libre de nivel A1';
+    const vistos = MODULES.filter(m => m.phrases).map(m => `- ${m.es.split(' · ')[0]}`).join('\n');
+    const extra = (p.extra || '').trim();
+    return `Actúa como mi profesor(a) nativo(a) de Brasil y enséñame el portugués brasileño tal como se habla hoy. Soy hispanohablante, estoy en nivel A1 y tengo TDAH: necesito contenido corto, claro, por bloques y con refuerzo positivo.
+
+📚 LO QUE YA VI EN CLASE
+${vistos}
+- Vocabulario básico: saludos, familia, tiempo, días, lugares, comida y conectores
+- Verbos frecuentes en presente y en pasado (pretérito perfeito): ser, estar, ter, ir, fazer, poder, querer, saber, falar, gostar, comer, abrir
+
+🎯 TAREA
+${act.task(tema)}
+Tengo unos ${p.mins} minutos para esta sesión.${extra ? `\nNota adicional: ${extra}` : ''}
+
+🧾 FORMATO OBLIGATORIO para CADA frase o palabra en portugués, sin excepción:
+1. La frase en portugués, en **negrita**.
+2. Justo debajo: 🔊 la pronunciación escrita como la leería un hispanohablante, en cursiva y entre corchetes. Ejemplo: 🔊 *[Eu mi shámu Láura]*
+3. Justo debajo: la traducción al español.
+
+🔤 PRONUNCIACIÓN: acento nativo de Brasil (neutro, tipo Río / São Paulo). Escríbela como la leería un hispanohablante, con estas convenciones, y marca la sílaba tónica con tilde:
+- TE/TI → «chi» y DE/DI → «dji»: noite = nóichi, cidade = sidádji, bom dia = bong djía
+- E final átona → «i» y O final átona → «u»: nome = nómi, gato = gátu
+- L al final de sílaba → «u»: Brasil = Braziú, mal = máu
+- R inicial y RR → «j» suave: rua = júa, carro = káju
+- R final casi muda → «(r)»: falar = falá(r), por favor = pur favô(r)
+- LH → «li» (trabalho = trabáliu) · NH → «ñ» (tenho = téñu) · CH → «sh» (chuva = shúva)
+- J, y G antes de E/I → «zh»: janto = zhántu, gente = zhénchi
+- S entre vocales → «z»: casa = káza
+- OU → «ô» (sou = sô, vou = vô) · EI antes de R/J → «e» (feira = féra)
+- ÃO → «aung» · EM final → «eing» (bem = béing) · M final → «ng» (bom = bong)
+- muito = múintu (con nasal)
+
+🇧🇷 PRIORIDAD: EL PORTUGUÉS QUE HABLAN LOS BRASILEÑOS
+- Usa siempre el portugués de Brasil tal como lo hablan hoy los nativos, nunca el de Portugal.
+- Prefiere las formas naturales: «a gente» en vez de «nós», «você» (y «cê» al hablar), «tô / tá», «pra / pro», «sábado que vem».
+- Si una frase es correcta pero suena de libro, muéstrala y añade debajo «🇧🇷 Así lo dice un brasileño:» con la versión coloquial (también con pronunciación).
+
+🧠 REGLAS PARA MI APRENDIZAJE
+- Solo portugués de Brasil, con frases cortas de nivel A1.
+- Bloques de máximo 3 o 4 elementos, cada uno con subtítulo y un emoji.
+- Explicaciones de gramática en español, de máximo 2 líneas.
+- Si aparece una palabra nueva, agrégala a un mini glosario al final (con el mismo formato).
+- Tono amable y motivador: nunca me hagas sentir mal por un error.`;
+  }
+
+  function promptHtml(m) {
+    const p = state.prompt;
+    const acts = PROMPT_ACTS.map(a => `
+      <button data-action="pact" data-arg="${a.id}" aria-pressed="${p.act === a.id}"
+        class="flex items-center gap-2 p-3 rounded-xl border-2 text-left text-sm font-semibold transition ${p.act === a.id ? 'border-fuchsia-400 bg-fuchsia-50 text-fuchsia-900' : 'border-slate-200 bg-white text-slate-600 hover:border-fuchsia-200'}">
+        <i class="fa-solid ${a.icon} w-5 text-center"></i> ${a.label}
+      </button>`).join('');
+    const topics = PROMPT_TOPICS.map(t => `
+      <button data-action="ptema" data-arg="${esc(t)}" class="px-3 py-1.5 rounded-full text-xs font-semibold border ${p.tema === t ? 'bg-slate-900 text-white border-slate-900' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'}">${t}</button>`).join('');
+    const step = (n, title, body) => `
+      <section class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+        <h3 class="font-bold text-slate-900 flex items-center gap-2 mb-3"><span class="w-7 h-7 rounded-full bg-fuchsia-100 text-fuchsia-700 grid place-items-center text-sm">${n}</span> ${title}</h3>
+        ${body}
+      </section>`;
+
+    return `
+      <div class="grid lg:grid-cols-2 gap-5">
+        <div class="space-y-5">
+          ${step(1, '¿Qué quieres hacer?', `<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">${acts}</div>`)}
+          ${step(2, '¿Sobre qué tema?', `
+            <input data-prompt="tema" value="${esc(p.tema)}" placeholder="Escribe un tema…" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-fuchsia-400 outline-none">
+            <div class="flex flex-wrap gap-2 mt-3">${topics}</div>`)}
+          ${step(3, 'Ajustes (opcional)', `
+            <label class="block text-sm text-slate-600 mb-1">Tiempo disponible</label>
+            <select data-prompt="mins" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white mb-3">
+              ${['5', '10', '15', '20'].map(x => `<option value="${x}" ${p.mins === x ? 'selected' : ''}>${x} minutos</option>`).join('')}
+            </select>
+            <label class="block text-sm text-slate-600 mb-1">Nota para la IA</label>
+            <textarea data-prompt="extra" rows="2" placeholder="Ej.: quiero practicar para una entrevista de trabajo" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-fuchsia-400 outline-none">${esc(p.extra)}</textarea>`)}
+        </div>
+
+        <section class="bg-slate-900 rounded-2xl p-5 shadow-sm flex flex-col lg:sticky lg:top-32 lg:self-start">
+          <div class="flex items-center justify-between gap-3 mb-3">
+            <h3 class="font-bold text-white flex items-center gap-2"><i class="fa-solid fa-robot text-fuchsia-300"></i> Tu prompt</h3>
+            <button data-action="copyprompt" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-fuchsia-500 hover:bg-fuchsia-400 text-white font-semibold">
+              <i class="fa-regular fa-copy"></i> Copiar
+            </button>
+          </div>
+          <pre id="prompt-out" class="whitespace-pre-wrap text-sm text-slate-200 leading-relaxed max-h-[32rem] overflow-y-auto font-sans">${esc(buildPrompt())}</pre>
+          <p class="text-xs text-slate-400 mt-3">Pégalo en Claude, ChatGPT o Gemini. La IA te responderá con el mismo formato de este curso: portugués → 🔊 pronunciación → traducción.</p>
+        </section>
+      </div>`;
+  }
+
+  function copyPrompt() {
+    const text = buildPrompt();
+    const ok = () => toast('📋 ¡Prompt copiado! Pégalo en tu IA favorita');
+    const fallback = () => {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); ok(); } catch (e) { toast('No se pudo copiar: selecciona el texto manualmente'); }
+      ta.remove();
+    };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(ok, fallback);
+    else fallback();
+  }
+
+  /* ================================================================
+     RENDER
+     ================================================================ */
+  function renderTabs() {
+    $('tabs').innerHTML = MODULES.map(m => {
+      const active = m.id === state.tab;
+      const [d, t] = moduleProgress(m) || [0, 0];
+      const badge = !t ? '<i class="fa-solid fa-wand-magic-sparkles"></i>' : d === t ? '<i class="fa-solid fa-check"></i>' : `${d}/${t}`;
+      return `
+        <button role="tab" aria-selected="${active}" data-action="tab" data-arg="${m.id}"
+          class="shrink-0 flex items-center gap-2 px-4 py-3 rounded-2xl text-sm font-semibold transition ${active ? 'bg-indigo-600 text-white shadow-md' : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'}">
+          <i class="fa-solid ${m.icon}"></i>
+          <span>${m.num}. ${m.tab}</span>
+          <span class="text-xs px-2 py-0.5 rounded-full ${active ? 'bg-white/20' : !t ? 'bg-fuchsia-100 text-fuchsia-700' : d === t ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-100'}">${badge}</span>
+        </button>`;
+    }).join('');
+  }
+
+  // Con muchas pestañas, mantén la activa visible en pantallas pequeñas
+  function centerActiveTab() {
+    const nav = $('tabs');
+    const a = nav.querySelector('[aria-selected="true"]');
+    if (a) nav.scrollLeft = a.offsetLeft - nav.offsetLeft - (nav.clientWidth - a.offsetWidth) / 2;
+  }
+
+  function renderPanel() {
+    const m = MODULES.find(x => x.id === state.tab) || MODULES[0];
+    $('panel').innerHTML = moduleHeader(m) + (m.practice ? practiceHtml()
+      : m.vocab ? vocabHtml(m)
+      : m.verbs ? verbsHtml(m)
+      : m.prompt ? promptHtml(m)
+      : tipBox(m) + `<div class="grid grid-cols-1 md:grid-cols-2 gap-4">${m.phrases.map(p => p.section ? sectionHead(p) : p.words ? soundCard(p, m) : phraseCard(p, m)).join('')}</div>` + nextButton(m));
+  }
+
+  function renderPractice() {
+    const body = $('practice-body');
+    if (body) body.innerHTML = state.practice === 'cards' ? cardsHtml() : quizHtml();
+  }
+
+  function updateStats() {
+    const pct = percent();
+    const xp = calcXP();
+    $('progress-bar').style.width = pct + '%';
+    $('progress-text').textContent = pct + '%';
+    $('progress').setAttribute('aria-valuenow', pct);
+
+    const xpEl = $('xp');
+    if (xpEl.textContent !== String(xp)) {
+      xpEl.textContent = xp;
+      const pill = $('xp-pill');
+      pill.classList.remove('pop'); void pill.offsetWidth; pill.classList.add('pop');
+    }
+    $('level').textContent = LEVELS.filter(([min]) => xp >= min).pop()[1];
+    setPressed($('btn-slow'), state.slow);
+
+    renderTabs();
+    save();
+  }
+
+  function afterChange(prevPct) {
+    updateStats();
+    if (prevPct < 100 && percent() === 100) {
+      setTimeout(() => { toast('🎉 ¡Completaste el curso A1! Parabéns!'); burst(160, 0.6); }, 600);
+    }
+  }
+
+  /* ================================================================
+     ACCIONES
+     ================================================================ */
+  const actions = {
+    tab(id) {
+      state.tab = id;
+      renderPanel(); updateStats(); centerActiveTab();
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    },
+
+    done(id) {
+      const prev = percent();
+      const i = state.done.indexOf(id);
+      if (i >= 0) {
+        state.done.splice(i, 1);
+      } else {
+        state.done.push(id);
+        burst(30);
+        toast(`${pick(PRAISE)} +${XP.phrase} XP`);
+        const m = MODULES.find(x => unitIds(x).includes(id));
+        if (unitIds(m).every(u => state.done.includes(u))) {
+          setTimeout(() => { toast(`🏅 ¡Módulo ${m.num} completado!`); burst(90, 0.7); }, 900);
+        }
+      }
+      renderPanel();
+      document.querySelector(`[data-action="done"][data-arg="${id}"]`)?.focus();
+      afterChange(prev);
+    },
+
+    flip() {
+      ui.flipped = !ui.flipped;
+      const el = $('flashcard');
+      el.classList.toggle('is-flipped', ui.flipped);
+      el.setAttribute('aria-pressed', ui.flipped);
+      const f = FLASH[ui.card];
+      if (ui.flipped) {
+        speak(f.pt);
+        if (!state.seen.includes(f.id)) {
+          const prev = percent();
+          state.seen.push(f.id);
+          toast(`+${XP.flash} XP · ¡Tarjeta repasada!`);
+          $('dots').innerHTML = dotsHtml();
+          afterChange(prev);
+        }
+      }
+    },
+
+    prev() { ui.card = (ui.card - 1 + FLASH.length) % FLASH.length; ui.flipped = false; renderPractice(); $('flashcard').focus(); },
+    next() { ui.card = (ui.card + 1) % FLASH.length; ui.flipped = false; renderPractice(); $('flashcard').focus(); },
+
+    mode(m) { state.practice = m; renderPanel(); save(); },
+
+    vcat(i) { ui.vocab = Number(i); renderPanel(); $('panel').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' }); },
+    verb(i) { ui.verb = Number(i); renderPanel(); },
+    tense(t) { ui.tense = t; renderPanel(); },
+    pastverbs() { ui.tense = 'past'; actions.tab('vverbos'); },
+
+    pact(id) { state.prompt.act = id; renderPanel(); save(); },
+    ptema(t) { state.prompt.tema = t; renderPanel(); save(); },
+    copyprompt: copyPrompt,
+
+    answer(arg) {
+      const q = QUIZ[ui.q];
+      const i = Number(arg);
+      if (i === q.correct) {
+        ui.solved = true;
+        ui.praise = pick(PRAISE);
+        speak(q.options[i].pt);
+        if (!state.quiz[q.id]) {
+          const prev = percent();
+          state.quiz[q.id] = true;
+          ui.praise += ` +${XP.quiz} XP`;
+          burst(50, 0.7);
+          afterChange(prev);
+        }
+      } else {
+        ui.wrong.push(i);
+      }
+      renderPractice();
+    },
+
+    nextq() { ui.q++; ui.wrong = []; ui.solved = false; renderPractice(); },
+    restartquiz() { ui.q = 0; ui.wrong = []; ui.solved = false; renderPractice(); },
+
+    slow() {
+      state.slow = !state.slow;
+      toast(state.slow ? '🐢 Audio lento activado' : '🐇 Audio a velocidad normal');
+      updateStats();
+    },
+
+    noise: toggleNoise,
+
+    reset() {
+      if (!confirm('¿Seguro que quieres empezar de cero? Se borrará tu XP y progreso.')) return;
+      Object.assign(state, { done: [], seen: [], quiz: {}, tab: 'apres', practice: 'cards' });
+      Object.assign(ui, { card: 0, flipped: false, q: null, wrong: [], solved: false });
+      renderPanel(); updateStats();
+      toast('Progreso reiniciado. ¡Nuevo comienzo! 🌱');
+    }
+  };
+
+  // Delegación de eventos: un solo listener para toda la página
+  document.addEventListener('click', e => {
+    const say = e.target.closest('[data-say]');
+    if (say) { speak(say.dataset.say); return; }
+    const el = e.target.closest('[data-action]');
+    if (el && !el.disabled && actions[el.dataset.action]) actions[el.dataset.action](el.dataset.arg, el);
+  });
+
+  document.addEventListener('input', e => {
+    const key = e.target.dataset && e.target.dataset.prompt;
+    if (!key) return;
+    state.prompt[key] = e.target.value;
+    $('prompt-out').textContent = buildPrompt();
+    save();
+  });
+
+  // Teclado: Enter/Espacio gira la tarjeta; flechas cambian de tarjeta
+  document.addEventListener('keydown', e => {
+    if (e.target.id === 'flashcard' && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); actions.flip(); }
+    if (state.tab === 'pratica' && state.practice === 'cards' && $('flashcard')) {
+      if (e.key === 'ArrowRight') actions.next();
+      if (e.key === 'ArrowLeft') actions.prev();
+    }
+  });
+
+  renderPanel();
+  updateStats();
+  centerActiveTab();
+  </script>
+</body>
+</html>
