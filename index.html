@@ -2432,6 +2432,186 @@
       ]
     },
     {
+      id: 'cidade', num: 0, tab: 'La ciudad', icon: 'fa-city', color: 'indigo',
+      title: 'A Cidade', pron: 'A Sidádji', es: 'La ciudad · Lugares, calles, direcciones, transporte y cómo describirla',
+      tip: {
+        title: 'Ficar: el verbo para ubicar lugares',
+        text: 'Para decir dónde está un lugar, en Brasil se usa <b>ficar</b>: «Onde <b>fica</b> o banco?» — «<b>Fica</b> na esquina». Con personas y cosas que se mueven se usa <b>estar</b>.',
+        words: [
+          { pt: 'a cidade', pron: 'a sidádji', es: 'la ciudad' },
+          { pt: 'Onde fica…?', pron: 'Óndji fíka', es: '¿Dónde queda…?' },
+          { pt: 'perto · longe', pron: 'pértu · lónzhi', es: 'cerca · lejos' }
+        ]
+      },
+      phrases: [
+        { section: 'Lugares de la ciudad', rd: 'cid-lugares', icon: 'fa-city', text: 'Toca cada lugar y repítelo. Para preguntar si hay uno cerca: <b>Tem … aqui perto?</b>' },
+        { id: 'cd1', tag: 'Servicios', tagIcon: 'fa-building-columns',
+          rule: 'O banco, a farmácia…', hint: '<b>Farmácia</b> = droguería. En Brasil venden de todo, ¡hasta chocolates!',
+          pics: [
+            ['🏦', 'o banco', 'u bánku', 'el banco'],
+            ['🏥', 'o hospital', 'u ospitáu', 'el hospital'],
+            ['💊', 'a farmácia', 'a farmásia', 'la droguería'],
+            ['🏫', 'a escola', 'a iskóla', 'el colegio']
+          ] },
+        { id: 'cd2', tag: 'Compras y comida', tagIcon: 'fa-cart-shopping',
+          rule: 'O mercado, a padaria…', hint: '<b>Padaria</b> = panadería: ahí se desayuna con café y pan con mantequilla. El centro comercial es <b>o shopping</b>.',
+          pics: [
+            ['🏪', 'o mercado', 'u merkádu', 'el supermercado'],
+            ['🥖', 'a padaria', 'a padaría', 'la panadería'],
+            ['🍽️', 'o restaurante', 'u jestauránchi', 'el restaurante'],
+            ['🛍️', 'o shopping', 'u shópin', 'el centro comercial']
+          ] },
+        { id: 'cd3', tag: 'Cultura y ocio', tagIcon: 'fa-masks-theater',
+          rule: 'O museu, o cinema…', hint: '<b>Museu</b> termina en -eu: «muzéu». <b>Igreja</b> = iglesia.',
+          pics: [
+            ['⛪', 'a igreja', 'a igrêzha', 'la iglesia'],
+            ['🏛️', 'o museu', 'u muzéu', 'el museo'],
+            ['🎬', 'o cinema', 'u sinêma', 'el cine'],
+            ['🏟️', 'o estádio', 'u istádjiu', 'el estadio']
+          ] },
+        { id: 'cd4', tag: 'Espacios públicos', tagIcon: 'fa-tree-city',
+          rule: 'A praça, o parque…', hint: '<b>Os correios</b> = la oficina de correos. <b>Delegacia</b> = estación de policía.',
+          pics: [
+            ['🌳', 'a praça', 'a prása', 'la plaza'],
+            ['🏞️', 'o parque', 'u párki', 'el parque'],
+            ['📮', 'os correios', 'us kojêius', 'el correo'],
+            ['🚓', 'a delegacia', 'a delegasía', 'la estación de policía']
+          ] },
+        { id: 'cdp1', tag: 'Preguntar', tagIcon: 'fa-circle-question',
+          pt: 'Tem uma farmácia aqui perto?', pron: 'Téing úma farmásia akí pértu?', es: '¿Hay una droguería por aquí cerca?',
+          nat: { pt: 'Sabe se tem farmácia por aqui?', pron: 'Sábi si téing farmásia pur akí?', note: '= ¿Sabe si hay droguería por aquí? Más amable.' },
+          key: { pt: 'Tem … aqui perto?', pron: 'Téing … akí pértu', es: '¿Hay … por aquí cerca?' } },
+        { id: 'cdp2', tag: 'Ir a', tagIcon: 'fa-person-walking',
+          pt: 'Eu vou à padaria comprar pão.', pron: 'Eu vô à padaría komprá(r) páung', es: 'Voy a la panadería a comprar pan.',
+          nat: { pt: 'Vou na padaria rapidinho.', pron: 'Vô na padaría japidjíñu', note: 'Al hablar se dice «ir na / no» en vez de «à / ao».' },
+          key: { pt: 'ir à · ir ao', pron: 'í(r) à · í(r) au', es: 'ir a la · ir al' } },
+        { section: 'Calles y aceras', rd: 'cid-ruas', icon: 'fa-road', text: 'Las partes de la calle. El semáforo se llama <b>o sinal</b> (o <b>o farol</b> en São Paulo).' },
+        { id: 'cd5', tag: 'La calle', tagIcon: 'fa-road',
+          rule: 'A rua, a esquina…', hint: '<b>Quarteirão</b> = cuadra, manzana. También se dice <b>a quadra</b>.',
+          words: [
+            { pt: 'a rua', pron: 'a júa', es: 'la calle' },
+            { pt: 'a avenida', pron: 'a avenída', es: 'la avenida' },
+            { pt: 'a esquina', pron: 'a iskína', es: 'la esquina' },
+            { pt: 'o quarteirão', pron: 'u kuarteráung', es: 'la cuadra' }
+          ] },
+        { id: 'cd6', tag: 'Para el peatón', tagIcon: 'fa-person-walking',
+          rule: 'A calçada, o sinal…', hint: '<b>Calçada</b> = andén, acera. <b>Ponto de ônibus</b> = paradero.',
+          words: [
+            { pt: 'a calçada', pron: 'a kausáda', es: 'el andén, la acera' },
+            { pt: 'o sinal', pron: 'u sináu', es: 'el semáforo' },
+            { pt: 'a faixa de pedestres', pron: 'a fáisha dji pedéstris', es: 'la cebra' },
+            { pt: 'o ponto de ônibus', pron: 'u póntu dji ónibus', es: 'el paradero' }
+          ] },
+        { id: 'cdp3', tag: 'Ubicar', tagIcon: 'fa-location-dot',
+          pt: 'A padaria fica na esquina.', pron: 'A padaría fíka na iskína', es: 'La panadería queda en la esquina.',
+          key: { pt: 'ficar (lugar)', pron: 'fiká(r)', es: 'quedar, estar ubicado' } },
+        { id: 'cdp4', tag: 'Seguridad', tagIcon: 'fa-traffic-light',
+          pt: 'Espera o sinal ficar verde!', pron: 'Ispéra u sináu fiká(r) vérdji!', es: '¡Espera a que el semáforo se ponga en verde!',
+          key: { pt: 'o sinal fechou · abriu', pron: 'u sináu feshô · abríu', es: 'el semáforo está en rojo · en verde' } },
+        { section: 'Pedir y dar direcciones', rd: 'cid-direcoes', icon: 'fa-compass', text: 'Empieza siempre con <b>Com licença</b> (con permiso). Derecha = <b>direita</b>, izquierda = <b>esquerda</b>.' },
+        { id: 'cd7', tag: 'Instrucciones', tagIcon: 'fa-diamond-turn-right',
+          rule: 'Siga reto, vire…', hint: '<b>Reto</b> = derecho, recto. Ojo: <b>direita</b> = derecha, ¡no «directo»!',
+          words: [
+            { pt: 'siga reto', pron: 'síga jétu', es: 'siga derecho' },
+            { pt: 'vire à direita', pron: 'víri à djiréita', es: 'gire a la derecha' },
+            { pt: 'vire à esquerda', pron: 'víri à iskérda', es: 'gire a la izquierda' },
+            { pt: 'volte', pron: 'vóuchi', es: 'devuélvase' }
+          ] },
+        { id: 'cd8', tag: 'Referencias', tagIcon: 'fa-signs-post',
+          rule: 'No fim da rua…', hint: 'Para contar cuadras: <b>fica a duas quadras</b> = queda a dos cuadras.',
+          words: [
+            { pt: 'a primeira rua', pron: 'a priméra júa', es: 'la primera calle' },
+            { pt: 'no fim da rua', pron: 'nu fing da júa', es: 'al final de la calle' },
+            { pt: 'atravesse a rua', pron: 'atravési a júa', es: 'cruce la calle' },
+            { pt: 'fica a duas quadras', pron: 'fíka a dúas kuádras', es: 'queda a dos cuadras' }
+          ] },
+        { id: 'cdp5', tag: 'Preguntar', tagIcon: 'fa-hand',
+          pt: 'Com licença, como eu chego na estação de metrô?', pron: 'Kong lisénsa, kómu eu shégu na istasáung dji metrô?', es: 'Disculpe, ¿cómo llego a la estación de metro?',
+          key: { pt: 'Com licença', pron: 'Kong lisénsa', es: 'con permiso, disculpe' } },
+        { id: 'cdp6', tag: 'Indicar', tagIcon: 'fa-arrow-right',
+          pt: 'Siga reto e vire na segunda à direita.', pron: 'Síga jétu i víri na segúnda à djiréita', es: 'Siga derecho y gire en la segunda a la derecha.',
+          key: { pt: 'à direita · à esquerda', pron: 'à djiréita · à iskérda', es: 'a la derecha · a la izquierda' } },
+        { id: 'cdp7', tag: 'Distancia', tagIcon: 'fa-shoe-prints',
+          pt: 'É longe daqui? — Não, dá pra ir a pé.', pron: 'É lónzhi dakí? — Náung, dá pra í(r) a pé', es: '¿Queda lejos de aquí? — No, se puede ir a pie.',
+          key: { pt: 'daqui = de + aqui', pron: 'dakí', es: 'de aquí' } },
+        { id: 'cdp8', tag: 'Perdido', tagIcon: 'fa-map',
+          pt: 'Estou perdido. Pode me ajudar?', pron: 'Istô perdjídu. Pódji mi azhudá(r)?', es: 'Estoy perdido. ¿Me puede ayudar?',
+          key: { pt: 'perdido · perdida', pron: 'perdjídu · perdjída', es: 'perdido · perdida' } },
+        { section: 'Moverse por la ciudad', rd: 'cid-transporte', icon: 'fa-train-subway', text: 'Tomar el bus se dice <b>pegar o ônibus</b>. Los vehículos están en <b>Objetos → Transporte</b>; aquí van las frases.' },
+        { id: 'cd9', tag: 'Estaciones', tagIcon: 'fa-ticket',
+          rule: 'O metrô, a rodoviária…', hint: '<b>Rodoviária</b> = terminal de buses intermunicipales. <b>Passagem</b> = pasaje, tiquete.',
+          words: [
+            { pt: 'a estação de metrô', pron: 'a istasáung dji metrô', es: 'la estación de metro' },
+            { pt: 'a rodoviária', pron: 'a jodoviária', es: 'la terminal de buses' },
+            { pt: 'o aeroporto', pron: 'u aeropôrtu', es: 'el aeropuerto' },
+            { pt: 'a passagem', pron: 'a pasázheing', es: 'el pasaje' }
+          ] },
+        { id: 'cdp9', tag: 'Bus', tagIcon: 'fa-bus',
+          pt: 'Qual ônibus vai para o centro?', pron: 'Kuáu ónibus vái pru séntru?', es: '¿Qué bus va al centro?',
+          key: { pt: 'o centro', pron: 'u séntru', es: 'el centro de la ciudad' } },
+        { id: 'cdp10', tag: 'Rutina', tagIcon: 'fa-train-subway',
+          pt: 'Eu pego o metrô todo dia.', pron: 'Eu pégu u metrô tôdu djía', es: 'Tomo el metro todos los días.',
+          key: { pt: 'pegar o ônibus · o metrô', pron: 'pegá(r) u ónibus · u metrô', es: 'tomar el bus · el metro' } },
+        { id: 'cdp11', tag: 'Bajarse', tagIcon: 'fa-person-walking-arrow-right',
+          pt: 'Onde eu desço para ir ao museu?', pron: 'Óndji eu désu pra í(r) au muzéu?', es: '¿Dónde me bajo para ir al museo?',
+          key: { pt: 'descer · subir', pron: 'desê(r) · subí(r)', es: 'bajarse · subirse' } },
+        { id: 'cdp12', tag: 'Tráfico', tagIcon: 'fa-car',
+          pt: 'O trânsito está horrível!', pron: 'U tránzitu istá ojível!', es: '¡El tráfico está horrible!',
+          nat: { pt: 'Tá um trânsito!', pron: 'Tá ung tránzitu!', note: '= ¡Qué trancón! Corto y muy usado.' },
+          key: { pt: 'o trânsito · o engarrafamento', pron: 'u tránzitu · u engajafaméntu', es: 'el tráfico · el trancón' } },
+        { section: 'Describir una ciudad', rd: 'cid-descr', icon: 'fa-building', text: 'Adjetivos para hablar de tu ciudad. Recuerda: <b>a cidade</b> es femenina, así que el adjetivo también.' },
+        { id: 'cd10', tag: 'Cómo es', tagIcon: 'fa-volume-high',
+          rule: 'Movimentada, tranquila…', hint: '<b>Movimentada</b> = concurrida, con mucha gente. <b>Barulhenta</b> = ruidosa.',
+          words: [
+            { pt: 'movimentada', pron: 'movimentáda', es: 'concurrida' },
+            { pt: 'tranquila', pron: 'trankuíla', es: 'tranquila' },
+            { pt: 'barulhenta', pron: 'baruliénta', es: 'ruidosa' },
+            { pt: 'segura · perigosa', pron: 'segúra · perigóza', es: 'segura · peligrosa' }
+          ] },
+        { id: 'cd11', tag: 'Zonas', tagIcon: 'fa-map',
+          rule: 'O centro, o bairro…', hint: 'En Río y São Paulo la ciudad se divide en zonas: <b>Zona Sul, Zona Norte</b>…',
+          words: [
+            { pt: 'o centro', pron: 'u séntru', es: 'el centro' },
+            { pt: 'o bairro', pron: 'u báiju', es: 'el barrio' },
+            { pt: 'a zona sul', pron: 'a zôna súu', es: 'la zona sur' },
+            { pt: 'a capital', pron: 'a kapitáu', es: 'la capital' }
+          ] },
+        { id: 'cdp13', tag: 'Grande', tagIcon: 'fa-city',
+          pt: 'São Paulo é uma cidade enorme e muito movimentada.', pron: 'Sáung Páulu é úma sidádji enórmi i múintu movimentáda', es: 'São Paulo es una ciudad enorme y muy concurrida.',
+          key: { pt: 'a cidade', pron: 'a sidádji', es: 'la ciudad (¡femenino!)' } },
+        { id: 'cdp14', tag: 'Preferir', tagIcon: 'fa-heart',
+          pt: 'Eu prefiro cidade pequena, é mais tranquila.', pron: 'Eu prefíru sidádji pekéna, é máis trankuíla', es: 'Prefiero las ciudades pequeñas, son más tranquilas.',
+          key: { pt: 'cidade grande · cidade pequena', pron: 'sidádji grándji · sidádji pekéna', es: 'ciudad grande · ciudad pequeña' } },
+        { id: 'cdp15', tag: 'Colombia', tagIcon: 'fa-mountain-city',
+          pt: 'Bogotá é a capital da Colômbia e fica nas montanhas.', pron: 'Bogotá é a kapitáu da Kolômbia i fíka nas montáñas', es: 'Bogotá es la capital de Colombia y queda en las montañas.',
+          key: { pt: 'fica nas montanhas', pron: 'fíka nas montáñas', es: 'queda en las montañas' } },
+        { section: 'Lugares muy brasileños', rd: 'cid-br', icon: 'fa-flag', text: 'Lugares que vas a encontrar en cualquier ciudad de Brasil.' },
+        { id: 'cd12', tag: 'Bien de Brasil', tagIcon: 'fa-store',
+          rule: 'A feira, o boteco…', hint: '<b>Feira</b> = mercado callejero, una vez por semana. <b>Boteco</b> = bar sencillo de barrio.',
+          pics: [
+            ['🍍', 'a feira', 'a féra', 'el mercado callejero'],
+            ['🍺', 'o boteco', 'u botéku', 'el bar de barrio'],
+            ['🍔', 'a lanchonete', 'a lanshonéchi', 'la cafetería de comidas rápidas'],
+            ['🍹', 'o quiosque', 'u kióski', 'el kiosco de playa']
+          ] },
+        { id: 'cd13', tag: 'Paisaje', tagIcon: 'fa-mountain-sun',
+          rule: 'A orla, o morro…', hint: '<b>A orla</b> = el paseo junto a la playa. <b>O morro</b> = el cerro.',
+          pics: [
+            ['🏖️', 'a orla', 'a órla', 'el malecón'],
+            ['⛰️', 'o morro', 'u móju', 'el cerro'],
+            ['🚶', 'o calçadão', 'u kausadáung', 'el bulevar peatonal'],
+            ['🌉', 'a ponte', 'a pónchi', 'el puente']
+          ] },
+        { id: 'cdp16', tag: 'Feria', tagIcon: 'fa-apple-whole',
+          pt: 'Domingo de manhã tem feira na rua.', pron: 'Domíngu dji mañá téing féra na júa', es: 'Los domingos por la mañana hay mercado en la calle.',
+          nat: { pt: 'Vamos na feira comer pastel?', pron: 'Vámus na féra komê(r) pastéu?', note: 'El pastel de feria con jugo de caña es un clásico.' },
+          key: { pt: 'a feira (livre)', pron: 'a féra (lívri)', es: 'el mercado callejero' } },
+        { id: 'cdp17', tag: 'Fútbol', tagIcon: 'fa-futbol',
+          pt: 'Vamos pro boteco ver o jogo?', pron: 'Vámus pru botéku vê(r) u zhógu?', es: '¿Vamos al bar a ver el partido?',
+          key: { pt: 'pro = para o', pron: 'pru', es: 'al, para el (al hablar)' } },
+      ]
+    },
+    {
       id: 'vocab', num: 16, tab: 'Vocabulario', icon: 'fa-book', color: 'cyan', vocab: true,
       title: 'Vocabulário Essencial', pron: 'Vokabuláriu Esensiáu', es: 'Vocabulario esencial · Las palabras que más vas a usar, por categorías'
     },
@@ -2453,7 +2633,7 @@
   const GROUPS = [
     { id: 'base', name: 'Primeros pasos', icon: 'fa-seedling', ids: ['apres', 'som', 'num', 'horas', 'dias', 'meses', 'clima', 'cores'] },
     { id: 'gram', name: 'Gramática', icon: 'fa-puzzle-piece', ids: ['verbos', 'hetero', 'adj', 'poss', 'contr', 'paises', 'perg', 'passado', 'vverbos'] },
-    { id: 'vida', name: 'Vida diaria', icon: 'fa-house', ids: ['familia', 'casa', 'rotina', 'comida', 'prof', 'objetos', 'animais', 'vocab'] },
+    { id: 'vida', name: 'Vida diaria', icon: 'fa-house', ids: ['familia', 'casa', 'cidade', 'rotina', 'comida', 'prof', 'objetos', 'animais', 'vocab'] },
     { id: 'prac', name: 'Practicar', icon: 'fa-gamepad', ids: ['pratica', 'prompt'] }
   ];
   const ORDER = GROUPS.flatMap(g => g.ids);
@@ -2530,7 +2710,12 @@
     { id: 'f67', cat: 'Clima',        icon: 'fa-temperature-high', pt: 'Está abafado',      pron: 'Istá abafádu',          es: 'Está bochornoso' },
     { id: 'f68', cat: 'Clima',        icon: 'fa-cloud-rain',    pt: 'a garoa',              pron: 'a garôa',               es: 'la llovizna' },
     { id: 'f69', cat: 'Clima',        icon: 'fa-cloud-showers-heavy', pt: 'Tá chovendo canivete!', pron: 'Tá shovéndu kanivéchi!', es: '¡Está lloviendo a cántaros!' },
-    { id: 'f70', cat: 'Clima',        icon: 'fa-tv',            pt: 'a previsão do tempo',  pron: 'a previzáung du témpu', es: 'el pronóstico' }
+    { id: 'f70', cat: 'Clima',        icon: 'fa-tv',            pt: 'a previsão do tempo',  pron: 'a previzáung du témpu', es: 'el pronóstico' },
+    { id: 'f71', cat: 'Ciudad',       icon: 'fa-arrow-right',   pt: 'vire à direita',       pron: 'víri à djiréita',       es: 'gire a la derecha' },
+    { id: 'f72', cat: 'Ciudad',       icon: 'fa-arrow-up',      pt: 'siga reto',            pron: 'síga jétu',             es: 'siga derecho' },
+    { id: 'f73', cat: 'Ciudad',       icon: 'fa-traffic-light', pt: 'o sinal',              pron: 'u sináu',               es: 'el semáforo' },
+    { id: 'f74', cat: 'Ciudad',       icon: 'fa-bus',           pt: 'pegar o ônibus',       pron: 'pegá(r) u ónibus',      es: 'tomar el bus' },
+    { id: 'f75', cat: 'Ciudad',       icon: 'fa-location-dot',  pt: 'Onde fica…?',          pron: 'Óndji fíka',            es: '¿Dónde queda…?' }
   ];
 
   const FLASH_COLORS = {
@@ -2553,7 +2738,8 @@
     'Animales':     'from-emerald-400 to-lime-500',
     'Familia':      'from-orange-400 to-pink-500',
     'Casa':         'from-amber-400 to-orange-500',
-    'Clima':        'from-sky-400 to-cyan-500'
+    'Clima':        'from-sky-400 to-cyan-500',
+    'Ciudad':       'from-indigo-400 to-sky-500'
   };
 
   const QUIZ = [
@@ -2898,7 +3084,25 @@
         { pt: 'Vai chovendo.', pron: 'Vái shovéndu' }
       ], correct: 1,
       hint: 'Pista: en portugués, ir + verbo va sin «a».',
-      explain: 'Ir + infinitivo sin «a»: vai chover, vou comer.' }
+      explain: 'Ir + infinitivo sin «a»: vai chover, vou comer.' },
+    { id: 'q39', topic: 'Ciudad',
+      q: '«Gire a la izquierda» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'Vire à esquerda.', pron: 'Víri à iskérda' },
+        { pt: 'Vire à direita.', pron: 'Víri à djiréita' },
+        { pt: 'Gire a izquierda.', pron: 'Zhíri a iskierda' }
+      ], correct: 0,
+      hint: 'Pista: «direita» es la derecha.',
+      explain: 'Esquerda = izquierda · direita = derecha.' },
+    { id: 'q40', topic: 'Ciudad',
+      q: '«Tomo el bus todos los días» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'Eu pego o ônibus todo dia.', pron: 'Eu pégu u ónibus tôdu djía' },
+        { pt: 'Eu pego o ônibus toda dia.', pron: 'Eu pégu u ónibus tôda djía' },
+        { pt: 'Eu pega o ônibus todo dia.', pron: 'Eu péga u ónibus tôdu djía' }
+      ], correct: 0,
+      hint: 'Pista: «dia» es masculino y con «eu» el verbo termina en -o.',
+      explain: 'Pegar o ônibus = tomar el bus. Eu pego · todo dia (masculino).' }
   ];
 
   /* ---------- Vocabulario por categorías ---------- */
@@ -3113,7 +3317,7 @@
       task: t => `Voy a pegar un texto que escribí en portugués sobre «${t}». Muéstrame la versión corregida frase por frase con el formato obligatorio y, debajo de cada frase, explica el error en una sola línea en español. Si algo es correcto pero suena poco natural, dime cómo lo diría un brasileño. Termina diciéndome una cosa que hice bien.\n\nMI TEXTO:\n[PEGA AQUÍ TU TEXTO]` }
   ];
 
-  const PROMPT_TOPICS = ['Mi presentación personal', 'Mi rutina diaria', 'Comida y restaurantes', 'Ser y estar', 'Palabras interrogativas', 'Viajar a Brasil', 'Mi familia', 'Adjetivos para describir personas', 'Lo que hice el fin de semana (pasado)', 'Números, fechas y teléfonos', '¿Qué hora es? (horas y citas)', 'Dinero y compras', 'Días de la semana y planes', 'Profesiones y trabajo', 'Colores y ropa', 'Contracciones (no, na, do, da, ao, à)', 'Meses, estaciones y clima', 'Países y nacionalidades', 'Objetos de la casa y del día a día', 'Animales y mascotas', 'Mi casa y las tareas domésticas', 'El clima y el pronóstico', 'Billetes y monedas de Brasil'];
+  const PROMPT_TOPICS = ['Mi presentación personal', 'Mi rutina diaria', 'Comida y restaurantes', 'Ser y estar', 'Palabras interrogativas', 'Viajar a Brasil', 'Mi familia', 'Adjetivos para describir personas', 'Lo que hice el fin de semana (pasado)', 'Números, fechas y teléfonos', '¿Qué hora es? (horas y citas)', 'Dinero y compras', 'Días de la semana y planes', 'Profesiones y trabajo', 'Colores y ropa', 'Contracciones (no, na, do, da, ao, à)', 'Meses, estaciones y clima', 'Países y nacionalidades', 'Objetos de la casa y del día a día', 'Animales y mascotas', 'Mi casa y las tareas domésticas', 'El clima y el pronóstico', 'Moverme por la ciudad y pedir direcciones', 'Billetes y monedas de Brasil'];
 
   const XP = { phrase: 20, flash: 10, quiz: 30 };
   // Umbrales como fracción del XP total, para que escalen al agregar contenido
@@ -3572,6 +3776,43 @@
       ['"Amanhã vai fazer sol e trinta graus."', '"Amañá vái fazê(r) sóu i trínta gráus"', '"Mañana va a hacer sol y treinta grados."'],
       ['Ela arruma a bolsa: protetor solar, boné e óculos de sol.', 'Éla ajúma a bôusa: protetô(r) solá(r), boné i ókulus dji sóu', 'Empaca el bolso: bloqueador, gorra y gafas de sol.'],
       ['"Praia, aí vou eu!"', '"Práia, aí vô eu!"', '"¡Playa, allá voy!"']
+    ] },
+    // Ciudad
+    'cid-lugares': { emoji: '🏙️', pt: 'Um sábado na cidade', pron: 'Ung sábadu na sidádji', es: 'Un sábado en la ciudad', lines: [
+      ['No sábado, a Lia e a mãe vão ao centro.', 'Nu sábadu, a Lía i a máing váung au séntru', 'El sábado, Lia y su mamá van al centro.'],
+      ['Primeiro, elas vão ao banco e à farmácia.', 'Priméru, élas váung au bánku i à farmásia', 'Primero van al banco y a la droguería.'],
+      ['Depois, compram pão quentinho na padaria.', 'Depóis, kómpraung páung kenchíñu na padaría', 'Después compran pan calientito en la panadería.'],
+      ['No final, a Lia brinca na praça. Que dia bom!', 'Nu fináu, a Lía brínka na prása. Ki djía bóng!', 'Al final, Lia juega en la plaza. ¡Qué buen día!']
+    ] },
+    'cid-ruas': { emoji: '🚦', pt: 'Atravessar a rua', pron: 'Atravesá(r) a júa', es: 'Cruzar la calle', lines: [
+      ['A Lia e o Pedro estão na calçada.', 'A Lía i u Pédru istáung na kausáda', 'Lia y Pedro están en el andén.'],
+      ['O sinal está vermelho para os carros.', 'U sináu istá verméliu pra us kájus', 'El semáforo está en rojo para los carros.'],
+      ['Eles olham para os dois lados.', 'Élis óliaung pra us dóis ládus', 'Miran a los dos lados.'],
+      ['E atravessam na faixa de pedestres. Muito bem!', 'I atravésaung na fáisha dji pedéstris. Múintu béing!', 'Y cruzan por la cebra. ¡Muy bien!']
+    ] },
+    'cid-direcoes': { emoji: '🧭', pt: 'Onde fica o museu?', pron: 'Óndji fíka u muzéu?', es: '¿Dónde queda el museo?', lines: [
+      ['O Pedro e a Lia procuram o museu.', 'U Pédru i a Lía prokúraung u muzéu', 'Pedro y Lia buscan el museo.'],
+      ['Eles perguntam para uma senhora: "Com licença, onde fica o museu?"', 'Élis pergúntaung pra úma señóra: "Kong lisénsa, óndji fíka u muzéu?"', 'Le preguntan a una señora: "Disculpe, ¿dónde queda el museo?"'],
+      ['"Sigam reto e virem à esquerda na padaria."', '"Sígaung jétu i víreing à iskérda na padaría"', '"Sigan derecho y giren a la izquierda en la panadería."'],
+      ['"Obrigado!" E lá está o museu, na esquina!', '"Obrigádu!" I lá istá u muzéu, na iskína!', '"¡Gracias!" ¡Y ahí está el museo, en la esquina!']
+    ] },
+    'cid-transporte': { emoji: '🚇', pt: 'De metrô com a vovó', pron: 'Dji metrô kong a vovó', es: 'En metro con la abuela', lines: [
+      ['A Lia pega o metrô com a vovó Ana.', 'A Lía péga u metrô kong a vovó Ána', 'Lia toma el metro con la abuela Ana.'],
+      ['O metrô está cheio, mas é rápido.', 'U metrô istá shéiu, más é jápidu', 'El metro está lleno, pero es rápido.'],
+      ['Quando elas descem, o trânsito lá fora está horrível!', 'Kuándu élas déseing, u tránzitu lá fóra istá ojível!', 'Cuando se bajan, ¡el tráfico afuera está horrible!'],
+      ['A vovó ri: "Ainda bem que a gente veio de metrô!"', 'A vovó jí: "Aínda béing ki a zhénchi véiu dji metrô!"', 'La abuela se ríe: "¡Menos mal que vinimos en metro!"']
+    ] },
+    'cid-descr': { emoji: '🌆', pt: 'Cidade grande, cidade pequena', pron: 'Sidádji grándji, sidádji pekéna', es: 'Ciudad grande, ciudad pequeña', lines: [
+      ['A Lia mora numa cidade grande e movimentada.', 'A Lía móra núma sidádji grándji i movimentáda', 'Lia vive en una ciudad grande y concurrida.'],
+      ['A vovó Ana mora numa cidade pequena do interior.', 'A vovó Ána móra núma sidádji pekéna du interiô(r)', 'La abuela Ana vive en un pueblo pequeño.'],
+      ['Lá é tranquilo e todo mundo se conhece.', 'Lá é trankuílu i tôdu múndu si koñéssi', 'Allá es tranquilo y todo el mundo se conoce.'],
+      ['A Lia gosta das duas. E você, Cesar?', 'A Lía gósta das dúas. I vosê, Séza(r)?', 'A Lia le gustan las dos. ¿Y a ti, Cesar?']
+    ] },
+    'cid-br': { emoji: '🍍', pt: 'Domingo de feira', pron: 'Domíngu dji féra', es: 'Domingo de mercado', lines: [
+      ['Domingo de manhã, a rua da Lia vira uma feira.', 'Domíngu dji mañá, a júa da Lía víra úma féra', 'El domingo por la mañana, la calle de Lia se vuelve un mercado.'],
+      ['Tem frutas, verduras e muitas cores.', 'Téing frútas, verdúras i múintas kôris', 'Hay frutas, verduras y muchos colores.'],
+      ['O feirante grita: "Olha o abacaxi docinho!"', 'U feiránchi gríta: "Ólia u abakashí dosíñu!"', 'El vendedor grita: "¡Mire la piña dulcecita!"'],
+      ['A Lia come um pastel com caldo de cana. Delícia!', 'A Lía kómi ung pastéu kong káudu dji kána. Delísia!', 'Lia se come un pastel con jugo de caña. ¡Delicioso!']
     ] },
     'obj-ff': { emoji: '🤭', pt: 'As confusões do Pedro', pron: 'As konfuzóings du Pédru', es: 'Las confusiones de Pedro', lines: [
       ['O Pedro quer apagar um erro e pede: "Me dá a borracha?"', 'U Pédru ké(r) apagá(r) ung éju i pédji: "Mi dá a bojásha?"', 'Pedro quiere borrar un error y pide: "¿Me das el borrador?"'],
