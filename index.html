@@ -2612,6 +2612,387 @@
       ]
     },
     {
+      id: 'demo', num: 0, tab: 'Demostrativos', icon: 'fa-hand-point-right', color: 'violet',
+      title: 'Os Pronomes Demonstrativos', pron: 'Us Pronômis Demonstratívus', es: 'Los demostrativos · Distancia, género y número, variables e invariables, con ejercicios',
+      tip: {
+        title: 'Este, esse, aquele: ¿cerca de quién?',
+        text: 'Funcionan como en español: <b>este</b> = cerca de mí, <b>esse</b> = cerca de ti, <b>aquele</b> = lejos de los dos. Los <b>variables</b> (este, essa, aqueles…) cambian con género y número; los <b>invariables</b> (isto, isso, aquilo) nunca cambian. Ojo: al hablar en Brasil, <b>esse</b> se usa casi para todo.',
+        words: [
+          { pt: 'este · aqui', pron: 'éschi · akí', es: 'este · aquí' },
+          { pt: 'esse · aí', pron: 'ési · aí', es: 'ese · ahí' },
+          { pt: 'aquele · lá', pron: 'akéli · lá', es: 'aquel · allá' }
+        ]
+      },
+      phrases: [
+        { section: 'Las 3 distancias', rd: 'dem-dist', icon: 'fa-ruler-horizontal', text: 'Como en español, hay 3 distancias: <b>este</b> (cerca de mí · aqui), <b>esse</b> (cerca de ti · aí) y <b>aquele</b> (lejos de los dos · lá, ali). Toca cada palabra de la tabla.' },
+        { id: 'dm0', tag: 'Tabla completa', tagIcon: 'fa-table',
+          rule: 'Todos los demostrativos', hint: 'Las filas de arriba son <b>variables</b> (cambian con género y número). La última fila es <b>invariable</b>: nunca cambia.',
+          table: { head: ['', 'Cerca de mí (aqui)', 'Cerca de ti (aí)', 'Lejos (lá · ali)'], rows: [
+            ['Masc. singular', ['este', 'éschi'], ['esse', 'ési'], ['aquele', 'akéli']],
+            ['Fem. singular', ['esta', 'ésta'], ['essa', 'ésa'], ['aquela', 'akéla']],
+            ['Masc. plural', ['estes', 'éschis'], ['esses', 'ésis'], ['aqueles', 'akélis']],
+            ['Fem. plural', ['estas', 'éstas'], ['essas', 'ésas'], ['aquelas', 'akélas']],
+            ['Invariable', ['isto', 'ístu'], ['isso', 'ísu'], ['aquilo', 'akílu']]
+          ] } },
+        { id: 'dm1', tag: 'Cerca de mí', tagIcon: 'fa-hand',
+          rule: 'Este, esta → aqui', hint: 'Lo que tengo en la mano o a mi lado. Va con <b>aqui</b>. Ojo: «este» suena «éschi» (TE → chi).',
+          words: [
+            { pt: 'este livro', pron: 'éschi lívru', es: 'este libro' },
+            { pt: 'esta caneta', pron: 'ésta kanéta', es: 'este esfero' },
+            { pt: 'aqui', pron: 'akí', es: 'aquí' }
+          ] },
+        { id: 'dm2', tag: 'Cerca de ti', tagIcon: 'fa-hand-point-right',
+          rule: 'Esse, essa → aí', hint: 'Lo que está junto a la persona con quien hablo. Va con <b>aí</b>. ¡Una sola S suena fuerte: ési!',
+          words: [
+            { pt: 'esse celular', pron: 'ési selulá(r)', es: 'ese celular' },
+            { pt: 'essa mochila', pron: 'ésa moshíla', es: 'esa mochila' },
+            { pt: 'aí', pron: 'aí', es: 'ahí' }
+          ] },
+        { id: 'dm3', tag: 'Lejos', tagIcon: 'fa-binoculars',
+          rule: 'Aquele, aquela → lá, ali', hint: 'Lejos de los dos. Va con <b>lá</b> (allá) o <b>ali</b> (allí, un poco más cerca).',
+          words: [
+            { pt: 'aquele prédio', pron: 'akéli prédjiu', es: 'aquel edificio' },
+            { pt: 'aquela montanha', pron: 'akéla montáña', es: 'aquella montaña' },
+            { pt: 'lá · ali', pron: 'lá · alí', es: 'allá · allí' }
+          ] },
+        { id: 'dmp1', tag: 'Aqui', tagIcon: 'fa-book', hl: 'Este',
+          pt: 'Este livro aqui é meu.', pron: 'Éschi lívru akí é méu', es: 'Este libro (de aquí) es mío.',
+          key: { pt: 'este … aqui', pron: 'éschi … akí', es: 'cerca de quien habla' } },
+        { id: 'dmp2', tag: 'Aí', tagIcon: 'fa-mobile-screen', hl: 'Esse',
+          pt: 'Esse celular aí é seu?', pron: 'Ési selulá(r) aí é séu?', es: '¿Ese celular (de ahí) es tuyo?',
+          key: { pt: 'esse … aí', pron: 'ési … aí', es: 'cerca de quien escucha' } },
+        { id: 'dmp3', tag: 'Lá', tagIcon: 'fa-house', hl: 'Aquela',
+          pt: 'Aquela casa lá é da vovó.', pron: 'Akéla káza lá é da vovó', es: 'Aquella casa (de allá) es de la abuela.',
+          key: { pt: 'aquele … lá', pron: 'akéli … lá', es: 'lejos de los dos' } },
+        { section: 'Género y número (variables)', rd: 'dem-conc', icon: 'fa-venus-mars', text: 'Los <b>variables</b> acompañan o reemplazan a un sustantivo y concuerdan con él: <b>-e → -a</b> en femenino y <b>+s</b> en plural.' },
+        { id: 'dm4', tag: 'Género', tagIcon: 'fa-venus-mars',
+          rule: 'Este / esta, esse / essa…', hint: 'Masculino termina en <b>-e</b>, femenino en <b>-a</b>. ¡Igual que en español!',
+          words: [
+            { pt: 'este menino · esta menina', pron: 'éschi menínu · ésta menína', es: 'este niño · esta niña' },
+            { pt: 'esse carro · essa moto', pron: 'ési káju · ésa móto', es: 'ese carro · esa moto' },
+            { pt: 'aquele homem · aquela mulher', pron: 'akéli ômeing · akéla mulié(r)', es: 'aquel hombre · aquella mujer' },
+            { pt: 'este dia · esta semana', pron: 'éschi djía · ésta semána', es: 'este día · esta semana' }
+          ] },
+        { id: 'dm5', tag: 'Número', tagIcon: 'fa-clone',
+          rule: 'Plural: + s', hint: 'Solo se agrega <b>-s</b>. Ojo: «estes» suena «éschis».',
+          words: [
+            { pt: 'estes livros', pron: 'éschis lívrus', es: 'estos libros' },
+            { pt: 'essas meninas', pron: 'ésas menínas', es: 'esas niñas' },
+            { pt: 'aqueles prédios', pron: 'akélis prédjius', es: 'aquellos edificios' },
+            { pt: 'estas flores', pron: 'éstas flôris', es: 'estas flores' }
+          ] },
+        { id: 'dm6', tag: '¡Trampa!', tagIcon: 'fa-triangle-exclamation',
+          rule: 'Concuerda con el género en portugués', hint: 'Algunas palabras cambian de género respecto al español (repasa <b>Heterogenéricos</b>): el demostrativo sigue al portugués.',
+          words: [
+            { pt: 'este leite', pron: 'éschi léichi', es: 'esta leche' },
+            { pt: 'esta viagem', pron: 'ésta viázheing', es: 'este viaje' },
+            { pt: 'esse sal', pron: 'ési sáu', es: 'esa sal' },
+            { pt: 'essa cor', pron: 'ésa kô(r)', es: 'ese color' }
+          ] },
+        { id: 'dmp4', tag: 'Plural', tagIcon: 'fa-shoe-prints', hl: 'Essas',
+          pt: 'Essas sandálias são muito bonitas.', pron: 'Ésas sandálias sáung múintu bonítas', es: 'Esas sandalias son muy bonitas.',
+          key: { pt: 'essas (fem. plural)', pron: 'ésas', es: 'esas' } },
+        { id: 'dmp5', tag: 'Personas', tagIcon: 'fa-children', hl: 'Aqueles',
+          pt: 'Aqueles meninos são meus primos.', pron: 'Akélis menínus sáung méus prímus', es: 'Aquellos niños son mis primos.',
+          key: { pt: 'aqueles (masc. plural)', pron: 'akélis', es: 'aquellos' } },
+        { id: 'dmp6', tag: 'Sin sustantivo', tagIcon: 'fa-shirt',
+          pt: 'Qual camiseta você quer? — Quero esta.', pron: 'Kuáu kamizéta vosê ké(r)? — Kéru ésta', es: '¿Qué camiseta quieres? — Quiero esta.',
+          nat: { pt: 'Quero essa aí.', pron: 'Kéru ésa aí', note: 'Al hablar se agrega el lugar para precisar.' },
+          key: { pt: 'esta (reemplaza a «camiseta»)', pron: 'ésta', es: 'esta' } },
+        { id: 'dmp7', tag: 'Concordancia', tagIcon: 'fa-mug-hot',
+          pt: 'Este café está muito quente.', pron: 'Éschi kafé istá múintu kénchi', es: 'Este café está muy caliente.',
+          key: { pt: 'o café · este café', pron: 'u kafé · éschi kafé', es: 'el café · este café' } },
+        { section: 'Invariables: isto, isso, aquilo', rd: 'dem-inv', icon: 'fa-cube', text: 'Los <b>invariables</b> nunca cambian y <b>nunca van con un sustantivo</b>. Se usan para algo sin nombrar, una idea o una situación. «Isso livro» ✗ → «esse livro» ✓.' },
+        { id: 'dm7', tag: 'Las 3 formas', tagIcon: 'fa-cube',
+          rule: 'Isto, isso, aquilo', hint: 'Son como «esto, eso, aquello». Siempre en masculino singular: «Isso é <b>bom</b>».',
+          words: [
+            { pt: 'isto', pron: 'ístu', es: 'esto' },
+            { pt: 'isso', pron: 'ísu', es: 'eso' },
+            { pt: 'aquilo', pron: 'akílu', es: 'aquello' },
+            { pt: 'tudo isso', pron: 'túdu ísu', es: 'todo eso' }
+          ] },
+        { id: 'dm8', tag: 'Variable vs. invariable', tagIcon: 'fa-scale-balanced',
+          rule: 'Esse livro o isso?', hint: '<b>Isso</b> = algo sin nombre o una idea · <b>esse</b> = acompaña o reemplaza a una palabra concreta.',
+          words: [
+            { pt: 'O que é isso? — É um livro.', pron: 'U ki é ísu? — É ung lívru', es: '¿Qué es eso? — Es un libro.' },
+            { pt: 'Esse livro é bom.', pron: 'Ési lívru é bóng', es: 'Ese libro es bueno.' },
+            { pt: 'Isso é bom.', pron: 'Ísu é bóng', es: 'Eso es bueno (una idea).' },
+            { pt: 'Esse é bom.', pron: 'Ési é bóng', es: 'Ese (libro) es bueno.' }
+          ] },
+        { id: 'dmp8', tag: 'Preguntar', tagIcon: 'fa-circle-question',
+          pt: 'O que é isso?', pron: 'U ki é ísu?', es: '¿Qué es eso?',
+          key: { pt: 'O que é isto? · O que é aquilo?', pron: 'U ki é ístu · U ki é akílu', es: '¿Qué es esto? · ¿Qué es aquello?' } },
+        { id: 'dmp9', tag: 'Exacto', tagIcon: 'fa-thumbs-up',
+          pt: 'Isso mesmo!', pron: 'Ísu mêsmu!', es: '¡Eso mismo! ¡Exacto!',
+          nat: { pt: 'Isso aí!', pron: 'Ísu aí!', note: '= ¡Eso! ¡Así se hace! Lo oirás todo el tiempo.' },
+          key: { pt: 'isso mesmo', pron: 'ísu mêsmu', es: 'exactamente' } },
+        { id: 'dmp10', tag: 'Lejos', tagIcon: 'fa-binoculars',
+          pt: 'Aquilo ali é um tucano?', pron: 'Akílu alí é ung tukánu?', es: '¿Aquello de allí es un tucán?',
+          key: { pt: 'aquilo ali', pron: 'akílu alí', es: 'aquello de allí' } },
+        { id: 'dmp11', tag: 'Opinión', tagIcon: 'fa-face-frown',
+          pt: 'Não gosto disso.', pron: 'Náung góstu djísu', es: 'No me gusta eso.',
+          key: { pt: 'disso = de + isso', pron: 'djísu', es: 'de eso' } },
+        { id: 'dmp12', tag: 'Situación', tagIcon: 'fa-face-surprise',
+          pt: 'Isso é muito importante!', pron: 'Ísu é múintu importánchi!', es: '¡Eso es muy importante!',
+          key: { pt: 'isso + masculino', pron: 'ísu', es: 'el adjetivo va en masculino' } },
+        { section: 'Contracciones', rd: 'dem-contr', icon: 'fa-link', text: 'Con <b>de</b> y <b>em</b> el demostrativo se pega: de + esse = <b>desse</b>, em + aquele = <b>naquele</b>. Con <b>a</b> solo se pega a aquele / aquilo: <b>àquele</b>.' },
+        { id: 'dm9', tag: 'Tabla de contracciones', tagIcon: 'fa-table',
+          rule: 'De, em, a + demostrativo', hint: '<b>De</b> = del/de · <b>em</b> = en. Las formas con «à» son formales y poco usadas al hablar.',
+          table: { head: ['', 'este', 'esse', 'aquele', 'isto · isso · aquilo'], rows: [
+            ['de +', ['deste', 'déschi'], ['desse', 'dési'], ['daquele', 'dakéli'], ['disto · disso · daquilo', 'djístu · djísu · dakílu']],
+            ['em +', ['neste', 'néschi'], ['nesse', 'nési'], ['naquele', 'nakéli'], ['nisto · nisso · naquilo', 'nístu · nísu · nakílu']],
+            ['a +', ['—'], ['—'], ['àquele', 'akéli'], ['àquilo', 'akílu']]
+          ] } },
+        { id: 'dm10', tag: 'De +', tagIcon: 'fa-tag',
+          rule: 'Deste, dessa, daquilo…', hint: 'Con verbos que piden <b>de</b>: gostar de, precisar de, lembrar de.',
+          words: [
+            { pt: 'desta vez', pron: 'désta vêis', es: 'esta vez' },
+            { pt: 'daquela cor', pron: 'dakéla kô(r)', es: 'de aquel color' },
+            { pt: 'disso', pron: 'djísu', es: 'de eso' },
+            { pt: 'dessa forma', pron: 'désa fórma', es: 'de esa forma' }
+          ] },
+        { id: 'dm11', tag: 'Em +', tagIcon: 'fa-location-dot',
+          rule: 'Neste, nessa, naquilo…', hint: 'Para lugar y tiempo: <b>nesse dia</b> = ese día · <b>nesta casa</b> = en esta casa.',
+          words: [
+            { pt: 'nesse dia', pron: 'nési djía', es: 'ese día' },
+            { pt: 'naquela época', pron: 'nakéla époka', es: 'en aquella época' },
+            { pt: 'nisso', pron: 'nísu', es: 'en eso' },
+            { pt: 'neste momento', pron: 'néschi moméntu', es: 'en este momento' }
+          ] },
+        { id: 'dmp13', tag: 'Gostar de', tagIcon: 'fa-utensils', hl: 'desse',
+          pt: 'Eu gosto muito desse restaurante.', pron: 'Eu góstu múintu dési jestauránchi', es: 'Me gusta mucho ese restaurante.',
+          key: { pt: 'gostar de + esse = desse', pron: 'dési', es: 'gustar de ese' } },
+        { id: 'dmp14', tag: 'Pasado', tagIcon: 'fa-cloud-rain', hl: 'Naquele',
+          pt: 'Naquele dia, choveu muito.', pron: 'Nakéli djía, shovêu múintu', es: 'Aquel día llovió mucho.',
+          key: { pt: 'naquele dia', pron: 'nakéli djía', es: 'aquel día' } },
+        { id: 'dmp15', tag: 'Creer', tagIcon: 'fa-face-surprise', hl: 'nisso',
+          pt: 'Eu não acredito nisso!', pron: 'Eu náung akredjítu nísu!', es: '¡No lo puedo creer!',
+          key: { pt: 'acreditar em + isso = nisso', pron: 'nísu', es: 'creer en eso' } },
+        { id: 'dmp16', tag: 'Lugar', tagIcon: 'fa-building', hl: 'neste',
+          pt: 'Ela mora neste prédio.', pron: 'Éla móra néschi prédjiu', es: 'Ella vive en este edificio.',
+          key: { pt: 'em + este = neste', pron: 'néschi', es: 'en este' } },
+        { id: 'dmp17', tag: 'Necesitar', tagIcon: 'fa-book-open', hl: 'daqueles',
+          pt: 'Eu preciso daqueles livros para estudar.', pron: 'Eu presízu dakélis lívrus pra istudá(r)', es: 'Necesito aquellos libros para estudiar.',
+          key: { pt: 'precisar de + aqueles = daqueles', pron: 'dakélis', es: 'necesitar aquellos' } },
+        { section: 'Tiempo y conversación', rd: 'dem-tempo', icon: 'fa-clock-rotate-left', text: 'También marcan el tiempo: <b>este</b> = ahora · <b>esse</b> = algo cercano o lo que se acaba de decir · <b>aquele</b> = un pasado lejano.' },
+        { id: 'dm12', tag: 'En el tiempo', tagIcon: 'fa-calendar',
+          rule: 'Este ano, naquele tempo…', hint: '<b>Naquela época</b> = en aquella época. Muy útil para contar recuerdos.',
+          words: [
+            { pt: 'este ano', pron: 'éschi ánu', es: 'este año' },
+            { pt: 'esta semana', pron: 'ésta semána', es: 'esta semana' },
+            { pt: 'naquele tempo', pron: 'nakéli témpu', es: 'en aquel tiempo' },
+            { pt: 'nessa hora', pron: 'nésa óra', es: 'en ese momento' }
+          ] },
+        { id: 'dmp18', tag: 'Futuro', tagIcon: 'fa-plane',
+          pt: 'Este ano eu vou viajar para o Brasil.', pron: 'Éschi ánu eu vô viazhá(r) pru Brazíu', es: 'Este año voy a viajar a Brasil.',
+          key: { pt: 'este ano', pron: 'éschi ánu', es: 'este año' } },
+        { id: 'dmp19', tag: 'Recuerdo', tagIcon: 'fa-clock-rotate-left',
+          pt: 'Naquela época, eu morava na Colômbia.', pron: 'Nakéla époka, eu moráva na Kolômbia', es: 'En aquella época, vivía en Colombia.',
+          key: { pt: 'naquela época', pron: 'nakéla époka', es: 'en aquella época' } },
+        { id: 'dmp20', tag: 'Lo dicho', tagIcon: 'fa-comment',
+          pt: 'Isso que você disse é verdade.', pron: 'Ísu ki vosê djísi é verdádji', es: 'Eso que dijiste es verdad.',
+          key: { pt: 'isso que…', pron: 'ísu ki', es: 'eso que…' } },
+        { id: 'dmp21', tag: 'Ánimo', tagIcon: 'fa-star',
+          pt: 'É isso aí, Cesar! Você entendeu!', pron: 'É ísu aí, Séza(r)! Vosê entendêu!', es: '¡Eso es, Cesar! ¡Entendiste!',
+          key: { pt: 'É isso aí!', pron: 'É ísu aí!', es: '¡Eso es! ¡Así es!' } },
+        { section: 'Cómo se habla en Brasil', rd: 'dem-fala', icon: 'fa-comments', text: 'Al hablar, casi todos los brasileños usan <b>esse</b> también para lo cercano y dejan <b>este</b> para textos y situaciones formales. Para precisar, agregan <b>aqui, aí, lá</b>.' },
+        { id: 'dm13', tag: 'Esse + lugar', tagIcon: 'fa-map-pin',
+          rule: 'Esse aqui, esse aí…', hint: 'Es la fórmula más natural: el lugar dice la distancia.',
+          words: [
+            { pt: 'esse aqui', pron: 'ési akí', es: 'este de aquí' },
+            { pt: 'esse aí', pron: 'ési aí', es: 'ese de ahí' },
+            { pt: 'aquele lá', pron: 'akéli lá', es: 'aquel de allá' },
+            { pt: 'essa aqui', pron: 'ésa akí', es: 'esta de aquí' }
+          ] },
+        { id: 'dmp22', tag: 'En la tienda', tagIcon: 'fa-store',
+          pt: 'Quero esse aqui, por favor.', pron: 'Kéru ési akí, pur favô(r)', es: 'Quiero este de aquí, por favor.',
+          nat: { pt: 'Me vê esse aqui.', pron: 'Mi vê ési akí', note: 'Lo que dirás en panaderías y tiendas.' },
+          key: { pt: 'esse aqui', pron: 'ési akí', es: 'este de aquí (hablado)' } },
+        { id: 'dmp23', tag: 'Pregunta', tagIcon: 'fa-dog',
+          pt: 'Que cachorro é esse?', pron: 'Ki kashóju é ési?', es: '¿Qué perro es ese?',
+          key: { pt: 'Que … é esse?', pron: 'Ki … é ési', es: '¿Qué … es ese?' } },
+        { id: 'dmp24', tag: 'Sorpresa', tagIcon: 'fa-face-flushed',
+          pt: 'Nossa, que calor é esse!', pron: 'Nósa, ki kalô(r) é ési!', es: '¡Uy, qué calor tan tremendo!',
+          key: { pt: 'Que … é esse!', pron: 'Ki … é ési', es: 'exclamación de sorpresa' } },
+        { id: 'dmp25', tag: 'Escrito', tagIcon: 'fa-pen-nib',
+          pt: 'Neste texto, vamos estudar os demonstrativos.', pron: 'Néschi tékstu, vámus istudá(r) us demonstratívus', es: 'En este texto vamos a estudiar los demostrativos.',
+          key: { pt: 'este (escrito)', pron: 'éschi', es: 'en textos se usa la norma: este = lo que está aquí' } },
+        { section: 'Oraciones para entender', rd: 'dem-oracoes', icon: 'fa-book-open-reader', text: 'Muchas oraciones para ver cada forma en uso: primero las simples y luego las contracciones. Toca cada una, escúchala y repítela en voz alta.' },
+        { id: 'dms1', tag: 'Aqui', tagIcon: 'fa-hand',
+          rule: 'Este, esta, estes, estas', hint: 'Todo está <b>cerca de mí</b>, o es lo que estoy presentando.',
+          words: [
+            { pt: 'Esta é a minha casa.', pron: 'Ésta é a míña káza', es: 'Esta es mi casa.' },
+            { pt: 'Este café aqui está delicioso.', pron: 'Éschi kafé akí istá delisiôzu', es: 'Este café de aquí está delicioso.' },
+            { pt: 'Estes sapatos são novos.', pron: 'Éschis sapátus sáung nóvus', es: 'Estos zapatos son nuevos.' },
+            { pt: 'Estas fotos são da viagem.', pron: 'Éstas fótus sáung da viázheing', es: 'Estas fotos son del viaje.' }
+          ] },
+        { id: 'dms2', tag: 'Aí', tagIcon: 'fa-hand-point-right',
+          rule: 'Esse, essa, esses, essas', hint: 'Todo está <b>cerca de la otra persona</b>, o es suyo.',
+          words: [
+            { pt: 'Essa blusa aí é nova?', pron: 'Ésa blúza aí é nóva?', es: '¿Esa blusa es nueva?' },
+            { pt: 'Esse seu cachorro é muito fofo!', pron: 'Ési séu kashóju é múintu fôfu!', es: '¡Ese perro tuyo es muy tierno!' },
+            { pt: 'Esses óculos ficam bem em você.', pron: 'Ésis ókulus fíkaung béing ing vosê', es: 'Esas gafas te quedan bien.' },
+            { pt: 'Me passa essas chaves, por favor.', pron: 'Mi pása ésas shávis, pur favô(r)', es: 'Pásame esas llaves, por favor.' }
+          ] },
+        { id: 'dms3', tag: 'Lá', tagIcon: 'fa-binoculars',
+          rule: 'Aquele, aquela, aqueles, aquelas', hint: 'Todo está <b>lejos de los dos</b>: va con <b>lá</b> o <b>ali</b>.',
+          words: [
+            { pt: 'Aquele homem lá é o meu professor.', pron: 'Akéli ômeing lá é u méu profesô(r)', es: 'Aquel hombre de allá es mi profesor.' },
+            { pt: 'Aquela praia é a mais bonita do Rio.', pron: 'Akéla práia é a máis boníta du Jíu', es: 'Aquella playa es la más bonita de Río.' },
+            { pt: 'Aqueles prédios lá são muito altos.', pron: 'Akélis prédjius lá sáung múintu áutus', es: 'Aquellos edificios de allá son muy altos.' },
+            { pt: 'Você vê aquelas nuvens? Vai chover.', pron: 'Vosê vê akélas núveings? Vái shovê(r)', es: '¿Ves aquellas nubes? Va a llover.' }
+          ] },
+        { id: 'dms4', tag: 'Invariables', tagIcon: 'fa-cube',
+          rule: 'Isto, isso, aquilo', hint: 'Sin sustantivo: cosas sin nombrar, ideas o situaciones.',
+          words: [
+            { pt: 'Isto aqui é um presente para você.', pron: 'Ístu akí é ung prezénchi pra vosê', es: 'Esto es un regalo para ti.' },
+            { pt: 'Isso não é justo!', pron: 'Ísu náung é zhústu!', es: '¡Eso no es justo!' },
+            { pt: 'Aquilo lá no céu é um avião?', pron: 'Akílu lá nu séu é ung aviáung?', es: '¿Aquello en el cielo es un avión?' },
+            { pt: 'Tudo isso é seu?', pron: 'Túdu ísu é séu?', es: '¿Todo eso es tuyo?' }
+          ] },
+        { id: 'dms5', tag: 'Em + este / esse', tagIcon: 'fa-location-dot',
+          rule: 'Neste, nesta, nesse, nessa', hint: '<b>Em</b> = en. Para lugares (dentro de) y momentos.',
+          words: [
+            { pt: 'Neste restaurante a comida é ótima.', pron: 'Néschi jestauránchi a komída é ótchima', es: 'En este restaurante la comida es excelente.' },
+            { pt: 'Nesta cidade faz muito calor.', pron: 'Nésta sidádji fáis múintu kalô(r)', es: 'En esta ciudad hace mucho calor.' },
+            { pt: 'Nesse dia, eu estava doente.', pron: 'Nési djía, eu istáva doénchi', es: 'Ese día yo estaba enfermo.' },
+            { pt: 'Tem água nessa garrafa?', pron: 'Téing água nésa gajáfa?', es: '¿Hay agua en esa botella?' }
+          ] },
+        { id: 'dms6', tag: 'Em + aquele / esses', tagIcon: 'fa-clock-rotate-left',
+          rule: 'Naquele, naquela, nesses, naquilo', hint: '<b>Naquele tempo</b> y <b>naquela época</b> sirven para contar recuerdos.',
+          words: [
+            { pt: 'Naquele tempo, não tinha celular.', pron: 'Nakéli témpu, náung chíña selulá(r)', es: 'En aquel tiempo no había celular.' },
+            { pt: 'Eu estudei naquela escola.', pron: 'Eu istudéi nakéla iskóla', es: 'Estudié en aquella escuela.' },
+            { pt: 'Nesses dias, eu trabalho muito.', pron: 'Nésis djías, eu trabáliu múintu', es: 'En estos días trabajo mucho.' },
+            { pt: 'Eu nunca pensei naquilo.', pron: 'Eu núnka penséi nakílu', es: 'Nunca pensé en aquello.' }
+          ] },
+        { id: 'dms7', tag: 'De + este / esse', tagIcon: 'fa-tag',
+          rule: 'Deste, desta, desse, dessa', hint: 'Con verbos que piden <b>de</b>: gostar, precisar, ter medo, ser de (origen).',
+          words: [
+            { pt: 'Eu gosto deste livro.', pron: 'Eu góstu déschi lívru', es: 'Me gusta este libro.' },
+            { pt: 'Você é desta cidade?', pron: 'Vosê é désta sidádji?', es: '¿Eres de esta ciudad?' },
+            { pt: 'Eu preciso desse documento.', pron: 'Eu presízu dési dokuméntu', es: 'Necesito ese documento.' },
+            { pt: 'Ela tem medo dessa rua à noite.', pron: 'Éla téing médu désa júa a nôichi', es: 'Le da miedo esa calle de noche.' }
+          ] },
+        { id: 'dms8', tag: 'De + aquele / isso', tagIcon: 'fa-link',
+          rule: 'Daquele, daquela, daqueles, disso', hint: '<b>Lembrar de</b> (acordarse de) y <b>falar de</b> (hablar de) usan mucho estas formas.',
+          words: [
+            { pt: 'Você se lembra daquele dia?', pron: 'Vosê si lémbra dakéli djía?', es: '¿Te acuerdas de aquel día?' },
+            { pt: 'Eu comprei o pão daquela padaria.', pron: 'Eu kompréi u páung dakéla padaría', es: 'Compré el pan de aquella panadería.' },
+            { pt: 'Os livros daqueles alunos estão aqui.', pron: 'Us lívrus dakélis alúnus istáung akí', es: 'Los libros de aquellos alumnos están aquí.' },
+            { pt: 'Não fala disso agora!', pron: 'Náung fála djísu agóra!', es: '¡No hables de eso ahora!' }
+          ] },
+        { id: 'dmp26', tag: 'Diálogo', tagIcon: 'fa-comments',
+          pt: 'Que blusa linda! Onde você comprou essa? — Naquela loja do centro.', pron: 'Ki blúza línda! Óndji vosê komprô ésa? — Nakéla lózha du séntru', es: '¡Qué blusa tan linda! ¿Dónde compraste esa? — En aquella tienda del centro.',
+          key: { pt: 'essa · naquela', pron: 'ésa · nakéla', es: 'la tuya (aí) · lejos (em + aquela)' } },
+        { id: 'dmp27', tag: 'Las 3 distancias', tagIcon: 'fa-ruler-horizontal',
+          pt: 'Você quer isto aqui ou isso aí? — Aquilo lá!', pron: 'Vosê ké(r) ístu akí ô ísu aí? — Akílu lá!', es: '¿Quieres esto de aquí o eso de ahí? — ¡Aquello de allá!',
+          key: { pt: 'isto · isso · aquilo', pron: 'ístu · ísu · akílu', es: 'esto · eso · aquello' } },
+        { id: 'dmp28', tag: 'Recuerdo', tagIcon: 'fa-umbrella-beach',
+          pt: 'Lembra daquela viagem? Naquele verão, a gente foi pra Bahia.', pron: 'Lémbra dakéla viázheing? Nakéli veráung, a zhénchi fôi pra Baía', es: '¿Te acuerdas de aquel viaje? Ese verano fuimos a Bahía.',
+          key: { pt: 'daquela · naquele', pron: 'dakéla · nakéli', es: 'de aquella · en aquel' } },
+        { id: 'dmp29', tag: 'Presentar', tagIcon: 'fa-user-group',
+          pt: 'Esta é a minha amiga Júlia, e aquele lá é o irmão dela.', pron: 'Ésta é a míña amíga Zhúlia, i akéli lá é u irmáung déla', es: 'Esta es mi amiga Júlia, y aquel de allá es su hermano.',
+          key: { pt: 'Esta é… · Aquele é…', pron: 'Ésta é · Akéli é', es: 'para presentar personas (nunca «isto»)' } },
+        { id: 'dmp30', tag: 'Opinar', tagIcon: 'fa-scale-balanced',
+          pt: 'Eu concordo com isso, mas não com aquilo que ele disse.', pron: 'Eu konkórdu kong ísu, más náung kong akílu ki éli djísi', es: 'Estoy de acuerdo con eso, pero no con lo que él dijo.',
+          key: { pt: 'aquilo que…', pron: 'akílu ki', es: 'aquello que, lo que…' } },
+        { section: '¡Ejercicios!', rd: 'dem-ex', icon: 'fa-pencil', text: 'Elige la opción correcta (10 ejercicios, 52 preguntas). Usa la <b>norma escrita</b> (la de los exámenes): este = aqui, esse = aí, aquele = lá. Si fallas, lee la pista y vuelve a intentar.' },
+        { id: 'dmx1', tag: 'Ejercicio 1', tagIcon: 'fa-ruler-horizontal',
+          rule: 'Distancia: este, esse o aquele', hint: 'Fíjate en aqui / aí / lá y en la pista entre paréntesis.',
+          ex: [
+            { q: 'Tengo el libro en la mano: «___ livro é muito bom.»', o: ['Este', 'Esse', 'Aquele'], a: 0, why: 'Está conmigo (aqui) → este.' },
+            { q: 'El celular está junto a ti: «___ celular aí é seu?»', o: ['Este', 'Esse', 'Aquele'], a: 1, why: 'Aí = cerca de ti → esse.' },
+            { q: 'Un avión en el cielo: «Olha ___ avião lá no céu!»', o: ['este', 'esse', 'aquele'], a: 2, why: 'Lá, lejos de los dos → aquele.' },
+            { q: 'El esfero está en mi mano: «___ caneta aqui não funciona.»', o: ['Esta', 'Essa', 'Aquela'], a: 0, why: 'Aqui + femenino → esta.' },
+            { q: 'Montañas a lo lejos: «Você vê ___ montanhas lá longe?»', o: ['estas', 'essas', 'aquelas'], a: 2, why: 'Lá longe + femenino plural → aquelas.' }
+          ] },
+        { id: 'dmx2', tag: 'Ejercicio 2', tagIcon: 'fa-venus-mars',
+          rule: 'Género y número', hint: 'Mira si la palabra es masculina o femenina <b>en portugués</b>, y si es singular o plural.',
+          ex: [
+            { q: 'Cerca de ti: «___ meninas são minhas primas.»', o: ['Esses', 'Essas', 'Essa'], a: 1, why: 'Meninas = femenino plural → essas.' },
+            { q: 'El color de tu camisa: «Eu adoro ___ cor!»', o: ['esse', 'essa', 'isso'], a: 1, why: '«A cor» es femenina en portugués → essa cor.' },
+            { q: 'Aquí, en la mesa: «___ leite está frio.»', o: ['Esta', 'Este', 'Isto'], a: 1, why: '«O leite» es masculino en portugués → este leite.' },
+            { q: 'Aquí, en la bolsa: «Comprei ___ sapatos ontem.»', o: ['estes', 'estas', 'este'], a: 0, why: 'Sapatos = masculino plural → estes.' },
+            { q: 'Un viaje del pasado: «___ viagem foi incrível!»', o: ['Aquele', 'Aquela', 'Aquilo'], a: 1, why: '«A viagem» es femenina → aquela.' }
+          ] },
+        { id: 'dmx3', tag: 'Ejercicio 3', tagIcon: 'fa-scale-balanced',
+          rule: 'Variable o invariable', hint: 'Si hay sustantivo (o lo reemplazas), usa variable. Si es algo sin nombre o una idea, invariable.',
+          ex: [
+            { q: 'Señalas algo raro cerca de ti: «O que é ___?»', o: ['esse', 'isso', 'essa'], a: 1, why: 'Algo sin nombrar → isso.' },
+            { q: '«___ livro é do Pedro.»', o: ['Isso', 'Esse', 'Isto'], a: 1, why: 'Con sustantivo → variable: esse livro.' },
+            { q: 'Alguien dijo algo feo: «Não fale ___!»', o: ['isso', 'esse', 'essa'], a: 0, why: 'Una idea, lo que se dijo → isso.' },
+            { q: 'Algo lejano que no sabes qué es: «___ ali é um museu?»', o: ['Aquele', 'Aquilo', 'Aquela'], a: 1, why: 'No sabes qué es → aquilo.' },
+            { q: '«Qual blusa você prefere? — ___ azul.»', o: ['Essa', 'Isso', 'Esse'], a: 0, why: 'Reemplaza a «blusa» (femenino) → essa.' }
+          ] },
+        { id: 'dmx4', tag: 'Ejercicio 4', tagIcon: 'fa-link',
+          rule: 'Contracciones', hint: 'De + esse = desse · em + aquele = naquele · de + isso = disso.',
+          ex: [
+            { q: 'de + essa: «Eu gosto ___ música.»', o: ['de essa', 'dessa', 'nessa'], a: 1, why: 'Gostar de + essa → dessa.' },
+            { q: 'em + aquele: «___ dia, eu acordei tarde.»', o: ['Daquele', 'Naquele', 'Em aquele'], a: 1, why: 'Em + aquele → naquele.' },
+            { q: 'em + isso: «Eu não acredito ___!»', o: ['nisso', 'disso', 'em isso'], a: 0, why: 'Acreditar em + isso → nisso.' },
+            { q: 'em + este: «Ela mora ___ prédio.»', o: ['deste', 'neste', 'em este'], a: 1, why: 'Em + este → neste.' },
+            { q: 'de + esses: «Preciso ___ livros para estudar.»', o: ['desses', 'nesses', 'de esses'], a: 0, why: 'Precisar de + esses → desses.' }
+          ] },
+        { id: 'dmx5', tag: 'Ejercicio 5', tagIcon: 'fa-language',
+          rule: 'Traduce al portugués', hint: 'El reto final: junta distancia, género, número y contracciones.',
+          ex: [
+            { q: '«Aquella casa de allá es muy grande.»', o: ['Essa casa lá é muito grande.', 'Aquela casa lá é muito grande.', 'Aquilo casa lá é muito grande.'], a: 1, why: 'Allá = lá, femenino → aquela casa.' },
+            { q: '«¿Qué es esto?»', o: ['O que é este?', 'O que é isto?', 'O que é esto?'], a: 1, why: 'Algo sin nombrar, aquí → isto.' },
+            { q: '«Este año estudio portugués.»', o: ['Este ano eu estudo português.', 'Isto ano eu estudo português.', 'Esto ano eu estudo português.'], a: 0, why: '«O ano» es masculino y lleva sustantivo → este ano.' },
+            { q: '«En ese momento llegó Pedro.»', o: ['Em esse momento, o Pedro chegou.', 'Nesse momento, o Pedro chegou.', 'Desse momento, o Pedro chegou.'], a: 1, why: 'Em + esse se contrae → nesse.' },
+            { q: '«Me gusta eso.»', o: ['Eu gosto isso.', 'Eu gosto disso.', 'Eu gosto desse.'], a: 1, why: 'Gostar de + isso (una idea) → disso.' }
+          ] },
+        { id: 'dmx6', tag: 'Ejercicio 6', tagIcon: 'fa-comments',
+          rule: 'En la vida real', hint: 'Situaciones de todos los días en Brasil.',
+          ex: [
+            { q: 'En la panadería, señalas un pan junto a ti: «Me vê ___ aqui.»', o: ['esse', 'isso', 'aquilo'], a: 0, why: 'Al hablar: esse aqui = este de aquí.' },
+            { q: 'Tu amigo dice algo correcto: «___ mesmo!»', o: ['Esse', 'Isso', 'Este'], a: 1, why: 'Expresión fija: Isso mesmo!' },
+            { q: 'Recuerdas tu infancia: «___ época, eu morava em Bogotá.»', o: ['Naquela', 'Daquela', 'Aquela'], a: 0, why: 'Em + aquela → naquela época.' },
+            { q: 'Ves un perro lindo junto a alguien: «Que cachorro é ___?»', o: ['isso', 'esse', 'essa'], a: 1, why: 'Reemplaza a «cachorro» (masculino) → esse.' },
+            { q: 'Una noticia increíble: «Eu não acredito ___!»', o: ['nisso', 'nesse', 'disso'], a: 0, why: 'Acreditar em + isso → nisso.' }
+          ] },
+        { id: 'dmx7', tag: 'Ejercicio 7', tagIcon: 'fa-list-check',
+          rule: 'Banco de palabras (1)', hint: 'Banco de palabras: <b>nesse</b> · <b>dessa</b> · <b>naquilo</b> · <b>nesta</b> · <b>esta</b> · <b>naquela</b>',
+          ex: [
+            { q: 'em + esse: «___ momento, o telefone tocou.»', o: ['Desse', 'Nesse', 'Naquilo'], a: 1, why: 'Em + esse → nesse momento.' },
+            { q: 'de + essa: «Eu gosto muito ___ cidade.»', o: ['nessa', 'desta', 'dessa'], a: 2, why: 'Gostar de + essa → dessa cidade.' },
+            { q: 'em + aquilo: «Não pense mais ___.»', o: ['naquilo', 'daquilo', 'naquele'], a: 0, why: 'Pensar em + aquilo (algo sin nombrar) → naquilo.' },
+            { q: 'em + esta: «___ semana, eu tenho prova.»', o: ['Nessa', 'Nesta', 'Desta'], a: 1, why: 'Em + esta → nesta semana.' },
+            { q: 'Cerca de mí: «___ mochila aqui é minha.»', o: ['Esta', 'Essa', 'Isto'], a: 0, why: 'Aqui + femenino con sustantivo → esta.' },
+            { q: 'em + aquela: «Eu morava ___ casa lá.»', o: ['daquela', 'aquela', 'naquela'], a: 2, why: 'Morar em + aquela → naquela casa.' }
+          ] },
+        { id: 'dmx8', tag: 'Ejercicio 8', tagIcon: 'fa-list-check',
+          rule: 'Banco de palabras (2)', hint: 'Banco de palabras: <b>este</b> · <b>nessa</b> · <b>daqueles</b> · <b>isso</b> · <b>daquela</b>',
+          ex: [
+            { q: 'Cerca de mí: «___ livro aqui é muito interessante.»', o: ['Esse', 'Este', 'Isto'], a: 1, why: 'Aqui + masculino con sustantivo → este livro.' },
+            { q: 'em + essa: «Você trabalha ___ empresa aí?»', o: ['nessa', 'dessa', 'nesta'], a: 0, why: 'Trabalhar em + essa → nessa empresa.' },
+            { q: 'de + aqueles: «Eu preciso ___ papéis lá.»', o: ['naqueles', 'daquelas', 'daqueles'], a: 2, why: 'Precisar de + aqueles (masc. plural) → daqueles papéis.' },
+            { q: 'Algo en tu mano, sin nombrarlo: «O que é ___ na sua mão?»', o: ['esse', 'isso', 'isto'], a: 1, why: 'Sin sustantivo y cerca de ti → isso.' },
+            { q: 'de + aquela (hace mucho): «Você se lembra ___ festa?»', o: ['daquela', 'naquela', 'dessa'], a: 0, why: 'Lembrar de + aquela → daquela festa.' }
+          ] },
+        { id: 'dmx9', tag: 'Ejercicio 9', tagIcon: 'fa-list-check',
+          rule: 'Banco de palabras (3)', hint: 'Banco de palabras: <b>deste</b> · <b>disso</b> · <b>naquele</b> · <b>nesses</b> · <b>neste</b>',
+          ex: [
+            { q: 'de + este: «Eu gosto ___ restaurante aqui.»', o: ['neste', 'deste', 'desse'], a: 1, why: 'Gostar de + este → deste restaurante.' },
+            { q: 'de + isso: «Eu não sei nada ___.»', o: ['disso', 'nisso', 'desse'], a: 0, why: 'Saber de + isso (una idea) → disso.' },
+            { q: 'em + aquele (hace mucho): «___ ano, eu viajei para o Brasil.»', o: ['Daquele', 'Nesse', 'Naquele'], a: 2, why: 'Em + aquele → naquele ano.' },
+            { q: 'em + esses: «___ dias, choveu muito.»', o: ['Nesses', 'Nessas', 'Desses'], a: 0, why: 'Em + esses (masc. plural) → nesses dias.' },
+            { q: 'em + este: «Eu moro ___ bairro aqui.»', o: ['deste', 'nesse', 'neste'], a: 2, why: 'Morar em + este → neste bairro.' }
+          ] },
+        { id: 'dmx10', tag: 'Ejercicio 10', tagIcon: 'fa-brain',
+          rule: 'Sin pistas', hint: 'Ahora sin ayuda: deduce la distancia (aqui, aí, lá), el género y la preposición que pide el verbo.',
+          ex: [
+            { q: 'Tu amigo dijo la verdad: «Eu acredito ___.»', o: ['disso', 'nisso', 'isso'], a: 1, why: 'Acreditar em + isso → nisso.' },
+            { q: 'Presentas a tu primo, que está a tu lado: «___ aqui é o meu primo Davi.»', o: ['Isto', 'Aquele', 'Este'], a: 2, why: 'Para personas nunca se usa isto. A tu lado → este.' },
+            { q: 'Un pájaro en lo alto de un árbol lejano: «Olha! ___ pássaro lá em cima é um tucano!»', o: ['Aquele', 'Esse', 'Aquilo'], a: 0, why: 'Lá em cima + sustantivo masculino → aquele pássaro.' },
+            { q: 'El color de una pared lejana: «Não gosto ___ cor lá na parede.»', o: ['naquela', 'daquela', 'daquele'], a: 1, why: 'Gostar de + aquela (a cor es femenina) → daquela.' },
+            { q: 'Tu amiga tiene una caja: «O que tem ___ caixa aí?»', o: ['nessa', 'dessa', 'nesta'], a: 0, why: 'Dentro (em) + essa, porque está aí → nessa.' },
+            { q: 'Hablando de lo que pasó la semana pasada: «Você foi à festa? — Fui! Gostei muito ___ festa.»', o: ['desta', 'dessa', 'nessa'], a: 1, why: 'Algo ya mencionado o pasado cercano → dessa.' }
+          ] },
+      ]
+    },
+    {
       id: 'vocab', num: 16, tab: 'Vocabulario', icon: 'fa-book', color: 'cyan', vocab: true,
       title: 'Vocabulário Essencial', pron: 'Vokabuláriu Esensiáu', es: 'Vocabulario esencial · Las palabras que más vas a usar, por categorías'
     },
@@ -2632,7 +3013,7 @@
   // Secciones del menú: el orden de los módulos (y su número) sale de aquí
   const GROUPS = [
     { id: 'base', name: 'Primeros pasos', icon: 'fa-seedling', ids: ['apres', 'som', 'num', 'horas', 'dias', 'meses', 'clima', 'cores'] },
-    { id: 'gram', name: 'Gramática', icon: 'fa-puzzle-piece', ids: ['verbos', 'hetero', 'adj', 'poss', 'contr', 'paises', 'perg', 'passado', 'vverbos'] },
+    { id: 'gram', name: 'Gramática', icon: 'fa-puzzle-piece', ids: ['verbos', 'hetero', 'adj', 'poss', 'demo', 'contr', 'paises', 'perg', 'passado', 'vverbos'] },
     { id: 'vida', name: 'Vida diaria', icon: 'fa-house', ids: ['familia', 'casa', 'cidade', 'rotina', 'comida', 'prof', 'objetos', 'animais', 'vocab'] },
     { id: 'prac', name: 'Practicar', icon: 'fa-gamepad', ids: ['pratica', 'prompt'] }
   ];
@@ -2715,7 +3096,12 @@
     { id: 'f72', cat: 'Ciudad',       icon: 'fa-arrow-up',      pt: 'siga reto',            pron: 'síga jétu',             es: 'siga derecho' },
     { id: 'f73', cat: 'Ciudad',       icon: 'fa-traffic-light', pt: 'o sinal',              pron: 'u sináu',               es: 'el semáforo' },
     { id: 'f74', cat: 'Ciudad',       icon: 'fa-bus',           pt: 'pegar o ônibus',       pron: 'pegá(r) u ónibus',      es: 'tomar el bus' },
-    { id: 'f75', cat: 'Ciudad',       icon: 'fa-location-dot',  pt: 'Onde fica…?',          pron: 'Óndji fíka',            es: '¿Dónde queda…?' }
+    { id: 'f75', cat: 'Ciudad',       icon: 'fa-location-dot',  pt: 'Onde fica…?',          pron: 'Óndji fíka',            es: '¿Dónde queda…?' },
+    { id: 'f76', cat: 'Demostrativos', icon: 'fa-hand-point-right', pt: 'este · esse · aquele', pron: 'éschi · ési · akéli', es: 'este · ese · aquel' },
+    { id: 'f77', cat: 'Demostrativos', icon: 'fa-cube',          pt: 'isto · isso · aquilo', pron: 'ístu · ísu · akílu',   es: 'esto · eso · aquello (invariables)' },
+    { id: 'f78', cat: 'Demostrativos', icon: 'fa-link',          pt: 'disso',                pron: 'djísu',                 es: 'de eso (de + isso)' },
+    { id: 'f79', cat: 'Demostrativos', icon: 'fa-clock-rotate-left', pt: 'naquele dia',     pron: 'nakéli djía',           es: 'aquel día (em + aquele)' },
+    { id: 'f80', cat: 'Demostrativos', icon: 'fa-thumbs-up',     pt: 'Isso mesmo!',          pron: 'Ísu mêsmu!',            es: '¡Exacto!' }
   ];
 
   const FLASH_COLORS = {
@@ -2739,7 +3125,8 @@
     'Familia':      'from-orange-400 to-pink-500',
     'Casa':         'from-amber-400 to-orange-500',
     'Clima':        'from-sky-400 to-cyan-500',
-    'Ciudad':       'from-indigo-400 to-sky-500'
+    'Ciudad':       'from-indigo-400 to-sky-500',
+    'Demostrativos': 'from-violet-400 to-fuchsia-500'
   };
 
   const QUIZ = [
@@ -3102,7 +3489,34 @@
         { pt: 'Eu pega o ônibus todo dia.', pron: 'Eu péga u ónibus tôdu djía' }
       ], correct: 0,
       hint: 'Pista: «dia» es masculino y con «eu» el verbo termina en -o.',
-      explain: 'Pegar o ônibus = tomar el bus. Eu pego · todo dia (masculino).' }
+      explain: 'Pegar o ônibus = tomar el bus. Eu pego · todo dia (masculino).' },
+    { id: 'q41', topic: 'Demostrativos',
+      q: '«¿Qué es eso?» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'O que é esse?', pron: 'U ki é ési' },
+        { pt: 'O que é isso?', pron: 'U ki é ísu' },
+        { pt: 'O que é esso?', pron: 'U ki é ésu' }
+      ], correct: 1,
+      hint: 'Pista: algo sin nombrar usa el invariable.',
+      explain: 'Sin sustantivo y sin saber qué es → isso.' },
+    { id: 'q42', topic: 'Demostrativos',
+      q: '«Me gusta mucho esa canción» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'Eu gosto muito dessa música.', pron: 'Eu góstu múintu désa música' },
+        { pt: 'Eu gosto muito essa música.', pron: 'Eu góstu múintu ésa música' },
+        { pt: 'Eu gosto muito de isso música.', pron: 'Eu góstu múintu dji ísu música' }
+      ], correct: 0,
+      hint: 'Pista: gostar pide «de».',
+      explain: 'Gostar de + essa = dessa música.' },
+    { id: 'q43', topic: 'Demostrativos',
+      q: '«Aquellas casas de allá» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'Aquelas casas lá', pron: 'Akélas kázas lá' },
+        { pt: 'Aqueles casas lá', pron: 'Akélis kázas lá' },
+        { pt: 'Aquilo casas lá', pron: 'Akílu kázas lá' }
+      ], correct: 0,
+      hint: 'Pista: casas es femenino plural.',
+      explain: 'Femenino plural y lejos → aquelas casas.' }
   ];
 
   /* ---------- Vocabulario por categorías ---------- */
@@ -3317,7 +3731,7 @@
       task: t => `Voy a pegar un texto que escribí en portugués sobre «${t}». Muéstrame la versión corregida frase por frase con el formato obligatorio y, debajo de cada frase, explica el error en una sola línea en español. Si algo es correcto pero suena poco natural, dime cómo lo diría un brasileño. Termina diciéndome una cosa que hice bien.\n\nMI TEXTO:\n[PEGA AQUÍ TU TEXTO]` }
   ];
 
-  const PROMPT_TOPICS = ['Mi presentación personal', 'Mi rutina diaria', 'Comida y restaurantes', 'Ser y estar', 'Palabras interrogativas', 'Viajar a Brasil', 'Mi familia', 'Adjetivos para describir personas', 'Lo que hice el fin de semana (pasado)', 'Números, fechas y teléfonos', '¿Qué hora es? (horas y citas)', 'Dinero y compras', 'Días de la semana y planes', 'Profesiones y trabajo', 'Colores y ropa', 'Contracciones (no, na, do, da, ao, à)', 'Meses, estaciones y clima', 'Países y nacionalidades', 'Objetos de la casa y del día a día', 'Animales y mascotas', 'Mi casa y las tareas domésticas', 'El clima y el pronóstico', 'Moverme por la ciudad y pedir direcciones', 'Billetes y monedas de Brasil'];
+  const PROMPT_TOPICS = ['Mi presentación personal', 'Mi rutina diaria', 'Comida y restaurantes', 'Ser y estar', 'Palabras interrogativas', 'Viajar a Brasil', 'Mi familia', 'Adjetivos para describir personas', 'Lo que hice el fin de semana (pasado)', 'Números, fechas y teléfonos', '¿Qué hora es? (horas y citas)', 'Dinero y compras', 'Días de la semana y planes', 'Profesiones y trabajo', 'Colores y ropa', 'Contracciones (no, na, do, da, ao, à)', 'Meses, estaciones y clima', 'Países y nacionalidades', 'Objetos de la casa y del día a día', 'Animales y mascotas', 'Mi casa y las tareas domésticas', 'El clima y el pronóstico', 'Moverme por la ciudad y pedir direcciones', 'Demostrativos: este, esse, aquele, isso', 'Billetes y monedas de Brasil'];
 
   const XP = { phrase: 20, flash: 10, quiz: 30 };
   // Umbrales como fracción del XP total, para que escalen al agregar contenido
@@ -3814,6 +4228,55 @@
       ['O feirante grita: "Olha o abacaxi docinho!"', 'U feiránchi gríta: "Ólia u abakashí dosíñu!"', 'El vendedor grita: "¡Mire la piña dulcecita!"'],
       ['A Lia come um pastel com caldo de cana. Delícia!', 'A Lía kómi ung pastéu kong káudu dji kána. Delísia!', 'Lia se come un pastel con jugo de caña. ¡Delicioso!']
     ] },
+    // Demostrativos
+    'dem-dist': { emoji: '👉', pt: 'Este, esse, aquele', pron: 'Éschi, ési, akéli', es: 'Este, ese, aquel', lines: [
+      ['A Lia tem uma bola na mão: "Esta bola é minha."', 'A Lía téing úma bóla na máung: "Ésta bóla é míña"', 'Lia tiene una pelota en la mano: "Esta pelota es mía."'],
+      ['Ela olha para o Pedro: "Essa bola aí é sua?"', 'Éla ólia pru Pédru: "Ésa bóla aí é súa?"', 'Mira a Pedro: "¿Esa pelota es tuya?"'],
+      ['Depois ela aponta para longe: "E aquela bola lá?"', 'Depóis éla apónta pra lónzhi: "I akéla bóla lá?"', 'Después señala a lo lejos: "¿Y aquella pelota de allá?"'],
+      ['"Aquela é do Tico!", ri o Pedro.', '"Akéla é du Tíku!", jí u Pédru', '"¡Aquella es de Tico!", se ríe Pedro.']
+    ] },
+    'dem-conc': { emoji: '🛍️', pt: 'Na loja de roupas', pron: 'Na lózha dji jôpas', es: 'En la tienda de ropa', lines: [
+      ['A Lia e a mãe estão numa loja de roupas.', 'A Lía i a máing istáung núma lózha dji jôpas', 'Lia y su mamá están en una tienda de ropa.'],
+      ['"Mãe, eu quero estas sandálias e este vestido!"', '"Máing, eu kéru éstas sandálias i éschi vestchídu!"', '"¡Mamá, quiero estas sandalias y este vestido!"'],
+      ['A mãe diz: "E esses sapatos? São bonitos!"', 'A máing djís: "I ésis sapátus? Sáung bonítus!"', 'La mamá dice: "¿Y esos zapatos? ¡Son bonitos!"'],
+      ['"Não, mãe! Eu prefiro aquelas botas lá!"', '"Náung, máing! Eu prefíru akélas bótas lá!"', '"¡No, mamá! ¡Prefiero aquellas botas de allá!"']
+    ] },
+    'dem-inv': { emoji: '🤔', pt: 'O que é isso?', pron: 'U ki é ísu?', es: '¿Qué es eso?', lines: [
+      ['O Tico encontra uma coisa estranha no chão.', 'U Tíku enkóntra úma kôiza istráña nu sháung', 'Tico encuentra una cosa rara en el piso.'],
+      ['A Lia pergunta: "O que é isso, Tico?"', 'A Lía pergúnta: "U ki é ísu, Tíku?"', 'Lia pregunta: "¿Qué es eso, Tico?"'],
+      ['Ele responde: "Isto é um biscoito!"', 'Éli jespóndji: "Ístu é ung biskôitu!"', 'Él responde: "¡Esto es una galleta!"'],
+      ['A Lia ri: "Isso mesmo! Muito bem!"', 'A Lía jí: "Ísu mêsmu! Múintu béing!"', 'Lia se ríe: "¡Eso mismo! ¡Muy bien!"']
+    ] },
+    'dem-contr': { emoji: '📸', pt: 'Naquele tempo', pron: 'Nakéli témpu', es: 'En aquel tiempo', lines: [
+      ['A vovó Ana mostra uma foto antiga.', 'A vovó Ána móstra úma fótu anchíga', 'La abuela Ana muestra una foto antigua.'],
+      ['"Nesta foto, eu tinha dez anos."', '"Nésta fótu, eu chíña déis ánus"', '"En esta foto, yo tenía diez años."'],
+      ['"Naquela casa, morava a minha família."', '"Nakéla káza, moráva a míña família"', '"En aquella casa vivía mi familia."'],
+      ['A Lia diz: "Eu gosto muito dessa foto, vovó!"', 'A Lía djís: "Eu góstu múintu désa fótu, vovó!"', 'Lia dice: "¡Me gusta mucho esa foto, abuela!"']
+    ] },
+    'dem-tempo': { emoji: '🏊', pt: 'Este ano', pron: 'Éschi ánu', es: 'Este año', lines: [
+      ['"Este ano, eu vou aprender a nadar", diz a Lia.', '"Éschi ánu, eu vô aprendê(r) a nadá(r)", djís a Lía', '"Este año voy a aprender a nadar", dice Lia.'],
+      ['"Naquela época, eu tinha medo da água."', '"Nakéla époka, eu chíña médu da água"', '"En aquella época, le tenía miedo al agua."'],
+      ['O Pedro diz: "Isso é muito legal!"', 'U Pédru djís: "Ísu é múintu legáu!"', 'Pedro dice: "¡Eso es genial!"'],
+      ['"Nesse sábado, a gente vai junto pra piscina!"', '"Nési sábadu, a zhénchi vái zhúntu pra pisína!"', '"¡Este sábado vamos juntos a la piscina!"']
+    ] },
+    'dem-fala': { emoji: '🍦', pt: 'Na sorveteria', pron: 'Na sorvetería', es: 'En la heladería', lines: [
+      ['A Lia chega na sorveteria com o Pedro.', 'A Lía shéga na sorvetería kong u Pédru', 'Lia llega a la heladería con Pedro.'],
+      ['"Moço, eu quero esse aqui, de chocolate."', '"Mósu, eu kéru ési akí, dji shokoláchi"', '"Señor, quiero este de aquí, de chocolate."'],
+      ['O Pedro aponta: "E pra mim, aquele lá, de morango."', 'U Pédru apónta: "I pra míng, akéli lá, dji morángu"', 'Pedro señala: "Y para mí, aquel de allá, de fresa."'],
+      ['"Nossa, que sorvete é esse? Que delícia!"', '"Nósa, ki sorvéchi é ési? Ki delísia!"', '"¡Uy, qué helado tan bueno! ¡Qué delicia!"']
+    ] },
+    'dem-oracoes': { emoji: '📷', pt: 'O álbum de fotos', pron: 'U áubung dji fótus', es: 'El álbum de fotos', lines: [
+      ['A Lia mostra o álbum de fotos para o Pedro.', 'A Lía móstra u áubung dji fótus pru Pédru', 'Lia le muestra el álbum de fotos a Pedro.'],
+      ['"Esta aqui sou eu, e esse é o meu pai."', '"Ésta akí sô eu, i ési é u méu pái"', '"Esta de aquí soy yo, y ese es mi papá."'],
+      ['"Naquela praia, eu vi um golfinho!"', '"Nakéla práia, eu ví ung goufíñu!"', '"¡En aquella playa vi un delfín!"'],
+      ['"Eu gosto muito desta foto. E você, gosta dessa?"', '"Eu góstu múintu désta fótu. I vosê, gósta désa?"', '"Me gusta mucho esta foto. Y tú, ¿te gusta esa?"']
+    ] },
+    'dem-ex': { emoji: '🏆', pt: 'O desafio do Tico', pron: 'U dezafíu du Tíku', es: 'El reto de Tico', lines: [
+      ['O Tico faz um desafio: "Este, esse ou aquele?"', 'U Tíku fáis ung dezafíu: "Éschi, ési ô akéli?"', 'Tico pone un reto: "¿Este, ese o aquel?"'],
+      ['A Lia segura um lápis: "Este lápis!"', 'A Lía segúra ung lápis: "Éschi lápis!"', 'Lia sostiene un lápiz: "¡Este lápiz!"'],
+      ['Ela aponta para o Pedro: "Esse boné!"', 'Éla apónta pru Pédru: "Ési boné!"', 'Señala a Pedro: "¡Esa gorra!"'],
+      ['E olha para o céu: "Aquela nuvem!" — "Acertou!", grita o Tico.', 'I ólia pru séu: "Akéla núveing!" — "Asertô!", gríta u Tíku', 'Y mira al cielo: "¡Aquella nube!" — "¡Acertaste!", grita Tico.']
+    ] },
     'obj-ff': { emoji: '🤭', pt: 'As confusões do Pedro', pron: 'As konfuzóings du Pédru', es: 'Las confusiones de Pedro', lines: [
       ['O Pedro quer apagar um erro e pede: "Me dá a borracha?"', 'U Pédru ké(r) apagá(r) ung éju i pédji: "Mi dá a bojásha?"', 'Pedro quiere borrar un error y pide: "¿Me das el borrador?"'],
       ['A Lia ri, porque em espanhol isso parece outra coisa!', 'A Lía jí, purkê ing ispañóu ísu paréssi ôtra kôiza!', 'Lia se ríe, porque en español eso parece otra cosa.'],
@@ -4208,6 +4671,69 @@
       </article>`;
   }
 
+  // Tabla de formas: celdas [pt, pron] que se pueden escuchar
+  function tableCard(p, m) {
+    const c = COLORS[m.color];
+    const cell = x => !Array.isArray(x) ? `<span class="text-xs font-bold uppercase tracking-wider text-slate-500">${x}</span>`
+      : x[0] === '—' ? '<span class="text-slate-300">—</span>'
+      : `<button data-say="${esc(x[0])}" class="text-left hover:text-indigo-700"><span class="block font-bold text-slate-900 leading-tight">${x[0]}</span><span class="block text-xs italic text-indigo-600">[${x[1]}]</span></button>`;
+    const head = p.table.head.map(h => `<th class="p-2 text-left text-xs font-bold text-slate-600 bg-slate-50">${h}</th>`).join('');
+    const rows = p.table.rows.map(r => `<tr class="border-t border-slate-100">${r.map(x => `<td class="p-2 align-top">${cell(x)}</td>`).join('')}</tr>`).join('');
+    return `
+      <article class="md:col-span-2 fade-up bg-white rounded-2xl p-5 sm:p-6 flex flex-col gap-4 shadow-sm transition border ${state.done.includes(p.id) ? 'border-emerald-300 ring-2 ring-emerald-100' : 'border-slate-200'}">
+        <span class="self-start inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${c.chip}">
+          <i class="fa-solid ${p.tagIcon}"></i> ${p.tag}
+        </span>
+        <div>
+          <p class="text-xl font-bold text-slate-900 leading-snug">${p.rule}</p>
+          <p class="text-sm text-slate-500 mt-1">${p.hint}</p>
+        </div>
+        <div class="overflow-x-auto rounded-xl border border-slate-200"><table class="w-full min-w-[480px] text-sm"><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>
+        ${doneButton(p.id, '¡Tabla dominada!', 'La leí en voz alta')}
+      </article>`;
+  }
+
+  // Ejercicio de opción múltiple dentro del módulo; al resolverlo todo, cuenta como completado
+  function exCard(p, m) {
+    const c = COLORS[m.color];
+    ui.ex = ui.ex || {};
+    const solved = p.ex.filter((it, i) => (ui.ex[p.id + ':' + i] || {}).ok).length;
+    const items = p.ex.map((it, i) => {
+      const st = ui.ex[p.id + ':' + i] || { wrong: [], ok: false };
+      const opts = it.o.map((o, k) => {
+        const good = st.ok && k === it.a, bad = st.wrong.includes(k);
+        const cls = good ? 'bg-emerald-500 text-white border-emerald-500' : bad ? 'bg-rose-50 text-rose-400 border-rose-200 line-through' : 'bg-white hover:border-indigo-400 hover:bg-indigo-50 border-slate-200 text-slate-800';
+        return `<button data-action="exans" data-arg="${p.id}:${i}:${k}" ${st.ok || bad ? 'disabled' : ''} class="px-3 py-2 rounded-lg border text-sm font-semibold transition ${cls}">${o}</button>`;
+      }).join('');
+      const fb = st.ok ? `<p class="text-sm text-emerald-700"><i class="fa-solid fa-circle-check"></i> ${it.why}</p>`
+        : st.wrong.length ? '<p class="text-sm text-rose-600"><i class="fa-solid fa-rotate-right"></i> Casi… ¡intenta otra vez!</p>' : '';
+      return `
+        <li class="p-3 rounded-xl border ${st.ok ? 'border-emerald-200 bg-emerald-50/50' : 'border-slate-200 bg-slate-50/50'} space-y-2">
+          <p class="font-semibold text-slate-800"><span class="text-indigo-600">${i + 1}.</span> ${it.q}</p>
+          <div class="flex flex-wrap gap-2">${opts}</div>
+          ${fb}
+        </li>`;
+    }).join('');
+    const done = state.done.includes(p.id);
+    return `
+      <article class="md:col-span-2 fade-up bg-white rounded-2xl p-5 sm:p-6 flex flex-col gap-4 shadow-sm transition border ${done ? 'border-emerald-300 ring-2 ring-emerald-100' : 'border-slate-200'}">
+        <div class="flex items-center justify-between gap-2">
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${c.chip}">
+            <i class="fa-solid ${p.tagIcon}"></i> ${p.tag}
+          </span>
+          <span class="text-sm font-bold text-slate-500">${solved}/${p.ex.length}</span>
+        </div>
+        <div>
+          <p class="text-xl font-bold text-slate-900 leading-snug">${p.rule}</p>
+          <p class="text-sm text-slate-500 mt-1">${p.hint}</p>
+        </div>
+        <ol class="space-y-3">${items}</ol>
+        <p class="text-sm font-semibold text-center py-2 rounded-xl ${done ? 'bg-emerald-500 text-white' : 'bg-slate-100 text-slate-600'}">
+          ${done ? '<i class="fa-solid fa-trophy"></i> ¡Ejercicio completado!' : `Responde todas bien para ganar +${XP.phrase} XP`}
+        </p>
+      </article>`;
+  }
+
   // Lectura para niños: una historia corta, frase por frase
   function readingCard(key) {
     const r = READINGS[key];
@@ -4249,7 +4775,7 @@
     const flush = () => { if (pending) html += readingCard(pending); pending = null; };
     m.phrases.forEach(p => {
       if (p.section) { flush(); html += sectionHead(p); pending = p.rd || null; }
-      else html += p.cash ? cashCard(p, m) : p.pics ? picCard(p, m) : p.words ? soundCard(p, m) : phraseCard(p, m);
+      else html += p.table ? tableCard(p, m) : p.ex ? exCard(p, m) : p.cash ? cashCard(p, m) : p.pics ? picCard(p, m) : p.words ? soundCard(p, m) : phraseCard(p, m);
     });
     flush();
     return html + readingCard(m.id);
@@ -4862,6 +5388,25 @@ Tengo unos ${p.mins} minutos para esta sesión.${extra ? `\nNota adicional: ${ex
     verb(i) { ui.verb = Number(i); renderPanel(); },
     tense(t) { ui.tense = t; renderPanel(); },
     pastverbs() { ui.tense = 'past'; actions.tab('vverbos'); },
+
+    exans(arg) {
+      const [id, i, k] = arg.split(':');
+      const p = MODULES.flatMap(x => x.phrases || []).find(x => x.id === id);
+      const it = p.ex[Number(i)];
+      ui.ex = ui.ex || {};
+      const st = ui.ex[id + ':' + i] = ui.ex[id + ':' + i] || { wrong: [], ok: false };
+      if (Number(k) === it.a) {
+        st.ok = true;
+        const mt = it.q.match(/«([^»]+)»/);
+        speak(mt && mt[1].includes('___') ? mt[1].replace('___', it.o[it.a]) : it.o[it.a]);
+        const all = p.ex.every((_, j) => (ui.ex[id + ':' + j] || {}).ok);
+        if (all && !state.done.includes(id)) { actions.done(id); return; }
+        toast(pick(PRAISE));
+      } else {
+        st.wrong.push(Number(k));
+      }
+      renderPanel();
+    },
 
     pact(id) { state.prompt.act = id; renderPanel(); save(); },
     ptema(t) { state.prompt.tema = t; renderPanel(); save(); },
