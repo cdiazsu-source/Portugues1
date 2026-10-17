@@ -10,4 +10,9 @@ Abre `index.html` en el navegador. No necesita instalación; el progreso se guar
 
 ## Módulos
 
-Presentación · Pronunciación · Ser, estar e ir · Rutina · Comida · Heterogenéricos · Adjetivos · Posesivos · Preguntas · Números (fechas, teléfonos y dinero) · ¿Qué hora es? · Días de la semana · Profesiones · Colores · Pasado (pretérito perfeito) · Vocabulario · Verbos (presente y pasado) · Práctica · Prompt IA
+Cada módulo incluye una **lectura para niños** (y una por cada sección interna), con los personajes Lia, Tico, Pedro y la vovó Ana. El botón ☰ abre el menú con los módulos agrupados:
+
+- **Primeros pasos:** Presentación · Pronunciación · Números (fechas, teléfonos y dinero) · ¿Qué hora es? · Días de la semana · Meses y estaciones · Colores
+- **Gramática:** Ser, estar e ir · Heterogenéricos · Adjetivos · Posesivos · Contracciones · Preguntas · Pasado (pretérito perfeito) · Verbos (presente y pasado)
+- **Vida diaria:** Rutina · Comida · Profesiones · Vocabulario
+- **Practicar:** Flashcards y quiz · Prompt IA
