@@ -2897,7 +2897,7 @@
         { id: 'dmp30', tag: 'Opinar', tagIcon: 'fa-scale-balanced',
           pt: 'Eu concordo com isso, mas não com aquilo que ele disse.', pron: 'Eu konkórdu kong ísu, más náung kong akílu ki éli djísi', es: 'Estoy de acuerdo con eso, pero no con lo que él dijo.',
           key: { pt: 'aquilo que…', pron: 'akílu ki', es: 'aquello que, lo que…' } },
-        { section: '¡Ejercicios!', rd: 'dem-ex', icon: 'fa-pencil', text: 'Elige la opción correcta (10 ejercicios, 52 preguntas). Usa la <b>norma escrita</b> (la de los exámenes): este = aqui, esse = aí, aquele = lá. Si fallas, lee la pista y vuelve a intentar.' },
+        { section: '¡Ejercicios!', rd: 'dem-ex', icon: 'fa-pencil', text: 'Primero elige la opción correcta (10 ejercicios) y luego escribe tú la palabra (3 ejercicios más, 30 frases). Usa la <b>norma escrita</b> (la de los exámenes): este = aqui, esse = aí, aquele = lá. Si fallas, lee la pista y vuelve a intentar.' },
         { id: 'dmx1', tag: 'Ejercicio 1', tagIcon: 'fa-ruler-horizontal',
           rule: 'Distancia: este, esse o aquele', hint: 'Fíjate en aqui / aí / lá y en la pista entre paréntesis.',
           ex: [
@@ -2989,6 +2989,48 @@
             { q: 'El color de una pared lejana: «Não gosto ___ cor lá na parede.»', o: ['naquela', 'daquela', 'daquele'], a: 1, why: 'Gostar de + aquela (a cor es femenina) → daquela.' },
             { q: 'Tu amiga tiene una caja: «O que tem ___ caixa aí?»', o: ['nessa', 'dessa', 'nesta'], a: 0, why: 'Dentro (em) + essa, porque está aí → nessa.' },
             { q: 'Hablando de lo que pasó la semana pasada: «Você foi à festa? — Fui! Gostei muito ___ festa.»', o: ['desta', 'dessa', 'nessa'], a: 1, why: 'Algo ya mencionado o pasado cercano → dessa.' }
+          ] },
+        { id: 'dmw1', tag: 'Escribir 1', tagIcon: 'fa-keyboard',
+          rule: 'Completa la frase (1)', hint: 'Escribe la palabra que falta. La pista dice la distancia: <b>aqui</b> → est-, <b>aí</b> → ess-, <b>ali / lá</b> → aquel-. Y fíjate si el verbo pide <b>em</b>, <b>de</b> o <b>a</b>. Pulsa Enter para comprobar.',
+          wr: [
+            { q: 'Não concordo com nada do que está escrito _____ livro que seguro em minhas mãos. (aqui)', a: ['neste'], why: 'Escrito em + este (en mis manos, aqui) → neste.' },
+            { q: 'Por favor, pegue uma folha de papel _____ gaveta ao seu lado. (aí)', a: ['dessa'], why: 'Pegar algo de + essa (al lado de ti, aí) → dessa.' },
+            { q: 'Quem é o proprietário _____ casa bonita lá no fim da rua? (ali)', a: ['daquela'], why: 'O proprietário de + aquela (lejos) → daquela.' },
+            { q: 'Nunca pensei que encontraríamos tantas dificuldades _____ projeto que estamos finalizando hoje. (aqui)', a: ['neste'], why: 'Dificuldades em + este (el proyecto de ahora) → neste.' },
+            { q: 'O diretor pediu para entregar estes documentos diretamente _____ gerente do setor oposto. (lá)', a: ['àquela', 'àquele'], why: 'Entregar a + aquela → àquela (con crase). Si el gerente es hombre: àquele.' },
+            { q: 'O que você está pensando em fazer a respeito _____ assunto que mencionou há pouco? (aí)', a: ['desse'], why: 'A respeito de + esse (lo que tú mencionaste) → desse.' },
+            { q: 'Encontrei estas fotos antigas guardadas _____ baú que fica no sótão. (lá)', a: ['naquele'], why: 'Guardadas em + aquele (lejos, en el ático) → naquele.' },
+            { q: 'Não me lembro de ter visto nada parecido com _____ nesta loja. (aqui)', a: ['isto'], why: 'Algo sin nombrar, aquí → isto (invariable).' },
+            { q: 'Você concorda com _____ que o palestrante acabou de afirmar? (aí)', a: ['isso'], why: 'Lo que alguien acaba de decir → isso (invariable).' },
+            { q: 'Gostei muito _____ bolo que você trouxe para a festa. (aí)', a: ['desse'], why: 'Gostar de + esse (el que tú trajiste) → desse.' }
+          ] },
+        { id: 'dmw2', tag: 'Escribir 2', tagIcon: 'fa-keyboard',
+          rule: 'Completa la frase (2)', hint: 'Escribe la palabra que falta. La pista dice la distancia: <b>aqui</b> → est-, <b>aí</b> → ess-, <b>ali / lá</b> → aquel-. Y fíjate si el verbo pide <b>em</b>, <b>de</b> o <b>a</b>. Pulsa Enter para comprobar.',
+          wr: [
+            { q: 'Moro _____ apartamento desde que cheguei ao Brasil. (aqui)', a: ['neste'], why: 'Morar em + este (donde estoy) → neste.' },
+            { q: 'Você pode me passar _____ caneta que está perto de você? (aí)', a: ['essa'], why: 'Sin preposición, femenino, cerca de ti → essa.' },
+            { q: '_____ montanhas lá no horizonte são lindas ao pôr do sol. (lá)', a: ['aquelas'], why: 'Femenino plural, lejos, sin preposición → aquelas.' },
+            { q: 'Ninguém acreditou _____ história que ele contou ontem. (aí)', a: ['nessa'], why: 'Acreditar em + essa (algo contado, cercano) → nessa.' },
+            { q: 'Preciso _____ livros que estão na sua mesa para estudar. (aí)', a: ['desses'], why: 'Precisar de + esses (en tu mesa) → desses.' },
+            { q: 'Não tenho nada a ver com _____! (aí)', a: ['isso'], why: 'Una situación o idea → isso.' },
+            { q: '_____ que estou segurando é um presente para a minha avó. (aqui)', a: ['isto'], why: 'Algo en mi mano, sin nombrar → isto.' },
+            { q: 'Você já foi _____ restaurante japonês lá na esquina? (lá)', a: ['àquele', 'naquele'], why: 'Ir a + aquele → àquele (norma). Al hablar, en Brasil se dice mucho «naquele».' },
+            { q: 'As crianças brincaram _____ parque o dia inteiro. (ali)', a: ['naquele'], why: 'Brincar em + aquele (allí) → naquele.' },
+            { q: 'Lembro muito bem _____ verão que passamos na praia. (lá, hace años)', a: ['daquele'], why: 'Lembrar de + aquele (pasado lejano) → daquele.' }
+          ] },
+        { id: 'dmw3', tag: 'Escribir 3', tagIcon: 'fa-keyboard',
+          rule: 'Completa la frase (3)', hint: 'Escribe la palabra que falta. La pista dice la distancia: <b>aqui</b> → est-, <b>aí</b> → ess-, <b>ali / lá</b> → aquel-. Y fíjate si el verbo pide <b>em</b>, <b>de</b> o <b>a</b>. Pulsa Enter para comprobar.',
+          wr: [
+            { q: 'Quanto custa _____ bolsa aqui na vitrine? (aqui)', a: ['esta'], why: 'Sin preposición, femenino, aquí → esta.' },
+            { q: 'O que você acha _____ ideia que eu acabei de dar? (aqui)', a: ['desta'], why: 'Achar de + esta (mi idea, la de ahora) → desta.' },
+            { q: 'Não gostei _____ que você falou na reunião. (aí)', a: ['disso'], why: 'Gostar de + isso (lo que dijiste) → disso.' },
+            { q: 'Coloque as chaves _____ gaveta, aqui do meu lado. (aqui)', a: ['nesta'], why: 'Colocar em + esta (a mi lado) → nesta.' },
+            { q: '_____ meninos lá no campo são os meus sobrinhos. (lá)', a: ['aqueles'], why: 'Masculino plural, lejos, sin preposición → aqueles.' },
+            { q: 'Você mora _____ prédio aí em frente? (aí)', a: ['nesse'], why: 'Morar em + esse (cerca de ti) → nesse.' },
+            { q: 'Tenho saudade _____ tempo em que morava na Colômbia. (lá, hace años)', a: ['daquele'], why: 'Saudade de + aquele (pasado lejano) → daquele.' },
+            { q: 'Entreguei o convite _____ senhora que estava ali na porta. (ali)', a: ['àquela'], why: 'Entregar a + aquela → àquela (con crase).' },
+            { q: 'Ela está muito interessada _____ curso que você está fazendo. (aí)', a: ['nesse'], why: 'Interessada em + esse (tu curso) → nesse.' },
+            { q: 'Pensei muito _____ que aconteceu naquele dia. (lá)', a: ['naquilo'], why: 'Pensar em + aquilo (algo lejano, sin nombrar) → naquilo.' }
           ] },
       ]
     },
@@ -4734,6 +4776,57 @@
       </article>`;
   }
 
+  // Ejercicio de escribir: completar la frase con la forma correcta
+  const normAns = t => t.toLowerCase().trim().replace(/[.!?¡¿,;]+$/g, '').replace(/\s+/g, ' ');
+  const noAccents = t => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const capIf = (it, w) => it.q.startsWith('_____') ? w.charAt(0).toUpperCase() + w.slice(1) : w;
+  const wrFull = (it, html) => { const w = capIf(it, it.a[0]); return it.q.replace(/ \([^)]*\)\s*$/, '').replace('_____', html ? '<b>' + w + '</b>' : w); };
+  function wrCard(p, m) {
+    const c = COLORS[m.color];
+    ui.wr = ui.wr || {};
+    const solved = p.wr.filter((it, i) => (ui.wr[p.id + ':' + i] || {}).ok).length;
+    const items = p.wr.map((it, i) => {
+      const key = p.id + ':' + i;
+      const st = ui.wr[key] || { val: '', wrong: 0, ok: false };
+      const blank = `<span class="inline-block min-w-[4.5rem] px-1 border-b-2 ${st.ok ? 'border-emerald-400 text-emerald-700 font-bold' : 'border-indigo-300'} text-center">${st.ok ? capIf(it, st.shown) : '&nbsp;'}</span>`;
+      const body = st.ok ? `
+          <button data-say="${esc(wrFull(it))}" class="w-full text-left text-sm rounded-lg bg-white border border-emerald-200 p-2 hover:border-indigo-300"><i class="fa-solid fa-volume-high text-indigo-500"></i> ${wrFull(it, true)}</button>
+          <p class="text-sm text-emerald-700"><i class="fa-solid fa-circle-check"></i> ${st.revealed ? 'Respuesta: <b>' + it.a[0] + '</b>. ' : ''}${it.why}</p>
+          ${st.note ? `<p class="text-sm text-amber-700"><i class="fa-solid fa-lightbulb"></i> ${st.note}</p>` : ''}`
+        : `
+          <div class="flex flex-wrap gap-2">
+            <input id="wr-${key}" data-wr="${key}" value="${esc(st.val)}" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Respuesta ${i + 1}"
+              class="flex-1 min-w-[8rem] px-3 py-2 rounded-lg border ${st.wrong ? 'border-rose-300' : 'border-slate-300'} focus:outline-none focus:ring-2 focus:ring-indigo-300">
+            <button data-action="wrcheck" data-arg="${key}" class="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold">Comprobar</button>
+            ${st.wrong >= 2 ? `<button data-action="wrshow" data-arg="${key}" class="px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold">Ver respuesta</button>` : ''}
+          </div>
+          ${st.wrong ? `<p class="text-sm text-rose-600"><i class="fa-solid fa-rotate-right"></i> ${st.wrong >= 2 ? 'Pista: ' + it.why.split('→')[0] + '→ …' : 'Casi… ¡revisa la distancia y la preposición!'}</p>` : ''}`;
+      return `
+        <li class="p-3 rounded-xl border ${st.ok ? 'border-emerald-200 bg-emerald-50/50' : 'border-slate-200 bg-slate-50/50'} space-y-2">
+          <p class="font-semibold text-slate-800 leading-relaxed"><span class="text-indigo-600">${i + 1}.</span> ${it.q.replace('_____', blank)}</p>
+          ${body}
+        </li>`;
+    }).join('');
+    const done = state.done.includes(p.id);
+    return `
+      <article class="md:col-span-2 fade-up bg-white rounded-2xl p-5 sm:p-6 flex flex-col gap-4 shadow-sm transition border ${done ? 'border-emerald-300 ring-2 ring-emerald-100' : 'border-slate-200'}">
+        <div class="flex items-center justify-between gap-2">
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${c.chip}">
+            <i class="fa-solid ${p.tagIcon}"></i> ${p.tag}
+          </span>
+          <span class="text-sm font-bold text-slate-500">${solved}/${p.wr.length}</span>
+        </div>
+        <div>
+          <p class="text-xl font-bold text-slate-900 leading-snug">${p.rule}</p>
+          <p class="text-sm text-slate-500 mt-1">${p.hint}</p>
+        </div>
+        <ol class="space-y-3">${items}</ol>
+        <p class="text-sm font-semibold text-center py-2 rounded-xl ${done ? 'bg-emerald-500 text-white' : 'bg-slate-100 text-slate-600'}">
+          ${done ? '<i class="fa-solid fa-trophy"></i> ¡Ejercicio completado!' : `Completa todas las frases para ganar +${XP.phrase} XP`}
+        </p>
+      </article>`;
+  }
+
   // Lectura para niños: una historia corta, frase por frase
   function readingCard(key) {
     const r = READINGS[key];
@@ -4775,7 +4868,7 @@
     const flush = () => { if (pending) html += readingCard(pending); pending = null; };
     m.phrases.forEach(p => {
       if (p.section) { flush(); html += sectionHead(p); pending = p.rd || null; }
-      else html += p.table ? tableCard(p, m) : p.ex ? exCard(p, m) : p.cash ? cashCard(p, m) : p.pics ? picCard(p, m) : p.words ? soundCard(p, m) : phraseCard(p, m);
+      else html += p.table ? tableCard(p, m) : p.ex ? exCard(p, m) : p.wr ? wrCard(p, m) : p.cash ? cashCard(p, m) : p.pics ? picCard(p, m) : p.words ? soundCard(p, m) : phraseCard(p, m);
     });
     flush();
     return html + readingCard(m.id);
@@ -5389,6 +5482,9 @@ Tengo unos ${p.mins} minutos para esta sesión.${extra ? `\nNota adicional: ${ex
     tense(t) { ui.tense = t; renderPanel(); },
     pastverbs() { ui.tense = 'past'; actions.tab('vverbos'); },
 
+    wrcheck(key) { wrSubmit(key, false); },
+    wrshow(key) { wrSubmit(key, true); },
+
     exans(arg) {
       const [id, i, k] = arg.split(':');
       const p = MODULES.flatMap(x => x.phrases || []).find(x => x.id === id);
@@ -5451,6 +5547,41 @@ Tengo unos ${p.mins} minutos para esta sesión.${extra ? `\nNota adicional: ${ex
       toast('Progreso reiniciado. ¡Nuevo comienzo! 🌱');
     }
   };
+
+  // Ejercicios de escribir: comprobar (o revelar) una respuesta
+  function wrSubmit(key, reveal) {
+    const [id, i] = key.split(':');
+    const p = MODULES.flatMap(x => x.phrases || []).find(x => x.id === id);
+    const it = p.wr[Number(i)];
+    ui.wr = ui.wr || {};
+    const st = ui.wr[key] = ui.wr[key] || { val: '', wrong: 0, ok: false };
+    const input = document.getElementById('wr-' + key);
+    st.val = input ? input.value : st.val;
+    const v = normAns(st.val);
+    if (!reveal && !v) { input && input.focus(); return; }
+    const exact = it.a.findIndex(a => normAns(a) === v);
+    const loose = it.a.findIndex(a => noAccents(normAns(a)) === noAccents(v));
+    if (reveal || exact >= 0 || loose >= 0) {
+      st.ok = true; st.revealed = reveal;
+      const k = exact >= 0 ? exact : loose >= 0 ? loose : 0;
+      st.shown = reveal ? it.a[0] : it.a[k];
+      st.note = reveal ? '' : exact < 0 ? `¡Bien! Pero ojo con el acento: se escribe <b>${it.a[k]}</b>.` : k > 0 ? `También se usa, pero la forma de la norma es <b>${it.a[0]}</b>.` : '';
+      speak(wrFull(it));
+      if (!reveal) toast(pick(PRAISE));
+      const all = p.wr.every((_, j) => (ui.wr[id + ':' + j] || {}).ok);
+      if (all && !state.done.includes(id)) { actions.done(id); return; }
+      renderPanel();
+      const next = p.wr.findIndex((_, j) => !(ui.wr[id + ':' + j] || {}).ok);
+      if (next >= 0) document.getElementById('wr-' + id + ':' + next)?.focus({ preventScroll: true });
+    } else {
+      st.wrong++;
+      renderPanel();
+      document.getElementById('wr-' + key)?.focus({ preventScroll: true });
+    }
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && e.target.dataset && e.target.dataset.wr) { e.preventDefault(); wrSubmit(e.target.dataset.wr, false); }
+  });
 
   // Delegación de eventos: un solo listener para toda la página
   document.addEventListener('click', e => {
