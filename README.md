@@ -10,4 +10,4 @@ Abre `index.html` en el navegador. No necesita instalación; el progreso se guar
 
 ## Módulos
 
-Presentación · Pronunciación · Ser, estar e ir · Rutina · Comida · Heterogenéricos · Adjetivos · Posesivos · Preguntas · Números · ¿Qué hora es? · Colores · Pasado · Vocabulario · Verbos (presente y pasado) · Práctica · Prompt IA
+Presentación · Pronunciación · Ser, estar e ir · Rutina · Comida · Heterogenéricos · Adjetivos · Posesivos · Preguntas · Números (fechas, teléfonos y dinero) · ¿Qué hora es? · Días de la semana · Profesiones · Colores · Pasado (pretérito perfeito) · Vocabulario · Verbos (presente y pasado) · Práctica · Prompt IA

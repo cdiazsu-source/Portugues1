@@ -414,7 +414,7 @@
     },
     {
       id: 'num', num: 10, tab: 'Números', icon: 'fa-hashtag', color: 'blue',
-      title: 'Os Números', pron: 'Us Númerus', es: 'Los números · Contar, fechas, teléfonos, direcciones y compras',
+      title: 'Os Números', pron: 'Us Númerus', es: 'Los números · Contar, fechas, teléfonos, dinero y compras',
       tip: {
         title: 'El número con apodo',
         text: 'En Brasil el 6 se dice <b>meia</b> al dictar teléfonos y direcciones (de «meia dúzia», media docena). Así no se confunde con <b>três</b>.',
@@ -541,11 +541,52 @@
           nat: { pt: 'Moro na Rua Sete, cento e vinte, apê trinta e dois.', pron: 'Móru na Júa Séchi, séntu i vínchi, apê trínta i dóis', note: '«Apê» = apartamento. Se dice el número sin «número».' },
           key: { pt: 'o apartamento · o apê', pron: 'u apartaméntu · u apê', es: 'el apartamento' } },
 
-        { section: 'En el día a día', icon: 'fa-basket-shopping', text: 'Precios, cantidades y pisos: los usarás en tiendas, mercados y edificios.' },
+        { section: 'Dinero', icon: 'fa-money-bill-wave', text: 'La moneda de Brasil es el <b>real</b> (R$). La coma separa los centavos: R$ 19,90. Y casi todo se paga por <b>Pix</b> desde el celular.' },
+        { id: 'md1', tag: 'Reales y centavos', tagIcon: 'fa-coins',
+          rule: 'O real e os centavos', hint: 'Plural: real → <b>reais</b>. Billete = <b>nota</b>, moneda = <b>moeda</b>.',
+          words: [
+            { pt: 'um real', pron: 'ung jeáu', es: 'un real' },
+            { pt: 'dois reais', pron: 'dóis jeáis', es: 'dos reales' },
+            { pt: 'cinquenta centavos', pron: 'sinkuénta sentávus', es: 'cincuenta centavos' },
+            { pt: 'uma nota de vinte', pron: 'úma nóta dji vínchi', es: 'un billete de veinte' }
+          ] },
+        { id: 'md2', tag: 'Leer precios', tagIcon: 'fa-receipt',
+          rule: 'R$ 19,90 = dezenove e noventa', hint: 'Al hablar se omiten «reais» y «centavos»: solo los números unidos con <b>e</b>.',
+          words: [
+            { pt: 'um real e cinquenta', pron: 'ung jeáu i sinkuénta', es: 'R$ 1,50' },
+            { pt: 'dezenove e noventa', pron: 'djizenóvi i novénta', es: 'R$ 19,90' },
+            { pt: 'cento e vinte reais', pron: 'séntu i vínchi jeáis', es: 'R$ 120' }
+          ] },
+        { id: 'md3', tag: 'Formas de pago', tagIcon: 'fa-credit-card',
+          rule: 'Dinheiro, cartão ou Pix?', hint: '<b>Pix</b> = transferencia instantánea por celular. ¡El más usado en Brasil!',
+          words: [
+            { pt: 'em dinheiro', pron: 'ing djiñéru', es: 'en efectivo' },
+            { pt: 'no cartão', pron: 'nu kartáung', es: 'con tarjeta' },
+            { pt: 'no Pix', pron: 'nu píkis', es: 'por Pix' },
+            { pt: 'parcelado', pron: 'parseládu', es: 'a cuotas' }
+          ] },
         { id: 'np2', tag: 'Precio', tagIcon: 'fa-tag',
           pt: 'Quanto custa? Custa vinte e cinco reais.', pron: 'Kuántu kústa? Kústa vínchi i sínku jeáis', es: '¿Cuánto cuesta? Cuesta veinticinco reales.',
           nat: { pt: 'Quanto é? Dá vinte e cinco.', pron: 'Kuántu é? Dá vínchi i sínku', note: '«Dá» = sale / da en total. Lo oirás en todas las tiendas.' },
           key: { pt: 'o real · os reais', pron: 'u jeáu · us jeáis', es: 'el real · los reales (moneda de Brasil)' } },
+        { id: 'mp1', tag: 'Pagar', tagIcon: 'fa-credit-card',
+          pt: 'Posso pagar com cartão?', pron: 'Pósu pagá(r) kong kartáung', es: '¿Puedo pagar con tarjeta?',
+          nat: { pt: 'Aceita Pix?', pron: 'Aséita píkis', note: 'La pregunta más común en cualquier tienda.' },
+          key: { pt: 'débito ou crédito?', pron: 'débitu ô krédjitu', es: '¿débito o crédito?' } },
+        { id: 'mp2', tag: 'Caro · barato', tagIcon: 'fa-tags',
+          pt: 'Nossa, está muito caro! Tem mais barato?', pron: 'Nósa, istá múintu káru! Téing máis barátu', es: '¡Uy, está muy caro! ¿Hay algo más barato?',
+          nat: { pt: 'Tá caro, faz um desconto?', pron: 'Tá káru, fáis ung djiskóntu', note: 'Pedir «desconto» es normal en ferias y mercados.' },
+          key: { pt: 'caro · barato', pron: 'káru · barátu', es: 'caro · barato' } },
+        { id: 'mp3', tag: 'Cambio', tagIcon: 'fa-hand-holding-dollar',
+          pt: 'Tem troco para cinquenta?', pron: 'Téing tróku pra sinkuénta', es: '¿Tiene cambio de cincuenta?',
+          nat: { pt: 'Pode ficar com o troco.', pron: 'Pódji fiká(r) kong u tróku', note: '= Quédese con las vueltas.' },
+          key: { pt: 'o troco', pron: 'u tróku', es: 'el cambio, las vueltas' } },
+        { id: 'mp4', tag: 'Jerga', tagIcon: 'fa-face-grin-wink',
+          pt: 'Isso custa dez reais.', pron: 'Ísu kústa déis jeáis', es: 'Eso cuesta diez reales.',
+          nat: { pt: 'Isso aí é dez conto.', pron: 'Ísu aí é déis kóntu', note: '«Conto» = forma informal de decir reales (como «lucas»).' },
+          key: { pt: 'a grana · o dinheiro', pron: 'a grána · u djiñéru', es: 'la plata (informal) · el dinero' } },
+
+        { section: 'En el día a día', icon: 'fa-basket-shopping', text: 'Cantidades, pisos y género: los usarás en mercados, edificios y al hablar de tu familia.' },
         { id: 'np10', tag: 'Mercado', tagIcon: 'fa-scale-balanced',
           pt: 'Me vê meio quilo de queijo, por favor.', pron: 'Mi vê méiu kílu dji kéizhu, pur favô(r)', es: 'Deme medio kilo de queso, por favor.',
           key: { pt: 'meio quilo · meia dúzia', pron: 'méiu kílu · méia dúzia', es: 'medio kilo · media docena' } },
@@ -639,7 +680,146 @@
       ]
     },
     {
-      id: 'cores', num: 12, tab: 'Colores', icon: 'fa-palette', color: 'red',
+      id: 'dias', num: 12, tab: 'Días', icon: 'fa-calendar-week', color: 'teal',
+      title: 'Os Dias da Semana', pron: 'Us Djías da Semána', es: 'Los días de la semana · Planes, costumbres y citas',
+      tip: {
+        title: 'Los días se cuentan desde el domingo',
+        text: 'El domingo es el día 1, así que el lunes es el «segundo» día: <b>segunda-feira</b>. Al hablar casi siempre se omite <b>-feira</b>. Los días con «feira» son femeninos (<b>na</b> segunda); sábado y domingo, masculinos (<b>no</b> sábado).',
+        words: [
+          { pt: 'segunda', pron: 'segúnda', es: 'lunes (al hablar)' },
+          { pt: 'na terça', pron: 'na térsa', es: 'el martes' },
+          { pt: 'no domingo', pron: 'nu domíngu', es: 'el domingo' }
+        ]
+      },
+      phrases: [
+        { section: 'Los 7 días', icon: 'fa-calendar-week', text: 'Toca cada día. La «ei» de «feira» suena «e»: féra.' },
+        { id: 'd1', tag: 'Lunes – miércoles', tagIcon: 'fa-calendar-day',
+          rule: 'Segunda, terça, quarta', hint: '2.º, 3.º y 4.º día de la semana.',
+          words: [
+            { pt: 'segunda-feira', pron: 'segúnda féra', es: 'lunes' },
+            { pt: 'terça-feira', pron: 'térsa féra', es: 'martes' },
+            { pt: 'quarta-feira', pron: 'kuárta féra', es: 'miércoles' }
+          ] },
+        { id: 'd2', tag: 'Jueves – viernes', tagIcon: 'fa-calendar-day',
+          rule: 'Quinta e sexta', hint: '<b>Sexta</b> suena «sésta». ¡El viernes es el día favorito de los brasileños!',
+          words: [
+            { pt: 'quinta-feira', pron: 'kínta féra', es: 'jueves' },
+            { pt: 'sexta-feira', pron: 'sésta féra', es: 'viernes' },
+            { pt: 'Sextou!', pron: 'Sestô!', es: '¡Llegó el viernes! (jerga)' }
+          ] },
+        { id: 'd3', tag: 'Fin de semana', tagIcon: 'fa-umbrella-beach',
+          rule: 'Sábado e domingo', hint: 'Son los únicos días masculinos: <b>o sábado, o domingo</b>.',
+          words: [
+            { pt: 'sábado', pron: 'sábadu', es: 'sábado' },
+            { pt: 'domingo', pron: 'domíngu', es: 'domingo' },
+            { pt: 'o fim de semana', pron: 'u fing dji semána', es: 'el fin de semana' }
+          ] },
+        { id: 'd4', tag: 'Palabras útiles', tagIcon: 'fa-clock',
+          rule: 'Ontem, hoje, amanhã', hint: '<b>Amanhã</b> = mañana (el día siguiente). El festivo es <b>o feriado</b>.',
+          words: [
+            { pt: 'ontem', pron: 'ónteing', es: 'ayer' },
+            { pt: 'hoje', pron: 'ózhi', es: 'hoy' },
+            { pt: 'amanhã', pron: 'amañáng', es: 'mañana' },
+            { pt: 'o feriado', pron: 'u feriádu', es: 'el día festivo' }
+          ] },
+        { section: 'Úsalos en frases', icon: 'fa-comments', text: 'Para un día concreto: <b>na / no</b>. Para una costumbre: <b>às / aos</b> o <b>toda / todo</b>.' },
+        { id: 'dp1', tag: 'Hoy', tagIcon: 'fa-calendar-check',
+          pt: 'Hoje é sexta-feira!', pron: 'Ózhi é sésta féra!', es: '¡Hoy es viernes!',
+          nat: { pt: 'Sextou!', pron: 'Sestô!', note: '«Sextou» = ¡por fin viernes! Súper popular en redes y en la oficina.' },
+          key: { pt: 'Que dia é hoje?', pron: 'Ki djía é ózhi', es: '¿Qué día es hoy?' } },
+        { id: 'dp2', tag: 'Un día concreto', tagIcon: 'fa-chalkboard-user', hl: 'Na segunda',
+          pt: 'Na segunda eu tenho aula de português.', pron: 'Na segúnda eu téñu áula dji portugués', es: 'El lunes tengo clase de portugués.',
+          key: { pt: 'na segunda · no sábado', pron: 'na segúnda · nu sábadu', es: 'el lunes · el sábado' } },
+        { id: 'dp3', tag: 'Costumbre', tagIcon: 'fa-repeat',
+          pt: 'Aos domingos eu almoço com a minha família.', pron: 'Aus domíngus eu aumósu kong a míña família', es: 'Los domingos almuerzo con mi familia.',
+          nat: { pt: 'Todo domingo almoço com a família.', pron: 'Tódu domíngu aumósu kong a família', note: '«Todo domingo» es lo más natural al hablar.' },
+          key: { pt: 'aos sábados · às segundas', pron: 'aus sábadus · as segúndas', es: 'los sábados · los lunes (costumbre)' } },
+        { id: 'dp4', tag: 'Planes', tagIcon: 'fa-champagne-glasses',
+          pt: 'Vamos sair no sábado à noite?', pron: 'Vámus saí(r) nu sábadu a nóichi', es: '¿Salimos el sábado en la noche?',
+          nat: { pt: 'Bora sair sábado?', pron: 'Bóra saí(r) sábadu', note: '«Bora» = ¡vamos! (informal).' },
+          key: { pt: 'sábado à noite', pron: 'sábadu a nóichi', es: 'el sábado en la noche' } },
+        { id: 'dp5', tag: 'Pasado y futuro', tagIcon: 'fa-arrows-left-right',
+          pt: 'Na segunda passada eu fiquei em casa.', pron: 'Na segúnda pasáda eu fikéi ing káza', es: 'El lunes pasado me quedé en casa.',
+          nat: { pt: 'Segunda que vem eu vou pra praia.', pron: 'Segúnda ki véing eu vô pra práia', note: '«Que vem» = próximo · «passada» = pasado.' },
+          key: { pt: 'passada · que vem', pron: 'pasáda · ki véing', es: 'pasado · próximo' } }
+      ]
+    },
+    {
+      id: 'prof', num: 13, tab: 'Profesiones', icon: 'fa-briefcase', color: 'orange',
+      title: 'As Profissões', pron: 'As Profisóings', es: 'Las profesiones · Decir a qué te dedicas y dónde trabajas',
+      tip: {
+        title: 'Profesión sin artículo y con género',
+        text: 'Para decir tu profesión <b>no uses artículo</b>: «Eu sou engenheiro». El femenino: <b>-o → -a</b> (médico, médica), <b>-or → -ora</b> (professor, professora). Las que terminan en <b>-ista</b> o <b>-e</b> no cambian: o / a dentista.',
+        words: [
+          { pt: 'o médico · a médica', pron: 'u médjiku · a médjika', es: 'el médico · la médica' },
+          { pt: 'o professor · a professora', pron: 'u profesô(r) · a profesóra', es: 'el profesor · la profesora' },
+          { pt: 'o / a dentista', pron: 'u / a denchísta', es: 'el / la dentista' }
+        ]
+      },
+      phrases: [
+        { section: 'Profesiones por área', icon: 'fa-briefcase', text: 'Toca cada una y repítela. Están en masculino; recuerda la regla del femenino.' },
+        { id: 'pr1', tag: 'Salud', tagIcon: 'fa-stethoscope',
+          rule: 'Médico, enfermeiro, dentista', hint: '«-eiro» suena «-éru»: <b>enfermeiro = enferméru</b>.',
+          words: [
+            { pt: 'médico', pron: 'médjiku', es: 'médico' },
+            { pt: 'enfermeiro', pron: 'enferméru', es: 'enfermero' },
+            { pt: 'dentista', pron: 'denchísta', es: 'dentista' },
+            { pt: 'psicólogo', pron: 'psikólogu', es: 'psicólogo' }
+          ] },
+        { id: 'pr2', tag: 'Oficina', tagIcon: 'fa-building',
+          rule: 'Professor, advogado, engenheiro', hint: '<b>Advogado</b> = abogado: suena «adjivogádu».',
+          words: [
+            { pt: 'professor', pron: 'profesô(r)', es: 'profesor' },
+            { pt: 'advogado', pron: 'adjivogádu', es: 'abogado' },
+            { pt: 'engenheiro', pron: 'enzheñéru', es: 'ingeniero' },
+            { pt: 'contador', pron: 'kontadô(r)', es: 'contador' }
+          ] },
+        { id: 'pr3', tag: 'Servicios', tagIcon: 'fa-bell-concierge',
+          rule: 'Garçom, cozinheiro, motorista', hint: '<b>Garçom</b> = mesero (femenino: garçonete).',
+          words: [
+            { pt: 'garçom', pron: 'garsóng', es: 'mesero' },
+            { pt: 'cozinheiro', pron: 'koziñéru', es: 'cocinero' },
+            { pt: 'motorista', pron: 'motorísta', es: 'conductor' },
+            { pt: 'vendedor', pron: 'vendedô(r)', es: 'vendedor' }
+          ] },
+        { id: 'pr4', tag: 'Más profesiones', tagIcon: 'fa-laptop-code',
+          rule: 'Estudante, programador…', hint: '<b>Autônomo</b> = trabajador independiente, freelance.',
+          words: [
+            { pt: 'estudante', pron: 'istudánchi', es: 'estudiante' },
+            { pt: 'programador', pron: 'programadô(r)', es: 'programador' },
+            { pt: 'policial', pron: 'polisiáu', es: 'policía' },
+            { pt: 'autônomo', pron: 'autônomu', es: 'independiente' }
+          ] },
+        { id: 'pr5', tag: 'Lugares de trabajo', tagIcon: 'fa-location-dot',
+          rule: 'Onde você trabalha?', hint: '¡Falso amigo! <b>Escritório</b> = oficina (no «escritorio»).',
+          words: [
+            { pt: 'o hospital', pron: 'u ospitáu', es: 'el hospital' },
+            { pt: 'o escritório', pron: 'u iskritóriu', es: 'la oficina (¡ojo!)' },
+            { pt: 'a loja', pron: 'a lózha', es: 'la tienda' },
+            { pt: 'a empresa', pron: 'a empréza', es: 'la empresa' }
+          ] },
+        { section: 'Hablar de tu trabajo', icon: 'fa-comments', text: 'Preguntar, responder y describir a tu familia.' },
+        { id: 'prp1', tag: 'Preguntar', tagIcon: 'fa-circle-question',
+          pt: 'O que você faz? — Eu sou engenheira.', pron: 'U ki vosê fáis? — Eu sô enzheñéra', es: '¿A qué te dedicas? — Soy ingeniera.',
+          nat: { pt: 'Cê trabalha com quê? — Trabalho com TI.', pron: 'Sê trabália kong kê? — Trabáliu kong tê í', note: '«Trabalhar com…» = trabajar en el área de… · TI = tecnología.' },
+          key: { pt: 'Eu sou + profesión', pron: 'Eu sô', es: 'Soy + profesión (¡sin «um / uma»!)' } },
+        { id: 'prp2', tag: 'Dónde', tagIcon: 'fa-hospital',
+          pt: 'Eu trabalho num hospital, sou enfermeiro.', pron: 'Eu trabáliu nung ospitáu, sô enferméru', es: 'Trabajo en un hospital, soy enfermero.',
+          key: { pt: 'num · numa', pron: 'nung · núma', es: 'en un · en una (em + um)' } },
+        { id: 'prp3', tag: 'Femenino', tagIcon: 'fa-venus-mars', hl: 'professora',
+          pt: 'Minha mãe é professora e meu pai é médico.', pron: 'Míña máing é profesóra i méu pái é médjiku', es: 'Mi mamá es profesora y mi papá es médico.',
+          key: { pt: '-or → -ora · -o → -a', pron: 'profesô(r) → profesóra', es: 'así se forma el femenino' } },
+        { id: 'prp4', tag: 'Falso amigo', tagIcon: 'fa-face-grimace',
+          pt: 'Ela trabalha num escritório de advocacia.', pron: 'Éla trabália nung iskritóriu dji adjivokasía', es: 'Ella trabaja en una oficina de abogados.',
+          key: { pt: 'o escritório', pron: 'u iskritóriu', es: 'la oficina (¡no el escritorio!)' } },
+        { id: 'prp5', tag: 'Estudiar', tagIcon: 'fa-graduation-cap',
+          pt: 'Eu estudo engenharia na universidade.', pron: 'Eu istúdu enzheñaría na universidádji', es: 'Estudio ingeniería en la universidad.',
+          nat: { pt: 'Faço engenharia.', pron: 'Fásu enzheñaría', note: '«Fazer + carrera» = estudiar esa carrera.' },
+          key: { pt: 'fazer faculdade', pron: 'fazê(r) fakuudádji', es: 'estudiar en la universidad' } }
+      ]
+    },
+    {
+      id: 'cores', num: 14, tab: 'Colores', icon: 'fa-palette', color: 'red',
       title: 'As Cores', pron: 'As Kóris', es: 'Los colores · Describir cosas, personas y ropa',
       tip: {
         title: 'Los colores también tienen género y plural',
@@ -700,8 +880,8 @@
       ]
     },
     {
-      id: 'passado', num: 13, tab: 'Pasado', icon: 'fa-clock-rotate-left', color: 'yellow',
-      title: 'O Passado', pron: 'U Pasádu', es: 'El pasado · Lo que hiciste ayer, el fin de semana y en tu vida',
+      id: 'passado', num: 15, tab: 'Pasado', icon: 'fa-clock-rotate-left', color: 'yellow',
+      title: 'O Passado', pron: 'U Pasádu', es: 'El pasado (pretérito perfeito) · Paso a paso, de las reglas a la conversación',
       tip: {
         title: 'El pretérito: acciones terminadas',
         text: 'Funciona como en español: <b>falei</b> = hablé, <b>comi</b> = comí. Truco: con <b>ele / você / a gente</b>, los verbos en -AR terminan en <b>-ou</b> y suena «ô» (falou = falô). Tablas completas en <button data-action="pastverbs" data-arg="1" class="underline font-semibold text-indigo-700">Verbos → Pasado</button>.',
@@ -712,6 +892,7 @@
         ]
       },
       phrases: [
+        { section: '1 · Cómo se forma (regulares)', icon: 'fa-gears', text: 'Quita <b>-ar / -er / -ir</b> y pon la terminación. Empieza por aquí: con estas 4 tarjetas ya puedes contar casi todo.' },
         { id: 'ps1', tag: 'Regulares -AR', tagIcon: 'fa-comment',
           rule: 'falar → falei, falou', hint: 'eu fal<b>ei</b> · ele / a gente fal<b>ou</b> · eles fal<b>aram</b>. ¡«-ou» suena «ô»!',
           words: [
@@ -733,6 +914,26 @@
             { pt: 'ele abriu', pron: 'éli abríu', es: 'él abrió' },
             { pt: 'eles abriram', pron: 'élis abríraung', es: 'ellos abrieron' }
           ] },
+        { id: 'ps11', tag: 'Nosotros', tagIcon: 'fa-users',
+          rule: 'Nós · a gente', hint: '<b>Nós falamos</b> es igual en presente y pasado: «ontem» lo aclara. Al hablar se usa <b>a gente</b> + forma de ele.',
+          words: [
+            { pt: 'nós falamos', pron: 'nós falámus', es: 'hablamos (hoy o ayer)' },
+            { pt: 'a gente falou', pron: 'a zhénchi falô', es: 'nosotros hablamos (al hablar)' },
+            { pt: 'a gente comeu', pron: 'a zhénchi koméu', es: 'nosotros comimos' },
+            { pt: 'a gente saiu', pron: 'a zhénchi saíu', es: 'nosotros salimos' }
+          ] },
+
+        { section: '2 · Cambios de ortografía', icon: 'fa-spell-check', text: 'Solo cambia la forma de <b>eu</b>, para que el sonido no cambie. Son verbos muy usados.' },
+        { id: 'ps8', tag: '-car · -gar · -çar', tagIcon: 'fa-pen',
+          rule: 'fiquei, cheguei, comecei', hint: '-car → <b>-quei</b> · -gar → <b>-guei</b> · -çar → <b>-cei</b>. Pero ele: ficou, chegou, começou.',
+          words: [
+            { pt: 'eu fiquei', pron: 'eu fikéi', es: 'me quedé (ficar)' },
+            { pt: 'eu cheguei', pron: 'eu shegéi', es: 'llegué (chegar)' },
+            { pt: 'eu comecei', pron: 'eu komeséi', es: 'empecé (começar)' },
+            { pt: 'eu almocei', pron: 'eu aumoséi', es: 'almorcé (almoçar)' }
+          ] },
+
+        { section: '3 · Irregulares esenciales', icon: 'fa-bolt', text: 'No siguen la regla, pero son los que más vas a usar. Aprende primero <b>eu</b> y <b>ele</b>.' },
         { id: 'ps4', tag: 'Ser = Ir', tagIcon: 'fa-equals',
           rule: 'fui, foi, foram', hint: 'Como en español, <b>ser</b> e <b>ir</b> son iguales en pasado: «Fui à praia» · «Foi incrível».',
           words: [
@@ -760,49 +961,141 @@
           rule: 'vi, deu, disse', hint: '<b>Deu certo!</b> = ¡Funcionó! Se dice todo el tiempo.',
           words: [
             { pt: 'eu vi', pron: 'eu ví', es: 'yo vi' },
+            { pt: 'ele viu', pron: 'éli víu', es: 'él vio' },
             { pt: 'deu', pron: 'déu', es: 'dio / salió' },
             { pt: 'eu disse', pron: 'eu djísi', es: 'yo dije' }
+          ] },
+        { id: 'ps10', tag: 'Vir · Trazer · Pôr', tagIcon: 'fa-box-open',
+          rule: 'vim, veio, trouxe, pus', hint: '<b>Trouxe</b> suena «trôsi» (la X suena S). <b>Vim</b> = vine, <b>veio</b> = vino.',
+          words: [
+            { pt: 'eu vim', pron: 'eu víng', es: 'yo vine' },
+            { pt: 'ele veio', pron: 'éli véiu', es: 'él vino' },
+            { pt: 'eu trouxe', pron: 'eu trôsi', es: 'yo traje' },
+            { pt: 'eu pus', pron: 'eu pús', es: 'yo puse' }
+          ] },
+
+        { section: '4 · Errores típicos de hispanohablantes', icon: 'fa-triangle-exclamation', text: 'Estos son los errores más comunes. Si los evitas, ya suenas mucho mejor.' },
+        { id: 'ps9', tag: 'Eu ≠ ele', tagIcon: 'fa-people-arrows',
+          rule: 'La trampa: eu y ele cambian', hint: 'En los irregulares, la forma de <b>eu</b> y la de <b>ele</b> son distintas. ¡No las mezcles!',
+          words: [
+            { pt: 'eu fiz · ele fez', pron: 'eu fís · éli fêis', es: 'yo hice · él hizo' },
+            { pt: 'eu tive · ele teve', pron: 'eu chívi · éli tévi', es: 'yo tuve · él tuvo' },
+            { pt: 'eu pude · ele pôde', pron: 'eu púdji · éli pôdji', es: 'yo pude · él pudo' },
+            { pt: 'eu vim · ele veio', pron: 'eu víng · éli véiu', es: 'yo vine · él vino' }
+          ] },
+        { id: 'ps12', tag: 'No digas…', tagIcon: 'fa-ban',
+          rule: 'Lo correcto (✗ lo que sale del español)', hint: 'Toca y repite la forma correcta hasta que reemplace a la del español.',
+          words: [
+            { pt: 'eu tive', pron: 'eu chívi', es: '✗ eu tuve' },
+            { pt: 'eu estive', pron: 'eu ischívi', es: '✗ eu estuve' },
+            { pt: 'ele falou', pron: 'éli falô', es: '✗ ele faló' },
+            { pt: 'eu fui', pron: 'eu fúi', es: '✗ eu foi' }
+          ] },
+        { id: 'ps13', tag: 'Sin «he + -ado»', tagIcon: 'fa-scissors',
+          rule: '«He comido» = comi', hint: 'En Brasil casi no se usa «tenho comido». Para «he hecho / he visto» usa el pasado simple + <b>já</b>.',
+          words: [
+            { pt: 'Já comi.', pron: 'Zhá komí', es: 'Ya comí / He comido.' },
+            { pt: 'Nunca fui.', pron: 'Núnka fúi', es: 'Nunca he ido.' },
+            { pt: 'Você já viu?', pron: 'Vosê zhá víu', es: '¿Ya viste? / ¿Has visto?' }
+          ] },
+
+        { section: '5 · Palabras de tiempo', icon: 'fa-clock-rotate-left', text: 'Te avisan que la frase va en pasado. Ponlas al inicio para ordenarte.' },
+        { id: 'ps14', tag: 'Cuándo', tagIcon: 'fa-calendar-minus',
+          rule: 'Ontem à noite, anteontem…', hint: '<b>Há</b> + tiempo = hace + tiempo: <b>há uma semana</b> (al hablar: faz uma semana).',
+          words: [
+            { pt: 'ontem à noite', pron: 'ónteing a nóichi', es: 'anoche' },
+            { pt: 'anteontem', pron: 'anchiónteing', es: 'anteayer' },
+            { pt: 'há uma semana', pron: 'a úma semána', es: 'hace una semana' },
+            { pt: 'no mês passado', pron: 'nu méis pasádu', es: 'el mes pasado' }
+          ] },
+        { id: 'ps15', tag: 'Ordenar la historia', tagIcon: 'fa-list-ol',
+          rule: 'Primeiro, depois, aí…', hint: 'Los brasileños encadenan con <b>aí</b>: «…aí eu fui pra casa».',
+          words: [
+            { pt: 'primeiro', pron: 'priméru', es: 'primero' },
+            { pt: 'depois', pron: 'depóis', es: 'después' },
+            { pt: 'aí', pron: 'aí', es: 'entonces, luego' },
+            { pt: 'no final', pron: 'nu fináu', es: 'al final' }
+          ] },
+
+        { section: '6 · Cuenta tu día', icon: 'fa-sun', text: 'Tu rutina, pero en pasado. Practica contando lo que hiciste ayer.' },
+        { id: 'ps16', tag: 'Rutina en pasado', tagIcon: 'fa-person-walking',
+          rule: 'Acordei, saí, trabalhei, voltei', hint: 'Son los verbos de la rutina con <b>eu</b>. ¡Úsalos para contar tu día!',
+          words: [
+            { pt: 'eu acordei', pron: 'eu akordéi', es: 'me desperté' },
+            { pt: 'eu saí de casa', pron: 'eu saí dji káza', es: 'salí de casa' },
+            { pt: 'eu trabalhei', pron: 'eu trabaliéi', es: 'trabajé' },
+            { pt: 'eu voltei', pron: 'eu voutéi', es: 'volví' }
           ] },
         { id: 'pp1', tag: 'Ayer', tagIcon: 'fa-bed',
           pt: 'Ontem eu acordei tarde.', pron: 'Ónteing eu akordéi tárdji', es: 'Ayer me desperté tarde.',
           nat: { pt: 'Ontem acordei super tarde.', pron: 'Ónteing akordéi súpe(r) tárdji', note: 'Se omite «eu» y «super» intensifica.' },
           key: { pt: 'ontem · anteontem', pron: 'ónteing · anchiónteing', es: 'ayer · anteayer' } },
+        { id: 'pp7', tag: 'Contar en orden', tagIcon: 'fa-list-ol',
+          pt: 'Primeiro eu tomei café, depois fui trabalhar.', pron: 'Priméru eu toméi kafé, depóis fúi trabaliá(r)', es: 'Primero desayuné, después fui a trabajar.',
+          nat: { pt: 'Tomei café, aí fui trabalhar.', pron: 'Toméi kafé, aí fúi trabaliá(r)', note: '«Aí» une las acciones como un «y entonces».' },
+          key: { pt: 'fui + infinitivo', pron: 'fúi', es: 'fui a + verbo (¡sin «a»!)' } },
+        { id: 'pp12', tag: 'Llegué', tagIcon: 'fa-house',
+          pt: 'Eu cheguei em casa às dez e jantei.', pron: 'Eu shegéi ing káza ás déis i zhantéi', es: 'Llegué a casa a las diez y cené.',
+          key: { pt: 'chegar em casa', pron: 'shegá(r) ing káza', es: 'llegar a casa (en Brasil: «em»)' } },
+
+        { section: '7 · Experiencias: já · ainda não · nunca', icon: 'fa-star', text: 'Para hablar de lo que has hecho (o no) en tu vida.' },
+        { id: 'pp3', tag: 'Experiencias', tagIcon: 'fa-bowl-food',
+          pt: 'Eu já comi feijoada, mas ainda não provei açaí.', pron: 'Eu zhá komí fezhuáda, mas aínda náung provéi asaí', es: 'Ya comí feijoada, pero todavía no he probado el açaí.',
+          nat: { pt: 'Já foi pro Brasil? — Já! / Ainda não.', pron: 'Zhá fói pru Braziú? — Zhá! / Aínda náung', note: 'Se responde con «já» o «ainda não», no con «sí».' },
+          key: { pt: 'já · ainda não', pron: 'zhá · aínda náung', es: 'ya · todavía no' } },
+        { id: 'pp8', tag: 'Responder sí', tagIcon: 'fa-reply',
+          pt: 'Você já almoçou? — Já, almocei ao meio-dia.', pron: 'Vosê zhá aumosô? — Zhá, aumoséi au méiu djía', es: '¿Ya almorzaste? — Sí, almorcé al mediodía.',
+          nat: { pt: 'Já almoçou? — Almocei!', pron: 'Zhá aumosô? — Aumoséi!', note: 'Para decir «sí» los brasileños repiten el verbo.' },
+          key: { pt: 'você almoçou → eu almocei', pron: 'aumosô → aumoséi', es: 'la pregunta usa ele; tú respondes con eu' } },
+        { id: 'pp6', tag: 'Hace…', tagIcon: 'fa-hourglass-half',
+          pt: 'Eu comecei a estudar português há dois meses.', pron: 'Eu komeséi a istudá(r) portugués a dóis mézis', es: 'Empecé a estudiar portugués hace dos meses.',
+          nat: { pt: 'Comecei faz dois meses.', pron: 'Komeséi fáis dóis mézis', note: 'Al hablar, «faz» reemplaza a «há».' },
+          key: { pt: 'há + tiempo', pron: 'á', es: 'hace + tiempo' } },
+        { id: 'pp13', tag: 'Nunca', tagIcon: 'fa-plane',
+          pt: 'Eu nunca fui ao Rio, mas quero ir.', pron: 'Eu núnka fúi au Jíu, mas kéru í(r)', es: 'Nunca he ido a Río, pero quiero ir.',
+          nat: { pt: 'Nunca fui pro Rio!', pron: 'Núnka fúi pru Jíu!', note: '«Pro» = para o.' },
+          key: { pt: 'nunca + pasado', pron: 'núnka', es: 'nunca he + participio' } },
+
+        { section: '8 · Conversación', icon: 'fa-comments', text: 'Frases para contar y preguntar qué pasó.' },
         { id: 'pp2', tag: 'Semana pasada', tagIcon: 'fa-umbrella-beach',
           pt: 'Na semana passada eu fui à praia com meus amigos.', pron: 'Na semána pasáda eu fúi a práia kong méus amígus', es: 'La semana pasada fui a la playa con mis amigos.',
           nat: { pt: 'Semana passada fui pra praia com a galera.', pron: 'Semána pasáda fúi pra práia kong a galéra', note: '«A galera» = el parche, el grupo de amigos.' },
           key: { pt: 'eu fui · ele foi', pron: 'eu fúi · éli fói', es: 'yo fui · él fue' } },
-        { id: 'pp3', tag: 'Experiencias', tagIcon: 'fa-bowl-food',
-          pt: 'Eu já comi feijoada, mas ainda não provei açaí.', pron: 'Eu zhá komí fezhuáda, mas aínda náung provéi asaí', es: 'Ya comí feijoada, pero todavía no he probado el açaí.',
-          nat: { pt: 'Já foi pro Brasil? — Já! / Ainda não.', pron: 'Zhá fói pru Braziú? — Zhá! / Aínda náung', note: 'Para «he probado / he ido» se usa el pasado simple. Se responde con «já» o «ainda não», no con «sí».' },
-          key: { pt: 'já · ainda não', pron: 'zhá · aínda náung', es: 'ya · todavía no' } },
         { id: 'pp4', tag: 'Fin de semana', tagIcon: 'fa-champagne-glasses',
           pt: 'Como foi o seu fim de semana? Foi ótimo!', pron: 'Kómu fói u séu fing dji semána? Fói óchimu!', es: '¿Cómo estuvo tu fin de semana? ¡Estuvo genial!',
           nat: { pt: 'E aí, como foi o fim de semana? — Foi demais!', pron: 'I aí, kómu fói u fing dji semána? — Fói djimáis!', note: '«Demais» = ¡buenísimo!' },
           key: { pt: 'Como foi…?', pron: 'Kómu fói', es: '¿Cómo estuvo / cómo fue…?' } },
+        { id: 'pp9', tag: '¿Qué pasó?', tagIcon: 'fa-bus',
+          pt: 'O que aconteceu? — Eu perdi o ônibus.', pron: 'U ki akonteséu? — Eu perdjí u ónibus', es: '¿Qué pasó? — Perdí el bus.',
+          nat: { pt: 'Que foi? — Perdi o busão.', pron: 'Ki fói? — Perdjí u buzáung', note: '«Que foi?» = ¿qué pasó? · «busão» = bus (informal).' },
+          key: { pt: 'aconteceu', pron: 'akonteséu', es: 'pasó, sucedió' } },
+        { id: 'pp10', tag: 'Eu y ele', tagIcon: 'fa-people-arrows', hl: 'fez',
+          pt: 'Eu fiz o jantar e ele fez a sobremesa.', pron: 'Eu fís u zhantá(r) i éli fêis a sobremésa', es: 'Yo hice la cena y él hizo el postre.',
+          key: { pt: 'fiz (eu) · fez (ele)', pron: 'fís · fêis', es: 'hice · hizo' } },
+        { id: 'pp11', tag: 'Vir', tagIcon: 'fa-door-open',
+          pt: 'Ela veio para a festa, mas eu não vim.', pron: 'Éla véiu pára a fésta, mas eu náung víng', es: 'Ella vino a la fiesta, pero yo no vine.',
+          nat: { pt: 'Ela veio pra festa, eu não.', pron: 'Éla véiu pra fésta, eu náung', note: 'Respuesta corta y natural.' },
+          key: { pt: 'eu vim · ele veio', pron: 'eu víng · éli véiu', es: 'yo vine · él vino' } },
         { id: 'pp5', tag: 'Resultado', tagIcon: 'fa-circle-check',
           pt: 'Eu tentei e deu certo!', pron: 'Eu tentéi i déu sértu', es: '¡Lo intenté y funcionó!',
           nat: { pt: 'Deu ruim!', pron: 'Déu juíng', note: 'Lo contrario, en jerga: «¡Salió mal! / ¡Se dañó!»' },
-          key: { pt: 'deu certo · deu errado', pron: 'déu sértu · déu ejádu', es: 'salió bien · salió mal' } },
-        { id: 'pp6', tag: 'Hace…', tagIcon: 'fa-hourglass-half',
-          pt: 'Eu comecei a estudar português há dois meses.', pron: 'Eu komeséi a istudá(r) portugués a dóis mézis', es: 'Empecé a estudiar portugués hace dos meses.',
-          nat: { pt: 'Comecei faz dois meses.', pron: 'Komeséi fáis dóis mézis', note: 'Al hablar, «faz» reemplaza a «há».' },
-          key: { pt: 'há + tiempo', pron: 'á', es: 'hace + tiempo' } }
+          key: { pt: 'deu certo · deu errado', pron: 'déu sértu · déu ejádu', es: 'salió bien · salió mal' } }
       ]
     },
     {
-      id: 'vocab', num: 14, tab: 'Vocabulario', icon: 'fa-book', color: 'cyan', vocab: true,
+      id: 'vocab', num: 16, tab: 'Vocabulario', icon: 'fa-book', color: 'cyan', vocab: true,
       title: 'Vocabulário Essencial', pron: 'Vokabuláriu Esensiáu', es: 'Vocabulario esencial · Las palabras que más vas a usar, por categorías'
     },
     {
-      id: 'vverbos', num: 15, tab: 'Verbos', icon: 'fa-person-running', color: 'lime', verbs: true,
+      id: 'vverbos', num: 17, tab: 'Verbos', icon: 'fa-person-running', color: 'lime', verbs: true,
       title: 'Verbos Mais Usados', pron: 'Vérbus Máis Uzádus', es: 'Los verbos más usados · Presente y pasado en 1ª, 2ª y 3ª persona'
     },
     {
-      id: 'pratica', num: 16, tab: 'Práctica', icon: 'fa-gamepad', color: 'pink', practice: true,
+      id: 'pratica', num: 18, tab: 'Práctica', icon: 'fa-gamepad', color: 'pink', practice: true,
       title: 'Prática Interativa', pron: 'Práchika Interachíva', es: 'Práctica interactiva · Flashcards y quiz'
     },
     {
-      id: 'prompt', num: 17, tab: 'Prompt IA', icon: 'fa-robot', color: 'fuchsia', prompt: true,
+      id: 'prompt', num: 19, tab: 'Prompt IA', icon: 'fa-robot', color: 'fuchsia', prompt: true,
       title: 'Estude com IA', pron: 'Istúdji kong i-á', es: 'Estudia con IA · Un prompt listo para copiar y pegar'
     }
   ];
@@ -830,7 +1123,17 @@
     { id: 'f20', cat: 'Números',      icon: 'fa-cake-candles',  pt: 'primeiro de março',    pron: 'priméru dji márssu',    es: 'primero de marzo' },
     { id: 'f21', cat: 'Horas',        icon: 'fa-clock',         pt: 'Cê tem horas?',        pron: 'Sê téing óras',         es: '¿Tienes la hora?' },
     { id: 'f22', cat: 'Horas',        icon: 'fa-hourglass-end', pt: 'Quinze para as três',  pron: 'Kínzi pára as trés',    es: 'Las tres menos cuarto' },
-    { id: 'f23', cat: 'Horas',        icon: 'fa-sun',           pt: 'É meio-dia',           pron: 'É méiu djía',           es: 'Es mediodía' }
+    { id: 'f23', cat: 'Horas',        icon: 'fa-sun',           pt: 'É meio-dia',           pron: 'É méiu djía',           es: 'Es mediodía' },
+    { id: 'f24', cat: 'Números',      icon: 'fa-mobile-screen', pt: 'Aceita Pix?',          pron: 'Aséita píkis',          es: '¿Acepta Pix? (pago por celular)' },
+    { id: 'f25', cat: 'Números',      icon: 'fa-receipt',       pt: 'dezenove e noventa',   pron: 'djizenóvi i novénta',   es: 'R$ 19,90' },
+    { id: 'f26', cat: 'Pasado',       icon: 'fa-house',         pt: 'Eu fiquei em casa',    pron: 'Eu fikéi ing káza',     es: 'Me quedé en casa' },
+    { id: 'f27', cat: 'Pasado',       icon: 'fa-door-open',     pt: 'Ele veio',             pron: 'Éli véiu',              es: 'Él vino' },
+    { id: 'f28', cat: 'Pasado',       icon: 'fa-hammer',        pt: 'Eu fiz · ele fez',     pron: 'Eu fís · éli fêis',     es: 'Yo hice · él hizo' },
+    { id: 'f29', cat: 'Pasado',       icon: 'fa-hand-holding',  pt: 'Eu tive',              pron: 'Eu chívi',              es: 'Yo tuve (¡no «tuve»!)' },
+    { id: 'f30', cat: 'Días',         icon: 'fa-calendar-week', pt: 'Sextou!',              pron: 'Sestô!',                es: '¡Por fin viernes!' },
+    { id: 'f31', cat: 'Días',         icon: 'fa-calendar-day',  pt: 'segunda-feira',        pron: 'segúnda féra',          es: 'lunes' },
+    { id: 'f32', cat: 'Profesiones',  icon: 'fa-building',      pt: 'o escritório',         pron: 'u iskritóriu',          es: 'la oficina (¡no «escritorio»!)' },
+    { id: 'f33', cat: 'Profesiones',  icon: 'fa-bell-concierge', pt: 'o garçom',            pron: 'u garsóng',             es: 'el mesero' }
   ];
 
   const FLASH_COLORS = {
@@ -842,6 +1145,8 @@
     'Falso amigo':  'from-slate-500 to-slate-700',
     'Números':      'from-blue-400 to-indigo-500',
     'Horas':        'from-green-400 to-emerald-600',
+    'Días':         'from-teal-400 to-cyan-600',
+    'Profesiones':  'from-orange-400 to-amber-600',
     'Colores':      'from-red-400 to-amber-400',
     'Pasado':       'from-yellow-400 to-orange-500'
   };
@@ -954,7 +1259,70 @@
         { pt: 'Hoje é o primeiro março.',      pron: 'Ózhi é u priméru márssu' }
       ], correct: 1,
       hint: 'Pista: el día 1 del mes es especial.',
-      explain: 'El día 1 se dice «primeiro». Del 2 en adelante: dia dois, dia três…' }
+      explain: 'El día 1 se dice «primeiro». Del 2 en adelante: dia dois, dia três…' },
+    { id: 'q13', topic: 'Pasado',
+      q: '¿Cómo dices «Llegué tarde»?',
+      options: [
+        { pt: 'Eu cheguei tarde.', pron: 'Eu shegéi tárdji' },
+        { pt: 'Eu chegei tarde.', pron: 'Eu shezhéi tárdji' },
+        { pt: 'Eu chegou tarde.', pron: 'Eu shegô tárdji' }
+      ], correct: 0,
+      hint: 'Pista: -gar cambia con «eu» para mantener el sonido de la G.',
+      explain: 'Chegar → eu chegUei (para que la G siga sonando «g»). Ele chegou.' },
+    { id: 'q14', topic: 'Pasado',
+      q: '«Él hizo la tarea» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'Ele fiz a lição.', pron: 'Éli fís a lisáung' },
+        { pt: 'Ele fez a lição.', pron: 'Éli fêis a lisáung' },
+        { pt: 'Ele fazeu a lição.', pron: 'Éli fazéu a lisáung' }
+      ], correct: 1,
+      hint: 'Pista: en los irregulares, eu y ele tienen formas distintas.',
+      explain: 'Eu fiz · ele fez. ¡La trampa más común!' },
+    { id: 'q15', topic: 'Pasado',
+      q: '¿Cómo dices «Tuve una reunión»?',
+      options: [
+        { pt: 'Eu tuve uma reunião.', pron: 'Eu túvi úma jeuniáung' },
+        { pt: 'Eu teve uma reunião.', pron: 'Eu tévi úma jeuniáung' },
+        { pt: 'Eu tive uma reunião.', pron: 'Eu chívi úma jeuniáung' }
+      ], correct: 2,
+      hint: 'Pista: no copies el español; con «eu» la vocal es «i».',
+      explain: 'Eu tive (yo tuve) · ele teve (él tuvo). «Tuve» no existe en portugués.' },
+    { id: 'q16', topic: 'Pasado',
+      q: 'Te preguntan «Você já comeu?» y sí comiste. ¿Qué respondes como un brasileño?',
+      options: [
+        { pt: 'Sim, já comeu.', pron: 'Sing, zhá koméu' },
+        { pt: 'Já comi!', pron: 'Zhá komí!' },
+        { pt: 'Sim, já como.', pron: 'Sing, zhá kómu' }
+      ], correct: 1,
+      hint: 'Pista: los brasileños responden repitiendo el verbo… pero con «eu».',
+      explain: 'Se responde con el verbo en primera persona: «Já comi!». «Comeu» es de ele / você.' },
+    { id: 'q17', topic: 'Días',
+      q: '«El viernes voy a la playa» — ¿cuál es la correcta?',
+      options: [
+        { pt: 'No sexta eu vou à praia.', pron: 'Nu sésta eu vô a práia' },
+        { pt: 'Na sexta eu vou à praia.', pron: 'Na sésta eu vô a práia' },
+        { pt: 'A sexta eu vou à praia.', pron: 'A sésta eu vô a práia' }
+      ], correct: 1,
+      hint: 'Pista: los días con «-feira» son femeninos.',
+      explain: 'Sexta-feira es femenino → na sexta. Sábado y domingo: no sábado, no domingo.' },
+    { id: 'q18', topic: 'Profesiones',
+      q: '¿Cómo dices «Ella es profesora»?',
+      options: [
+        { pt: 'Ela é professora.', pron: 'Éla é profesóra' },
+        { pt: 'Ela é professor.', pron: 'Éla é profesô(r)' },
+        { pt: 'Ela está professora.', pron: 'Éla istá profesóra' }
+      ], correct: 0,
+      hint: 'Pista: la profesión es parte de quién eres… y tiene femenino.',
+      explain: 'Ser + profesión, sin artículo: ela é professora. -or → -ora.' },
+    { id: 'q19', topic: 'Dinero',
+      q: 'En la caja ves «R$ 19,90». ¿Cómo lo dice el cajero?',
+      options: [
+        { pt: 'Dezenove e noventa.', pron: 'Djizenóvi i novénta' },
+        { pt: 'Dez nove noventa.', pron: 'Déis nóvi novénta' },
+        { pt: 'Noventa e dezenove.', pron: 'Novénta i djizenóvi' }
+      ], correct: 0,
+      hint: 'Pista: primero los reales, luego los centavos, unidos con «e».',
+      explain: 'Se dicen los reales y los centavos con «e»: dezenove e noventa.' }
   ];
 
   /* ---------- Vocabulario por categorías ---------- */
@@ -991,17 +1359,6 @@
         { pt: 'nunca', pron: 'núnka', es: 'nunca' },
         { pt: 'a semana', pron: 'a semána', es: 'la semana' },
         { pt: 'o fim de semana', pron: 'u fing dji semána', es: 'el fin de semana' }
-      ] },
-    { id: 'vc-dias', emoji: '📅', name: 'Días de la semana', tip: 'Se cuenta desde el domingo. Al hablar se dice solo «segunda», «terça»…',
-      words: [
-        { pt: 'segunda-feira', pron: 'segúnda féra', es: 'lunes' },
-        { pt: 'terça-feira', pron: 'térsa féra', es: 'martes' },
-        { pt: 'quarta-feira', pron: 'kuárta féra', es: 'miércoles' },
-        { pt: 'quinta-feira', pron: 'kínta féra', es: 'jueves' },
-        { pt: 'sexta-feira', pron: 'sésta féra', es: 'viernes' },
-        { pt: 'sábado', pron: 'sábadu', es: 'sábado' },
-        { pt: 'domingo', pron: 'domíngu', es: 'domingo' },
-        { pt: 'o feriado', pron: 'u feriádu', es: 'el día festivo' }
       ] },
     { id: 'vc-lugares', emoji: '🏙️', name: 'Lugares', tip: 'Ônibus es el bus. ¡Nada que ver con «ómnibus»!',
       words: [
@@ -1180,10 +1537,11 @@
       task: t => `Voy a pegar un texto que escribí en portugués sobre «${t}». Muéstrame la versión corregida frase por frase con el formato obligatorio y, debajo de cada frase, explica el error en una sola línea en español. Si algo es correcto pero suena poco natural, dime cómo lo diría un brasileño. Termina diciéndome una cosa que hice bien.\n\nMI TEXTO:\n[PEGA AQUÍ TU TEXTO]` }
   ];
 
-  const PROMPT_TOPICS = ['Mi presentación personal', 'Mi rutina diaria', 'Comida y restaurantes', 'Ser y estar', 'Palabras interrogativas', 'Viajar a Brasil', 'Mi familia', 'Adjetivos para describir personas', 'Lo que hice el fin de semana (pasado)', 'Números, fechas y teléfonos', '¿Qué hora es? (horas y citas)', 'Colores y ropa'];
+  const PROMPT_TOPICS = ['Mi presentación personal', 'Mi rutina diaria', 'Comida y restaurantes', 'Ser y estar', 'Palabras interrogativas', 'Viajar a Brasil', 'Mi familia', 'Adjetivos para describir personas', 'Lo que hice el fin de semana (pasado)', 'Números, fechas y teléfonos', '¿Qué hora es? (horas y citas)', 'Dinero y compras', 'Días de la semana y planes', 'Profesiones y trabajo', 'Colores y ropa'];
 
   const XP = { phrase: 20, flash: 10, quiz: 30 };
-  const LEVELS = [[0, '🌱 Principiante'], [600, '🧭 Explorador'], [1300, '✈️ Viajero'], [2100, '🏆 Maestro']];
+  // Umbrales como fracción del XP total, para que escalen al agregar contenido
+  const LEVELS = [[0, '🌱 Principiante'], [0.2, '🧭 Explorador'], [0.45, '✈️ Viajero'], [0.7, '🏆 Maestro']];
   const PRAISE = ['¡Excelente!', '¡Genial!', '¡Lo lograste!', '¡Vas muy bien!', '¡Qué buen ritmo!'];
 
   const COLORS = {
@@ -1214,6 +1572,7 @@
   }
   const ALL_UNITS = MODULES.flatMap(unitIds);
   const TOTAL = ALL_UNITS.length + FLASH.length + QUIZ.length;
+  const MAX_XP = ALL_UNITS.length * XP.phrase + FLASH.length * XP.flash + QUIZ.length * XP.quiz;
 
   /* ================================================================
      ESTADO (se guarda en este navegador)
@@ -1762,7 +2121,7 @@
 
 📚 LO QUE YA VI EN CLASE
 ${vistos}
-- Vocabulario básico: saludos, familia, tiempo, días, lugares, comida y conectores
+- Vocabulario básico: saludos, familia, tiempo, lugares, comida y conectores
 - Verbos frecuentes en presente y en pasado (pretérito perfeito): ser, estar, ter, ir, fazer, poder, querer, saber, falar, gostar, comer, abrir
 
 🎯 TAREA
@@ -1912,7 +2271,7 @@ Tengo unos ${p.mins} minutos para esta sesión.${extra ? `\nNota adicional: ${ex
       const pill = $('xp-pill');
       pill.classList.remove('pop'); void pill.offsetWidth; pill.classList.add('pop');
     }
-    $('level').textContent = LEVELS.filter(([min]) => xp >= min).pop()[1];
+    $('level').textContent = LEVELS.filter(([f]) => xp >= Math.round(f * MAX_XP / 100) * 100).pop()[1];
     setPressed($('btn-slow'), state.slow);
 
     renderTabs();
